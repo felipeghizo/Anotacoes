@@ -1,0 +1,726 @@
+REDES
+
+----- IMPORTANTE -----
+	
+	(Para mais informações sobre a rede):
+		WINDOWS -> Painel de controle -> exibir o status e as tarefas da rede
+		ou
+		cmd -> cd/ -> ipconfig /all
+	
+----------------------
+
+4 Pilares para uma rede confiavel:
+
+	1.1.3) Tolerancia e falhas
+	
+		Uma rede tolerante a falhas é aquela que limita o número de dispositivos afetados durante uma falha. Ela foi desenvolvida para permitir uma recuperação 		rápida quando ocorre uma falha. Essas redes dependem de vários caminhos entre a origem e o destino de uma mensagem. Se um caminho falhar, as mensagens 			serão instantaneamente enviadas por um link diferente. Ter vários caminhos para um destino é conhecido como redundância.
+		(Redundancia = varios caminhos).
+
+	1.1.4) Escalabilidade
+
+		Uma rede escalável se expande rapidamente para oferecer suporte a novos usuários e aplicativos. Ela faz isso sem degradar o desempenho dos serviços que 		estão sendo acessados por usuários existentes. Essas redes são escaláveis porque os projetistas seguem padrões e protocolos aceitos. Isso permite que 		os fornecedores de software e hardware se concentrem em melhorar produtos e serviços sem precisar criar um novo conjunto de regras para operar na rede.
+		(Usuários adicionais e redes inteiras podem ser conectados à Internet sem reduzir o desempenho para usuários atuais.)
+	
+	1.1.5) Qualidade de Serviço
+
+		Quando o volume de tráfego é maior do que o que pode ser transportado pela rede, os dispositivos retêm os pacotes na memória até que os recursos 		estejam	disponíveis para transmiti-los. Com uma política de QoS configurada, o roteador é capaz de gerenciar o fluxo do tráfego de voz e de dados, 		priorizando as	comunicações por voz se a rede ficar congestionada. O foco do QoS é priorizar o tráfego sensível ao tempo. O tipo de tráfego, e não o 		conteúdo, é o que é importante.A largura de banda é medida pelo número de bits que podem ser transmitidos em um único segundo, ou bits por segundo 		(bps). 			
+		(QoS = Qualidade do serviço) 
+
+	1.1.6) Segurança de rede
+		
+		Proteger a infraestrutura de rede inclui proteger fisicamente os dispositivos que fornecem conectividade de rede e impedir o acesso não autorizado ao 		software de gerenciamento que reside neles.
+
+		Os ad   ministradores de rede também devem proteger as informações contidas nos pacotes transmitidos pela rede e as informações armazenadas nos 			dispositivos conectados à rede. Para atingir os objetivos de segurança de rede, existem três requisitos principais.
+
+		Confidencialidade - A confidencialidade dos dados significa que apenas os destinatários pretendidos e autorizados podem acessar e ler os dados.
+		Integridade - A integridade dos dados garante aos usuários que as informações não foram alteradas na transmissão, da origem ao destino.
+		Disponibilidade - A disponibilidade de dados garante aos usuários acesso oportuno e confiável aos serviços de dados para usuários autorizados.
+  
+
+REDES HIERARQUICAS
+ 
+	1.2.1) Endereços Físicos e Lógicos
+
+		Os endereços IP contêm duas partes. Uma parte identifica a porção de rede. A porção de rede do endereço IP será a mesma para todos os hosts conectados 		à mesma rede local. A segunda parte do endereço IP identifica o host individualmente nesta rede Dentro da mesma rede local, a porção de host do 		endereço IP é exclusiva para cada host como mostrado na figura.
+		Os endereços MAC físico e IP lógico são necessários para que um computador se comunique em uma rede hierárquica, assim como o nome e o endereço de uma 		pessoa são necessários para enviar uma carta.
+
+		As 3 camadas da hierarquia:
+ 
+		Camada core: A camada do núcleo é uma camada de backbone de alta velocidade com conexões (de backup) redundantes. Ela é responsável por transmitir 			grandes quantidades de dados entre várias redes finais. Os dispositivos da camada de núcleo normalmente incluem roteadores e switches de alta 			velocidade e muito eficientes,tais como um Cisco Catalyst 9600 mostrado na figura. O objetivo principal da camada do núcleo é transportar dados 			rapidamente. 
+		Camada de distribuição: A camada de distribuição fornece um ponto de conexão para redes separadas e controla o fluxo de informações entre as redes. 			Normalmente, ela contém switches mais eficientes do que a camada de acesso, além de roteadores para fazer o roteamento entre redes. Os 				dispositivos da camada de distribuição controlam o tipo e a quantidade de tráfego que flui da camada de acesso para a camada do núcleo.
+		Camada de acesso: A camada de acesso fornece um ponto de conexão à rede para dispositivos de usuário final e permite que vários hosts se conectem a 			outros hosts por um dispositivo de rede, geralmente um switch ou um access point. Normalmente, todos os dispositivos dentro de uma única camada 			de acesso terão a mesma porção de rede do endereço IP.Os switches fornecem a conexão para os dispositivos da camada de distribuição, geralmente 			um dispositivo layer 3 tal como um roteador ou um switch layer 3.
+
+NUVEM E VIRTUALIZAÇÃO
+
+	SaaS – Software como serviço
+	PaaS – Plataforma como serviço
+	IaaS – Infraestrutura como serviço
+
+	Nuvens públicas - Os aplicativos e serviços baseados em nuvem oferecidos em uma nuvem pública são disponibilizados à população em geral. Os serviços podem ser 		gratuitos ou oferecidos em um modelo de pagamento por uso, como o pagamento de armazenamento online. A nuvem pública usa a Internet para fornecer 		serviços.
+	Nuvens privadas - Os serviços e aplicativos na nuvem disponibilizados em uma nuvem privada são indicados para entidades ou empresas específicas, como o 		governo. Uma nuvem privada pode ser configurada usando a rede privada de uma organização, embora isso possa ser caro para construir e manter. Uma nuvem 		privada também pode ser gerenciada por uma organização externa com segurança de acesso estrita.
+	Nuvens híbridas - Uma nuvem híbrida é composta de duas ou mais nuvens (exemplo: parte privada, parte pública), onde cada parte permanece um objeto separado, 		mas ambas são conectadas usando uma única arquitetura. Indivíduos em uma nuvem híbrida podem ter níveis de acesso a vários serviços baseados em 		direitos de acesso de usuário.
+	Nuvens comunitárias - Uma nuvem comunitária é criada para uso exclusivo de uma comunidade específica. As diferenças entre nuvens públicas e comunitárias são as 		necessidades funcionais que foram personalizadas para a comunidade. Por exemplo, organizações de saúde devem manter a conformidade com políticas e leis 		(por exemplo, HIPAA) que exigem confidencialidade e autenticação especial.
+
+	A virtualização é a base da computação em nuvem. Sem ela, a computação em nuvem, como é mais implantada, não seria possível. Virtualizar significa criar uma 	versão virtual, e não física, de um computador. Um exemplo seria executar um "computador Linux" no seu PC Windows.
+
+	Uma das principais vantagens da virtualização é o menor custo geral:
+	
+	É necessário menos equipamento - A virtualização permite a consolidação do servidor, o que requer menos dispositivos físicos e reduz os custos de manutenção.
+	Menos energia é consumida - A consolidação de servidores reduz os custos mensais de energia e refrigeração.
+	Menos espaço é necessário - A consolidação do servidor reduz a quantidade de espaço necessário.
+	São benefícios adicionais da virtualização:
+
+	Prototipagem mais fácil - Laboratórios independentes, operando em redes isoladas, podem ser criados rapidamente para testes e implementações de prototipagem de 		rede.
+	Provisionamento de servidor mais rápido - Criar um servidor virtual é muito mais rápido do que provisionar um servidor físico.
+		Maior tempo de atividade do servidor - A maioria das plataformas de virtualização de servidor agora oferece recursos avançados de tolerância a falhas 		redundantes.
+	Recuperação de desastres aprimorada - A maioria das plataformas de virtualização de servidores corporativos possui software que pode ajudar a testar e 			automatizar o failover antes que ocorra um desastre.
+	Suporte legado - A virtualização pode estender a vida útil dos sistemas operacionais e aplicativos, proporcionando mais tempo para as organizações migrarem 		para soluções mais recentes.
+	
+	Hipervisores: O hypervisor é um programa, firmware ou hardware que adiciona uma camada de abstração ao hardware físico. A camada de abstração é usada para 		criar máquinas virtuais que têm acesso a todo o hardware da máquina física, como CPUs, memória, controladores de disco e NICs
+	
+	Hipervisor do Tipo 1 - Abordagem “Bare Metal”
+		Os hypervisors Tipo 1, também são chamados de abordagem "bare-metal", pois o hypervisor é instalado diretamente no hardware. Os hypervisors Tipo 1 são 		geralmente usados em servidores corporativos e em dispositivos de rede de data center.
+
+		Com os hypervisors Tipo 1, o hypervisor é instalado diretamente no servidor ou no hardware de rede. Depois, as instâncias de um SO são instaladas no 		hypervisor, conforme mostrado na figura. Os hypervisors Tipo 1 têm acesso direto aos recursos de hardware e, portanto, são mais eficientes do que as 		arquiteturas hospedadas. Os hypervisors Tipo 1 melhoram a escalabilidade, o desempenho e a robustez.
+
+	Hipervisor do Tipo 2 - Abordagem “hospedada”
+		Um hipervisor Tipo 2 é um software que cria e executa instâncias VM. O computador, em que um hypervisor oferece suporte a uma ou mais VMs, é um 		computador host. Os hypervisors Tipo 2 são também chamados hypervisors hospedados. Isso acontece porque o hypervisor está instalado no topo do SO 		atual, como Mac OS X, Windows ou Linux. Em seguida, uma ou mais instâncias de SO adicionais são instaladas no topo do hypervisor, conforme mostrado na 		figura. Uma grande vantagem dos hipervisores Tipo 2 é que o software do console de gerenciamento não é necessário.
+
+
+BINÁRIO:
+	Complemento de 1:
+		Essa interpretação, o bit mais significativoé também utilizado para indicar o sinal. Porém, a interpretação dos demais bits depende do bit de sinal: 			se o bit de sinal é 0, então o número é positivoe a magnitude é o valor correspondente aos demais bits.
+			se o bit de sinal é 1, então o número é negativoe a magnitude é o valor correspondente ao complementodos demais bits
+		0101 corresponde ao número 5 (positivo) 
+		1101 corresponde ao número -2 (negativo),
+		pois _(101)2_ = (010)2= (2)10.
+		O complemento de 0 é 1 e o de 1 é 0.
+
+	Complemento de 2:
+		Essa interpretação é similar ao complemento de 1, porém quando o bit de sinal é 1, a magnitude é dada pelo valor correspondente ao complemento dos 		demais bits, mais 1:
+		0101 corresponde ao número 5 (positivo) 
+		1101 corresponde ao número -3 (negativo), 
+		pois _(1101)2_= (0010)2+ 1 = (0011)2= (3)10
+
+		1001	-> inverte os bits 	-> 0110 	-> +1	-> 0111 	-> 7		(7 = 0111)
+		7	-> 0111		-> -1	-> 0110 	-> inverte os bits	-> 1001		(-7 = 1001)
+
+IPv4 e IPv6 são os principais protocolos de comunicação da camada de rede. Os protocolos da camada de rede realizam quatro operações: endereçamento de dispositivos finais, encapsulamento, roteamento e desencapsulamento.
+
+IPV4:
+
+	Cada endereço é composto por uma string de 32 bits dividida em quatro seções, chamadas octetos. Cada octeto tem 8 bits (ou 1 byte) separados por um ponto. Por 	exemplo, o PC1 na figura recebeu o endereço IPv4 11000000.10101000.00001010.00001010. Seu endereço de gateway padrão seria aquele da interface Ethernet Gigabit 	do R1, 11000000.10101000.00001010.00000001.
+
+	O IPv4 é um dos principais protocolos de comunicação de camada de rede. O cabeçalho do pacote IPv4 é usado para garantir que esse pacote seja entregue para sua 	próxima parada no caminho para seu dispositivo final de destino.
+
+	O cabeçalho de um pacote IPv4 consiste em campos com informações importantes sobre o pacote. Esses campos contêm números binários que são examinados pelo 	processo da Camada 3.
+
+	Versão – Contém um valor binário de 4 bits definido como 0100 que identifica que este é um pacote IP versão 4.
+
+	Serviços diferenciados ou DiffServ (DS) - Anteriormente chamado de Tipo de Serviço (ToS), o campo DS é um campo de 8 bits usado para determinar a prioridade de 		cada pacote. Os seis bits mais significativos do campo DiffServ são os bits do ponto de código de serviços diferenciados (DSCP) e os dois últimos são 		os bits de notificação de congestionamento explícita (ECN).
+
+	Tempo de vida (TTL) – TTL contém um valor binário de 8 bits que é usado para limitar a vida útil de um pacote. O dispositivo de origem do pacote IPv4 define o 		valor TTL inicial. É diminuído em um cada vez que o pacote é processado por um roteador. Se o campo TTL for decrementado até zero, o roteador 			descartará o pacote e enviará uma mensagem ICMP de tempo excedido para o endereço IP de origem. Como o roteador decrementa o TTL de cada pacote, o 		roteador também deve recalcular a soma de verificação do cabeçalho.
+
+	Protocolo - Este campo é usado para identificar o protocolo de próximo nível. O valor binário de 8 bits indica o tipo de carga de dados que o pacote está 		carregando, o que permite que a camada de rede transfira os dados para o protocolo apropriado das camadas superiores. Valores comuns incluem ICMP (1), 		TCP (6) e UDP (17).
+
+	Checksum de cabeçalho — Isso é usado para detectar corrupção no cabeçalho IPv4.
+
+	Endereço IP Origem – Contém um valor binário de 32 bits que representa o endereço IP origem do pacote. O endereço de origem IPv 4 é sempre um endereço unicast.
+
+	Endereço IP Destino – Contém um valor binário de 32 bits que representa o endereço IP destino do pacote. O endereço IPv4 destino é um endereço unicast, 	multicast, ou broadcast.
+
+	Os campos Tamanho do Cabeçalho de Internet (IHL), Tamanho Total e Soma de Verificação do Cabeçalho servem para identificar e validar o pacote.
+	Outros campos são usados para reorganizar um pacote fragmentado. O pacote IPv4 usa especificamente os campos Identificação, Flags e Deslocamento do Fragmento 	para organizar os fragmentos. Um roteador pode precisar fragmentar um pacote IPv4 ao encaminhá-lo de um meio para outro com uma MTU menor.
+
+	Limitações do IPv4
+
+		Esgotamento do endereço IPv4 - O IPv4 tem um número limitado de endereços públicos exclusivos disponíveis. Embora haja aproximadamente 4 bilhões de 			endereços IPv4, o número crescente de novos dispositivos habilitados para IP, conexões sempre ativas e o potencial de crescimento de regiões 			menos desenvolvidas têm aumentado a necessidade de mais endereços.
+		Falta de conectividade ponto a ponto - Network Address Translation (NAT) é uma tecnologia comumente implementada em redes IPv4. A NAT é uma forma de 			vários dispositivos compartilharem um único endereço IPv4 público. No entanto, como o endereço IPv4 público é compartilhado, o endereço IPv4 de 			um host de rede interna fica oculto. Isso pode ser problemático para tecnologias que exigem conectividade de ponta a ponta.
+		Maior complexidade da rede - Embora o NAT tenha ampliado a vida útil do IPv4, ele só se destinava a ser um mecanismo de transição para o IPv6. O NAT em 			suas várias implementações cria complexidade adicional na rede, criando latência e dificultando a solução de problemas.
+
+	Observação: Um endereço IPv4 de gateway padrão é necessário para acessar redes remotas e os endereços IPv4 do servidor DNS são necessários para converter nomes 	de domínio em endereços IPv4.
+
+	Estrutura do endereço IPv4
+
+		A máscara de sub-rede IPv4 é usada para diferenciar a parte da rede da parte do host de um endereço IPv4. Quando um endereço IPv4 é atribuído a um 		dispositivo, a máscara de sub-rede é usada para determinar o endereço de rede do dispositivo. O endereço de rede representa todos os 				dispositivos na mesma rede.
+
+		Observe que, na verdade, a máscara de sub-rede não contém a parte da rede ou host de um endereço IPv4, apenas informa ao computador onde procurar a 		parte do endereço IPv4 que é a parte da rede e qual parte é a parte do host.
+
+		O processo real usado para identificar a parte da rede e a parte de host é chamado de AND.
+
+		O Comprimento do Prefixo: O comprimento do prefixo é o número de bits definido como 1 na máscara de sub-rede. Está escrito em "notação de barra", que é 		anotada por uma barra (/) seguida pelo número de bits definido como 1. Portanto, conte o número de bits da máscara de sub-rede e preceda-o com uma 		barra.
+		Observação: Um endereço de rede também é conhecido como prefixo ou prefixo de rede. Portanto, o comprimento do prefixo é o número de 1 bits na máscara 			de sub-rede.
+
+		Ao representar um endereço IPv4 usando um comprimento de prefixo, o endereço IPv4 é gravado seguido do comprimento do prefixo sem espaços. Por exemplo, 		192.168.10.10 255.255.255.0 seria gravado como 192.168.10.10/24. O uso de vários tipos de comprimentos do prefixo será discutido mais tarde. Por 		enquanto, o foco estará no prefixo /24 (ou seja, 255.255.255.0)
+
+		Para identificar o endereço de rede de um host IPv4, é feito um AND lógico, bit a bit, entre o endereço IPv4 e a máscara de sub-rede. Quando se usa AND 		entre o endereço e a máscara de sub-rede, o resultado é o endereço de rede. A operação AND entre um endereço de host IPv4 e uma máscara de sub-rede 		resulta no endereço de rede IPv4 para este host. Neste exemplo, a operação AND entre o endereço de host 192.168.10.10 e a máscara de sub-rede 			255.255.255.0 (/24) resulta no endereço de rede IPv4 192.168.10.0/24. Esta é uma operação IPv4 importante, pois informa ao host a qual rede pertence.
+
+
+IPV6:
+
+	O sistema de numeração hexadecimal é usado em rede para representar endereços IP versão 6 e endereços MAC Ethernet.
+
+	Os endereços IPv6 têm 128 bits de comprimento e a cada 4 bits é representado por um único dígito hexadecimal; para um total de 32 valores hexadecimais. Os 	endereços IPv6 não diferenciam maiúsculas e minúsculas e podem ser escritos tanto em minúsculas como em maiúsculas.
+
+	Conforme mostrado na figura, o formato preferido para escrever um endereço IPv6 é x:x:x:x:x:x:x:x, com cada "x" consistindo em quatro valores hexadecimais. 	Quando falamos de 8 bits de um endereço IPv4, usamos o termo octeto. No IPv6, um hexteto é o termo não oficial usado para se referir a um segmento de 16 bits 	ou quatro valores hexadecimais. Cada "x" é um único hextet, 16 bits ou quatro dígitos hexadecimais.
+
+	As melhorias que o IPv6 fornece incluem o seguinte:
+
+		Espaço de endereço aumentado - Os endereços IPv6 são baseados no endereçamento hierárquico de 128 bits, em oposição ao IPv4 com 32 bits.
+
+		Manipulação aprimorada de pacotes - O cabeçalho IPv6 foi simplificado com menos campos.
+
+		Elimina a necessidade de NAT - Com um número tão grande de endereços IPv6 públicos, o NAT entre um endereço IPv4 privado e um IPv4 público não é 			necessário. Isso evita alguns dos problemas induzidos por NAT enfrentados por aplicativos que exigem conectividade de ponta a ponta.
+
+	O cabeçalho simplificado do IPv6 consiste em um cabeçalho de comprimento fixo de 40 octetos (em grande parte devido ao comprimento dos endereços IPv6 de 	origem e de destino).O cabeçalho simplificado IPv6 permite um processamento mais eficiente de cabeçalhos IPv6.
+
+	Os campos no cabeçalho do pacote IPv6 incluem o seguinte:
+
+		Versão - Este campo contém um valor binário de 4 bits definido como 0110 que identifica isso como um pacote IP versão 6.
+
+		Classe de tráfego - Este campo de 8 bits é equivalente ao campo DS (Serviços diferenciados de IPv4).
+
+		Etiqueta de fluxo - Este campo de 20 bits sugere que todos os pacotes com a mesma etiqueta de fluxo recebam o mesmo tipo de manipulação pelos 				roteadores.
+
+		Comprimento da carga útil - Este campo de 16 bits indica o comprimento da parte dos dados ou da carga útil do pacote IPv6. Isso não inclui o 				comprimento do cabeçalho IPv6, que é um cabeçalho fixo de 40 bytes.
+
+		Próximo cabeçalho - Este campo de 8 bits é equivalente ao campo Protocolo IPv4. Ele exibe o tipo de carga de dados que o pacote está carregando, 			permitindo que a camada de rede transfira os dados para o protocolo apropriado das camadas superiores.
+
+		Limite de salto - Este campo de 8 bits substitui o campo TTL IPv4. Esse valor é subtraído de um por cada roteador que encaminha o pacote. Quando o 			contador atinge 0, o pacote é descartado e uma mensagem de ICMPv6 com tempo excedido é encaminhada para o host de envio. Isso indica que o 			pacote não atingiu seu destino porque o limite de salto foi excedido. Ao contrário do IPv4, o IPv6 não inclui uma soma de verificação do 			cabeçalho IPv6, porque esta função é executada nas camadas inferior e superior. Isso significa que a soma de verificação não precisa ser 			recalculada por cada roteador quando diminui o campo Limite de Hop, o que também melhora o desempenho da rede.
+
+		Endereço IPv6 de origem - Este campo de 128 bits identifica o endereço IPv6 do host de envio.
+
+		Endereço IPv6 de destino - Este campo de 128 bits identifica o endereço IPv6 do host de recebimento.
+
+	Um pacote IPv6 pode conter também cabeçalhos de extensão (EH), que fornecem informações de camada de rede. Opcionais, os cabeçalhos de extensão ficam 	posicionados entre o cabeçalho IPv6 e a carga. Eles são usados para fragmentação, segurança, suporte à mobilidade e muito mais. Ao contrário de IPv4, os 	roteadores não fragmentam os pacotes IPv6 roteados.
+
+Ethernet
+
+	Com a expansão das redes, foram desenvolvidos padrões que definiram regras para a operação de equipamentos de rede de diferentes fornecedores. Os padrões são 	vantajosos para as redes porque:
+
+		Facilitam o design
+		Simplificam o desenvolvimento de produtos
+		Promovem a concorrência
+		Fornecem interconexões consistentes
+		Facilitam o treinamento
+		Oferecem mais opções de fornecedor aos clientes
+
+	"O Instituto de Engenheiros Elétricos e Eletrônicos, ou IEEE", mantém os padrões de rede, incluindo Ethernet e padrões sem fio. Os comitês do IEEE são 	responsáveis por aprovar e manter os padrões para conexões, requisitos de mídia e protocolos de comunicação. Cada padrão de tecnologia recebe um número 	referente ao comitê responsável por aprovar e manter o padrão. O comitê responsável pelos padrões de Ethernet é o 802.3.
+
+	Desde a criação da Ethernet em 1973, os padrões evoluíram para especificar versões mais rápidas e flexíveis da tecnologia. Essa capacidade da Ethernet de 	melhorar ao longo do tempo é um dos principais motivos de ela ter se tornado tão popular. Cada versão da Ethernet tem um padrão associado. Por exemplo, o 802.3 	100BASE-T representa o 100 Megabits Ethernet com padrões de cabo de par trançado. A notação padrão significa que:
+
+		100 é a velocidade em Mbps
+		BASE significa transmissão de banda base
+		T significa o tipo de cabo, neste caso, par trançado.
+
+	Todas as interfaces de rede Ethernet têm um endereço físico atribuído a elas na fabricação. Esses endereços têm 48 bit (seis bytes) e são escritos em notação 	hexadecimal. Os endereços MAC têm duas partes. Uma parte do endereço MAC, os três primeiros bytes, representa o fornecedor que fabricou a interface de rede. 	Essa parte do MAC é chamada de OUI (identificador organizacionalmente único). Cada fornecedor que desejar fazer e vender interfaces de rede Ethernet deve se 	registrar com o IEEE para ter um OUI atribuído.
+
+	A segunda parte do endereço, os três bytes restantes, é o ID único para a interface. Todos os endereços MAC que começam com o mesmo OUI precisam ter valores 	únicos nos últimos três bytes.
+
+SUBCAMADAS DE ENLACE DE DADOS
+
+	Protocolos IEEE 802 LAN/MAN, incluindo Ethernet, usam as seguintes duas subcamadas separadas da camada de link de dados para operar. Eles são o controle de 	link lógico (LLC) e o controle de acesso de mídia (MAC), como mostrado na figura.
+
+	Lembre-se de que LLC e MAC têm as seguintes funções na camada de enlace:
+
+		Subcamada LLC - Esta subcamada IEEE 802.2 se comunica entre o software de rede nas camadas superiores e o hardware do dispositivo nas camadas 			inferiores. Ela coloca a informação no quadro que identifica qual protocolo de camada de rede está sendo usado para o quadro. Essas informações 		permitem que vários protocolos 	da camada 3, como IPv4 e IPv6, usem a mesma interface de rede e mídia.
+
+		Subcamada MAC - Esta subcamada (IEEE 802.3, 802.11 ou 802.15 por exemplo) é implementada em hardware e é responsável pelo encapsulamento de dados e 		controle de acesso ao meio. Ele fornece endereçamento de camada de link de dados e é integrado com várias tecnologias de camada física.
+
+	A subcamada MAC é responsável pelo encapsulamento de dados e acesso à mídia.
+	Lembre-se que a Ethernet legada que usa uma topologia de barramento ou hubs, é um meio compartilhado e half-duplex. Ethernet em um meio half-duplex usa um 	método de acesso baseado em contenção, detecção de múltiplos acessos/detecção de colisão (CSMA/CD). Isso garante que apenas um dispositivo esteja transmitindo 	por vez. O CSMA/CD permite que vários dispositivos compartilhem o mesmo meio half-duplex, detectando uma colisão quando mais de um dispositivo tenta transmitir 	simultaneamente. Ele também fornece um algoritmo de back-off para retransmissão.
+
+	As LANs Ethernet de hoje usam switches que operam em full-duplex. As comunicações full-duplex com switches Ethernet não exigem controle de acesso através do 	CSMA/CD.
+
+	Encapsulamento de dados
+
+		O encapsulamento de dados IEEE 802.3 inclui o seguinte:
+
+			Quadro Ethernet - Esta é a estrutura interna do quadro Ethernet.
+			Endereçamento Ethernet - O quadro Ethernet inclui um endereço MAC de origem e de destino para entregar o quadro Ethernet de NIC Ethernet para 				NIC Ethernet na mesma LAN.
+			Detecção de erro Ethernet - O quadro Ethernet inclui um trailer de seqüência de verificação de quadro (FCS) usado para detecção de erro.
+	
+	Acessando a mídia
+
+
+	Como mostrado na figura, a subcamada MAC IEEE 802.3 inclui as especificações para diferentes padrões de comunicações Ethernet em vários tipos de mídia, 	incluindo cobre e fibra.
+
+	O tamanho mínimo do quadro Ethernet é de 64 bytes e o máximo esperado é de 1518 bytes. Isso inclui todos os bytes do campo de endereço MAC de destino até o 	campo FCS (Frame Check Sequence). O campo de preâmbulo não é incluído ao descrever o tamanho do quadro.
+
+Endereço MAC Unicast 	00-07-E9-63-CE-53
+
+	Na Ethernet, são utilizados diferentes endereços MAC para comunicação unicast, broadcast e multicast da Camada 2.
+	Um endereço MAC de unicast é o endereço exclusivo usado quando um quadro é enviado de um único dispositivo de transmissão para um único dispositivo de destino.
+
+
+Endereço MAC de broadcast FF-FF-FF-FF-FF-FF
+
+	Um quadro de transmissão Ethernet é recebido e processado por cada dispositivo na LAN Ethernet. Os recursos de uma transmissão Ethernet são os seguintes:
+
+		Possui um endereço MAC de destino de FF-FF-FF-FF-FF-FF em hexadecimal (48 endereços em binário).
+		É inundada todas as portas de switch Ethernet, exceto a porta de entrada.
+		Ele não é encaminhado por um roteador.
+	
+	Se os dados encapsulados forem um pacote de transmissão IPv4, isso significa que o pacote contém um endereço IPv4 de destino que possui todos os 1s na parte do 	host. Essa numeração no endereço significa que todos os hosts naquela rede local (domínio de broadcast) receberão e processarão o pacote.
+	O endereço IPv4 destino é um endereço de broadcast, 192.168.1.255. Quando o pacote IPv4 broadcast é encapsulado no quadro Ethernet, o endereço MAC de destino é 	o endereço MAC de broadcast FF-FF-FF-FF-FF-FF em hexadecimal (48 uns em binário).
+	DHCP para IPv4 é um exemplo de um protocolo que usa endereços de broadcast Ethernet e IPv4.
+	No entanto, nem todas as transmissões Ethernet carregam um pacote de difusão IPv4. Por exemplo, as Solicitações ARP não usam IPv4, mas a mensagem ARP é enviada 	como uma transmissão Ethernet.
+
+Endereço MAC Multicast IPv4 01-00-5E / IPv6 33-33
+
+	Um quadro de multicast Ethernet é recebido e processado por um grupo de dispositivos na LAN Ethernet que pertencem ao mesmo grupo de multicast. Os recursos de 	um multicast Ethernet são os seguintes:
+
+		Há um endereço MAC de destino 01-00-5E quando os dados encapsulados são um pacote multicast IPv4 e um endereço MAC de destino de 33-33 quando os dados 			encapsulados são um pacote multicast IPv6.
+		Há outros endereços MAC de destino multicast reservados para quando os dados encapsulados não são IP, como STP (Spanning Tree Protocol) e LLDP 				(LinkLayer Discovery Protocol).
+		É inundada todas as portas de switch Ethernet, exceto a porta de entrada, a menos que o switch esteja configurado para espionagem multicast.
+		Ele não é encaminhado por um roteador, a menos que o roteador esteja configurado para rotear pacotes multicast.
+	
+	Se os dados encapsulados forem um pacote multicast IP, os dispositivos que pertencem a um grupo multicast recebem um endereço IP do grupo multicast. O 	intervalo de endereços IPv4 multicast vai de 224.0.0.0 a 239.255.255.255. O intervalo de endereços multicast IPv6 começa com ff00::/8. Como os endereços 	multicast representam um grupo de endereços (às vezes chamado de grupo de hosts), eles só podem ser utilizados como destino de um pacote. A origem sempre será 	um endereço unicast.
+
+	Assim como nos endereços unicast e broadcast, o endereço IP multicast requer um endereço MAC multicast correspondente para entregar quadros em uma rede local. 	O endereço MAC multicast está associado e usa informações de endereçamento do endereço multicast IPv4 ou IPv6.
+	
+	Protocolos de roteamento e outros protocolos de rede usam endereçamento multicast. Aplicativos como software de vídeo e imagem também podem usar endereçamento 	multicast, embora aplicativos multicast não sejam tão comuns.
+
+Noções Básicas sobre Switches
+
+	Um switch Ethernet da camada 2 usa endereços MAC da camada 2 para tomar decisões de encaminhamento. Desconhece completamente os dados (protocolo) que estão 	sendo transportados na parte de dados do quadro, como um pacote IPv4, uma mensagem ARP ou um pacote ND IPv6. O switch toma decisões de encaminhamento com base 	apenas nos endereços MAC Ethernet da camada 2.
+
+	Um switch Ethernet examina sua tabela de endereços MAC para tomar uma decisão de encaminhamento para cada quadro, ao contrário dos hubs Ethernet herdados que 	repetem bits em todas as portas, exceto a porta de entrada. Na figura, o switch de quatro portas acaba de ser ligado. O switch toma decisões de encaminhamento 	com base apenas nos endereços MAC Ethernet da camada 2.
+
+	Nota: A tabela de endereços MAC às vezes é chamada de tabela de memória endereçável de conteúdo (CAM). Embora o termo "tabela CAM" seja muito comum, neste 	curso nós a chamaremos de tabela de endereços MAC.
+
+Switch Aprendizado e Encaminhamento
+
+	O switch cria a tabela de endereços MAC dinamicamente examinando o endereço MAC de origem dos quadros recebidos em uma porta. O switch encaminha quadros 	procurando uma correspondência entre o endereço MAC de destino no quadro e uma entrada na tabela de endereços MAC.
+
+	Aprendizado: Todo quadro que entra em um switch é verificado quanto ao aprendizado de novas informações. Isso é feito examinando o endereço MAC de origem do 		quadro e o número da porta em que o quadro entrou no comutador. Se o endereço MAC de origem não existe, é adicionado à tabela juntamente com o número 		da porta de entrada. Se o endereço MAC de origem existir, o switch atualizará o cronômetro de atualização para essa entrada na tabela. Por padrão, a 		maioria dos switches Ethernet mantém uma entrada na tabela por 5 minutos.
+
+	Encaminhamento: Se o endereço MAC de destino for um endereço unicast, o switch procurará uma correspondência entre o endereço MAC de destino do quadro e uma 		entrada em sua tabela de endereços MAC. Se o endereço MAC de destino estiver na tabela, ele encaminhará o quadro pela porta especificada. Se o endereço 		MAC de destino não estiver na tabela, o switch encaminhará o quadro por todas as portas, exceto a de entrada. Isso é chamado de unicast desconhecido.
+
+abelas de endereços MAC em switches conectados	
+	
+	Um switch pode ter vários endereços MAC associados a uma única porta. Isso é comum quando o switch está conectado a outro switch. O switch terá uma entrada 	separada na tabela de endereços MAC para cada quadro recebido com um endereço MAC de origem diferente.
+
+Envie o Quadro para o Gateway Padrão
+
+	Quando um dispositivo tem um endereço IP em uma rede remota, o quadro Ethernet não pode ser enviado diretamente para o dispositivo de destino. Em vez disso, o 	quadro Ethernet é enviado ao endereço MAC do gateway padrão, o roteador.
+
+A Camada de Rede
+
+	Para realizar comunicações de ponta a ponta através dos limites da rede, os protocolos de camada de rede executam quatro operações básicas:
+
+	Endereçamento de dispositivos finais – Os dispositivos finais devem ser configurados com um endereço IP exclusivo para identificação na rede.
+	Encapsulamento – A camada de rede encapsula a unidade de dados de protocolo (PDU) da camada de transporte em um pacote. O processo de encapsulamento adiciona 		informações de cabeçalho IP, como os endereços IP dos hosts origem (emissor) e destino (receptor). O processo de encapsulamento é executado pela origem 		do pacote IP.
+	Roteamento – A camada de rede fornece serviços para direcionar os pacotes para um host de destino em outra rede. Para trafegar para outras redes, o pacote deve 		ser processado por um roteador. A função do roteador é escolher o melhor caminho e direcionar os pacotes para o host de destino em um processo 			conhecido como roteamento. Um pacote pode atravessar muitos roteadores antes de chegar ao host de destino. Cada roteador que um pacote atravessa para 		chegar ao host de destino é chamado de salto.
+	Desencapsulamento - Quando o pacote chega à camada de rede do host de destino, o host verifica o cabeçalho IP do pacote. Se o endereço IP de destino no 		cabeçalho corresponder ao seu próprio endereço IP, o cabeçalho IP será removido do pacote. Depois que o pacote é desencapsulado pela camada de rede, a 		PDU resultante da Camada 4 é transferida para o serviço apropriado na camada de transporte. O processo de desencapsulamento é executado pelo host de 		destino do pacote IP.
+
+	A camada de rede, ou Camada OSI 3, fornece serviços para permitir que dispositivos finais troquem dados entre redes. IPv4 e IPv6 são os principais protocolos 	de comunicação da camada de rede. Outros protocolos de camada de rede incluem protocolos de roteamento como OSPF e protocolos de mensagens como ICMP.	
+	Diferentemente da camada de transporte (OSI Layer 4), que gerencia o transporte de dados entre os processos em execução em cada host, os protocolos de 		comunicação da camada de rede (ou seja, IPv4 e IPv6) especificam a estrutura de pacotes e o processamento usado para transportar os dados de um host 		para outro hospedeiro. A operação sem levar em consideração os dados contidos em cada pacote permite que a camada de rede transporte pacotes para 		diversos tipos de comunicações entre vários hosts. Os protocolos da camada de rede realizam quatro operações: endereçamento de dispositivos finais, 	encapsulamento, roteamento e desencapsulamento. IPv4 e IPv6 especificam a estrutura de pacotes e o processamento usado para transportar os dados de um host 	para outro host. A operação sem levar em consideração os dados contidos em cada pacote permite que a camada de rede transporte pacotes para diversos tipos 	de comunicações entre vários hosts.
+
+Características do IP
+
+	O IP foi desenvolvido como um protocolo com baixa sobrecarga. Ele fornece apenas as funções necessárias para enviar um pacote de uma origem a um destino por um 	sistema interconectado de redes. O protocolo não foi projetado para rastrear e gerenciar o fluxo de pacotes. Essas funções, se exigido, são realizadas por 	outros protocolos em outras camadas, principalmente TCP na Camada 4. O IP encapsula o segmento da camada de transporte ou outros dados adicionando um cabeçalho 	IP. O cabeçalho IP é usado para entregar o pacote ao host de destino. O cabeçalho IP é examinado por roteadores e switches de camada 3 à medida que percorre 	uma rede até seu destino. As informações de endereçamento IP permanecem as mesmas desde o momento em que o pacote deixa o host de origem até chegar ao host de 	destino, exceto quando traduzido pelo dispositivo executando NAT para IPv4.
+
+	Estas são as características básicas da IP:
+
+	Sem conexão - Não há conexão com o destino estabelecido antes do envio de pacotes de dados.
+		O IP não tem conexão, o que significa que nenhuma conexão ponta a ponta dedicada é criada pelo IP antes que os dados sejam enviados. A comunicação sem 		conexão é conceitualmente semelhante a enviar uma carta a alguém sem notificar o destinatário com antecedência. A figura resume esse ponto-chave.
+
+	Melhor esforço - o IP é inerentemente não confiável, porque a entrega de pacotes não é garantida.
+		O IP também não requer campos adicionais no cabeçalho para manter uma conexão estabelecida. Esse processo reduz bastante a sobrecarga do IP. No 		entanto, sem conexão de ponta a ponta pré-estabelecida, os remetentes não sabem se os dispositivos de destino estão presentes e funcionais ao enviar 		pacotes, nem sabem se o destino recebe o pacote ou se o dispositivo de destino pode acessar e ler o pacote.
+		O protocolo IP não garante que o pacote enviado seja, de fato, recebido.
+
+	Independente da mídia - A operação é independente do meio (ou seja, cobre, fibra ótica ou sem fio) que carrega os dados.
+		Não confiável significa que o IP não tem a capacidade de gerenciar e recuperar pacotes não entregues ou corrompidos. Isso ocorre porque, embora os 		pacotes IP sejam enviados com informações sobre o local da entrega, eles não contêm informações que podem ser processadas para informar ao remetente se 		a entrega foi bem-sucedida. Os pacotes podem chegar ao destino corrompidos, fora de sequência ou simplesmente não chegar. O IP não tem capacidade de 		retransmitir os pacotes em caso de erros.
+		O IP opera independentemente da mídia que transporta os dados nas camadas inferiores da pilha de protocolos. Conforme mostra a figura, os pacotes IP 		podem ser comunicados como sinais elétricos por cabo de cobre, sinais ópticos nas fibras ou sinais de rádio em redes sem fio.
+
+		A camada de enlace de dados OSI é responsável por pegar um pacote IP e prepará-lo para transmissão pelo meio de comunicação. Isso significa que a 		entrega de pacotes IP não se limita a nenhum meio específico.
+		Há, no entanto, uma característica muito importante dos meios físicos que a camada de rede considera: o tamanho máximo da PDU que cada meio consegue 		transportar. Essa característica é chamada de unidade máxima de transmissão (maximum transmission unit - MTU). Parte das comunicações de controle entre 		a camada de enlace de dados e a camada de rede é a definição de um tamanho máximo para o pacote. A camada de enlace de dados passa o valor da MTU para 		a camada de rede. A camada de rede então determina o tamanho que os pacotes podem ter.
+		Em alguns casos, um dispositivo intermediário, geralmente um roteador, deve dividir um pacote IPv4 ao encaminhá-lo de um meio para outro com uma MTU 		menor. Esse processo é chamado fragmentação do pacote ou fragmentação. A fragmentação causa latência. Os pacotes IPv6 não podem ser fragmentados pelo 		roteador.
+	
+
+ARP
+
+	O ARP fornece duas funções básicas:
+		- Resolução de endereços IPv4 em endereços MAC
+		- Manter uma tabela de mapeamentos de endereços IPv4 para MAC
+
+	Quando um pacote é enviado à camada de enlace de dados para ser encapsulado em um quadro Ethernet, o dispositivo consulta uma tabela em sua memória para 	encontrar o endereço MAC que é mapeado para o endereço IPv4. Esta tabela é armazenada temporariamente na memória RAM e denominada tabela ARP ou cache ARP.
+	O dispositivo emissor pesquisará em sua tabela ARP um endereço IPv4 destino correspondente a um endereço MAC.
+		Se o endereço IPv4 destino do pacote estiver na mesma rede que o endereço IPv4 origem, o dispositivo pesquisará o endereço IPv4 destino na tabela ARP.
+		Se o endereço IPv4 destino do pacote estiver em uma rede diferente do endereço IPv4 origem, o dispositivo pesquisará o endereço IPv4 do gateway padrão 		na tabela ARP.
+	Nos dois casos, a pesquisa é por um endereço IPv4 e um endereço MAC correspondente para o dispositivo.
+	Cada entrada (linha) da tabela ARP vincula um endereço IPv4 a um endereço MAC. Chamamos a relação entre os dois valores de um mapa. Isso significa simplesmente 	que você pode localizar um endereço IPv4 na tabela e descobrir o endereço MAC correspondente. A tabela ARP salva (armazena em cache) temporariamente o 	mapeamento dos dispositivos da LAN.
+	Se o dispositivo localizar o endereço IPv4, seu endereço MAC correspondente será usado como endereço MAC de destino no quadro. Se nenhuma entrada for 	encontrada, o dispositivo enviará uma requisição ARP.
+
+	As mensagens do ARP são encapsuladas diretamente em um quadro Ethernet. Não há cabeçalho IPv4. A requisição ARP é encapsulada em um quadro Ethernet usando as 	seguintes informações de cabeçalho:
+
+		Endereço MAC de destino – Este é um endereço de broadcast FF-FF-FF-FF-FF-FF que requer todos os NICs Ethernet na LAN para aceitar e processar a 			solicitação ARP.
+		Endereço MAC de origem - Este é o endereço MAC do remetente da solicitação ARP.
+		Tipo - As mensagens ARP têm um campo de tipo de 0x806. Ele informa à NIC de recebimento que a parte de dados do quadro precisa ser transferida para o 			processo ARP.
+	Como as solicitações de ARP são transmissões, elas são inundadas em todas as portas pelo switch, exceto a porta de recebimento. Todas as NICs Ethernet no 	processo de LAN transmite e devem entregar a solicitação ARP ao seu sistema operacional para processamento. Cada dispositivo deve processar a requisição ARP 	para ver se o endereço IPv4 destino corresponde ao seu. Um roteador não encaminhará broadcasts pelas outras interfaces.
+
+	Somente um dispositivo na LAN terá um endereço IPv4 correspondente ao endereço IPv4 na requisição ARP. Nenhum outro dispositivo responderá.
+
+	Remoção de Entradas de uma Tabela ARP
+		Em cada dispositivo, um temporizador da cache ARP remove entradas ARP que não tenham sido usadas durante um determinado período. Os horários diferem 		dependendo do sistema operacional do dispositivo. Por exemplo, os sistemas operacionais Windows mais recentes armazenam entradas da tabela ARP entre 15 		e 45 segundos, conforme ilustrado na figura.
+
+	Tabelas ARP nos dispositivos - Comandos:
+		- Em um roteador Cisco, o comando show ip arp é usado para exibir a tabela ARP, conforme mostrado na figura.
+		- Em um PC com Windows 10, o comando arp –a é usado para exibir a tabela ARP, conforme mostrado na figura.
+
+	Seguranca:
+		Em alguns casos, o uso do ARP pode levar a um risco potencial à segurança. Um ator de ameaça pode usar falsificação ARP para realizar um ataque de 		envenenamento por ARP. Esta é uma técnica usada por um ator de ameaça para responder a uma solicitação ARP de um endereço IPv4 que pertence a outro 		dispositivo, como o gateway padrão, conforme mostrado na figura. O agente da ameaça envia uma resposta ARP com seu próprio endereço MAC. O destinatário 		da resposta ARP adicionará o endereço MAC errado à sua tabela ARP e enviará esses pacotes ao agente de ameaça.
+		 Switches de nível corporativo incluem técnicas de mitigação conhecidas como inspeção dinâmica ARP (DAI).
+
+Serviço de Nomes de Domínio (DNS)
+
+	Existem outros protocolos específicos da camada de aplicativo que foram projetados para facilitar a obtenção de endereços para dispositivos de rede. Esses 	serviços são essenciais porque seria muito demorado lembrar endereços IP em vez de URLs ou configurar manualmente todos os dispositivos em uma rede média a 	grande.O protocolo DNS define um serviço automatizado que compara nomes de recursos com o endereço de rede numérico requisitado. Ele inclui o formato para 	consultas, respostas e dados. As comunicações do protocolo DNS utilizam um único formato, chamado de mensagem. Este formato de mensagem é utilizado para todos 	os tipos de consultas de cliente e respostas de servidor, mensagens de erro e transferência de informações de registro de recursos entre servidores.
+
+	Formato de Mensagem DNS
+
+		O servidor DNS armazena diferentes tipos de registros de recursos usados \u200b\u200bpara resolver nomes. Esses registros contêm o nome, endereço e 		tipo de registro. Alguns desses tipos de registro são os seguintes:
+
+			A - Um endereço IPv4 do dispositivo final
+			NS - Um servidor de nomes autoritativo
+			AAAA - Um endereço IPv6 de dispositivo final (pronuncia-se quad-A)
+			MX - Um registro de troca de e-mail
+
+Protocolo de Configuração Dinâmica de Host (DHCP)
+
+	O serviço DHCP para IPv4 torna automática a atribuição de endereços IPv4, máscaras de sub-rede, gateways e outros parâmetros de rede IPv4. Isso é conhecido 	como o endereçamento dinâmico. A alternativa para o endereçamento dinâmico é o endereçamento estático. Ao usar o endereçamento estático, o administrador de 	redes insere manualmente informações de endereço IP em hosts. Quando um host está conectado à Internet, o servidor DHCP é contatado e um endereço é 	requisitado. O servidor DHCP escolhe um endereço de uma lista configurada de endereços chamada pool e o atribui (aloca) ao host.O DHCP para IPv6 (DHCPv6) 	fornece serviços semelhantes para clientes IPv6. Uma diferença importante é que o DHCPv6 não fornece o endereço do gateway padrão. Isso só pode ser obtido 	dinamicamente a partir da mensagem Anúncio do roteador do roteador.
+
+	Mensagens DHCP
+
+		Como mostra a figura, quando um dispositivo IPv4 configurado com DHCP inicia ou se conecta à rede, o cliente transmite uma mensagem de descoberta DHCP 		(DHCPDISCOVER) para identificar qualquer servidor DHCP disponível na rede. Um servidor DHCP responde com uma mensagem de oferta DHCP (DHCPOFFER), que 		oferece uma locação ao cliente. A mensagem de oferta contém o endereço IPv4 e a máscara de sub-rede a serem atribuídos, o endereço IPv4 do servidor DNS 		e o endereço IPv4 do gateway padrão. A oferta de locação também inclui a duração da locação.
+
+
+		O cliente pode receber várias mensagens DHCPOFFER, caso exista mais de um servidor DHCP na rede local. Portanto, deve escolher entre eles e transmitir 		uma mensagem de requisição de DHCP (DHCPREQUEST) que identifique o servidor explícito e a oferta de locação que o cliente está aceitando. Um cliente 		também pode decidir requisitar um endereço que já havia sido alocado pelo servidor. Presumindo que o endereço IPv4 requisitado pelo cliente, ou 		oferecido pelo servidor, ainda seja válido, o servidor retornará uma mensagem de confirmação DHCP (DHCPACK) que confirma para o cliente que a locação 		foi finalizada. Se a oferta não é mais válida, o servidor selecionado responde com uma mensagem de confirmação negativa DHCP (DHCPNAK). Se uma mensagem 		DHCPNAK for retornada, o processo de seleção deverá recomeçar com a transmissão de uma nova mensagem DHCPDISCOVER. Quando o cliente tiver a locação, 		ela deverá ser renovada por outra mensagem DHCPREQUEST antes do vencimento. O servidor DHCP garante que todos os endereços IP sejam exclusivos (um 		mesmo endereço IP não pode ser atribuído a dois dispositivos de rede diferentes simultaneamente). A maioria dos ISPs usa o DHCP para alocar endereços 		para seus clientes. O DHCPv6 possui um conjunto de mensagens semelhantes às do DHCPv4. As mensagens DHCPv6 são SOLICIT, ADVERTISE, INFORMATION REQUEST, 		e REPLY.
+
+		DISCOVER -> OFFER -> REQUEST -> PACK
+
+Propósito da Camada de Transporte
+	
+	A camada de transporte é o link entre a camada de aplicação e as camadas inferiores que são responsáveis pela transmissão pela rede.A camada de transporte não 	tem conhecimento do tipo de host de destino, o tipo de mídia pela qual os dados devem percorrer, o caminho percorrido pelos dados, o congestionamento em um 	link ou o tamanho da rede.
+	A camada de transporte inclui dois protocolos:
+		Protocolo TCP
+		Protocolo UDP (User Datagram Protocol)
+
+	A camada de transporte tem muitas responsabilidades:
+
+		- Rastreamento de Conversações Individuais: Na camada de transporte, cada conjunto de dados que flui entre um aplicativo de origem e um aplicativo de 			destino é conhecido como conversa e é rastreado separadamente. É responsabilidade da camada de transporte manter e monitorar essas várias 			conversações.A 	maioria das redes tem uma limitação da quantidade de dados que pode ser incluída em um único pacote. Portanto, os dados devem 			ser divididos em partes gerenciáveis.
+		- Segmentação de Dados e Remontagem de Segmentos: É responsabilidade da camada de transporte dividir os dados do aplicativo em blocos de tamanho 			adequado. Dependendo do protocolo de camada de transporte usado, os blocos de camada de transporte são chamados de segmentos ou datagramas. A 			figura ilustra a camada de transporte usando blocos diferentes para cada conversa. A camada de transporte divide os dados em blocos menores (ou 			seja, segmentos ou datagramas) que são mais fáceis de gerenciar e transportar.
+		- Adicionar Informações de Cabeçalho: O protocolo da camada de transporte também adiciona informações de cabeçalho contendo dados binários organizados 			em vários campos a cada bloco de dados. São os valores nesses campos que permitem que os vários protocolos da camada de transporte realizem 			diferentes funções no gerenciamento da comunicação de dados. Por exemplo, as informações de cabeçalho são usadas pelo host de recebimento para 			remontar os blocos de dados em um fluxo de dados completo para o programa de camada de aplicativo de recebimento. A camada de transporte 			garante que, mesmo com vários aplicativos em execução em um dispositivo, todos os aplicativos recebam os dados corretos.
+		- Identificação das Aplicações: A camada de transporte deve separar e gerenciar várias comunicações com as diferentes necessidades de requisitos de 			transporte. Para passar fluxos de dados para os aplicativos adequados, a camada de transporte identifica o aplicativo de destino usando um 			identificador chamado número da porta. Conforme ilustrado na figura, cada processo de software que precisa acessar a rede recebe um número de 			porta exclusivo para esse host.
+		- Multiplexação das Conversas: O envio de alguns tipos de dados (por exemplo, um vídeo de streaming) através de uma rede, como um fluxo de comunicação 			completo, pode consumir toda a largura de banda disponível. Isso impediria que outras conversas de comunicação ocorressem ao mesmo tempo. Isso 			também dificultaria a recuperação de erro e retransmissão dos dados danificados. Como mostrado na figura, a camada de transporte usa 				segmentação e multiplexação para permitir que diferentes conversas de comunicação sejam intercaladas na mesma rede. A verificação de erros pode 			ser realizada nos dados do segmento, para determinar se o segmento foi alterado durante a transmissão.
+
+	Protocolos da Camada de Transporte
+		O IP está preocupado apenas com a estrutura, endereçamento e roteamento de pacotes. O IP não especifica como a entrega ou o transporte de pacotes 		ocorrem. Os protocolos de camada de transporte especificam como transferir mensagens entre hosts e são responsáveis pelo gerenciamento dos requisitos 		de confiabilidade de uma conversa. A camada de transporte inclui os protocolos TCP e UDP. Diferentes aplicações têm diferentes necessidades de 			confiabilidade de transporte. Portanto, o TCP/IP fornece dois protocolos de camada de transporte
+
+		- Protocolo de Controle de Transmissão (TCP): O TCP é considerado um protocolo de camada de transporte confiável, completo, que garante que todos os 			dados cheguem ao destino. O TCP inclui campos que garantem a entrega dos dados do aplicativo. Esses campos exigem processamento adicional pelos 			hosts de envio e recebimento. O TCP divide os dados em segmentos. O transporte TCP é análogo a enviar pacotes que são rastreados da origem ao 			destino. Se um pedido pelo correio estiver dividido em vários pacotes, um cliente poderá verificar on-line a sequência de recebimento do 			pedido.
+
+			O TCP fornece confiabilidade e controle de fluxo usando estas operações básicas:
+
+				- Número e rastreamento de segmentos de dados transmitidos para um host específico a partir de um aplicativo específico
+				- Confirmar dados recebidos
+				- Retransmitir quaisquer dados não reconhecidos após um certo período de tempo
+				- Dados de sequência que podem chegar em ordem errada
+				- Enviar dados a uma taxa eficiente que seja aceitável pelo receptor
+				- Para manter o estado de uma conversa e rastrear as informações, o TCP deve primeiro estabelecer uma conexão entre o remetente e o 					receptor. É por isso que o TCP é conhecido como um protocolo orientado a conexão.
+			
+			Além de suportar as funções básicas de segmentação e remontagem de dados, o TCP também fornece os seguintes serviços:
+
+				Estabelece uma sessão - O TCP é um protocolo orientado à conexão que negocia e estabelece uma conexão (ou sessão) permanente entre os 					dispositivos de origem e de destino antes de encaminhar qualquer tráfego. Com o estabelecimento da sessão, os dispositivos 					negociam o volume de tráfego esperado que pode ser encaminhado em determinado momento e os dados de comunicação entre os dois 					podem ser gerenciados atentamente.
+				Garante a entrega confiável - Por várias razões, é possível que um segmento seja corrompido ou perdido completamente, pois é 						transmitido pela rede. O TCP garante que cada segmento enviado pela fonte chegue ao destino.
+				Fornece entrega no mesmo pedido - Como as redes podem fornecer várias rotas que podem ter taxas de transmissão diferentes, os dados 					podem chegar na ordem errada. Ao numerar e sequenciar os segmentos, o TCP garante que os segmentos sejam remontados na ordem 					correta.
+				Suporta controle de fluxo - os hosts de rede têm recursos limitados (ou seja, memória e poder de processamento). Quando percebe que 					esses recursos estão sobrecarregados, o TCP pode requisitar que a aplicação emissora reduza a taxa de fluxo de dados. Para 					isso, o TCP regula o volume de dados transmitido pelo dispositivo origem. O controle de fluxo pode impedir a necessidade de 					retransmissão dos dados quando os recursos do host receptor estão sobrecarregados.
+
+
+			Cabeçalho TCP: TCP é um protocolo stateful, o que significa que ele controla o estado da sessão de comunicação. Para manter o controle do 				estado de uma sessão, o TCP registra quais informações ele enviou e quais informações foram confirmadas. A sessão com estado começa com 				o estabelecimento da sessão e termina com o encerramento da sessão. Um segmento TCP adiciona 20 bytes (ou seja, 160 bits) de sobrecarga 				ao encapsular os dados da camada de aplicativo. A figura mostra os campos em um cabeçalho TCP.
+
+			Processos em Servidores TCP:
+				Um servidor individual não pode ter dois serviços atribuídos ao mesmo número de porta dentro dos mesmos serviços de camada de 					transporte. Por exemplo, um host executando um aplicativo de servidor web e um aplicativo de transferência de arquivos não pode ter os 				dois configurados para usar a mesma porta, como a porta TCP 80. Um aplicativo de servidor ativo atribuído a uma porta específica é 				considerado aberto, o que significa que a camada de transporte aceita e processa os segmentos endereçados a essa porta. Qualquer 				solicitação de cliente que chega endereçada ao soquete correto é aceita e os dados são transmitidos à aplicação do servidor. Pode haver 				muitas portas abertas ao mesmo tempo em um servidor, uma para cada aplicação de servidor ativa.
+
+			Estabelecimento de Conexão TCP
+				Nas conexões TCP, o cliente host estabelece a conexão com o servidor usando o processo de handshake de três vias. O handshake de três 				vias valida se o host de destino está disponível para comunicação. Neste exemplo, o host A validou que o host B está disponível.
+					- Etapa 1. SYN: O cliente iniciador requisita uma sessão de comunicação cliente-servidor com o servidor.
+					- Etapa 2. ACK e SYN: O servidor confirma a sessão de comunicação cliente-servidor e requisita uma sessão de comunicação de 						servidor-cliente.
+					- Etapa 3. ACK: O cliente iniciador confirma a sessão de comunicação de servidor-cliente.
+
+			Encerramento da Sessão
+				Para fechar uma conexão, o flag de controle Finish (FIN) deve ser ligado no cabeçalho do segmento. Para terminar cada sessão TCP de uma 				via, um handshake duplo, consistindo de um segmento FIN e um segmento ACK (Acknowledgment) é usado. Portanto, para terminar uma 				conversação única permitida pelo TCP, quatro trocas são necessárias para finalizar ambas as sessões. O cliente ou o servidor podem 				iniciar o encerramento. Quando todos os segmentos tiverem sido confirmados, a conexão é encerrada.
+					- Etapa 1. FIN: Quando o cliente não tem mais dados para enviar no fluxo, ele envia um segmento com um flag FIN ligado.
+					- Etapa 2. ACK: O servidor envia ACK para confirmar o recebimento de FIN para encerrar a sessão do cliente com o servidor.
+					- Etapa 3. FIN: O servidor envia um FIN ao cliente para encerrar a sessão do servidor-para-cliente.
+					- Etapa 4. ACK: O cliente responde com um ACK para reconhecer o FIN do servidor.
+
+			Análise do Handshake Triplo do TCP
+				Os hosts mantêm o estado, rastreiam cada segmento de dados em uma sessão e trocam informações sobre quais dados são recebidos usando as 				informações no cabeçalho TCP. O TCP é um protocolo full-duplex, em que cada conexão representa duas sessões de comunicação 					unidirecional. Para estabelecer uma conexão, os hosts realizam um handshake triplo (three-way handshake). Conforme mostrado na figura, 				os bits de controle no cabeçalho TCP indicam o progresso e o status da conexão.
+
+				Estas são as funções do handshake de três vias:
+		
+					- Estabelece que o dispositivo de destino está presente na rede.
+					- Ele verifica se o dispositivo de destino possui um serviço ativo e está aceitando solicitações no número da porta de destino 						que o cliente inicial pretende usar.
+					- Ele informa ao dispositivo de destino que o cliente de origem pretende estabelecer uma sessão de comunicação nesse número de 						porta.
+					- Após a conclusão da comunicação, as sessões são fechadas e a conexão é encerrada. Os mecanismos de conexão e sessão ativam a 						função de confiabilidade do TCP.
+
+			Confiabilidade TCP - Entrega Garantida e Ordenada
+				Durante o estabelecimento de uma sessão, um número de sequência inicial (ISN) é definido. Este ISN representa o valor inicial dos bytes 				que são transmitidos ao aplicativo receptor. À medida que os dados são transmitidos durante a sessão, número de sequência é 					incrementado do número de bytes que foram transmitidos. Esse rastreamento dos bytes de dados permite que cada segmento seja 					identificado e confirmado de forma única. Segmentos perdidos podem então, ser identificados. O processo TCP receptor coloca os dados de 				um segmento em um buffer receptor. Os segmentos são então colocados na ordem de sequência correta e passados para a camada de 					aplicativo quando remontados. Qualquer segmento que chegue com números de sequência fora de ordem são retidos para processamento 				posterior. Por isso, quando os segmentos com os bytes que faltavam chegam, esses segmentos são processados.
+
+			Confiabilidade TCP - Perda e Retransmissão de Dados
+				O número de sequência (SEQ) e o número de confirmação (ACK) são usados juntamente para confirmar o recebimento dos bytes de dados 				contidos nos segmentos. O número SEQ identifica o primeiro byte de dados no segmento que está sendo transmitido. O TCP usa o número de 				confirmação (ACK) enviado de volta à origem para indicar o próximo byte que o destino espera receber. Isto é chamado de confirmação 				antecipatória. Hoje em dia, os sistemas operacionais de host utilizam um recurso TCP opcional chamado reconhecimento seletivo (SACK), 				negociado durante o handshake de três vias. Se ambos os hosts suportarem SACK, o receptor pode reconhecer explicitamente quais 					segmentos (bytes) foram recebidos, incluindo quaisquer segmentos descontínuos. O host de envio, portanto, só precisa retransmitir os 				dados ausentes. Por exemplo, na próxima figura, novamente usando números de segmento para simplicidade, o host A envia segmentos 1 a 10 				para o host B. Se todos os segmentos chegarem, exceto os segmentos 3 e 4, o host B pode reconhecer que recebeu segmentos 1 e 2 (ACK 3) 				e reconhecer seletivamente os segmentos 5 a 10 (SACK 5-10). O host A só precisaria reenviar os segmentos 3 e 4.
+
+			Controle de Fluxo TCP - Tamanho Máximo do Segmento (MSS)
+				Na figura, a fonte está transmitindo 1.460 bytes de dados dentro de cada segmento TCP. Normalmente, este é o tamanho máximo do segmento 				(MSS) que o dispositivo de destino pode receber. O MSS faz parte do campo de opções no cabeçalho TCP que especifica a maior quantidade 				de dados, em bytes, que um dispositivo pode receber em um único segmento TCP. O tamanho do MSS não inclui o cabeçalho TCP. O MSS é 				normalmente incluído durante o handshake de três vias. Um MSS comum é 1.460 bytes ao usar IPv4. Um host determina o valor do campo de 				MSS subtraindo os cabeçalhos de IP e de TCP da MTU (Maximum transmission unit, Unidade máxima de transmissão) da Ethernet. Em uma 				interface Ethernet, a MTU padrão é 1500 bytes. Subtraindo o cabeçalho IPv4 de 20 bytes e o cabeçalho TCP de 20 bytes, o tamanho padrão 				do MSS será 1460 bytes
+
+		- Protocolo UDP (User Datagram Protocol)
+			O UDP é um protocolo de camada de transporte mais simples do que o TCP. Ele não fornece confiabilidade e controle de fluxo, o que significa que 			requer menos campos de cabeçalho. Como o remetente e os processos UDP receptor não precisam gerenciar confiabilidade e controle de fluxo, isso 			significa que datagramas UDP podem ser processados mais rápido do que segmentos TCP. O UDP fornece as funções básicas para fornecer datagramas 			entre 	os aplicativos apropriados, com muito pouca sobrecarga e verificação de dados. O UDP divide os dados em datagramas que também são 			chamados de segmentos. UDP é um protocolo sem conexão. Como o UDP não fornece confiabilidade ou controle de fluxo, ele não requer uma 				conexão estabelecida. Como o UDP não controla informações enviadas ou recebidas entre o cliente e o servidor, o UDP também é conhecido como 			um protocolo sem estado. UDP também é conhecido como um protocolo de entrega de melhor esforço porque não há confirmação de que os dados 			são recebidos no destino. Com o UDP, não há processo de camada de transporte que informe ao remetente se a entrega foi bem-sucedida. O UDP é 			como colocar uma carta regular, não registrada, no correio. O remetente da carta não tem conhecimento se o destinatário está disponível 			para receber a carta. Nem a agência de correio é responsável por rastrear a carta ou informar ao remetente se ela não chegar ao destino 			final.
+
+			Os recursos UDP incluem o seguinte:
+				- Os dados são reagrupados na ordem em que são recebidos.
+				- Quaisquer segmentos perdidos não são reenviados.
+				- Nenhum estabelecimento de seção.
+				- O envio não é informado sobre a disponibilidade do recurso.
+
+			Cabeçalho UDP: Um dos requisitos mais importantes para transmitir vídeo ao vivo e voz sobre a rede é que os dados continuem fluindo 					rapidamente. Vídeo ao vivo e aplicações de voz podem tolerar alguma perda de dados com efeito mínimo ou sem visibilidade e são 					perfeitos para o UDP. Os blocos de comunicação no UDP são chamados de datagramas ou segmentos. Esses datagramas são enviados como o 				melhor esforço pelo protocolo da camada de transporte. O cabeçalho UDP é muito mais simples do que o cabeçalho TCP porque só tem quatro 				campos e requer 8 bytes (ou seja, 64 bits). A figura mostra os campos em um cabeçalho UDP.
+				Os seis bits no campo Bits de Controle do cabeçalho do segmento TCP são também conhecidos como flags. Um sinalizador é um pouco 				definido como ativado ou desativado.
+				Os seis bits de controle sinalizadores são os seguintes:
+					URG - Campo de ponteiro urgente significativo	
+					ACK - Indicador de confirmação usado no estabelecimento de conexão e encerramento de sessão
+					PSH - Função Push
+					RST - Redefina a conexão quando ocorrer um erro ou exceder o tempo limite
+					SYN - Sincronizar números de sequência usados no estabelecimento de conexão
+					FIN - Não há mais dados do remetente e usados no encerramento da sessão
+
+			Há três tipos de aplicações que são mais adequadas para o UDP:
+
+				Aplicações de vídeo e multimídia ao vivo - Esses aplicativos podem tolerar a perda de dados, mas requerem pouco ou nenhum atraso. Os 				exemplos incluem VoIP e transmissão de vídeo ao vivo.
+				Aplicações de solicitação e resposta simples - Aplicativos com transações simples em que um host envia uma solicitação e pode ou não 				receber uma resposta. Os exemplos incluem DNS e DHCP.
+				Aplicativos que lidam com a confiabilidade - Comunicações unidirecionais em que o controle de fluxo, a detecção de erros, as 					confirmações e a recuperação de erros não são necessários ou podem ser gerenciados pela aplicação. Os exemplos incluem SNMP e TFTP.
+		
+			Reagrupamento do Datagrama UDP
+				UDP simplesmente remonta os dados na ordem que eles foram recebidos e os encaminha para a aplicação. Se a sequência de dados for 				importante para a aplicação, a aplicação deverá identificar a sequência apropriada e determinar como os dados devem ser processados.
+
+			Processos UDP em Servidores
+				Assim como o TCP, a comunicação cliente servidor é iniciada por uma aplicação cliente que requisita dados de um processo em um 					servidor. O processo no cliente UDP seleciona dinamicamente um número de porta a partir de uma faixa de números de portas e a usa como 				a porta de origem para a conversa. A porta de destino será geralmente o número de porta muito conhecida ou registrada atribuído ao 				processo no servidor. Depois que um cliente seleciona as portas de origem e de destino, o mesmo par de portas é usado no cabeçalho de 				todos os datagramas na transação. Para dados que retornam para o cliente vindos do servidor, os números da porta de origem e de destino 				no cabeçalho do datagrama são invertidos.
+					
+					- Clientes Enviando Requisições UDP: O cliente 1 está enviando uma solicitação de DNS enquanto o cliente 2 está solicitando 						serviços de autenticação RADIUS do mesmo servidor.
+					- Portas de destino de solicitação UDP: O cliente 1 está enviando uma solicitação de DNS usando a conhecida porta de destino 						53, enquanto o cliente 2 está solicitando serviços de autenticação RADIUS usando a porta de destino registrada 1812.
+					- Portas de origem da solicitação UDP: As solicitações dos clientes geram dinamicamente números de porta de origem. Nesse caso, 						o cliente 1 está usando a porta de origem 49152 e o cliente 2 está usando a porta de origem 51152.
+					- Destino da Resposta UDP: Quando o servidor responde às solicitações do cliente, ele reverte as portas de destino e de origem 						da solicitação inicial. Na resposta do servidor à solicitação DNS agora é a porta de destino 49152 e a resposta de 						autenticação RADIUS é agora a porta de destino 51152.
+					- Portas de origem de resposta UDP: As portas de origem na resposta do servidor são as portas de destino originais nas 							solicitações iniciais.
+
+	O Protocolo de Camada de Transporte Certo para a Aplicação Certa	
+		Alguns aplicativos podem tolerar a perda de dados durante a transmissão pela rede, mas atrasos na transmissão são inaceitáveis. Para esses aplicativos, 		o UDP é a melhor escolha, pois requer menos sobrecarga da rede. O UDP é preferível para aplicativos como Voz sobre IP (VoIP). Agradecimentos e 			retransmissão atrasariam a entrega e tornariam a conversa por voz inaceitável. O UDP também é usado por aplicativos de solicitação e resposta onde os 		dados são mínimos, e a retransmissão pode ser feita rapidamente. Por exemplo, o Domain Name System (DNS) usa UDP para esse tipo de transação. O cliente 		solicita endereços IPv4 e IPv6 para um nome de domínio conhecido de um servidor DNS. Se o cliente não receber uma resposta em um período predeterminado 		de tempo, ele simplesmente envia a solicitação novamente.
+
+		Para outras aplicações, é importante que todos os dados cheguem e que possam ser processados em sua sequência adequada. Para esses tipos de 			aplicativos, o TCP é usado como o protocolo de transporte. Por exemplo, aplicações como bancos de dados, navegadores e clientes de e-mail exigem que 		todos os dados enviados cheguem ao destino em seu estado original. Quaisquer dados ausentes podem corromper uma comunicação, tornando-a incompleta ou 		ilegível. Por exemplo, é importante ao acessar informações bancárias pela web certificar-se de que todas as informações são enviadas e recebidas 		corretamente. Os desenvolvedores de aplicações devem escolher que tipo de protocolo de transporte é apropriado com base nas necessidades de suas 		aplicações. O vídeo pode ser enviado através de TCP ou UDP. Os aplicativos que transmitem áudio e vídeo armazenados normalmente usam TCP. O aplicativo 		usa TCP para executar buffer, sondagem de largura de banda e controle de congestionamento, a fim de controlar melhor a experiência do usuário.
+
+		Vídeo e voz em tempo real geralmente usam UDP, mas também podem usar TCP, ou UDP e TCP. Um aplicativo de videoconferência pode usar UDP por padrão, mas 		como muitos firewalls bloqueiam UDP, o aplicativo também pode ser enviado por TCP.
+
+
+ Navegação IOS
+
+	Modos de Comando Primários
+		Todos os dispositivos de rede requerem um SO e podem ser configurados usando a CLI ou uma GUI. O uso da CLI pode fornecer ao administrador de rede 		controle e flexibilidade mais precisos do que usar a GUI. Este tópico aborda o uso da CLI para navegar pelo Cisco IOS. Como recurso de segurança, o 		software Cisco IOS separa o acesso de gerenciamento nestes dois modos de comando:
+
+			Modo EXEC do usuário - Este modo tem recursos limitados, mas é útil para operações básicas. Ele permite apenas um número limitado de comandos 				de monitoramento básicos, mas não permite a execução de nenhum comando que possa alterar a configuração do dispositivo. O modo EXEC 				usuário é identificado pelo prompt da CLI que termina com o símbolo >.
+			Modo EXEC privilegiado - Para executar comandos de configuração, um administrador de rede deve acessar o modo EXEC privilegiado. Modos de 				configuração mais altos, como o modo de configuração global, só podem ser acessados do modo EXEC privilegiado. O modo EXEC privilegiado 				pode ser identificado pelo prompt que termina com o símbolo #.
+
+			Switch>enable 			:	Switch# 				*Muda de usuario para privilegiado.
+			Switch>disable 			:	Switch> 				*Muda de privilegiado para usuario.
+			Switch#configure terminal	:	Switch(config)#				*Muda de privilegiado para modo de configuracao global.
+			Switch(config)#exit		: 	Switch#					*Muda de modo de configuracao global para privilegiado.
+
+	Estrutura de Comandos Básicos do IOS
+
+		Prompt  - comando - espaco - palavra chave ou argumento	
+		Switch> -  show   -   ' '  -      ip protocols
+		
+			* Palavra-chave - Este é um parâmetro específico definido no sistema operacional (na figura, protocolos ip).
+			* Argumento - Não é predefinido; é um valor ou variável definida pelo usuário (na figura, 192.168.10.5).
+	
+	Sintaxe de Comandos do IOS
+	
+		Negrito 		- Comandos e palavras chaves inseridas manualmente.
+		Itálico 		- Argumentos para os quais vc fornece valores.
+		[X] 			- Elemento opcional.
+		{X}			- Elemento necessário.
+		[X {Y | Z}]		- Escolha obrigatória dentro de um elemento opcional.
+		?			- Help
+		Switch>?		- Mostra todos os comandos de usuario disponiveis.
+		Switch#in?		- Completa o in para interface
+		Switch#interface ? 	- Mostra os parametros de interface.
+
+
+
+Etapas da Configuração Básica de um Switch
+	O switch Cisco só precisa receber informações básicas de segurança antes de ser conectado à rede. Elementos que normalmente são configurados em um switch de 	LAN incluem: nome de host, informações de endereço IP de gerenciamento, senhas e informações descritivas.As informações de endereço IP que devem ser 	configuradas em um switch são essencialmente as mesmas que você configura em um PC: endereço IP, máscara de sub-rede e gateway padrão.
+
+	Configuração da Interface Virtual de Switch
+		Para acessar o switch remotamente, um endereço IP e uma máscara de sub-rede devem ser configurados na SVI. Para configurar uma SVI em um switch, use o 		comando de configuração global interface vlan 1 . Vlan 1 não é uma interface física real, mas virtual. Em seguida, atribua um endereço IPv4 usando o 		comando de configuração de interface ip-address subnet-mask. Por fim, ative a interface virtual com o comando de configuração de interface no 			shutdown. Depois que o switch é configurado com esses comandos, o switch tem todos os elementos IPv4 prontos para comunicação pela rede local.
+
+		Nota: Semelhante aos hosts do Windows, os switches configurados com um endereço IPv4 normalmente também precisam ter um gateway padrão atribuído. Isso 		pode ser feito usando o comando de configuração global ip default-gateway ip-address . O parâmetro ip-address deve ser o endereço IPv4 do roteador 		local na rede, como mostrado no exemplo. No entanto, neste tópico, você configurará apenas uma rede com switches e hosts. Os roteadores serão 			configurados posteriormente.
+
+			Sw-Floor-1# configure terminal
+			Sw-Floor-1(config)# interface vlan 1
+			Sw-Floor-1(config-if)# ip address 192.168.1.20 255.255.255.0
+			Sw-Floor-1(config-if)# no shutdown
+			Sw-Floor-1(config-if)# exit
+			Sw-Floor-1(config)# ip default-gateway 192.168.1.1
+
+	Etapas da Configuração Básica de um Roteador
+		-Etapa 1. Configurar o nome do dispositivo.
+			Router(config)# hostname hostname
+		- Etapa 2. Proteger o modo EXEC privilegiado.
+			Router(config)# enable secret password
+		- Etapa 3. Proteger o modo EXEC usuário.
+			Router(config)# line console 0
+			Router(config-line)# password password
+			Router(config-line)# login
+		- Etapa 4. Proteger o acesso remoto Telnet/SSH.
+			Router(config-line)# line vty 0 4
+			Router(config-line)# password password
+			Router(config-line)# login
+			Router(config-line)# transport input {ssh | telnet | none | all}
+		- Etapa 5. Proteger todas as senhas do arquivo de configuração.
+			Router(config-line)# exit
+			Router(config)# service password-encryption
+		- Etapa 6. Apresentar a notificação legal.
+			Router(config)# banner motd delimiter message delimiter
+		- Etapa 7. Salvar a configuração.
+			Router(config)# copy running-config startup-config
+
+	Secure Remote Access
+
+		A configuração a seguir é usada para habilitar o acesso SSH ao switch.
+
+			Switch(config)# line vty 0 15
+			Switch(config-line)# password password
+			Switch(config-line)# transport input ssh
+			Switch(config-line)# login
+
+		Para verificar se as senhas estão definidas corretamente, use o comando show running-config . Essas senhas são armazenadas em running-configuration em 		texto simples. É possível definir a criptografia em todas as senhas armazenadas no roteador de modo que não sejam lidas facilmente por indivíduos não 		autorizados. O comando de configuração global service password-encryption garante que todas as senhas sejam criptografadas.
+
+	Ativar SSH
+
+		Etapa 1. Verifique o suporte a SSH.
+			Use o comando show ip ssh para verificar se o switch suporta SSH. Se o switch não estiver executando um IOS que ofereça suporte a recursos 			criptográficos, esse comando não será reconhecido.
+
+		Etapa 2. Configure o domínio IP.
+			Configure o nome de domínio IP da rede usando o comando ip domain-name domain-name global configuration mode.
+
+		Etapa 3. Gere pares de chaves RSA.
+			Nem todas as versões do IOS padrão para SSH versão 2 e SSH versão 1 tem falhas de segurança conhecidas. Para configurar o SSH versão 2, emita o 			comando ip ssh version 2 no modo de configuração global. Gerar um par de chaves RSA habilita automaticamente o SSH. Use o comando crypto key 			generate rsa no modo de configuração global para ativar o servidor SSH no switch e gerar um par de chaves RSA. Ao gerar chaves RSA, o 				administrador é solicitado a inserir um comprimento de módulo. A configuração de exemplo na figura usa um tamanho de módulo de 1.024 bits. Um 			comprimento de módulo mais longo é mais seguro, mas leva mais tempo para gerar e usar.
+			Observação: Para excluir o par de chaves RSA, use o comando crypto key zeroize rsa no modo de configuração global. Depois que o par de chaves 			RSA é excluído, o servidor SSH é desabilitado automaticamente.
+
+		Etapa 4. Configure a autenticação do usuário.
+			O servidor SSH pode autenticar usuários localmente ou usando um servidor de autenticação. Para usar o método de autenticação local, crie um par 			de nome de usuário e senha usando o comando username nome do usuário secret senha no modo de configuração global No exemplo, o usuário admin e 			designado a senha ccna.
+
+		Etapa 5. Configure as linhas vty.
+			Ative o protocolo SSH nas linhas vty usando o comando transport input ssh no modo de configuração de linha. O Catalyst 2960 tem linhas vty 			variando de 0 a 15. Essa configuração impede conexões não-SSH (como Telnet) e limita o switch para aceitar somente conexões SSH. Use o comando 			line vty no modo de configuração global e, em seguida, o comando login local no modo de configuração de linha para exigir autenticação local 			para conexões SSH do banco de dados de nome de usuário local.
+
+		Etapa 6. Ative a versão 2 do SSH.
+			Por padrão, o SSH suporta ambas as versões 1 e 2. Ao suportar ambas as versões, isso é mostrado na saída show ip ssh como suportando a versão 			1.99. A versão 1 tem vulnerabilidades conhecidas. Por esse motivo, é recomendável habilitar apenas a versão 2. Ative a versão SSH usando o 			comando de configuração global ip ssh version 2.
+
+		S1# show ip ssh
+		SSH Disabled - version 1.99
+		%Please create RSA keys (of at least 768 bits size) to enable SSH v2.
+		Authentication timeout: 120 secs; Authentication retries: 3
+		S1# configure terminal
+		S1(config)# ip domain-name cisco.com
+		S1(config)# crypto key generate rsa
+		The name for the keys will be: S1.cisco.com
+		...
+		How many bits in the modulus [512]: 1024
+		...
+		S1(config)# username admin secret ccna
+		S1(config-line)# line vty 0 15
+		S1(config-line)# transport input ssh
+		S1(config-line)# login local
+		S1(config-line)# exit
+		S1(config)# ip ssh version 2
+		S1(config)# exit
+		S1#
+
+
+	Para configurar um gateway padrão IPv4 em um switch, use o comando de configuração global ip default-gateway ip-address.
+
+
+Mensagens ICMP
+
+	Acessibilidade do Host:
+		Uma mensagem de eco ICMP pode ser usada para testar a capacidade de acesso de um host em uma rede IP. O host local envia uma solicitação de eco ICMP 		(ICMP Echo Request) para um host. Se o host estiver disponível, o host de destino enviará uma resposta de eco (Echo Reply).
+
+	Destino ou Serviço Inacessível:
+		Quando um host ou um gateway recebe um pacote que não pode entregar, ele pode usar uma mensagem ICMP de destino inalcançável para notificar à origem 		que o destino ou o serviço está inalcançável. A mensagem conterá um código que indica por que não foi possível entregar o pacote.
+
+		Alguns dos códigos de Destino inacessível para o ICMPv4 são os seguintes:
+	
+			0 = rede inalcançável
+			1 = host inalcançável
+			2 = protocolo inalcançável
+			3 = porta inalcançável
+
+		Alguns dos códigos de Destino inacessível para o ICMPv6 são os seguintes:
+
+			0 - Nenhuma rota para o destino
+			1 - A comunicação com o destino é administrativamente proibida (por exemplo, firewall)
+			2 - Além do escopo do endereço de origem
+			3 - Endereço inacessível
+			4 - porta inalcançável
+		
+		Observação: o ICMPv6 possui códigos semelhantes, mas ligeiramente diferentes, para mensagens de destino inacessível.
+
+ 		Tempo excedido
+			Uma mensagem ICMPv4 de tempo excedido é usada por um roteador para indicar que um pacote não pode ser encaminhado porque o campo Vida Útil 			(TTL) do pacote foi reduzido a 0. Se um roteador recebe um pacote e o campo TTL do pacote IPv4 diminui para zero, ele descarta o pacote e envia 			uma mensagem de tempo excedido para o host de origem. O ICMPv6 também enviará uma mensagem de tempo excedido se o roteador não conseguir 			encaminhar um pacote IPv6 porque o pacote expirou. Em vez do campo TTL do IPv4, o ICMPv6 usa o campo Limite de salto do IPv6 para determinar se 			o pacote expirou.
+
+			Nota: As mensagens de tempo excedido são usadas pela ferramenta traceroute.
+
+		Mensagens ICMPv6
+			Um contêiner de conteúdo com guias. O conteúdo pode ser texto, gráfico ou ambos. As mensagens informativas e de erro encontradas no ICMPv6 são 			muito semelhantes às mensagens de controle e de erros implementadas pelo ICMPv4. No entanto, o ICMPv6 tem funcionalidade aprimorada e novos 			recursos que não são encontrados no ICMPv4. As mensagens ICMPv6 são encapsuladas no IPv6. O ICMPv6 inclui quatro novos protocolos como parte do 			protocolo ND ou NDP (Neighbor Discovery Protocol): 
+		
+				As mensagens entre um roteador IPv6 e um dispositivo IPv6, incluindo alocação de endereços dinâmicos, são as seguintes:
+
+					Mensagem de Solicitação de Roteador (RS)
+					Mensagem de Anúncio de Roteador (RA)
+				
+				As mensagens entre dispositivos IPv6, incluindo detecção de endereço duplicado e resolução de endereço são as seguintes:
+
+					Mensagem de solicitação de vizinhos (NS)
+					Mensagem de anúncio de vizinhos (NA)
+
+				Nota: O ICMPv6 ND também inclui a mensagem de redirecionamento, que tem uma função semelhante à mensagem de redirecionamento usada no 				ICMPv4.
+
+		 Ping - Teste de conectividade
+			Para testar a conectividade com outro host em uma rede, uma solicitação de eco é enviada ao endereço do host usando o comando ping. Se o host 			no endereço especificado receber a requisição de eco, ele enviará uma resposta de eco. À medida que cada resposta de eco é recebida, o ping 			fornece feedback sobre o tempo entre o envio da solicitação e o recebimento da resposta. Esta pode ser uma medida do desempenho da rede.
+			O ping tem um valor de tempo limite para a resposta. Se a resposta não é recebida dentro do tempo de espera, o ping mostra uma mensagem 			informando que a resposta não foi recebida. Isso pode indicar que há um problema, mas também pode indicar que os recursos de segurança que 			bloqueiam as mensagens de ping foram ativados na rede. É comum o primeiro ping para o tempo limite se a resolução de endereço (ARP ou ND) 			precisar ser executada antes de enviar a Solicitação de eco ICMP. Depois que todas as solicitações são enviadas, o utilitário ping fornece um 			resumo que inclui a taxa de sucesso e o tempo médio de ida e volta até o destino.
+
+			Os tipos de testes de conectividade realizados com ping incluem o seguinte:
+
+				Fazendo ping no loopback local
+				Fazendo ping no gateway padrão
+				Fazendo ping no host remoto
+
+		Executar ping na loopback
+			O ping pode ser usado para testar a configuração interna do IPv4 ou IPv6 no host local. Para realizar este teste, execute ping no endereço de 			loopback local de 127.0.0.1 para IPv4 (::1 for IPv6). Uma resposta vinda de 127.0.0.1 para IPv4 (ou ::1 para IPv6) indica que o IP está 			instalado corretamente no host. Essa resposta vem da camada de rede. No entanto, ela não significa que os endereços, as máscaras ou os gateways 			estão configurados adequadamente, Nem indica o status da camada inferior da pilha de rede. Ela simplesmente testa o IP até a camada de rede do 			IP. Uma mensagem de erro indica que o TCP/IP não está operacional no host.
+
+				O ping no host local confirma que o TCP/IP está instalado e funcionando no host local.
+				O ping 127.0.0.1 faz com que o dispositivo envie um ping para si mesmo.
+
+		Pingando o Gateway Padrão
+			Você também pode usar o ping para testar a capacidade do host de se comunicar com a rede local. Isso geralmente é feito através do ping do 			endereço IP do gateway padrão do host. Um ping bem-sucedido no gateway padrão indica que o host e a interface do roteador que atua como gateway 			padrão estão operacionais na rede local. Para este teste, o endereço de gateway padrão é usado com mais frequência porque o roteador 				normalmente está sempre operacional. Se o endereço do gateway padrão não responder, o ping pode ser enviado para o endereço IP de outro host na 			rede local que se sabe estar operacional. Se o gateway padrão ou outro host responder, o host local poderá se comunicar com êxito pela rede 			local. Se o gateway padrão não responder, mas outro host, isso pode indicar um problema com a interface do roteador servindo como gateway 			padrão. Uma possibilidade é que o endereço de gateway padrão errado tenha sido configurado no host. Outra possibilidade é que a interface do 			roteador esteja plenamente operacional, mas tenha segurança aplicada a ela que a impeça de processar ou responder a solicitações ping. O host 			envia um ping ao gateway padrão, enviando uma solicitação de eco ICMP. O gateway padrão envia uma resposta de eco confirmando a conectividade.
+
+		Pingando um host remoto
+			O ping também pode ser usado para testar a capacidade de um host local de se comunicar por uma rede interconectada. O host local pode fazer 			ping em um host IPv4 operacional de uma rede remota, como mostrado na figura. O roteador usa sua tabela de roteamento IP para encaminhar os 			pacotes. Se esse ping tiver êxito, a operação de uma grande parte da rede interconectada poderá ser verificada. Um ping bem-sucedido na rede 			confirma a comunicação na rede local, a operação do roteador que serve como gateway padrão e a operação de todos os outros roteadores que 			possam estar no caminho entre a rede local e a rede do host remoto. Além disso, a funcionalidade do host remoto pode ser verificada. Se o host 			remoto não conseguir se comunicar para fora de sua rede local, ele não responderá.
+			Observação: muitos administradores de rede limitam ou proíbem a entrada de mensagens ICMP na rede corporativa, por isso a falta de uma resposta 			do ping pode ser consequência de restrições de segurança.
+
+		Traceroute - Testar o Caminho
+			O ping é usado para testar a conectividade entre dois hosts, mas não fornece informações sobre detalhes de dispositivos entre os hosts. 			Traceroute (tracert) é um utilitário que gera uma lista de saltos que foram alcançados com sucesso ao longo do caminho. Essa lista pode dar 			informações importantes para a verificação e a solução de erros. Se os dados atingirem o destino, o rastreamento listará a interface de cada 			roteador no caminho entre os hosts. Caso ocorra falha nos dados em algum salto ao longo do caminho, o endereço do último roteador que respondeu 			ao rastreamento poderá fornecer uma indicação de onde está o problema ou das restrições de segurança que foram encontradas.
+
+			A primeira sequência de mensagens enviadas pelo traceroute terá um campo TTL de valor 1. Isso faz com que o TTL coloque um tempo limite no 			pacote IPv4 que ocorrerá no primeiro roteador. Este roteador responde com uma mensagem ICMPv4 com tempo excedido. Agora o Traceroute tem o 			endereço do primeiro salto. O Traceroute aumenta progressivamente o campo TTL (2, 3, 4...) para cada sequência de mensagens. Isso fornece ao 			rastreamento o endereço de cada salto à medida que os pacotes expiram mais adiante no caminho. O campo TTL continua a ser aumentado até 			alcançar o destino ou até atingir um valor máximo pré-determinado. Depois que o destino final é alcançado, o host responde com uma mensagem de 			Porta inacessível do ICMP ou uma mensagem de resposta de eco do ICMP, em vez da mensagem Tempo excedido do ICMP.
+
+			Tempo de Ida e Volta (RTT)
+				O uso do traceroute fornece tempo de ida e volta para cada salto ao longo do caminho e indica se um salto falha na resposta. O tempo de 				ida e volta é o tempo que um pacote leva para alcançar o host remoto e retornar a resposta do host. Um asterisco (*) é usado para 				indicar um pacote perdido ou não respondido. Essas informações podem ser usadas para localizar um roteador problemático no caminho 				ou podem indicar que o roteador está configurado para não responder. Se forem exibidos tempos de resposta elevados ou perdas de dados 				para um determinado salto, significa que os recursos do roteador ou suas conexões podem estar sobrecarregados.
+
+			TTL no IPv4 e Limite de Saltos no IPv6 
+				O Traceroute utiliza uma função do campo TTL no IPv4 e do campo Limite de saltos no IPv6 nos cabeçalhos da camada 3, junto com a 				mensagem ICMP Time Exceded.

@@ -1,0 +1,2399 @@
+ 													
+----------------------------------------IMPORTANTE-------------------------------
+
+echo "<pre>";
+print_r($_SERVER);		essa função mostra as informações sobre o seridor.
+echo "</pre>";
+	
+Sempre que um comando for terminado deve-se adicionar ";" ao seu final, exceto em casos de comandos de condições( assim como no javascript).
+
+caixa = indices = chave
+
+\r\n		# Quebra linha "universal".
+
+ini_set()	# Alterar funções padrões do php.
+
+require_once arquivo.php;	Importa um arquivo php para outro (como o import do python).
+
+
+	
+----------COMANDOS DE ENTRADA E SAIDA:
+
+	para escrever algo na tela:			echo "Ola, Mundo!";	
+
+	para personalizar uma variavel:			
+		$variavel = @$_GET["a"]; 	# Dessa forma o valor da variavel aparece na url. 
+		$variavel = @$_POST["a"]; 	# Dessa forma, caso o method do form seja post, o valor da variavel nao aparece na url.
+	
+		@ serve para evitar warnings, porém há outra forma através de estruturas condicionais. 
+							
+
+	<!-- É pssivel usar o typecast para converter os valores das variaveis. basta adicionar (int,integer/string/float, real ou double/boolean{true/false})-->
+		
+	----- Concatenação:
+
+		O "." serve para concatenar os elementos. Ebtretando não é necessário em todos os casos.
+		EX:
+		<?php
+			$nome = 'felipe';
+			$idade = 18;
+			echo 'Meu nome é ' . $nome . ' e tenho ' . $idade . ' anos.';	
+			echo "Meu nome é $nome e tenho $idade anos.";			/* com as "" não é necessario concatenar (TOMAR CUIDADO COM: echo " <div class=\"nomedaclasse\" "[perceba que \" transforma " em str])*/
+		?>
+	
+
+
+---------- VARIAVEIS:
+
+	$nome da variavelvariavel = valor da variavel
+
+	EX:
+	$idade = 3;				// inteiro.
+					
+	$salario = 1825.54;			//float.
+
+	$nome = "felipe";			//string.
+
+	$casado = false/true;			//boolean.
+
+	----- VARIAVEIS VARIANTES OU VARIAVEIS DENTRO DE VARIAVEIS:
+
+		EX:
+		$site = "cursoemvideo";
+
+		$$site = "cursoPHP";
+
+		echo $site;				(vai aparecer cursoemvideo).
+
+		echo $cursoemvideo;			(vai aparecer cursophp).
+
+	----- VARIAVEIS REFERENCIAIS:
+
+		EX:
+	$a = 3;		
+	$b = &$a;	
+	$b += 5;	
+	$b = 8; e $a = 8;	# (O & conecta as duas variaveis e aquilo que for mudado em uma sera tambem mudado na outra).	
+
+	-----VARIAVEIS CONSTANTES:
+
+		São imutaveis.
+
+		define('NOMEDAVARIAVEL' , 'valor da variavel');
+		echo NOME;
+
+		define('DADOS', array('bla1'=>'1', 'bla2'=>'2'));
+
+	-----VARIAVEIS ESTARICAS:
+
+		function bla(){
+			
+			static $n = 0;	# Caso não exista sera declarada como 0; caso exista não acontece nada.
+			$n++;
+			return $n;
+		
+		}
+
+		echo bla();	# 1.
+		echo bla();	# 2.
+	
+	-----VARIAVEIS GLOBAIS:
+	
+		$nome = "felipe";
+
+		function bla(){
+			
+			global $nome;		# funciona em classes também.
+			echo $nome;
+
+		}
+
+	-----MUDADNDO TIPOS:
+
+		$numero = intval('28');
+		
+		ou, mais simples (cast):
+		
+		$numero = (int) '28';
+	
+		$numero = (string) 28;
+
+		$numero = (float) 28;
+
+	-----FUNÇÕES DE VARIAVEIS ou EXPRESSÕES REGULARES:
+	
+		1) preeg_match()	# Verifica se x esta na variavel.
+		
+			$teste = "felipe";
+
+			if (preg_match('/(.*?)li(.*)/', $teste, $retorno)){
+
+				echo "verdade";		
+				print_r($retorno);	# [0]=> felipe / [1] => fe / [2] => li / [3] => pe.	
+
+			}
+
+			$str = '<div>
+			<h2> Olá Mundo </h2>
+			</div?';
+
+			preg_match('/<div>(.*?)<\/div>/s', $str, $matches);	# s faz com que a quebra de linha seja considerada / i faz o prag_match ignorar case sensitivity.
+			
+			echo htmlentities($matches[0]);
+
+---------- OPERADORES ARITMÉTICOS:
+
+	Soma				+			
+				
+	Subtração			-	
+						
+	Multiplicação 			*		
+					
+	Divisão				/
+
+	Módulo (resto da divisão)	%
+
+	valor absoluto 			. abs($variavel);
+
+	potenciação			. pow($variavel1, $variavel2);
+
+	raiz quadrada			. sqrt($variavel);
+
+	arredondamento			. round($variavel); 	<!-- . ceil($variavel); {arredonda pra cima} e . floor($variavel); {arredonda pra baixo}. -->	
+
+	parte inteiro de um real	. intval($variavel);
+
+	formatação			. number_format($variavel, numero de casa decimais, "separador decimal", "separador de milhar);  
+
+---------- OPERADORES DE ATRIBUIÇÃO:
+
+	Pré-incremento			$variavel = $variavel + 1	++$variavel (primeiro fara o incremento e depois usara a variavel)
+
+	Pós-incremento			$variavel = $variavel + 1	$variavel++ (primiro usara a variavel e depois fara o incremento)
+
+	Pré-decremento			$variavel = $variavel - 1	--$variavel (primeiro fara o decremento e depois usara a variavel)
+
+	Pós-decremento			$variavel = $variavel - 1	$variavel-- (primiro usara a variavel e depois fara o decremento)
+
+	<!-- ($c = $c + 5;) ou ($c += 5;) / Quando o valor for igual a 1 é possivel fazer ($c++;) == ($c = $c + 1) / serve para todos os sinais. -->
+
+---------- OPERADORES RELACIONAIS:
+
+	maior				$a > $b
+
+	menor				$a < $b		
+
+	maior ou igual			$a >= $b
+
+	menor ou igual			$a <= $b
+
+	diferente			$a <> ou != $b 
+
+	igual				$a == $b
+
+	idêntico			$a === $b				# Mesmo valor e mesmo nype(int,real,...) 
+
+	Unário				expressão ? verdadeiro : falso		# EX1: $a > $b ? $a : $b; EX2: $situação = $media < 7 ? "reprovado" : "aprovado";
+
+---------- OPERADORES LÓGICOS:
+
+	and ou &&			Ambas as premissas precisam ser verdadeiras.
+
+	or ou ||			Apenas uma das premissas precisa ser verdadeira.
+
+	xor				Obrigatóriamente uma verdadeira e outra falsa, se ambas forem iguas sera considerado falso.
+
+	!				Igual ao nao, simplismente inverte o valor, falso para verdadeiro e vice-versa.
+
+	caso for só um manipula bist:
+		
+	&, |, etc.
+
+---------- COMENTARIOS EM PHP:
+
+	Em linha (in line):			# ou //.
+
+	Em mais de uma linha (multiline):	/* bla bla bla */
+
+---------- OPERADORES CONDICIONAIS:
+
+	<?php
+		if ($variavel1 > $valriavel2){
+	
+	?>
+
+	aqui vai html
+
+	<?php	
+		}else if($variavel1 < $valriavel2){
+
+			echo 'bla bla';
+
+		}else{
+	
+			echo 'iguais';
+		}
+	?>
+
+	ou 
+
+	<?php 
+
+		if($var == true)
+			echo "ok";	# Sem as {} a condição interpreta apenas a primeira linha.	
+
+	?>
+
+	<?php 
+
+		if(isset($_GET['acao']))	# Confirma se a variavel acao esta setada.
+			echo "ok";		# Sem as {} a condição interpreta apenas a primeira linha.	
+
+	?>
+
+
+	----- OPERADORES TERNARIOS:
+
+		$variavel = $a>$b ? $a : $b;
+
+		$mensagem = "Olá".(isset($nome): $nome ? "visitante");
+
+		$valor = $_POST['nome'] ?? $_POST['outra_coisa'] ?? "Nada deu certo!";		# Null coalescing operator.
+
+
+	----- OPERADORES DE MULTIPLA ESCOLHA:
+
+		$variavel = 2;
+	
+		switch($variavel) {
+
+			case 'guilherme':
+	
+				echo "A";
+				break;
+
+			case 2:
+
+				echo"B";
+				break;
+
+			default:
+
+			echo"ERRO";
+
+		}
+
+		ou
+
+		switch($variavel) {
+
+			case 1:
+			case 2:
+	
+				echo "A";
+				break;
+
+			default:
+
+			echo"ERRO";
+
+		}
+	
+
+	----- SPACESHIP:
+
+	$var = 10<=>4;		# Retorna 1.
+
+	$var = 4<=>10;		# Retorna -1.
+
+	$var = 'a'<=>'z';	# Retorna -1.
+
+---------- ESTRUTURAS DE REPETIÇÃO:
+
+	------ REPETIÇÃO COM VARIAVEL DE CONTROLE (FOR):
+
+		for($variavel = 1 ; $variavel <= 10 ; $c++){
+		
+			echo $variavel;
+
+		}
+
+	----- REPETIÇÃO COM TESTE LÓGICO NO INÍCIO (WHILE):
+
+		$variavel = 1;
+
+		while ($variavel <= 10){		# Se aparecer um break; a repetição sera interrompida de qualquer jeito e se aparecer um continue; ira repetir sem terminar (geralmente acompanham um if)
+
+			echo $variavel;
+
+			$variavel ++;			# $variavel = $variavel + 1; ou $variavel += 1; ou $variavel ++ (- tbm funciona)
+
+		}
+
+	----- REPETIÇÃO COM TESTE LÓGICO NO FINAL (DO):
+ 
+		$variavel = 1;
+
+		do{
+
+			echo $variavel;
+			$variavel ++;
+
+		}while($variavel <= 10);
+
+
+
+---------- FUNÇÃO:
+
+	function name($valor1, $valor2){  			# name sera o nome dado a função 
+
+		$valor3 = $valor1 + $valor2;
+
+		echo "A soma vale: $valor3";
+	}
+
+	name(valor dado a $valor1, valor dado a $valor2);	# Chamda da função que fará o comando ser acionado.
+	
+
+	----- COM RETURN:
+
+		function name($valor1, $valor2){  			
+
+			$valor3 = $valor1 + $valor2;
+			return($valor3);				# Quando a função for chamada ira passar o valor dado em return
+
+		}
+
+		$res = name(3, 4);					# 3 e 4 sao argumentos.
+
+		echo "A soma vale: $res";	
+
+		
+		Retorna no formato de string:
+	
+			function teste1() :?string{
+				return 9;
+			}
+
+			ou
+		
+			$numero = 9;
+			function teste1(?string	$numero){
+				return $numero;
+			}
+		
+
+	----- PARAMETROS DINAMICOS:
+
+		function soma(){
+
+			$p = func_get_args();				# Isso ira botar varios valores dentro do vetor $p, criando para cada valor um $p[0], $p[1],... por exemplo	
+			$tot = func_num_args();				# Isso ira retornar o numero de argumentos(valores) que foi passado.
+			$s = o
+
+			for($i=0; $i < $tot; $i++){
+
+				$s += $p[$i];
+
+			}
+
+			return $s;
+
+		}
+
+	----- PASSAGEM DE PARAMETRO POR VALOR:
+ 
+		function teste($x){  			
+
+			$x += 2;	
+			echo $x;				
+		}
+	
+		$a = 3;
+		teste($a);
+		echo $a;		# $a ainda recebera o valor 3.
+
+	----- PASSAGEM DE PARAMETRO POR REFERENCIA:
+		
+		$a = 3;
+		function teste(&$x){  			
+
+			$x += 2;		
+			echo $x;				
+		}
+	
+		teste($a);
+		echo $a;		# $a agr possui o valor 5.	
+
+	----- RECURSIVIDADE:	
+		
+		teste();
+		function teste(){
+		
+			echo "Ola mundo!";
+			static $i = 0;		# Variavel estática.
+			$i++;
+			if ($i < 5){
+				teste();
+			}
+		
+		}
+
+	----- COMO VARIAVEL:
+		$idade = 14
+		$func = function($nome) use ($idade){		# Use só funciona se a função for uma variavel.
+
+			echo $nome;
+			echo $idade;			
+		
+		};
+
+		$func("felipe"); 
+
+		class Classe1{
+
+			public function index(){
+				echo "classe 1";
+			}	
+	
+		}
+
+		class Classe2{
+
+			public function index(){
+				echo "classe 2";
+			}
+
+			public function callback($func){
+				$func();
+			}
+		}
+
+		$class1 = new Classe1;
+		$class2 = new Classe2;
+
+		$class2->callback(function() use ($class1){
+
+		});
+
+
+	----- CALLBACKS:
+
+	<?php
+
+		function executar($b, $a="felipe"){
+
+			$b($a);
+
+		}
+	
+		executar(function($nome){		# Função como parâmetro.
+		
+			echo "Ola".$nome;
+		
+		}
+		);
+
+	----- FORMAS DE CHAMAR A FUNÇÃO:
+
+	
+	1) func();				# Chamada simples.
+	
+		function func(){};
+	
+	2) $func();				# Chama a variavel que contem a função.
+	
+		$func = function(){};
+
+	3) call_user_func("name");		# Chama pelo nome da função.
+
+		function name(){};
+
+	4) is_callable($func){};		# Detecta se é função.
+		
+		$func = function(){};
+		if (is_callable($func)){};	
+--------------------------------------------------FUNÇÕES:
+
+	1) FUNÇÃO printf (echo com formatação):
+
+		$prod = "leite";
+		$preco = 4.5;
+		printf("O %s está custando R$ %.2f", $prod, $preco);		# %s (mostra string); $.2f (mostra float com 2 casas no .format());
+										# %d valor decimal (positivo ou negativo).
+										# %u valor decimal sem sinal (apenas positivo).
+										# %f valor real. 
+										# %s string.
+
+
+	2) FUNÇÃO print_r:
+	
+		<?php
+
+			$v[0] = 4;
+			$v[1] = 8;
+			$v[2] = 3;
+
+			print_r($v);
+			echo "<br>";
+
+			$v2 = array( 3, 7, 6, 2, 1, 9);			# array = vetor
+			print_r($v2);
+				
+		?>
+
+	3) FUNÇÃO var_dump (mostra o tipo de variavel) E var_export:
+	
+		<?php
+
+			$var = 4;
+	
+			var_dump($var);		# Retorna int(4).
+				
+		?>
+
+		<?php
+			
+			$a = array (1, 2, array ("a", "b", "c"));
+	
+			var_export($a);		# Retorna array (0 => 1, 1 => 2, 2 => array (0 => 'a', 1 => 'b', 2 => 'c')).
+		?>
+
+
+	4) FUNÇÃO count (conta quantas caixas tem):
+	
+		<?php
+
+			$var = "felipe";
+	
+			count($var);		# Retorna 6.
+				
+		?>
+	
+
+	5) FUNÇÃO wordwrap e strlen (wordwrap quebra o texo a cada x linhas e strlen retorna o comprimento da string):
+
+		<?php 
+
+			$txt = "Esse é um exemplo de String gigante que não acaba nunca e blá blá blá";
+		
+			$res = wordwrap($txt, 5, "<br/>", false);		# Quebra o texto a cada 5 caracteres e pula a linha. false: nao quebra palarvas com mais carcteres / true: quebra palavras com mais caracteres.
+
+			$resnum = strlen($txt);					# Número de letras e espaços na string.
+
+			echo "wordwrap: $res";
+
+			echo "<br>";
+
+			echo "strlen: $resnum";
+
+		?>
+
+		
+	6) FUNÇÃO str_word_count (conta as palavras de uma string e dependendo do parametro passado pode adicionar seus elementos em uma string):
+
+		<?php 
+
+			$frase = "Eu vou estudar php";
+
+			$cont = str_word_count($frase, 0);	# Conta as palavras na string.
+			$cont1 = str_word_count($frase, 1);	# Conta as palavras na string.
+			$cont2 = str_word_count($frase, 2);	# Conta as palavras na string.
+	
+
+			echo "Com 0:";
+			echo "$cont";				# Com 0: 4.
+			echo "<br>";
+
+			echo "Com 1:";
+			print_r ($cont1);			# Com 1: Array ( [0] => Eu [1] => vou [2] => estudar [3] => php ) 
+			echo "<br>";
+
+			echo "Com 2";
+			print_r ( $cont2);			# Com 2 mostra a posiçõa de inicio das palavras: Array ( [0] => Eu [3] => vou [7] => estudar [15] => php )
+
+		?>
+
+
+	7) FUNÇÃO explode (adiciona os valores da string a um vetor separando-os por um parametro):
+
+		<?php
+
+			$site = "curso em video";
+
+			$vetor = explode(" ", $site);			# Começa a contar apos o espaço.
+
+			print_r($vetor);				# Array ( [0] => curso [1] => em [2] => video ).
+
+		?>
+
+
+	8) FUNÇÃO trim / ltrim / rtrim (remove os espaços da string):
+	
+		<?php
+			
+			$nome = "   Joséxda Silva   ";	
+	
+			echo (strlen($nome));		# 19.
+
+			$novo = trim($nome);		# Remove os espaços antes e dps.
+
+			echo (strlen($novo));		# 13.
+
+			echo (ltrim($nome));		# José da Silva   .	Tira só os do inicio.
+
+			echo (rtrim($nome)); 		#    José da Silva.   	Tira só os do final.
+			
+		?>
+
+
+	9) FUNÇÃO str_split (cria um vetor que recebe cada elemento da string como um valor do array):
+
+		<?php
+
+			$nome = "Maria";
+	
+			$vetor = str_split($nome);		# Separa as letras. 
+
+			print_r($vetor);			# Array([0]=>M [1]=>a [2]=>r [3]=>i [4]=>a).
+
+		?>
+
+
+	10) FUNÇÃO implode ou join (junta os elementos do vetor): 
+
+		<?php
+	
+			$vetor[0] = "Curso";
+
+			$vetor[1] = "em";
+
+			$vetor[2] = "Video";
+
+			$texto = implode("#" , $vetor);
+
+			print($texto);				# Curso#em#Video
+
+		?>
+	
+	
+	11) FUNÇÃO chr e ord (mostra qual código pertence a qual letra no teclado):
+
+		<?php
+
+			$letra = chr(67);			# Mostra qual letra ta no código 67.
+			echo $letra;				# C.
+
+			$letra ="C";
+			echo ord($letra);			# Mostra o código da letra: 67.
+
+		?>
+	
+
+
+
+	12) FUNÇÃO strtolower e strtoupper (transoforma a string em lowercase e uppercase):
+
+		<?php
+	
+			$nome = "Gustavo Guanabara";
+			print("seu nome é:" .strtoupper($nome));	# Passa pra lower case.
+
+			$nome2 = "gustavo guanabara";
+			print("seu nome é:" .strtoupper($nome2));	# Passa pra upper case.
+
+		?>
+	
+
+	13) FUNÇÃO ucfirst e ucwords 
+	
+		<?php
+
+			$nome = "gustavo guanabara";
+			print("Seu nome é: " . ucfirst($nome));		# Passa a primeira letra pra upper case.
+
+			$nome2 = "gustavo guanabara";
+			print( "seu nome é: " . ucwords($nome2));	# Passa as primeiras letras das palavras para upper case.
+
+		?>
+
+	
+	14) FUNÇÃO strrev  (inverte a string):
+
+		<?php
+
+			$nome = "gustavo guanabara";
+			print( "seu nome aou contrario é: " . strrev($nome));		# Inverte as letras.
+
+		?>
+
+	
+	15) FUNÇÃO strpos e stripos (retorna a posição que o parametro desejado é encontrado dentro da string, com e sem caixa alta):
+
+		<?php 
+
+			$frase = "Estou aprendendo PHP";
+			$pos = strpos($frase, "PHP");
+			echo "A srting foi encontrada na posição $pos";		# Mostra a posição em que a string é mostrada contando os espaços.
+
+			$pos = stripos($frase, "php");
+			echo "A srting foi encontrada na posição $pos";		# Mostra a posição em que a string é mostrada contando os espaços e ignorando a caixa alta.
+	
+		?>
+
+
+	16) FUNÇÃO substr_count (conta quantas vezes um parametro é passado na string):
+
+		<?php
+	
+			$frase = "Estou aprendendo PHP np Curso em Vídeo de PHP";
+			$count = substr_count($frase, "PHP");				# Conta quantas vezes o parametro passado aparece.
+			print("PHP encontrado $count vezes");
+ 
+		?>
+
+
+	17) FUNÇÃO substr (fatia/corta uma string):
+
+		<?php
+
+			$site = "Curso em Vídeo";
+			$sub = substr($site, 0, 5);		# Fatia da posição inicial e acrescenta mais 5 letras / com valores negativos ira pegar as ultimas 5 letras (-5,2) = "Ví".
+			echo $sub;
+		
+		?>
+
+	18) FUNÇÃO str_pad (adiciona o parametro passado na direita, esquerda ou em ambos até que a string possua len = x ):
+
+		<?php
+
+			$nome = "Guanabara";
+			$novo = str_pad($nome, 30, " ", SRT_PAD_RIGHT);		# Ira acrescentar o numero de caracteres que falta na string para atingir 30 e ira preencher com o parametro passado na STR_PAD_LEFT, ou STR_PAD_RIGHT ou ate mesmo STR_PAD_BOTH.
+			print("Meu professor $novo é massa");
+	
+		?>	
+	
+	
+	19) FUNÇÃO str_repeat (repete o parametro passado x vezes):
+
+		<?php
+
+			$txt = str_repeat("Php", 5);
+			print("O texto gerado foi $txt");			# Ira repetir o parametro passado 5 vezes.
+
+		?>
+
+
+	20) FUNÇÃO str_ireplace (troca o primeiro parametro pelo segundo todas as vezes que ele aparece):
+
+		<?php
+
+			$frase = "Gosto de estudar matematica";
+			$novafrase = str_ireplace("matematica", "PHP", $frase);		# Troca o primeiro parametro (ignorando case) pelo que esta no segudo dentro da string.
+
+		?> 
+
+
+	21) FUNÇÃO sleep (o servidor congela por x segundos):
+
+		<?php
+		
+			echo "Ola";
+			sleep(3);			# O servidor "dorme" pro 3 segundos, e mostra "Ola, me chamo Felipe" tudo junto, ou seja, não é como o do Python.
+			echo ", me chamo Felipe";
+		?> 
+
+	22) FUNÇÃO die (o código termina):
+
+		<?php
+		
+			echo "Ola";			
+			die("ERROR 404");				# "Mata" o código, mostra na tela a mensagem e tudo abaixo não é executado.
+			echo ", me chamo Felipe";
+		?> 
+
+
+	23) FUNÇÃO date	(retorna a data e o horario):
+
+		<?php
+
+			date_default_timezone_set('America/Sao_Paulo');		# Fuso horário.
+
+			$data = date('d/m/Y');					# Formato brasileiro.
+			$hora = date('H:m:s');					# Horário.
+	
+			$data = date('d/m/Y H:m:s', time()+(60*10));		# Adiciona mais 10 minutos (time()+ valor em segundos).
+
+		?>
+
+		<?php
+
+			$date = DateTime::createFromFormat('d/m/Y', '06/07/2001');	# Formatar a data.
+			echo $date->format('Y-m-d');
+
+		?>
+		
+		<?php
+
+			echo date('d-m-Y H:i:s', strtotime('2001-07-06 15:03:00'));	# Mostra 2001-07-06 15:03:00.
+
+		?>
+
+
+	24) FUNÇÃO include (inclui outros arquivos prontos):
+
+		header.php ->
+	
+				<!DOCTYPE html>
+				<html>
+				<head>
+					<title><?php echo $titulo; ?></title>
+				</head>
+				<body>
+				meu header
+
+		footer.php ->
+				meu footer
+				</body>
+				</html>
+		
+		index.php ->
+
+			<?php
+			
+				$titlulo = "Meu titulo";
+				include('header.php');
+			?>
+	
+			<h1> Titulo do artigo </h1>
+
+			<?php
+		
+				include('footer.php');
+			?>
+
+
+	25) FUNÇÃO strip_tags (ignora HTML):
+	
+		<?php
+
+			$nome = "<h1> Felipe </h1> felipe";	
+			echo strip_tags($nome);		# Ignora as tags html. Saida igual a " Felipe  felipe".
+
+		?>
+
+
+	26) FUNÇÃO htmlentities (mostra o HTML na string):
+	
+		<?php
+
+			$div = "<div></div>";
+			echo htmlentities($div);	# Mostra os elementos html dentro da variavel. Saida igual a "<div></div>".
+
+		?>
+
+
+	27) FUNÇÃO array_merge (junta os arrays):
+
+		<?php
+
+			$array1 = ["cor"=>"marsala", "nome"=>"felipe"];
+			$array2 = [1, 2, "cor"=>"roxo", "nome2"=>"alice"];
+
+			$result = array_merge($array1, $array2);	# Serve para unir 2 ou mais arrays, em caso de chave igual pega a última.
+			print_r($result);				# saida igual a ([cor] => roxo [nome] => felipe [0] => 1 [1] => 2 [nome2] => alice).
+
+		?>
+
+
+	28) FUNÇÃO array_intersect_key (retorna o valor da chave repetida):
+	perdemos be
+		<?php
+
+			$array1 = ["cor"=>"marsala", "nome"=>"felipe"];
+			$array2 = [1, 2, "cor"=>"roxo", "nome2"=>"alice"];
+
+			$result = array_intersect_key($array1, $array2);	# Retorna o o primeiro valor da chave repetida.
+		
+			print_r($result);		# saida igual a ([cor] => marsala).
+
+		?>
+	
+
+	29) FUNÇÃO array_map (aplica a função passada para todos os elementos do vetor):
+
+		<?php
+
+			$array = ["<p> guilherme </p>", "joao", "<h1> felipe </h1>"];
+			print_r(array_map('strip_tags', $array));		# Aplica a função 'strip_tags' para cada elemento do vetor.
+
+		?>
+
+	30) FUNÇÃO header (Possui subfunções):
+	
+		-> 'Location' (Redireciona para outro site. Diferente do JS não carrega o arquivo principal, apenas redireciona): 
+			<?php
+				header('Location: https://google.com');
+				die();		# Matar o script e impedir que o resto seja executado.
+			?>
+
+		-> 'Content-type' (Passa o tipo do conteudo passado):
+			<?php
+				header('Content-type: image/png');
+				die();		# Matar o script e impedir que o resto seja executado.
+			?>
+
+		-> Para mais funções buscar na documentação.
+		
+	31) FUNÇÃO readfile (Ler o arquivo):
+
+		<?php
+			header('Content-type: image/png');
+			readfile('img.png');		# Abre a imagem.
+			die();				# Matar o script e impedir que o resto seja executado.
+		?>
+	
+	32) FUNÇÃO preg_match (Definir padrões):
+		
+		Validando o cpf:
+		<?php
+			function cpfValido($cpf){
+				$expressao = '/[0-9]{3}\./[0-9]{3}\./[0-9]{3}-[0-9]{2}/';
+				return preg_match($expressao, $cpf);
+			}
+		?>
+
+		validando o CEP:
+		<?php
+			if(isset($_POST["acao"])){
+		        	$cep = $_POST["cep"];
+        			$verifica = preg_match("/[0-9]{5}-[0-9]{3}$/", $cep);
+    			}
+
+		?>
+		<form method="post">
+			<input type="text" name="cep" placeholder="Insira seu CEP" />
+		    	<input type="submit" name="acao" value="ENVIAR!" />
+		</form>
+
+		validando o telefone:
+		<?php
+			if(isset($_POST["acao"])){
+		        	$cep = $_POST["fone"];
+        			$verifica = preg_match("/^(\[0-9]{2}\)|)[0-9]{4}-[0-9]{4}$/", $fone);
+    			}
+
+		?>
+		<form method="post">
+			<input type="text" name="fone" placeholder="Insira seu fone" />
+		    	<input type="submit" name="acao" value="ENVIAR!" />
+		</form>
+
+		validando o nome
+		<?php
+			if(isset($_POST["acao"])){
+		        	$cep = $_POST["nome"];
+        			$verifica = preg_match("/^[A-Z]{1}[a-z]{1,} [A-Z]{1}[a-z]{1,}$/", $nome);
+    			}
+
+		?>
+		<form method="post">
+			<input type="text" name="nome" placeholder="Insira seu nome" />
+		    	<input type="submit" name="acao" value="ENVIAR!" />
+		</form>
+
+
+
+---------- VETORES:
+
+	----- array simples:
+
+		<?php
+
+			$nome_do_array = [valores, dentro, das, chaves];
+			$nome_do_array[chave]; 
+
+		?>
+
+	----- array multiplo:
+
+		<?php
+
+			$array_multiplo = array(array("felipe", "duda"), array(20, 18))
+	
+			echo $array_multiplo[0][0];	/* felipe *\
+			echo $array_multiplo[0][1];	/* duda *\
+			echo $array_multiplo[1][0];	/* 20 *\
+			echo $array_multiplo[1][1]; 	/* 18 *\
+
+			$array_multiplo[0][1] = $array_multiplo[0][0]	/* $array_multiplo[0] fica: array("felipe", "felipe") *\
+	
+		?>
+	
+
+	----- MODOS DE DECLARAR:
+
+		PRINCIPAL:
+		$variaveis = ['guilherme','joao',felipe'];
+
+			EX:
+
+			echo $variaveis[0];	/*ghilerme */
+			echo $variaveis[1];	/*joao */
+			echo $variaveis[2];	/*felipe */
+	
+		1) Um array pode receber vairos tipos de dados:
+		$nome = array('guilherme', 23, true, 10.09); 
+		
+		EX:
+			echo $nome[0];	/*ghilerme */
+			echo $nome[1];	/* 23 */
+			echo $nome[2];	/* true */
+			echo $nome[3];	/* 10.09 */
+
+		2) Caso não seja defifnida uma chave seguira na ordem (0, 1, ...):	
+		$nome[] = 'ghilerme';	/* [0] */
+		$nome[] = 'felipe';	/* [1] */
+		
+		EX:	
+			echo $nome[0];	/* guilherme */
+			echo $nome[1];	/* felipe */
+
+		3) Caso seja definido os valores entre as chaves não existem e dara erro caso peça para printa-los (EX: echo $nome[3]):
+		$nome[0] = 'joao';
+		$nome[100] = 'felipe';
+
+		EX:	
+			echo $nome[0];		/* joao */
+			echo $nome[100];	/* felipe */
+
+		4) Usando stings na chave:
+		$informacao['nome'] = 'felipe';
+		$informacao['idade'] = 18;
+		$informacao['cidade'] = 'palhoça';
+	
+		EX:
+			echo $informacao['nome'];  	/* felipe */
+			echo $informacao['idade']; 	/* 18 */
+			echo $informacao['cidade']; 	/* palhoça */
+
+		5) Definindo a chave:
+		$vetor = array("chave1" => "valor1', "chave2" => "valor2') 
+		ou
+		$vetor = ["chave1" => "valor1', "chave2" => "valor2']
+		
+		EX:		
+
+			<?php
+
+				$n[0] = 3;	
+				$n[1] = 5;
+				$n[2] = 8;
+				$n[3] = 2;
+
+			?>
+			
+			ou
+
+			<?php
+
+				$n = array(3, 5, 8, 2);
+				$n[] = 7;		# n[4] = 7.
+
+			?>
+
+			ou
+
+			<?php
+
+				$n = array(3, 5, 8, 2);
+				$n["nome"] = "felipe;	# n["nome"] = "felipe".
+
+			?>
+
+	----- ADICIONANDO, REMOVENDO E MANIPULANDO ELEMENTOS:
+
+	
+		1) array_push e array_pop (mexe no final da pilha):
+
+			array_push($n, 7);	# Acrescenta um novo elemento no vetor $n com o valor 7.
+			array_pop($n);		# Elimina o último elemento do vetor $n.
+
+		2) array_unshift e arrey_shift (mexe no inicio da pilha):
+
+			array_unshift($n, 7);	# Acrescenta uma caixa no inicio do vetor $n com o valor 7.
+			array_shift($n);	# Elimina a primeira caixa do vetor $n.
+
+
+		3) sort / rsort / asort / arsort / ksort / krsort (ordena):
+
+			sort($n);	# Coloca os valores em ordem crescente.
+
+			rsort($n);	# Coloca os valores em ordem decrescente.
+
+			asort($n);	# Coloca os valores e as caixas em ordem crescente.
+
+			arsort($n);	# Coloca os calores e as caixas em ordem decrescente.
+		
+			ksort($n);	# Coloca as caixas em ordem crescente.
+
+			krsort($n);	# Coloca as caixas em ordem decrescente.
+
+
+		4) range
+
+			<?php
+
+				$c = range(5,20,5);		# A primeira casa recebe 5, a ultima casa recebe 20 e ira pular de 5 em 5 ate atingir o valor final.
+
+			?> 
+
+
+		5) foreach
+
+			Opção 1 -->
+
+				$arr = array('chave1' => 'felipe', 'amanda', 'duda');
+	
+				foreach ($arr as $key => $value) {
+					echo $key;
+					echo "=>";
+					echo $value;
+					echo "<hr>";
+		
+				}	
+
+				saida:
+
+				chave1=>felipe
+				0=>amanda
+				1=>duda
+
+			Opção 2 -->
+
+				$arr = array('chave1' => 'felipe', 'amanda', 'duda');
+
+				$total = count($arr);
+
+				for ($i = 0; $i <= $total; $i++){
+					echo $arr[$i];
+					echo "<br />";
+				}
+
+				saida:
+
+				amanda
+				duda
+
+			com html:
+				<!DOCTYPE html>
+				<html>
+				<head>
+					<title> Cenourinha </title>
+				</head>
+				<body>
+				<?php
+					if(isset($_POST['acao'])){
+						foreach ($_POST['value'] as $key => $value) {
+							echo $value;
+							echo "</br>";
+						}
+					}
+				?>
+				<form method="post">
+					<input type="checkbox" name="value[]" value="10">10
+					<input type="checkbox" name="value[]" value="20">20
+					<input type="checkbox" name="value[]" value="30">30
+					<input type="checkbox" name="value[]" value="40">40
+					<input type="submit" name="acao" value="enviar"> 
+				</form>
+
+				</body>
+				</html>
+
+	6) chaves personalizadas e unset
+
+		<?php
+
+			$v = array(1=>"A", 3=>"B", 6=>"C", 8=>"D");
+
+			echo "Chave personalizada: " .print_r($v);
+			$v[] = "E";					# Cria o 9 valendo "E".
+
+			echo "Chave personalizada mais um valor: " .print_r($v);
+			unset($v[8]);					# Destroi o vetor 8.
+
+			echo "Chave personalizada menos a casa 8: " .print_r($v);
+
+		?>
+
+	7) chaves associativas
+
+		<?php
+
+			$cad = array("nome" => "ana", "idade" => 23, "peso" => 78.5);
+			$cad["fuma"] = true;
+
+			foreach($cad as $campo=>$valor){
+
+				echo "O campo $campo possui o valor $valor";
+
+			}
+
+		?>
+
+
+---------- PROGRAMAÇÃO ORIENTADA A OBJETO:
+
+
+	Pilares: Herança / Encapsulamento / Polimorfismo / Abstração
+
+	COMER Nada
+
+	C
+	O
+	M
+	E
+	R
+	N
+
+	EX:
+		<?php
+			# Criando a classe:
+			class Pessoa{
+				private $nome;
+				private	$idade;
+				private	$altura;
+				private	$peso;
+				public function __construct($nome, $idade, $altura, $peso){
+					$this->nome = $nome;
+					$this->idade = $idade;
+					$this->altura = $altura;
+					$this->peso = $peso;
+				}
+				public function GetNome(){
+					return $this->nome; 					
+				}			
+				public function crescer(){		
+					echo "Estou crescendo";
+				}
+				private function comer(){				
+					echo "Estou comendo";
+				}
+			}
+			# Instanciando o objeto:
+			$pessoa = new Pessoa;
+			# Utilizando os métodos da classe:
+			$pessoa->crescer();
+	
+		?>
+
+	----- Atributos:
+		
+		public 		-> (+) Pode ser acessado de fora da classe.
+		private		-> (-) Só pode ser acessado dentro da classe.
+		protected	-> (#) Pode ser acessado por mãe e filhos.
+		static 		->  Inalteravel.
+
+		EX:
+			class Pessoa(){
+				
+				public $nome = "Felipe";
+				private	$idade = 20;
+				public static $especie_humana = true;	
+
+			}
+
+			$pessoa = new pessoa();
+			$pessoa->nome = "Sofia";		# $nome passa a ser Sofia.
+			$pessoa->idade = 16;			# ERRO FATAL.
+			echo Pessoa::$especie_humana;		# true.
+			Pessoa::$especie_humana = false;	# $especie_humana recebe falso para todos as instancias.
+			
+
+	----- Métodos:
+		
+		public 		-> (+) Pode ser acessado de fora da classe.
+		private		-> (-) Só pode ser acessado dentro da classe.
+		static 		-> Inalteravel.
+		protected	-> (#) Privado para tudo menos herança.
+		abstract	-> Função declarada no pai e desenvolvida nas filhas. 
+		
+		EX:
+			class Pessoa(){
+				
+				public $nome = "Felipe";
+				private	$idade = 20;
+				public static $especie_humana = true;	
+
+				public function comer($var1){
+					$this->peso += $var1;
+					$this->crescer();			# $this serve para se referir ao objeto usado quando a função foi chamada, funciona como o self do python. Já self no PHP serve para referenciar a classe e não a instancia.
+ 					return $this->peso;
+
+				}
+
+				pravte function crescer(){		
+				
+					echo "Estou crescendo";
+				
+				}
+	
+				public static respirar(){
+			
+					echo "Estou respirando";
+
+				}
+
+			}
+
+			$pessoa = new Pessoa(); 
+			echo $pessoa->peso;		# 65.
+			$pessoa->comer(5);		# 65 + 5.
+			echo $pessoa->peso;		# 70.
+
+		--- Método construtor:
+			Base para uma instância.
+
+			public function __construct() ou Nome_da_classe(){
+				# Tudo aqui dentro será executado quando a instância for criada.
+			}
+
+		--- Método acessor     	(Getter):
+			Retorna um valor.
+
+			public function getNome(){
+				return $nome;
+			}
+
+		--- Método modificador 	(Setter):
+			Altera um valor.
+
+			public function setNome(Name){
+				$this->nome = $Name;
+			}
+
+
+	----- POLIMORFISMO:
+	
+		POLI  = Muitos.	
+		MORFO = Formas.
+
+		Assinatura do método: Quantidade e tipos dos parametros iguais = assinaturas iguais / Quantidade e tipos dos parametros diferentes = assinaturas diferentes.
+			EX: (ASS: 1) public function Media($num1: real, $num2:real): real
+			    (ASS: 1) public function Media($val1: real, $val2:real): inteiro
+			    (ASS: 2) public function Media($val1: real, $val2:real, val3:real): inteiro
+			    (ASS: 1) public function Media($valor1: real, $valor2:real): real
+			    (ASS: 2) public function Media($numero1: real, $numero2:real, $numeroe:real): string
+
+		--- Polimorfismo de sobreposição: Acontece quando substituímos um método de uma superclasse na sua subclasse, usando a mesma assinatura.	
+			(Mesma assinatura, classes diferentes)
+			EX:	(EXERCICIO 07 POOPHP)
+				require_once 'Animal.php';
+				class Mamifero extends Animal{
+        				public function emitirSom(){
+            					echo "<p> Som de mamifero </p>";
+        			}
+	
+				require_once 'Mamifero.php';
+    				class Cachorro extends Mamifero{
+        				public function emitirSom(){
+            					echo "<p> Au!Au! </p>";
+        				}
+				}
+
+		--- Polimorfismo de sobrecarga (PHP NÃO POSSUI SUPORTE): Acontece quando o método retorna respostas diferentes para dados de entrada diferentes.
+			(Assinaturas diferentes, mesma classe)
+
+	----- HERANÇA:
+
+		class pai{
+
+			abstract function teste();		
+
+		}
+
+		class filha extends pai{
+
+			public function teste(){
+			
+				echo "Teste abstrato";				
+
+			}
+
+		}
+
+
+	----- ABSTRATO:
+
+		Classe abstrata: Não pode ser instanciada. Só pode servir como progenitora.
+			EX: abstract class teste{}
+
+		Método abstrato: Declarado, mas não implementado na progenitora.
+
+		Classe final: Não pode ser herdada por outra classe. Obrigatóriamente folha.
+			EX: final class bla{}	# Não gera filhas.
+
+		Método final: Não pode ser sobresquito pelas suas sub-classes. Obrigatóriamente herdado. 
+			EX: public final function bla(){}	# Não deixa outra subclasse sobrescrever.	
+
+		-- ABSTRACT (Pode possuir atributos e nem todos os métodos precisam ser implementados):
+
+			abstract class teste{
+
+				abstract function teste1();	
+				abstract function teste1();
+				abstract function teste1();	
+
+			}
+
+			class real extends teste(){
+	
+				public function teste1(){
+
+					echo "teste1";
+
+				}
+
+				public function teste2(){
+
+					echo "teste2";
+
+				}
+
+				public function teste3(){
+
+					echo "teste3";
+
+				}
+	
+			
+			}
+
+		-- INTERFACE (Não possui atributos e todos os métodos devem ser implementados):
+
+			interface interface1{
+
+				public function teste1();		
+
+			}
+		
+			class teste implements interface1{
+
+				public function teste1(){
+
+					echo "teste1";
+
+				}
+
+			}
+
+	----- CLASSE ANONIMA:
+
+		<?php
+
+			class Utils{
+
+				public function printmsg($msg){
+					$msg->showmsg();
+				}
+			
+			}
+
+			$utils = new Utils;
+
+			$utils->printmsg(new Class{
+				public function showmsg(){ "ola mundo"; 
+				}
+			});
+
+		?>
+
+	----- NAMESPACE E USE (Funciona como diretórios dentro do código "import"):
+
+		(classe1.php)
+	
+		<?php
+			namespace sessao1;
+			use Sessao2\Class2;
+			
+			class classe1{
+
+				function __construct(){
+
+					new Class2();
+					echo "Classe instanciada";
+
+				}
+	
+			}
+		
+		?>
+		
+
+		(classe2.php)
+	
+		<?php
+			namespace sessao2;
+			
+			class classe2{
+
+				function __construct(){
+
+					echo "Classe2 instanciada";
+
+				}
+			
+			}
+			
+		
+		?>
+		
+
+		(index.php)
+	
+		<?php
+		
+			include("classe1.php);
+			include("classe2.php);
+
+			use \Sessao1\Class1; ou use use \Sessao1\Class1 as nome_inventado;
+
+			$class1 = new Class1;
+			
+			
+		
+		?>
+
+	----- AUTOLOAD:
+
+		(config.php)
+		
+		<?php
+			
+			function myAutoLoad($class){
+				
+				$class = str_replace('\\', '/', $class);
+				if(file_exists('classes/'.$class.'.php')){
+
+					include('classes/'.$class.'.php');				
+
+				}
+				
+
+			}
+
+			spl_autoload_register('myAutoLoad');
+
+		?>
+
+		(index.php)
+		
+		<?php
+			
+			include("config.php");
+
+			new Home\Inicial();
+
+		?>
+
+		(utilidades.php)
+			
+		<?php
+
+			class Utilidades{
+
+				function __construct(){
+
+					echo "Classe Utilidades foi chamada com sucesso! ";
+			
+				}			
+
+			}
+	
+		?>
+
+		(Inicial.php)
+
+		<?php
+
+			namespace Home;
+
+			class Inicial{
+
+				function __construct(){
+
+					echo "Classe Inicial foi chamada com sucesso!";
+				
+				}
+			
+			}
+
+	
+		?>
+
+	
+	----- INSTANCEOF:	
+		Serve para verificar a qual classe o objeto faz referência.
+		
+		class A{};
+		class B{};
+
+		$a = new A;
+		$b = new B;
+		
+		if ($a instanceof A){
+		
+			echo " '$a' faz referência a classe A"; 	
+	
+		}
+
+		$func = function(){};
+
+		if ($func instanceof Closure){				# Closure é o objeto padrão do php que é o parâmetro de uma função.
+		
+			echo " '$a' faz referência a classe A"; 	
+	
+		}
+
+---------- BUFFER:	
+	
+	Controla a comunicação entre o cliente e o servidor.
+	
+	
+	<?php
+		
+		ob_start();		# Não envia nada até o momento em que for permitido enviar.
+
+		ob_end_flush();		# Autorização para enviar.
+
+		$v = ob_get_content();	# A variavel $v armazena tudo acima desse comando e abaixo de ob_start(); É necessario usar o ob_end_clean();
+		
+		ob_end_clean();		# Limpa o buffer.
+
+
+
+
+
+---------- MANIPULANDO ARQUIVOS E PASTAS:
+	
+	----- ARQUIVOS:
+
+		1) file_exists('pasta/arquivo.php')			->	Retorna true caso o arquivo exista na pasta e false caso contrario.
+
+		2) file_put_contentes('arquivo.txt', $conteudo)		->	Caso o arquivo 'arquivo.txt' já exista ira sobreescrever com o conteudo de $conteudo, caso não exista ira criar e adicionar o $conteudo ao novo arquivo.
+
+		3) file_get_content('arquivo.txt')			-> 	A variavel que receber tal função tera como valor o conteudo do arquivo (serve tbm para fazer requisições externas, como URLs por exemplo).
+
+		4) unlink('arquivo.php')				->  	Apaga o arquivo selecionado.
+
+	----- PASTAS:	
+
+		1) mkdir('pasta')					->	Cria uma pasta.
+
+		2) is_dir('pasta')					->	Retorna true caso a pasta exista e false caso contrario
+
+		3) rmdir('pasta')					-> 	Deleta a pasta.
+
+		4) readdir('pasta')					-> 	Lê o conteudo da pasta.
+
+
+---------- XML E JSON:
+
+	----- XML:
+		
+		1) LENDO XML:
+		
+			(arquivo.xml)
+			<informacoes>
+				<nome> felipe </nome>
+			</informacoes>
+	
+			(arquivo.php)
+			<?php
+
+				$xml = simplexml_load_file('arquivo.xml');
+			
+				exho $xml->informacoes->nome;			# felipe.
+
+			?>
+	
+		2) CRIANDO UM XML:
+
+			(arquivo.php)
+			<?php
+
+				$arr = ["felipe"=>"nome", "20"=>"idade"];
+				
+				$xml new SimpleXMLElement('<root/>');
+				arrat_walk_recursive($arr, array ($xml, 'addChild'));
+				file_put_contents('arquivo.xml', $xml->asXML());
+
+			?>
+
+			(arquivo.xml)
+			<root><nome>felipe</nome><idade>20</idade></root>
+	----- JSON:
+
+		<?php
+		
+			$json = '{"a":1, "b":2, "c":3}';
+
+			$obj = json_decode($json);		# Retorna como objeto.
+			echo $obj->a;
+
+			$arr = json_decode($json, true);	# Retorna como array.
+			echo $arr['a'];
+
+		?>
+	
+		Importante:
+			
+			JavaScript:	
+			$(function){
+
+				$.ajax({
+				
+					url:'bla',
+					dataType:'json'		# Caso esse elemento não esteja presente não funciona.
+				
+				})		
+
+			}
+
+			
+---------- IMAGEM:
+
+	----- WideImage:
+
+		1) Redimencionando a imagem em outro arquivo:
+		<?php
+			include("lib/WideImage.php");
+    			WideImage::load('image.png')->resize(50, 30)->saveToFile('SmallImage.jpg');	# resize = Tamanho da imagem e saveToFile = arquivo em que sera salvo.
+		?>
+
+		2) Corta a imagem:
+		<?php
+			include("lib/WideImage.php");
+    			WideImage::load('image.png')->crop("center", "center", 90, 50)->output('jpg');	# centro do eixo x / centro do eixo y / mostra 45 pra direita e 45 pra esquerda em x / 25 pra cima e 25 pra baixo em y / output = apenas mostra no html.
+		?>
+
+---------- DETECTANDO NAVEGADORES, SO E APARELHOS:
+
+	Através do Browser Detector:
+
+	
+	1) Descobrindo o navegador:
+	<?php
+		require("vendor/autoload.php");
+    		use Sinergi\BrowserDetector\Browser;
+    		$browser = new Browser();
+    		if ($browser->getName() === Browser::CHROME) {
+    			echo "Quem usa chrome é corno!";
+    		}
+	?>
+
+	2) Descobrindo o SO:
+	<?php
+		require("vendor/autoload.php");
+		use Sinergi\BrowserDetector\Os;
+		$os = new Os();
+		if ($os->getName() === Os::IOS) {
+    			echo 'You are using an iOS device.';
+		}
+	?>
+
+	2) Descobrindo o Dispositivo:
+	<?php
+		require("vendor/autoload.php");
+		use Sinergi\BrowserDetector\Device;
+		$device = new Device();
+		if ($device->getName() === Device::IPAD) {
+    			echo 'You are using an iPad.';
+		}
+	?>
+
+
+---------- BANCO DE DADOS:
+
+	No xamp ligar MySQL -> localhost/phpmyadmin/ -> database 
+
+
+	----- CRIANDO CONEXÃO COM O BANCO DE DADOS:
+		
+		<?php
+			define('HOST','localhost');	# Host.
+			define('DB','modulo_8');	# Nome do Data Base.
+			define('USER','root');		
+			define('PASS','');		# Senha (passada no segundo parâmetro).
+
+			try{
+
+				$pdo = new PDO('mysql:host='.HOST.';dbname='.DB, USER, PASS, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")); 
+				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);	// Modo de desenvolvimento.
+
+			}catch(Exception $e){
+			
+				echo "<h1> erro crítico </h1>";			
+
+			}
+			
+
+		?>
+
+	
+	----- ADICIOANDO ELEMENTOS AO BANCO DE DADOS:
+		<?php
+
+			date_default_timezone_set('America/Sao_Paulo');
+			$pdo = new pdo('mysql:host=localhost;dbname=modulo_8', 'root','');
+
+			if(isset($_POST['acao'])){
+
+				$nome = $_POST['nome'];
+				$sobrenome = $_POST['sobrenome'];
+				$momento_registro = date('Y-m-d H:i:s');			
+
+				$sql = $pdo->prepare("INSERT INTO `clientes` VALUES (null, ?, ?, ?)");		# Por segurança usa_se '?'.
+				$sql->execute(array($nome, $sobrenome, $momento_registro));			# As posições dos elementos do vetor substituem os '?'.	
+				echo "Cliente cadastrado com sucesso!";
+			}
+
+		?>
+
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<title>cadastro no banco</title>
+		</head>
+		<body>
+			<form method="post">
+				<input type="text" name="nome" required="">
+				<input type="text" name="sobrenome" required="">
+				<input type="submit" name="acao" value="enviar">
+			</form>
+
+		</body>
+		</html>
+
+	----- ATUALIZANDO ELEMENTOS:
+	
+		<?php
+
+			$pdo = new pdo('mysql:host=localhost;dbname=modulo_8', 'root','');
+
+			$id = 3;
+			$nome_novo = "felipe";
+			$nome_antigo = "mario";
+
+			$sobrenome_novo = "ghizoni";
+			$sobrenome_antigo = "silva";			
+
+			$sql = $pdo->prepare("UPDATE `clientes` SET nome=?, sobrenome=? WHERE id=? OR nome=? AND sobrenome=?");		# se não definir o WHERE atualiza todos.
+			
+			if ($sql->execute(array($nome_antigo, $sobrenome_antigo, $id, $nome, $sobrenome))){
+				echo "Cliente atualizado com sucesso!";
+			}
+
+		?>
+
+
+	----- DELETANDO ELEMENTOS:
+		
+		<?php
+
+			$pdo = new pdo('mysql:host=localhost;dbname=modulo_8', 'root','');
+
+			$id = 3;
+			$nome = "felipe";
+			$sobrenome = "ghizoni";			
+
+			$sql = $pdo->prepare("DELETE FROM `clientes` WHERE id=?");		# se não definir o WHERE deleta todos.
+			
+			if ($sql->execute(array($id))){
+				echo "Cliente deletado com sucesso!";
+			}
+
+		?>
+
+	----- BUSCANDO ELEMENTOS:
+
+		AND	->	E...
+
+		OR	-> 	Ou...
+
+		ON	->	No arquivo...
+
+		IN	->	De tal até tal...
+
+		BETWEEN	->	Entre...
+
+
+		1) featcAll() 	-> 	Pega todas as informações encontradas.
+		EX:
+
+			$pdo = new PDO('mysql:host=localhost;dbname=modulo_8', 'root','');
+
+			$sql = $pdo->prepare("SELCET * FROM `posts`");	# * é igual a "all".
+			$sql->execute();
+			$info = $sql->fetchAll();
+
+			print_r($info);
+
+
+		2) INNER JOIN	->	Junta duas ou mais tabelas.	# Inclui apenas os elementos solicitados de ambas as tabelas.
+		EX:
+
+			$pdo = new PDO('mysql:host=localhost;dbname=modulo_8', 'root','');
+
+			$sql = $pdo->prepare("SELCET `post`.*, `categorias`.*, `posts`.`id` AS `posts_id` FROM `posts` INNER JOIN `categorias` ON `posts`.`categorias_id` = `categoria`.`id`");	# Junta as tabelas e seleciona apenas os elementos em que a categoria_id do post for igual ao id da categoria.
+			$sql->execute();
+			$info = $sql->fetchAll(PDO::FETCH_ASSOC);	# PDO::FETCH_ASSOC retorna apenas o nome da coluna, caso não passado a coluna aparecera 2 vezes, uma com seu nome e outra com seu número.
+
+			print_r($info);
+
+		2.2) LEFT JOIN	-> 	Junta duas ou mais tabelas.	# Diferente do INNER JOIN inclui todos os elementos da tabela da esquerda.
+		EX:
+			
+			$pdo = new PDO('mysql:host=localhost;dbname=modulo_8', 'root','');
+
+			$sql = $pdo->prepare("SELCET * FROM `posts` LEFT JOIN `categorias` ON `posts`.`categorias_id` = `categoria`.`id`");	# Junta as tabelas e seleciona todos os elementos da tabela esquerda mais os elementos solicitados pelo ON.
+			$sql->execute();
+			$info = $sql->fetchAll(PDO::FETCH_ASSOC);	# PDO::FETCH_ASSOC retorna apenas o nome da coluna, caso não passado a coluna aparecera 2 vezes, uma com seu nome e outra com seu número.
+
+			print_r($info);
+
+
+		2.3) RIGHT JOIN	-> 	Junta duas ou mais tabelas.	# Diferente do INNER JOIN inclui todos os elementos da tabela da esquerda.
+		EX:
+			
+			$pdo = new PDO('mysql:host=localhost;dbname=modulo_8', 'root','');
+
+			$sql = $pdo->prepare("SELCET * FROM `posts` RIGHT JOIN `categorias` ON `posts`.`categorias_id` = `categoria`.`id`");	# Junta as tabelas e seleciona todos os elementos da tabela direita mais os elementos solicitados pelo ON.
+			$sql->execute();
+			$info = $sql->fetchAll(PDO::FETCH_ASSOC);	# PDO::FETCH_ASSOC retorna apenas o nome da coluna, caso não passado a coluna aparecera 2 vezes, uma com seu nome e outra com seu número.
+
+			print_r($info);
+
+
+		3) GROUP	-> 	Mostra apenas um de cada grupo (grupo = id por exemplo).
+
+			$pdo = new PDO('mysql:host=localhost;dbname=modulo_8', 'root','');
+
+			$sql = $pdo->prepare("SELCET `post`.*, `categorias`.*, `posts`.`id` AS `posts_id` FROM `posts` GROUP BY `categorias_id`, `posts_is`");	# Junta as colunas e seleciona apnas os elementos em que a categoria_id do post for igual ao id da categoria.
+			$sql->execute();
+			$info = $sql->fetchAll(PDO::FETCH_ASSOC);	# PDO::FETCH_ASSOC retorna apenas o nome da coluna, caso não passado a coluna aparecera 2 vezes, uma com seu nome e outra com seu número.
+
+			print_r($info);
+
+
+		4) ORDER	-> 	Ordena os dados recebidos.
+
+			$pdo = new PDO('mysql:host=localhost;dbname=modulo_8', 'root','');
+
+			$sql = $pdo->prepare("SELCET `post`.*, `categorias`.*, `posts`.`id` AS `posts_id` FROM `posts` GROUP BY `categorias_id`, `posts_is` ORDER BY categorias_id ASC/DESC");	# ASC = Ordem crescente / DESC = Ordem decrescente.
+			$sql->execute();
+			$info = $sql->fetchAll(PDO::FETCH_ASSOC);	# PDO::FETCH_ASSOC retorna apenas o nome da coluna, caso não passado a coluna aparecera 2 vezes, uma com seu nome e outra com seu número.
+
+			print_r($info);
+
+		4) LIMIT	-> 	Gera um limite de valores retornados.
+
+			$pdo = new PDO('mysql:host=localhost;dbname=modulo_8', 'root','');
+
+			$sql = $pdo->prepare("SELCET `post`.*, `categorias`.*, `posts`.`id` AS `posts_id` FROM `posts` GROUP BY `categorias_id`, `posts_is` ORDER BY categorias_id ASC/DESC LIMIT 1,3");	# LIMIT 1,3 -> Ira mostrar do elemento 1 até o 3, LIMIT 3 -> Ira mostrar até o elemento 3.
+			$sql->execute();
+			$info = $sql->fetchAll(PDO::FETCH_ASSOC);	# PDO::FETCH_ASSOC retorna apenas o nome da coluna, caso não passado a coluna aparecera 2 vezes, uma com seu nome e outra com seu número.
+
+			print_r($info);
+
+		5) LIKE		->	Busca todos os elementos que contenham tal caracteres.
+
+			$sql = $pdo->prepare("SELCET * FROM categorias WHERE email LIKE "%g%");	# Seleciona todos os emails de categoria que contenham a letra g (%g% = não importa o que vem antes nem dps / %g = vai terminar com g não importa o que venha antes / g% = vai começar com g não importa o que venha depois.  
+
+	----- LOCK TABLES (congela a tabela para evitar erros):
+
+		$pdo = new PDO('mysql:host=localhost;dbname=modulo_8', 'root','');
+
+		$pdo->exec("LOCK TABLES `clientes` WRITE");
+		sleep(10);
+			
+	----- SQL INJECTION:
+
+		logging = 'OR 1 = 1;/'
+		senha = /*..
+
+		Como previnir:
+		if(isset($_POST['login'])){
+			$login = $_POST['login'];
+			$senha = %_POST['senha'];
+			
+			$sql = $pdo->prepare("SELECT * FROM 'usuarios' WHERE login = ? AND senha = ?);
+			$sql->execute(array($login,$senha));
+			if($sql->rowCount() == 1){
+				echo "logado!";
+			}else{
+				echo "Loging falhou";
+			}
+		}
+	
+
+
+---------- GOOGLE API (Localização):
+
+	<form method="post">
+		<input type="text" name="adress"/>
+		<input type="submit" name="acao" value="enviar"/>
+	</form>
+	
+	<?php
+		
+		if(isset($_POST['acao'])){
+
+			$url = urlencode($_POST['adress']);
+			$str = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?adress='.$$url.'&sensor=false');
+
+			$endereco = json_decode($str);		
+
+		}
+	
+		echo "nome do bairro: "
+		echo $endereco->results[0]->adress_components[1]->short_name;
+
+
+	?>
+
+---------- CURL
+
+	(request.php):
+	<?php
+
+		if(isset($_POST['request']) && $_POST['request'] == 'name_return'){
+			die(json_encode(array('resultado'=>'felipe')));		
+		}
+
+	?>
+		
+
+	(index.php):
+	<?php
+		# Iniciar:
+		$curl = curl_init();
+
+		# Passar a URL desejada:
+		curl_setopt($curl, CURLOPT_URL, "http://localhost/Curso%20WebMaster/Aulas/PHP/curl/request.php");
+
+		# Deseja-se um POST e valor 1 para deixar habilitado:
+		curl_setopt($curl, CURLOPT_POST, 1);
+
+		# Campos de post mandados na request:
+		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query(array('request' => 'name_return')));
+
+		# Retorna tudo que o servidor me respondeu:
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+		# Executa:
+		$server_output = curl_exec($curl);
+
+		# Fecha:
+		curl_close($curl);
+
+		$resultado = json_decode($server_output);
+
+		echo $resultado->resultado;
+	
+	?>
+
+
+---------- TEMPO DE EXECUÇÃO:
+	Serve para saber quanto tempo algum script demora para ser executado. Útil caso 
+	haja um limite para esse tempo.
+
+	<?php
+		$start = microtime(true);
+		...
+		$end = microtime(true);	
+		$tempo_total = $end - $start; 
+	?>
+	
+	
+---------- SESSION E COOKIES:
+	Session e cookies são variaveis salvas no computador quando o site é acessado.
+	a diferença de session para cookie é que quando o site é fechado as variaveis 
+	da session se perdem, diferentemente das da cookie.
+
+	<?php
+
+		session_start();					# Cria a sessão.
+
+		$_SESSION['nome'] = "guilherme";			# Cria a variavel da sessão.
+		setcookie('nome', 'felipe', time() + (60*60*24), '/');	# Cria um cookie que dura 24 horas.
+		
+		unset($_SESSION['nome']);				# Destrói a variavel da sessão.
+		setcookie('nome', 'felipe', time() - (60*60*24), '/');	# Para destruir um cokkie basta colocar o tempo negativo.
+		session_destroy():					# Destroi a sessão.
+
+
+	?>
+
+	index.php
+	<?php
+		session_start();
+		...
+		session_write_close();		# Dessa forma index2 não espera index carregar.
+	<?
+
+	index2.php
+	<?php
+		session_start();
+		...
+		
+	<?
+
+---------- CACHE:
+	index.php
+	<?php
+
+		include('cache.php');
+		$cache = new Cache;
+		echo $cache->readCache()->conteudo;
+	
+	?>
+
+	cache.php
+	<?php
+		
+		class Cache{
+
+			public function readCache(){
+
+				if(file_exists('cache')){
+
+					$data = json_decode(file_get_contents('cache'));
+					if($data->tempo < time()){
+
+						//hora de criar o cache
+						echo "Criando novo cache<hr>";
+						$data = json_encode(['tempo'=>time()+(60*60), 'conteudo'=>"<h2> Nosso site esta em manutenção </h2>"]);
+						file_put_contents('cache', $data);
+						$data = json_decode($data);
+
+					}
+				
+				}else{
+
+					echo 'Criando cache pela primeira vez!<hr>';
+					$data = json_encode(['tempo'=>time()+(60*60), 'conteudo'=>"<h2> Nosso site esta em manutenção </h2>"]);
+					file_put_contents('cache', $data);
+					$data = json_decode($data);
+					
+
+				}
+
+				return $data;
+			
+			}
+			
+
+		}
+	
+	?>
+
+
+---------- TEMPLATE:
+	index.php
+	<?php
+
+		include('Template.php');
+		$template = new Template();
+		$template->render(['titulo'=>'Meu titulo', 'nome'=>'Felipe', 'idade'=>'20'], 'sobre.phtml');
+
+	?>
+
+	Template.php
+	<?php
+
+		class Template{
+			
+			public function render($arr, $file){
+
+				$arquivo = file_get_contents('arquivos/'.$file);
+				foreach ($arr as $key => $value) {
+				
+					$arquivo = str_replace('{'.$key.'}', $value, $arquivo);
+		
+				}
+				echo $arquivo;
+
+			}	
+		}
+	?>
+
+	sobre.phtml
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>{titulo}</title>
+	</head>
+	<body>
+		ola {nome}
+		eu tenho {idade} anos
+	</body>
+	</html>
+
+
+---------- LOG DE EVENTOS:
+
+	<?php 
+
+		date_default_timezone_set(/America/Sap_Paulo);
+		$var = "felipe";
+		if ($var != "felipe"){
+			error_log(date('d/m/Y H:i:s')."Nome errado", 3, "error_log.log1");	# Cria uma pasta chamada error_log1 e adiciona a mensagem anterior (3 -> não apaga as linhas anteriores e não dispara email).
+		} 
+
+
+---------- CRIPTOGRAFIA
+
+	-> Básica com md5:
+		<?php
+			$login = "felipe";
+			$senha = md5("12345");
+		?>
+
+	-> Básica com sha1:
+		<?php
+			$login = "felipe";
+			$senha = sha1("12345");
+		?>
+
+	-> Protegendo paginas individuais:
+		Dessa forma não é possivel acessar "home.php" através da url ".../home.php"
+		index.php
+		...
+		<body>
+		<?php
+			$logado = true;
+			include('pages/home.php);
+		?>
+
+		home.php
+		<?php
+			if(isset($logado)){
+				echo "Informação exclusiva pra quem logou";
+			} else {
+				echo "Arquivo protegido";
+			}
+		?>
+		
+
+---------- COMPOSER
+
+	packagist -> site para procurar por dependencias (bibliotecas)
+
+	incliondo dependencias: 
+	CMD:caminho da pasta do projeto: composer require biblioteca
+	
+	----- MANIPULANDO PLANILHAS EXCEL COM PHP:
+		(https://phpspreadsheet.readthedocs.io/en/latest/)
+		composer require phpoffice/phpspreadsheet
+	
+		<?php
+			require 'vendor/autoload.php';
+
+			use PhpOffice\PhpSpreadsheet\Spreadsheet;
+			use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
+		        // Criando a tabela:
+			$spreadsheet = new Spreadsheet();
+			$tabela = $spreadsheet->getActiveSheet();	# Tabela atual.
+			$tabela->setCellValue('A1', 'Hello World !');	# Set o valor de determinada célula.
+			$tabela->setCellValue('A2', 'Welcome!');	# Set o valor de determinada célula.
+			$writer = new Xlsx($spreadsheet);
+			$writer->save('tabela_teste.xlsx');		# Salva o arquivo em "tabela_teste.xlsx".
+
+		        //Modificando e lendo células:	
+		        $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load('tabela_teste.xlsx');
+       		 	$tabela1 = $spreadsheet->getActiveSheet();
+			$tabela1->getCell('A1')->setValue('John');	# Muda o valor da célula.
+       		 	$tabela1->getCell('A1');                    	# Lê a célula.
+		?>
+
+	----- MANIPULANDO PDF COM PHP:
+		(https://github.com/mpdf/mpdf)
+		composer require mpdf/mpdf 
+
+		<?php
+		    include('vendor/autoload.php');
+
+		    $mpdf = new \Mpdf\Mpdf();
+		    $valor = "";
+		    for($i = 0; $i < 10; $i++){
+		        $valor.="<h3>Valor ".$i."</h3>";
+		        $valor.="<hr>";
+		    }
+		    $mpdf->WriteHTML($valor);
+		    $mpdf->Output();
+		?>
+
+	----- MANIPULANDO PDF COM PHP:
+		(https://github.com/PHPOffice/PHPWord)
+		composer require phpoffice/phpword
+
+		<?php
+	 		require("vendor/autoload.php");
+    			$phpword = new \PhpOffice\PhpWord\PhpWord();
+    			$section = $phpword->addSection();
+    			$section->addText("Olá, Mundo!");
+    			$objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpword, "Word2007");
+    			$objWriter->save("arquivo.docx");
+		?>
+
+	----- ENVIANDO EMAIL COM PHP:
+		(https://github.com/PHPMailer/PHPMailer)
+		composer require phpmailer/phpmailer
+
+		<?php
+			use PHPMailer\PHPMailer\PHPMailer;
+			use PHPMailer\PHPMailer\Exception;
+
+			require 'path/to/PHPMailer/src/Exception.php';
+			require 'path/to/PHPMailer/src/PHPMailer.php';
+			require 'path/to/PHPMailer/src/SMTP.php';
+
+			//Create an instance; passing `true` enables exceptions
+        	  	$mail = new PHPMailer(true);
+		
+			try {
+		              	//Server settings
+		       	       	$mail->SMTPDebug = 0;                      	// Mostrar mensagens de erro (0 = sem mensagens / 1 = com mensagens).
+				$mail->isSMTP();                                // Tipo de conexão para disparar o email (geralmente é smtp).
+				$mail->Host       = 'smtp.office365.com';       // Host do email remetente.
+      	 		       	$mail->SMTPAuth   = true;                       // Enable SMTP authentication
+       			       	$mail->Username   = 'meu_email@gmail.com';      // Email do remetente.
+       			       	$mail->Password   = 'minhaSenha';     		// Senha do email remetente.
+       			       	$mail->SMTPSecure = "sll";            		// tls ou sll
+       			       	$mail->Port       = 587;                        // TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+ 
+ 			        //Recipients
+       			       	$mail->setFrom('meu_email@gmail.com', 'felipe');	// Email que vai disparar.
+       			       	$mail->addAddress($email, '');     			// Email do destinatário.
+
+				//Attachments
+				$mail->addAttachment('/var/tmp/file.tar.gz');         	// Adicionar arquivos em anexo. 
+  	 
+		             	//Content
+	       	       		$mail->isHTML(true);                             	// Formato de email HTML.
+		             	$mail->CharSet = "UTF-8";
+       			       	$mail->Subject = "<h1>Assunto</h1>";			// Assunto do email.
+       		   		$mail->Body    = "<p>Conteudo do email</p>";		// Conteudo do email
+ 
+ 			        $mail->send();		// Envia o email
+ 		             	echo 'Message has been sent';
+        	  	} catch (Exception $e) {	// Erro.
+        	      		echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        	  	}
+		?>
+
+
+	

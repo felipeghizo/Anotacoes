@@ -1,0 +1,438 @@
+1.1.1 O que é segurança cibernética?
+	Imagem com áreas selecionáveis. Selecione cada botão para mostrar mais informações.
+	Segurança cibernética é um esforço contínuo para proteger indivíduos, organizações e governos de ataques digitais por proteger
+
+	Níveis de proteção:
+		- Particular: Como indivíduo, você precisa proteger sua identidade, seus dados e seus dispositivos de computação.
+		- Corporativo: No nível corporativo, é responsabilidade de todos proteger a reputação, os dados e os clientes da empresa.
+		- Governo: À medida que mais informações digitais são coletadas e compartilhadas, sua proteção se torna ainda mais vital no nível do governo, 				onde estão em jogo a segurança nacional, a estabilidade econômica, a segurança e o bem-estar dos cidadãos.
+
+
+	1.1.2 Protegendo seus dados pessoais
+		Os dados pessoais são quaisquer informações que possam ser usadas para identificá-lo e que possam existir tanto offline quanto online.
+
+		- Identidade offline: Sua identidade offline é a pessoa da vida real que você apresenta diariamente em casa, na escola ou no trabalho. Como resultado, 			a família e os amigos sabem detalhes sobre sua vida pessoal, incluindo seu nome completo, idade e endereço.
+	
+		- Identidade online: Sua identidade on-line não é apenas um nome. É quem você é e como você se apresenta aos outros on-line. Ele inclui o nome de 			usuário ou alias que você usa para suas contas online, bem como a identidade social que você estabelece e retrata em comunidades e sites 			online.
+
+	1.1.3 Sua Identidade Online
+		É importante não revelar informações pessoais ao escolher um nome de usuário. 
+		Algumas outras dicas úteis para ajudar você a gerar seu nome de usuário:
+
+			- Não use seu nome completo ou partes do seu endereço.
+			- Não use seu nome de usuário de email.
+			- Não use a mesma combinação de nome de usuário e senha, especialmente em contas financeiras.
+			- Não re-utilize um nome de usuário muito peculiar frequentemente - isso facilita o rastreamento.
+			- Não escolha um nome de usuário que dê pistas sobre suas senhas, como uma série de números/letras, a primeira parte de uma frase de duas 				partes, como bate-bate ou luz das estrelas ou o departamento em que você trabalha, como TI .
+			- Escolha um nome de usuário apropriado para o tipo de conta, ou seja, comercial, social ou pessoal.
+
+
+	1.1.4 Seus dados
+		Imagem com áreas selecionáveis. Selecione cada botão para mostrar mais informações. Os dados pessoais descrevem qualquer informação sobre você, 		incluindo seu nome, número do seguro social, número da carteira de motorista, data e local de nascimento, nome de solteira de sua mãe e até fotos ou 		mensagens que você troca com familiares e amigos.
+
+		- Registros médicos: Toda vez que você visita o médico, informações pessoais relacionadas à sua saúde física e mental e bem-estar são adicionadas aos 			seus registros eletrônicos de saúde (EHRs). Como a maioria desses registros são salvos on-line, você precisa estar ciente das informações 			médicas que compartilha. E esses registros vão além dos limites do consultório médico. Por exemplo, muitos rastreadores de fitness coletam 			grandes quantidades de dados clínicos, como frequência cardíaca, pressão arterial e níveis de açúcar no sangue, que são transferidos, 				armazenados e exibidos na nuvem. Portanto, você deve considerar esses dados como parte de seus registros médicos.
+
+		- Registros de educação: Os registros educacionais contêm informações sobre suas qualificações acadêmicas e realizações. Esse registro também pode 			incluir informações de contato, históricos de saúde e imunização e registros de educação especial, incluindo IEPs (Individualized education 			programs, Programas de educação individualizada).
+
+		- Registros de empregos e financeiros: Os dados de emprego podem ser valiosos para os hackers, caso consigam coletar informações sobre seu emprego 			anterior ou até mesmo suas avaliações de desempenho atuais. Seus registros financeiros podem incluir informações sobre receitas e despesas. 			Seus registros fiscais podem incluir contracheques, extratos de cartão de crédito, sua classificação de crédito e detalhes de sua conta 			bancária. Todos esses dados, se não forem protegidos adequadamente, podem comprometer sua privacidade e permitir que os criminosos digitais 			usem suas informações para seu próprio benefício.
+
+	1.1.10 Quem mais deseja meus dados?
+
+		- Seu Provedor de serviços de Internet (ISP)
+			Seu ISP rastreia sua atividade on-line e, em alguns países, pode vender esses dados para os anunciantes com fins lucrativos. Em certas 				circunstâncias, os ISPs podem ser legalmente obrigados a compartilhar suas informações com agências ou autoridades de vigilância do governo.
+
+		- Anunciantes
+			A publicidade direcionada faz parte da experiência na Internet. Os anunciantes monitoram e rastreiam suas atividades online, como hábitos de 			compras e preferências pessoais e enviam anúncios direcionados ao seu perfil.
+			Mecanismos de pesquisa e plataformas de mídia social Essas plataformas coletam informações sobre gênero, localização geográfica, número de 			telefone e ideologias políticas e religiosas com base em seus históricos de pesquisa e identidade online. Essas informações são vendidas para 			os anunciantes com fins lucrativos.
+
+		- Sites que você visita
+			Os sites usam cookies para rastrear suas atividades, a fim de fornecer uma experiência mais personalizada. Mas isso deixa um rastro de dados 			que está vinculado à sua identidade on-line que muitas vezes pode acabar nas mãos dos anunciantes!
+
+
+1.2.1 Tipos de dados corporativos
+
+	1.2.1.1 Dados Tradicionais
+		Os dados tradicionais são normalmente gerados e mantidos por todas as organizações, grandes e pequenas. Ele inclui o seguinte:
+
+			- Dados transacionais como detalhes relacionados a compras e vendas, atividades de produção e operações organizacionais básicas, como qualquer 				informação usada para tomar decisões de trabalho.
+			- Propriedade intelectual , como patentes, marcas registradas e planos de novos produtos, permite que uma empresa obtenha vantagem econômica 				sobre seus concorrentes. Essas informações são geralmente consideradas um segredo comercial e perdê-las pode ser desastroso para o 				futuro de uma empresa.
+			- Dados financeiros, como declarações de rendimentos, balanços e demonstrações de fluxo de caixa, proporcionam detalhes sobre a saúde da 				empresa.
+
+
+1.2.2 O Cubo
+	O Cubo de McCumber é uma estrutura de modelo criada por John McCumber em 1991 para ajudar as empresas a estabelecer e avaliar iniciativas de segurança da 	informação considerando todos os fatores relacionados que as afetam. Esse modelo de segurança tem três dimensões:
+
+		- Os princípios básicos para proteger os sistemas de informação.
+		- A proteção das informações em cada um de seus possíveis estados.
+		- As medidas de segurança usadas para proteger os dados.
+
+	Os principios fundamentais para proteger as informacoes:
+
+		- A confidencialidade: é um conjunto de regras que evita a divulgação de dados sensíveis para pessoas, recursos ou processos não autorizados. Os 			métodos para garantir a confidencialidade incluem criptografia de dados, prova de identidade e autenticação de dois fatores.
+		- A integridade garante que as informações ou os processos do sistema sejam protegidos contra modificações intencionais ou acidentais. Uma maneira de 			garantir a integridade é usar uma função hash ou soma de verificação..
+		- Disponibilidade significa que os usuários autorizados podem acessar sistemas e dados quando e onde necessário, e aqueles que não atendem às condições 			estabelecidas, não podem. Isso pode ser alcançado por manutenção de equipamentos, realizando reparos de hardware, mantendo os sistemas 				operacionais e software atualizadose criando de backups.
+
+
+	A protecao da informacao em cada estado:
+
+		- O processamento refere-se aos dados que estão sendo usados para executar uma operação, como atualizar um registro de banco de dados (dados em 			processo).
+		- Armazenamento refere-se a dados armazenados na memória ou em um dispositivo de armazenamento permanente, como um disco rígido, uma unidade de estado 			sólido ou uma unidade USB (dados em repouso).
+		- Transmissão refere-se a dados que trafegam entre sistemas de informações (dados em trânsito).
+
+	As medidas de seguranca usadas para proteger os dados:
+
+		- Conscientização, treinamento e educação são as medidas adotadas por uma organização para garantir que usuários tenham conhecimento sobre as possíveis 			ameaças à segurança e as ações que podem tomar para proteger os sistemas de informações.
+		- A tecnologia se refere às soluções de software e hardware projetadas para proteger sistemas de informações, como firewalls, que monitoram 				continuamente sua rede em busca de possíveis incidentes mal-intencionados.
+		- Política e procedimento se referem aos controles administrativos que fornecem uma base sobre como uma empresa implementa a garantia de informações, 			como planos de resposta a incidentes e diretrizes de melhores práticas.
+
+
+	Lembre-se, os hackers usam muitas táticas para tentar parecer legítimos e induzir você a fornecer suas informações pessoais. Mas analise o e-mail com mais 	atenção:
+
+		domínio do remetente
+		Link da URL
+		linguagem, ortografia e gramática inadequadas
+		os gráficos pixelizados de baixa qualidade.
+
+1.4.1 Tips de Ivasores
+	
+	- Amadores: O termo 'script kiddies' surgiu na década de 90 e refere-se a hackers amadores ou inexperientes que usam ferramentas existentes ou 				instruções encontradas na Internet para lançar ataques. Alguns script kiddies são apenas curiosos, outros estão tentando demonstrar suas habilidades e 		causar danos. Embora esses invasores possam usar ferramentas básicas, os ataques ainda podem ter consequências devastadoras.
+	- Hackers: Este grupo de invasores entra em computadores ou redes para obter acesso. Dependendo da intenção da invasão, esses invasores são classificados como 		white, grey ou black hat.
+		-- white hat invadem redes ou sistemas de computador para identificar quaisquer pontos fracos, de modo que a segurança de um sistema ou rede possa ser 			melhorada. Essas invasões são feitas com prévia autorização e todos os resultados são relatados ao proprietário.
+		-- gray hat podem tentar encontrar vulnerabilidades em um sistema, mas só relatarão suas descobertas se essa ação coincidir com seus objetivos. Alguns 			hackers gray hat publicam os fatos sobre a vulnerabilidade na Internet para que outros invasores possam explorá-la.
+		-- Invasores black hat tiram vantagem de qualquer vulnerabilidade para obter ganhos pessoais, financeiros ou políticos ilegais.
+
+	-Hackers organizados: Esses criminosos incluem organizações de hacktivistas, criminosos virtuais, terroristas e os hackers patrocinados pelo Estado. Os 		criminosos são altamente sofisticados e organizados e ainda podem fornecer o crime digital como um serviço a outros criminosos. Os hacktivistas fazem 		declarações políticas para sensibilizar para questões que são importantes para eles. Os invasores patrocinados pelo estado reúnem informações ou 		cometem sabotagem em nome de seu governo. Esses invasores geralmente são altamente treinados e bem remunerados e seus ataques são concentrados em 		objetivos específicos e benéficos para o seu governo.
+
+	1.4.3 Ameaças Internas e Externas
+
+		(Interno) Funcionários, contratados ou parceiros confiáveis podem, acidental ou intencionalmente:
+
+			- Manipular dados confidenciais de forma incorreta
+			- Facilitar ataques externos conectando mídia USB infectada ao sistema de computador da organização
+			- Introduzir malware na rede da organização ao clicar em e-mails ou sites maliciosos
+			- Ameaçar as operações de servidores internos ou de dispositivos de infraestrutura de rede
+
+		(Externo) Os amadores ou invasores qualificados fora da empresa podem:
+
+			- Explorar vulnerabilidades na rede
+			- Impedir o acesso não autorizado aos seus dados ou dispositivos de computação
+			- Usar a engenharia social para obter acesso não autorizado a dados organizacionais.
+
+2.1 Analisando um ataque cibernético
+
+	2.1.1 Tipos de Malware
+		Os criminosos digitais usam muitos tipos diferentes de software mal-intencionado, ou malware, para realizar suas atividades. Abreviação de “Malicious 		Software” (software mal-intencionado), o malware é qualquer código que pode ser usado para roubar dados, ignorar controles de acesso, causar danos  ou 		comprometer um sistema. Saber quais são os diferentes tipos e como eles se espalham é fundamental para contê-los e removê-los.
+
+
+		- Spyware: Projetado para rastrear e espionar você, o spyware monitora sua atividade on-line e pode registrar todas as teclas que você pressiona no 			teclado, bem como capturar quase todos os dados, incluindo informações pessoais confidenciais, como detalhes bancários online. O spyware faz 			isso modificando as configurações de segurança dos dispositivos. Muitas vezes, o spyware se junta ao software legítimo ou a cavalos de Troia.
+
+		- Adware: O adware é frequentemente instalado com algumas versões de software e é projetado para fornecer anúncios automaticamente a um usuário, na 			maioria das vezes em um navegador da Web. Você sabe quando vê! É difícil ignorar quando você se depara com anúncios pop-up constantes na tela.É 			comum o adware vir com spyware.
+
+		- Backdoor: Esse tipo de malware é usado para obter acesso não autorizado, ignorando os procedimentos normais de autenticação para acessar um sistema. 			Como resultado, os hackers podem obter acesso remoto a recursos em uma aplicação e emitir comandos de sistema remoto. Um backdoor funciona em 			segundo plano e é difícil de detectar.
+
+		- Ransomware: Malware projetado para manter um sistema de computador, ou os dados incluídos nele, presos até que o pagamento seja feito. O ransomware 			geralmente funciona criptografando os dados para que você não possa acessá-los. Algumas versões de ransomware podem tirar proveito de 				vulnerabilidades específicas do sistema para bloqueá-lo. O ransomware é frequentemente disseminado por e-mails de phishing que o incentivam a 			baixar um anexo mal-intencionado ou uma vulnerabilidade de software.
+
+		- Scareware: Este é um tipo de malware que usa táticas de "medo" para induzi-lo a tomar uma ação específica. O Scareware consiste principalmente em 			janelas com estilo de sistema operacional que aparecem para alertar que seu sistema está em risco e precisa executar um programa específico 			para que ele retorne à operação normal. Se você concordar em executar o programa específico, seu sistema será infectado por malware.
+
+		- Rootkit: Esse malware foi projetado para modificar o sistema operacional para criar um backdoor, que os invasores podem usar para acessar seu 			computador remotamente. A maioria dos rootkits utiliza as vulnerabilidades do software para escalonar privilégios e modificar arquivos de 			sistema. Também é comum os rootkits modificarem a computação forense do sistema e as ferramentas de monitoramento, o que os torna muito 			difíceis de ser detectados. Na maioria dos casos, um computador infectado por um rootkit precisa ser apagado e qualquer software necessário 			reinstalado.
+		
+		- Virus: Um vírus é um tipo de programa de computador que, quando executado, se replica e se anexa a outros arquivos executáveis, como um documento, ao 			inserir seu próprio código. A maioria dos vírus necessita de ativação do usuário final e pode ser ativada em uma hora ou data específica. Os 			vírus podem ser relativamente inofensivos, como aqueles que exibem uma imagem divertida. Ou podem ser destrutivos, como os que modificam ou 			excluem dados. Os vírus também podem ser programados para se modificar e evitar a detecção. Agora, a maioria dos vírus é espalhada por unidades 			de USB, discos ópticos, compartilhamentos de rede  ou e-mail.
+
+		- Cavalo de troia: Esse malware realiza operações mal-intencionadas mascarando sua verdadeira intenção. Pode parecer legítimo, mas é, de fato, muito 			perigoso. Os cavalos de troia exploram os privilégios de usuário e são encontrados com mais frequência em arquivos de imagem, arquivos de áudio 			ou jogos. Ao contrário dos vírus, os cavalos de troia não se replicam automaticamente, mas agem como um engodo para enganar o software mal-			intencionado e passar por usuários desavisados.
+
+		- Worms: Esse é um tipo de malware que se replica para se espalhar de um computador para outro. Ao contrário de um vírus, que requer um programa host 			para ser executado, os worms podem ser executados por si próprios. Além da infecção inicial do host, eles não exigem a participação do usuário 			e podem se espalhar rapidamente pela rede. Os worms compartilham padrões semelhantes: eles exploram vulnerabilidades do sistema, têm uma 			maneira de se propagar e contêm código mal-intencionado (payload) para causar danos a redes ou sistemas de computador. Os worms são 				responsáveis por alguns dos ataques mais devastadores na Internet. Em 19 horas, o worm infectou mais de 300.000 servidores em 2001.
+
+	2.1.2 Sintomas de Malware
+		Independentemente do tipo de malware com o qual um sistema foi infectado, existem alguns sintomas comuns a serem observados. Entre eles estão:
+
+			- Um aumento no uso da unidade de processamento central (CPU), o que torna o dispositivo mais lento
+			- O computador congela ou trava frequentemente
+			- Há uma diminuição na velocidade de navegação na Web.
+			- Existem problemas inexplicáveis com conexões de rede.
+			- Arquivos modificados ou excluídos
+			- Há presença de arquivos, programas ou ícones de desktop desconhecidos.
+			- Processos ou serviços desconhecidos em execução
+			- Programas estão se desligando ou reconfigurando sozinhos.
+			- E-mails estão sendo enviados sem o conhecimento ou consentimento do usuário.
+
+2.2 Métodos de infiltração
+		
+	2.2.1 Engenharia social
+		Engenharia social – manipulação do indivíduo para executar ações ou divulgar informações confidenciais Os engenheiros sociais frequentemente dependem 		da boa vontade das pessoas para ajuda, mas também miram nos pontos fracos. Por exemplo, um invasor ligará para um funcionário autorizado com um 		problema urgente que exija acesso imediato à rede e apelará para a vaidade, ganância ou invocação de autoridade do funcionário usando técnicas de 		remoção  de nome para obter esse acesso.
+
+
+		- Pretexting: Isso ocorre quando um invasor liga para um indivíduo e mente para ele na tentativa de obter acesso a dados privilegiados. Por exemplo, 			fingir que precisa dos dados pessoais ou financeiros de uma pessoa para confirmar sua identidade.
+
+		- Tailgating: Isso ocorre quando um invasor segue rapidamente uma pessoa autorizada até um local físico seguro.
+
+		- Algo por algo (Quid pro quo): É quando um hacker solicita informações pessoais de uma pessoa em troca de algo, como um brinde gratuito.
+
+
+	2.2.2 Negação de Serviço
+		Os ataques de negação de serviço (DoS) são um tipo de ataque de rede que é relativamente simples de realizar, mesmo por um invasor não qualificado. Um 		ataque de negação de serviço (DoS) resulta em algum tipo de interrupção de serviço aos usuários, dispositivos ou aplicações.
+
+			- Quantidade Esmagadora de Tráfego: Quando uma rede, host ou aplicativo recebe uma enorme quantidade de dados a uma taxa que não consegue 				processar. Isso causa uma desaceleração na transmissão ou resposta ou uma falha em um dispositivo ou serviço.
+
+			- Pacotes Maliciosamente Formatados: Um pacote é uma coleta de dados que flui entre uma fonte e um computador receptor ou aplicativo através de 				uma rede, como a Internet. Quando um pacote formatado de forma mal-intencionada é enviado, o receptor não será capaz de tratá-lo. Por 				exemplo, um invasor encaminha pacotes com erros que não podem ser identificados pelo aplicativo ou encaminha pacotes formatados 				incorretamente.
+
+
+	2.2.3 DoS Distribuída
+		Um ataque de negação de serviço distribuída (DDoS) é semelhante a um  ataque de negação de serviço (DoS), mas é proveniente de várias fontes 			coordenadas. Por exemplo:
+
+			1) Um invasor cria uma rede (botnet) de hosts infectados chamados zumbis, que são controlados por sistemas de tratamento.
+			2) Os computadores zumbis examinam e infectam constantemente mais hosts, criando mais zumbis.
+			3) Quando está pronto, o hacker instrui os sistemas controlador para fazer com que o botnet de zumbis execute um ataque de negação de serviço 				distribuído (DDoS).
+
+
+
+	2.2.4 Botnet
+		Um computador bot normalmente é infectado por visitar um site, abrir um anexo de e-mail ou abrir um arquivo de mídia infectado. Uma botnet é um grupo 		de robôs (bots), conectados pela Internet, com a capacidade de ser controlado por um indivíduo ou grupo mal-intencionado. Ela pode ter dezenas de 		milhares, ou até centenas de milhares, de bots que normalmente são controlados por meio de um servidor de comando e controle. Esses robôs podem ser 		ativados para distribuir malware, lançar ataques de DDoS, distribuir e-mail de spam ou executar ataques de senha de força bruta. Os cibercriminosos 		freqüentemente alugam botnets para terceiros para fins nefastos. Muitas empresas. como a Cisco, força as atividades de rede por meio de filtros de 		tráfego de botnet para identificar qualquer local de botnet.
+
+
+
+	2.2.5 Ataques On-Path
+		Os invasores no caminho interceptam ou modificam as comunicações entre dois dispositivos, como um navegador e um servidor da Web, para coletar 			informações ou se passar por um dos dispositivos. Esse tipo de ataque também é chamado de ataque homem no meio ou homem no celular.
+
+			- Um ataque de MitM acontece quando um criminoso digital assume o controle de um dispositivo sem o conhecimento do usuário. Com esse nível de 				acesso, o invasor pode interceptar e capturar informações do usuário antes de transmiti-las ao seu destino desejado. Esses tipos de 				ataques costumam ser usados para roubar informações financeiras. Existem muitos tipos de malware que possuem recursos de ataque de 				MitM.
+
+			- Uma variação do man-in-middle, MitMo é um tipo de ataque usado para assumir o controle do dispositivo móvel de um usuário. Quando infectado, 				o dispositivo móvel é instruído a capturar informações confidenciais do usuário e enviá-las aos invasores. O ZeuS é um exemplo de 				pacote de malware com recursos MitMo. Ele permite que os invasores capturem silenciosamente as mensagens SMS de verificação de duas 				etapas enviadas aos usuários.
+
+
+
+	2.2.6 SEO Poisoning
+		Mecanismos de pesquisa como o Google funcionam apresentando uma lista de páginas da Web para usuários com base em suas consultas de pesquisa. Essas 		páginas da Web são classificadas de acordo com a relevância de seu conteúdo. Embora muitas empresas legítimas se especializem em otimizar sites para 		melhor posicioná-los, os invasores tiram proveito de termos de pesquisa populares e usam o SEO para empurrar sites maliciosos para posições mais altas 		nos resultados de pesquisa. Esta técnica é chamada de envenenamento de SEO. O objetivo mais comum do envenenamento de SEO é aumentar o tráfego para 		sites maliciosos que podem hospedar malware ou tentar engenharia social.
+
+
+
+	2.2.8 Ataques de senha
+
+		- Password spraying: Essa técnica tenta obter acesso a um sistema ao “pulverizar” algumas senhas usadas com frequência em um grande número de contas. 			Por exemplo, um criminoso digital usa 'Password123' com muitos nomes de usuário antes de tentar novamente com uma segunda senha comumente 			usada, como 'qwerty'.Essa técnica permite que o criminoso não seja detectado ao evitar bloqueios de conta frequentes.
+
+		- Ataque de dicionario: Um hacker tenta sistematicamente cada palavra de um dicionário ou uma lista de palavras usadas com frequência como senha, na 			tentativa de invadir uma conta protegida por senha.
+
+		- Forca bruta: A forma mais simples e mais usada de obter acesso a um site protegido por senha, os ataques de força bruta veem um invasor usando todas 			as combinações possíveis de letras, números e símbolos no espaço de senha até acertar.
+
+		- Arco-íris: As senhas em um sistema de computador não são armazenadas como texto sem formatação, mas como valores de hash (valores numéricos que 			identificam exclusivamente  os dados). Uma tabela do arco-íris é um grande dicionário de hashes pré-computados e as senhas das quais eles foram 			calculados. Ao contrário de um ataque de força bruta que precisa calcular cada hash, um ataque do arco-íris compara o hash de uma senha com os 			armazenados na tabela do arco-íris. Quando um invasor encontra uma correspondência, ele identifica a senha usada para criar o hash.
+
+		-Interceptacão de tráfego: Texto sem formatação ou senhas sem criptografia podem ser facilmente lidas por outras pessoas e máquinas interceptando 			comunicações. Se você armazenar uma senha em texto claro e legível, qualquer pessoa que tenha acesso à sua conta ou dispositivo, autorizado ou 			não autorizado, poderá lê-la.
+
+
+	2.2.10 Ameaças persistentes avançadas
+		Advanced Persistent Threat (APT) – uma operação multi-fase, longo prazo, furtiva e avançada contra um alvo específico. Por essas razões, um invasor 		geralmente não tem o conjunto de habilidades, os recursos ou a persistência para realizar APTs. Devido à complexidade e ao nível de habilidade 			necessários para realizar esse ataque, um APT geralmente é bem financiado e normalmente tem como alvo organizações ou nações por motivos comerciais ou 		políticos. Seu principal objetivo é implantar malware personalizado em um ou mais sistemas do alvo e permanecer lá sem ser detectado.
+
+
+2.3 Exploits e vulnerabilidade de segurança
+
+	2.3.1 Vulnerabilidades de Hardware
+		Vulnerabilidades de hardware são frequentemente introduzidas por falhas de projeto de hardware. Por exemplo, o tipo de memória chamado RAM  consiste 		basicamente em muitos capacitores (um componente que pode conter uma carga elétrica) instalados muito próximos um do outro. No entanto, logo foi 		descoberto que, devido à sua proximidade, as mudanças aplicadas a um desses capacitores poderiam influenciar os capacitores vizinhos. Com base nessa 		falha, foi criado um exploit chamado Rowhammer. Ao acessar (martelar) repetidamente uma linha de memória, a exploração do Rowhammer aciona 			interferências elétricas que eventualmente corrompem  os dados armazenados na RAM.As vulnerabilidades de hardware são específicas para modelos do 		dispositivo e geralmente não são exploradas por tentativas comprometedoras aleatórias. Embora as explorações de hardware sejam mais comuns em ataques 		altamente direcionados, a proteção contra malware tradicional e uma boa segurança física são proteção suficiente para o usuário comum.
+
+		Meltdown e Spectre:
+			Os pesquisadores de segurança do Google descobriram Meltdown e Spectre, duas vulnerabilidades de hardware que afetam quase todas as unidades de 			processamento central (CPUs) lançadas desde 1995 em desktops, laptops, servidores, smartphones,  dispositivos inteligentes e serviços em nuvem.
+			Os invasores que exploram essas vulnerabilidades podem ler toda a memória de um determinado sistema (Meltdown), bem como os dados manipulados 			por outras aplicações (Spectre). As explorações de vulnerabilidade Meltdown e Spectre são conhecidas como ataques de canal lateral (as 				informações são obtidas com a implementação de um sistema de computador). Eles têm a capacidade de comprometer grandes quantidades de dados de 			memória, porque os ataques podem ser executados várias vezes em um sistema com muito pouca possibilidade de uma falha ou outro erro.
+
+	2.3.2 Vulnerabilidades de Software
+		A vulnerabilidade SYNful Knock permitiu que os invasores ganhassem o controle de roteadores de nível empresarial, como os roteadores Cisco ISR antigos, 		dos quais poderiam monitorar toda a comunicação de rede e infectar outros dispositivos de rede. Tal vulnerabilidade foi introduzida no sistema quando 		uma versão alterada do IOS foi instalada nos roteadores. Para evitar isso, sempre verifique a integridade da imagem do IOS baixada e limite o acesso 		físico do equipamento somente ao pessoal autorizado.
+
+	2.3.3 Categorizando as vulnerabilidades de software
+
+		- Estouro de Buffer: Os buffers são áreas de memórias alocadas a um aplicativo. Uma vulnerabilidade ocorre quando os dados são gravados além dos 			limites de um buffer. Ao alterar os dados além dos limites de um buffer, o aplicativo pode acessar a memória alocada para outros processos. 			Isso pode levar a uma falha do sistema ou  comprometimento de dados ou fornecer escalonamento de privilégios.
+
+		- Entrada nao validada: Os programas geralmente exigem entrada de dados, mas esses dados recebidos podem ter conteúdo malicioso, projetado para forçar 			o programa a se comportar de maneira não intencional. Por exemplo, considere um programa que recebe uma imagem para processamento. Um usuário 			mal-intencionado pode criar um arquivo de imagem com dimensões de imagem inválidas. As dimensões criadas de forma mal-intencionada podem forçar 			o programa a alocar buffers de tamanhos incorretos e inesperados.
+
+		- Condicao de corrida: Esta vulnerabilidade descreve uma situação em que a saída de um evento depende de saídas ordenadas ou cronometradas. Uma 			condição de corrida se torna uma fonte de vulnerabilidade quando os eventos ordenados ou cronometrados necessários não ocorrem na ordem correta 			ou na sincronização apropriada.
+
+		- Fragilidade nas praticas de seguranca: Sistemas e dados confidenciais podem ser protegidos por meio de técnicas como autenticação, autorização e 			criptografia. Os desenvolvedores devem manter o uso de técnicas de segurança e bibliotecas que já foram criadas, testadas e verificadas e não 			devem tentar criar seus próprios algoritmos de segurança. É provável que elas introduzam novas vulnerabilidades.
+
+		- Probelams de controle de acesso: O controle de acesso é o processo de controlar quem faz o quê e abrange desde o gerenciamento do acesso físico ao 			equipamento até ditar quem tem acesso a um recurso, como um arquivo, e o que pode ser feito com ele, como ler ou alterar o arquivo. Muitas 			vulnerabilidades de segurança são criadas com o uso indevido de controles de acesso. Quase todos os controles de acesso e as práticas de 			segurança poderão ser superados se o invasor tiver acesso físico ao equipamento de destino. Por exemplo, não importa as configurações de 			permissão em um arquivo, um hacker pode ignorar o sistema operacional e ler os dados diretamente do disco. Para proteger a máquina e os dados 			 que ela contém, o acesso físico deve ser restrito e as técnicas de criptografia devem ser usadas para proteger dados contra roubo ou danos.
+
+2.4 O Cenário da Cibersegurança
+
+	2.4.1 Criptomoeda
+		Os proprietários de moedas criptografadas guardam seu dinheiro em “carteiras” virtuais e criptografadas. Quando uma transação ocorre entre os 			proprietários de duas carteiras digitais, os detalhes são registrados em um sistema de contabilidade descentralizado de contabilidade ou blockchain. 		Isso significa que é realizado com certo grau de anonimato e é autogerenciado, sem interferência de terceiros , como bancos centrais ou entidades 		governamentais. 
+		Aproximadamente a cada dez minutos, computadores especiais coletam dados sobre as últimas transações de criptomoeda, transformando-os em quebra-cabeças 		matemáticos para manter a confidencialidade. Essas transações são então verificadas através de um processo técnico e altamente complexo conhecido como 		“mineração”. Essa etapa normalmente envolve um exército de “mineradores” trabalhando em PCs avançados para resolver quebra-cabeças matemáticos e 		autenticar transações.
+		Uma vez verificado, o razão é atualizado e copiado e disseminado eletronicamente em todo o mundo para qualquer pessoa que pertence à rede blockchain, 		concluindo com eficiência uma transação.
+
+	2.4.2 Cryptojacking
+		O cryptojacking é uma ameaça emergente que se esconde no computador, telefone celular, tablet, laptop ou servidor do usuário, usando os recursos dessa 		máquina para "extrair" moedas criptografadas sem o consentimento ou conhecimento do usuário. Muitas vítimas de cryptojacking nem sabiam que tinham sido 		invadidas até que fosse tarde demais!
+
+
+
+3.1 Protegendo Seus Dispositivos e a Rede
+
+	3.1.2 Proteger seus dispositivos de computação
+
+		- Ative o firewall: Você deve usar pelo menos um tipo de firewall (firewall de software ou de hardware em um roteador) para proteger seu dispositivo 			contra acesso não autorizado. O firewall deve estar ativado e atualizado constantemente para impedir que hackers acessem seus dados pessoais ou 			da empresa.
+
+		- Instalar antivirus e antispyware: Os softwares mal-intencionados, como vírus e spyware, são projetados para obter acesso não autorizado ao computador 			e aos dados. Uma vez instalado, os vírus podem destruir os dados e tornar seu computador mais lento. Eles podem até assumir o controle do 			computador e transmitir e-mails de spam usando a conta. O spyware pode monitorar suas atividades on-line, coletar informações pessoais ou 			produzir anúncios pop-up indesejados no navegador da Web, enquanto você estiver on-line. Para evitar isso, você só deve baixar software de 			sites confiáveis. No entanto, você sempre deve usar um software antivírus para fornecer outra camada de proteção. Este software, que geralmente 			inclui antispyware, foi projetado para verificar a presença de vírus em seu computador e nos e-mails recebidos e excluí-los. Manter seu 			software atualizado protegerá seu computador de qualquer novo software malicioso que surgir.
+
+		- Gerencie seu sistema operacional e navegador: Os hackers estão sempre tentando aproveitar as vulnerabilidades que podem existir no sistema 				operacional (como o Microsoft Windows ou macOS) ou no navegador da Web (como o Google Chrome ou o Apple Safari). Portanto, para proteger seu 			computador e seus dados, você deve definir as configurações de segurança em seu computador e navegador para nível médio ou superior. Você 			também deve atualizar regularmente o sistema operacional do seu computador, incluindo o navegador da web, e baixar e instalar os patches de 			software e atualizações de segurança mais recentes dos fornecedores.
+
+		- Configurar protecao por senha: Todos os seus dispositivos de computação, incluindo PCs, laptops, tablets e smartphones, devem ser protegidos por 			senha para evitar acesso não autorizado. Qualquer informação armazenada, especialmente dados sensíveis ou confidenciais, deve ser 				criptografada. Você só deve armazenar as informações necessárias em seu dispositivo móvel, para o caso de ser roubado ou perdido. Lembre-se, se 			algum de seus dispositivos for comprometido, os criminosos podem acessar todos os seus dados por meio de seu provedor de serviços de 				armazenamento em nuvem, como iCloud ou Google Drive.
+
+
+	3.1.3 Segurança de rede sem fio em casa
+		As redes sem fio permitem que dispositivos habilitados para Wi-Fi, como laptops e tablets, se conectem à rede por meio de um identificador de rede 		predefinido, conhecido como identificador de conjunto de serviço (SSID). Embora um roteador sem fio possa ser configurado para não transmitir o SSID, 		isso não deve ser considerado segurança adequada para uma rede sem fio. Os hackers estarão cientes do SSID predefinido e da senha padrão. Portanto, 		esses detalhes devem ser alterados para evitar que invasores entrem na rede sem fio doméstica. Além disso, você deve criptografar a comunicação sem fio 		habilitando a segurança wireless e o recurso de criptografia WPA2 em seu roteador sem fio. Mas esteja ciente de que, mesmo com a criptografia WPA2 		habilitada, uma rede sem fio ainda pode ser vulnerável.
+	
+		Esta vulnerabilidade pode ser explorada por ataques de reinstalação de chave (KRACKs) por invasores. Em termos simples, os invasores interrompem a 		criptografia entre um roteador wireless e um dispositivo sem fio, dando-lhes acesso aos dados da rede. Ela afeta todas as redes WiFi modernas e 		protegidas. Para mitigar essa situação, você deve:
+
+			- Atualizar todos os dispositivos sem fio, como roteadores, laptops e dispositivos móveis, assim que as atualizações de segurança estiverem 				disponíveis
+			- Usar uma conexão com fio para todos os dispositivos com uma placa de interface de rede com fio (NIC)
+			- Use um serviço confiável de rede virtual privada (VPN) ao acessar uma rede sem fio.
+
+
+	3.1.8 Diretrizes de Senha
+		O Instituto Nacional de Padrões e Tecnologia (NIST) dos Estados Unidos publicou requisitos de senha aprimorados. Os padrões do NIST destinam-se a 		aplicações governamentais, mas também podem servir de padrão para outros setores. Essas diretrizes visam atribuir a responsabilidade de verificação de 		usuário aos provedores de serviços e garantir uma experiência melhor para os usuários em geral. Eles afirmam:
+
+			- As senhas devem ter no mínimo oito caracteres, mas não mais que 64 caracteres.
+			- Senhas comuns e facilmente adivinhadas, como ‘senha’ ou ‘abc123’ não devem ser usadas.
+			- Não deve haver regras de composição, como ter que incluir letras maiúsculas e minúsculas e números.
+			- Os usuários devem poder ver a senha ao digitar, para ajudar a melhorar a precisão.
+			- Todos os caracteres e espaços devem ser permitidos.
+			- Não deve haver dicas de senha.
+			- Não deve haver período de expiração de senha.
+			- Não deve haver autenticação baseada em conhecimento, como fornecer respostas a perguntas secretas ou verificar o histórico de transações.
+
+
+	3.3.2 Compreensão dos termos
+		Os Termos de Serviço incluirão várias seções, desde direitos e responsabilidades do usuário a isenções de responsabilidade e termos de modificação de 		conta.
+
+			- Politica de uso de dados: A política de uso de dados descreve como o provedor de serviços coletará, usará e compartilhará seus dados.
+
+			- Configuracoes de privacidade: As configurações de privacidade permitem controlar quem vê informações sobre você e quem pode acessar seus 				dados de perfil ou de conta.
+
+			- Politica de seguranca: A política de segurança descreve o que a empresa está fazendo para proteger os dados obtidos de você.
+			
+
+
+	3.3.6 Antes de se inscrever
+
+		Você já leu os Termos de Serviço?
+		Quais são os seus direitos em relação aos seus dados?
+		Você pode solicitar uma cópia de seus dados?
+		O que o provedor pode fazer com os dados dos quais você fez upload?
+		O que acontece com seus dados depois que você fecha sua conta?
+
+
+
+3.4 Como proteger a privacidade on-line
+
+	3.4.1 Autenticação de dois fatores
+		Além de seu nome de usuário e senha ou número de identificação pessoal (PIN), a autenticação de dois fatores requer um segundo token para verificar sua 		identidade. Pode ser:
+
+			- Objeto físico, como um cartão de crédito, telefone celular ou fob (chave de segurança)
+			- Varredura biométrica, como impressão digital ou reconhecimento facial e de voz
+			- Código de verificação enviado por SMS ou e-mail.
+
+	3.4.2 Autorização Aberta
+		Autorização Aberta (OAuth) é um protocolo padrão aberto que permite que você use suas credenciais para acessar aplicativos de terceiros sem expor sua 		senha. Você não consegue se lembrar dos detalhes de login, mas tudo bem. O portal oferece a opção de fazer login usando suas credenciais em um site de 		mídia social como o Facebook ou através de outra conta como o Google.
+
+
+
+
+
+
+
+
+
+4.1 Dispositivos e Tecnologias de Cibersegurança
+
+
+
+
+
+
+	4.1.1 Dispositivos de segurança
+		Os dispositivos de segurança podem ser dispositivos independentes, como um roteador ou ferramentas de software que são executados em um dispositivo de 		rede. Eles se enquadram em seis categorias gerais.
+
+			- Roteadores: Embora os roteadores sejam usados principalmente para interconectar vários segmentos de rede, eles geralmente também oferecem 				recursos básicos de filtragem de tráfego. Essas informações podem ajudá-lo a definir quais computadores de um determinado segmento de 				rede podem se comunicar com quais segmentos de rede.
+		
+			- Firewalls: Os firewalls podem analisar melhor o tráfego de rede e identificar comportamentos mal-intencionados que precisam ser bloqueados. 				Os firewalls podem ter políticas de segurança sofisticadas aplicadas ao tráfego que passa por eles.
+
+			- Sistemas de prevenção de invasão: Os sistemas IPS usam um conjunto de assinaturas de tráfego que correspondem e bloqueiam tráfego e ataques 				mal-intencionados.
+
+			- Redes Privadas Virtuais (VPN): Os sistemas de VPN permitem que os funcionários remotos usem um túnel criptografado seguro em seus 					computadores móveis e se conectem com segurança à rede da empresa. Os sistemas de VPN também podem interconectar com segurança filiais 				com a rede da central.
+
+			- Antivírus e Antimalware: Esses sistemas usam assinaturas ou análises comportamentais das aplicações para identificar e bloquear a execução de 				códigos mal-intencionados.
+
+			- Outros dispositivos de segurança: Outros dispositivos de segurança incluem dispositivos de segurança para web e e-mail, dispositivos de 				descriptografia, servidores de controle de acesso de clientes e sistemas de gerenciamento de segurança.
+
+
+	4.1.3 Firewalls
+		Em redes de computadores, um firewall é projetado para controlar ou filtrar quais comunicações são permitidas dentro e quais são permitidas fora de um 		dispositivo ou rede. Um firewall pode ser instalado em um único computador com o objetivo de proteger aquele computador (firewall baseado em host) ou 		pode ser um dispositivo de rede autônomo que protege uma rede inteira de computadores e todos os dispositivos host nessa rede (firewall baseado em 		rede).
+
+			- Firewall de camada de rede: Isso filtra as comunicações com base nos endereços IP de origem e destino.
+
+			- Firewall de camada de transporte: Filtra as comunicações com base nas portas de dados de origem e destino, bem como nos estados de conexão.
+
+			- Firewall de camada de aplicacao: Filtra as comunicações de acordo com um aplicativo, programa ou serviço.
+
+			- Firewall sensivel ao contexto (Context-aware): Filtra as comunicações com base no usuário, dispositivo, função, tipo de aplicativo e perfil 				de ameaça.
+			- Servidor proxy: Filtra solicitações de conteúdo da Web, como URLs, nomes de domínio e tipos de mídia.
+
+			- Servidor proxy reverso: Colocados na frente de servidores web, os servidores proxy reversos protegem, ocultam, descarregam e distribuem o 				acesso aos servidores web.
+			- Network address translation (NAT) firewall: Este firewall oculta ou mascara os endereços privados dos hosts da rede.
+
+			- Firewall baseado em host: Filtra portas e chamadas de serviço do sistema em um único sistema operacional de computador.
+
+
+	4.1.7 Sistemas de detecção e prevenção de intrusos.
+		Sistemas de detecção de intrusão (IDSs) e sistemas de prevenção de intrusão (IPSs) são medidas de segurança implantadas em uma rede para detectar e 		prevenir atividades maliciosas.
+
+		- IDS: Um IDS pode ser um dispositivo de rede dedicado ou uma das várias ferramentas em um servidor, firewall ou até mesmo um sistema operacional de 			computador host, como Windows ou Linux, que faz a varredura de dados em um banco de dados de regras ou assinaturas de ataque, em busca de 			tráfego malicioso. Se uma correspondência for detectada, o IDS registrará a detecção de registro e criará um alerta para um administrador de 			rede. Ela não tomará nenhuma ação e, portanto, não impedirá que os ataques aconteçam. O trabalho do IDS é detectar, registrar e relatar. A 			varredura realizada pelo IDS deixa a rede mais lenta (conhecido como latência). Para se prevenir o atraso de rede, um IDS é geralmente colocado 			off-line, separado do tráfego de rede regular. Dados são copiados ou espelhados por um switch e então encaminhados para o IDS para a detecção 			off-line.
+	
+		- IPS: Um IPS pode bloquear ou negar tráfego com base em uma regra positiva ou correspondência de assinatura. Um dos sistemas mais conhecidos de 			IPS/IDS é o Snort. A versão comercial do Snort é o Sourcefire da Cisco. A Sourcefire pode realizar análise de tráfego e porta em tempo real, 			registro, pesquisa e correspondência de conteúdo, bem como detectar sondas, ataques e executar varreduras de porta. Ele também se integra com 			outras ferramentas de terceiros para relatórios, desempenho e análise de log.
+
+
+4.2 Abordagem comportamental à segurança cibernética
+
+	4.2.2. NetFlow
+		A tecnologia NetFlow é usada para coletar informações sobre os dados que fluem através de uma rede, incluindo quem e quais dispositivos estão na rede, 		e quando e como os usuários e dispositivos acessam a rede. O NetFlow é um componente importante na análise e detecção baseada em comportamento. 		Switches, roteadores e firewalls equipados com NetFlow podem relatar informações sobre a entrada, saída e passagem de dados pela rede. Essas 			informações são enviadas para coletores do NetFlow que coletam, armazenam e analisam dados do NetFlow, que podem ser usados para estabelecer 			comportamentos de linha de base em mais de 90 atributos, como endereço IP de origem e destino.
+
+	4.2.3 Teste de penetração
+		O teste de penetração, conhecido como pen testing, é o ato de avaliar um sistema de computador, uma rede ou uma empresa em busca de vulnerabilidades de 		segurança. Um pen test procura violar sistemas, pessoas, processos e códigos para descobrir vulnerabilidades que podem ser exploradas. Essas 			informações são usadas para melhorar as defesas do sistema e garantir que ele possa suportar ataques cibernéticos no futuro.
+
+			- PLanejamento: O pen tester coleta o máximo de informações possível sobre um sistema ou rede de destino, suas vulnerabilidades e exploits 				potenciais para usar contra ele. Isso envolve a realização de pesquisas de vulnerabilidade e reconhecimento passivo ou ativo 					(footprinting).
+
+
+			- Varredura: O pen tester realiza o reconhecimento ativo para investigar um sistema ou rede de destino e identificar possíveis pontos fracos 				que, se explorados, podem dar acesso ao invasor. O reconhecimento ativo pode incluir:
+
+				-- Varredura de porta para identificar possíveis pontos de acesso em um sistema de destino
+				-- verificação de vulnerabilidades para identificar possíveis vulnerabilidades exploráveis de um determinado alvo
+				-- Estabelecer uma conexão ativa com um destino (enumeração) para identificar a conta de usuário, de sistema e de administrador.
+		
+			- Obter acesso: O pen tester tentará obter acesso a um sistema de destino e detectar o tráfego de rede, usando vários métodos para explorar o 				sistema, incluindo:
+
+				-- Lançar um exploit com um payload no sistema
+				-- Violar barreiras físicas a ativos
+				-- Engenharia social
+				-- Explorando vulnerabilidades de sites
+				-- Explorando vulnerabilidades ou configurações incorretas de software e hardware
+				-- Violar a segurança dos controles de acesso
+				-- Quebrar Wi-Fi com criptografia fraca.
+
+			- Manter o acesso: O pen tester manterá o acesso ao alvo para descobrir quais dados e sistemas estão vulneráveis à exploração. É importante que 				não sejam detectados, normalmente usando backdoors, cavalos de Troia, rootkits e outros canais encobertos para ocultar sua presença. 				Quando essa infraestrutura estiver em vigor, o pen tester prosseguirá para coletar os dados que eles consideram valiosos.
+			
+			- Analise e geracao de relatorio: O pen tester fornecerá feedback por meio de um relatório que recomenda atualizações de produtos, políticas e 				treinamento para melhorar a segurança de uma empresa.
+		
+
+
+4.3 Abordagem da Cisco para Cibersegurança
+
+	4.3.3 – Ferramentas para prevenção e detecção de incidentes
+		Estas são algumas das ferramentas usadas para detectar e prevenir incidentes de segurança:
+
+			- Um sistema Security Information and Event Management (SIEM) coleta e analisa alertas de segurança, logs e outros dados históricos e em tempo 				real de dispositivos de segurança na rede para facilitar a detecção precoce de ataques cibernéticos.
+			
+			- Um sistema de Data Loss Prevention (DLP) é projetado para impedir que dados confidenciais sejam roubados ou escapem de uma rede. Ele monitora 				e protege os dados em três estados diferentes: dados em uso (dados sendo acessados por um usuário), dados em movimento (dados que 				viajam pela rede) e dados inativos (dados armazenados em uma rede ou dispositivo de computador).
+
+
+
+
+
+
+
+	
+
+
+
+a

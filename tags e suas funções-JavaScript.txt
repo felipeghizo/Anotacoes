@@ -1,0 +1,1951 @@
+-----IMPORTANTE-----
+	a ordem dos fatores altera o produto final.
+
+	Erros aparecer o no console.
+
+	usar ; no fim.
+
+	+ serve como concatenador.
+
+	"\n" quebra a linha.
+
+	+	 						// Concatenar (JS n o possui interpola  o).
+
+	"bla ${var}"						// Com template string fica mais simples que concatena  o.
+	
+	/* */							// Comentario em bloco.
+	
+	//							// Coment rio em linha.
+
+	<script scr="script.js"></script>			// Importa o arquivo de JavaScript para o index.html
+
+	el_body.html("<div class=\"box1\">Minha box</div>");	// \" significa que a string n o foi fechada.
+
+
+MODO DE USO:
+
+<html>
+<head>
+	<title> vai senta na cabe a </title>
+	<meta charset="utf-8"/>	
+	<script>
+			console.log("Ola, Mundo!");		/// aparece ola mundo quando olhar no console (bagulho do criador la)
+	</script>
+</head>
+<body>
+	<h1> Ol , Mundo! </h1>
+</body>
+</html>
+
+	
+--------------------
+-----RECURSOS DE ESCRITA-----
+
+
+	<script> e </script>:						// Tudo que estiver dentro dessas tags sera cosiderado como comandos JavaScript.
+
+	console.log("mensagem");						// Escreve uma mensagem no console.
+
+	console.table(objeto);						// Cria uma tabela com os atributos do objeto.
+
+	alert("mensagem");							// Uma alerta ira aparecer com a mensagem passada.
+
+	confirm("mensagem");							// Um bot o confirma ira aparecer junto da mensagem.
+
+	prompt("mensagem");							// Uma text  rea ira aparecer junto da mensagem em um alerta.
+
+	document.writeln("mensagem");					// Ira escrever uma mensagem como um print e ira quebrar a linha.
+
+	document.write("<h2> Olá, hoje é dia ${Date()} </h2>");	// Mostra a data do computador.
+
+	document.getElementById("id").innerHTML = "Olá mundo";		// Altera aquilo que existe dentro do elemento selecionado. Para acrensentar algo use: el.innerHTML = el.innerHTML + "mensagem nova".
+
+	():									// Tudo que estiver entre () sao parametros. (note que 'arquivo'   uma variavel).
+		por exemplo: function bla (tipo){
+				if ( tipo == 1){
+					arquivo = "_imagem/lampada-apagada.jpg";
+				}
+				if (tipo == 2){ 
+					arquivo = "_imagem/lampada-acesa.jpg";
+				}
+				document.getElementById("luz"). src = arquivo;
+
+	{}:								// tudo que estiver entre {} sao codigos.
+
+		
+-----STRINGS:
+
+	-- CONCATENAC O:
+	
+		var nome, idade, nota
+		nome = "Felipe"
+		idade = 20
+		nota = 8.2
+
+		"O aluno " + nome + " de " + idade + " anos tirou" + nota 
+		`O aluno ${nome} de ${anos} anos tirou ${nota}`
+
+	-- Fun  es:
+		
+		1) split("x") -> Separa os elementos de uma string na posi  o x e adiciona as partes resultantes em um array.
+
+			var email = "felipe@gmail.com";
+			email.split("@");		// out: ["felipe", "gmail.com"]. 
+
+		2) substr(x, y) -> Retrona y car cteres a partir do  ndice x.
+
+			var email = "felipe ghizoni";
+			email.substr(2, 7);		// out: "lipe g". 
+
+		3) length -> Retorna a quantidade de elementos dentro da string.
+
+			let txt = "ABCDEF";
+			let length = txt.length;	// out: 6.
+
+		4) slice(x, y) -> Corta uma string come ando em x e indo at  y (y n o incluso / Valores negativos funcionam {substring() trata valores negativos como zero}).
+
+			let str = "Cenourinha";
+			let part = str.slice(0, 7);	// out: Cenouri.
+			let part = str.slice(-3, -1);	// out: nh.
+
+		5) replace(x, y) -> Troca x por y.
+
+			let text = "A be   minha amiga!";
+			let newText = text.replace("amiga", "namorada");	// out: A be   minha namorada!
+
+		6) toUpperCase() -> Converte a string para mai sculo.
+
+			let text1 = "Hello World!";
+			let text2 = text1.toUpperCase();	// out: HELLO WORLD!
+
+		7) toLowerCase() -> Converte a string para min sculo.
+
+			let text1 = "Hello World!";       
+			let text2 = text1.toLowerCase();	// out: hello world!
+
+		8) concat(x, y) -> Atrav s do car ctere passado em x ira concatenar com y.
+
+			let text1 = "Eu te amo";
+			let text2 = "Be!";
+			let text3 = text1.concat(" ", text2);	// out: Eu te amo Be!
+			let text3 = text1 + " " + text2;
+
+		9) trim() -> Remove todos os espa os desnecess rios (espa os > 1 viram 1) tanto no in cio como no meio e no final da string.
+
+			let text1 = "      Cenourinha     e      Moranguinho      ";
+			let text2 = text1.trim();	// out: "Cenourinha e Moranguinho".
+
+		10) he trimStart() -> Remove todos os espa os desnecess rios (espa os > 1 viram 1) no in cio da string.
+
+			let text1 = "      Cenourinha     e      Moranguinho      ";
+			let text2 = text1.trim();	// out: "Cenourinha e Moranguinho    ".	
+
+		11) The trimEnd()-> Remove todos os espa os desnecess rios (espa os > 1 viram 1) no final da string.
+
+			let text1 = "      Cenourinha     e      Moranguinho      ";
+			let text2 = text1.trim();	// out: "      Cenourinha e Moranguinho".	
+
+		12) padStart(x, y) -> Adiciona o valor de y no in cio da string at  que length da string seja >= x (Caso length > x n o acontece nada).
+
+			let text = "Eu te amo";
+			let padded = text.padStart(13,"mto");	// out: "mto Eu te amo".
+
+		13) The padEnd(x, y) -> Adiciona o valor de y no final da string at  que length da string seja >= x (Caso length > x n o acontece nada).
+
+			let text = "Eu te amo ";
+			let padded = text.padStart(18,"mto ");	// out: "Eu te amo mto mto".
+
+		14) charAt(x) -> Retorna o valor do elemento no index x.
+
+			let text = "Eu te amo Be";
+			let char = text.charAt(10);	// out: B
+
+		15) charCodeAt() -> Retorna o valor UTF-16 do elemento no index x.
+
+			let text = "Eu te amo Be";
+			let char = text.charAt(10);	// out: 66
+
+-----VARIAVEIS
+	
+	----- VAR, LET E CONTS:
+
+		const = "Felipe";		// Valor não pode ser alteardo, é constante.
+
+		let = "Maria";		// Variável é usada apenas dentro da estrutura em que se apresenta, como uma estrutura de condição, dessa forma ocupa menos espaço na memória.
+
+		var = "Soso";			// Variável normal.
+
+	----- DECLARA  O DE VARIAVEIS
+		/* 
+		O JavaScript possui algumas regras diderentes de declara  o de variaveis em rela ao a outras linguagens:
+		1) Pode come ar com letra, $ ou _.
+		2) N o pode come ar com n meros.
+		3)   possiv l usar letras, numeros, acentos e s mbolos.
+		4) N o pode conter espa os e n o pode ser uma palavra reservada.
+		*/
+ 			
+		var nome = "Felipe"
+
+		ou
+
+		var nome
+		nome = "felipe"
+
+		// Ao invés de var pode ser usado o let.
+
+		var nome = `
+		isso 
+
+		permite
+
+		qubrar 
+
+		a
+
+		linha
+		`
+
+	----- TIPOS DE VARIAVEIS
+		
+		/* 
+		Para descobrir o tipo de variav l usa-se o typeof:
+		var nome = "Felipe"
+		typeof nome 	// Retorna string.
+		*/
+
+		STR:		var String = "bla";
+
+		NUMBER:		var Int = 10; var double = 10.1;
+
+		BOOLEAM: 	var booleam = false/true;
+
+		ARRAY:		var nome = []/{};
+
+		OBJETO:		var animal = {}/[];
+
+	----- CONVERSãO:	
+		
+		STRING -> NUMBER:
+
+			var n1 = Number.parseInt(window.prompt("Numero 1: "))		// Converte para int.
+ 			ou
+			var n2 = Number.parseFloat(window.prompt("Numero 2: "))		// Converte para float.
+			ou 
+			var n3 = Number(window.prompt("Numero 3: "))			// Converte para os dois.	
+		
+		NUMBER -> STRING:
+		
+			var n1 = 28
+	
+			String(n1)
+			ou
+			n1.toString()	
+		
+		// O prompt retorna conteudo do elemento em forma de string.
+	
+
+	----- ARRAY:
+		
+		Definindo um array:
+			let num = []
+		
+		Acrescentando elementos ao array:
+			num.push(x)
+
+		Extenss o do Array:
+			num.length
+
+		Organizando o array:
+			num.sort()
+		
+		Buscano um valor no array:
+			num.indexOf(x)
+
+		Removendo valores:
+		
+			-> num.shift()		Remove o primeiro elemnto.
+			-> num.pop()		Remove o  ltimo elemento.
+			-> num.splice(x, y)	Remove o elemento da posi  o x at  x+y. 
+
+		Juntando valores:
+	
+			num.join("")		O valor entre as "" ser  alocado entre os valores da lista.
+
+	----- OBJETO:
+
+		var animal = {};
+		
+		var amigos = {nome:"jose", sexo:"M", idade:20, engordar(){}}
+	
+		animal.nome = "dog";
+		animal.peso = "24kg";
+		animal.idade = 23;
+
+		ou
+	
+		animal['nome'] = "dog";	
+		animal['peso'] = "24kg";
+		animal['idade'] = 23;	
+	
+		ou
+
+		animal.nome = {};
+
+		animal.nome[0] = "felipe";
+		animal.nome[1] = "guilherme";
+
+	----- FUNC ES DE VARIAVEIS:	
+
+		1) n.length:
+			// Retorna o comprimento da variavel.
+			EX:
+			
+			var nome = "Felipe"
+			nome.length	//6.
+
+		2) s.toUpperCase():
+			// Transforma minu culas em mai sculas.
+
+
+		3) s.toLowerCase():
+			// Transforma todas as mai sculas em min sculas.
+
+		4) n.toFixed(x):
+			// Arredonda n meros flutuantes em x casas.
+			EX:
+
+			var num = 28.5
+			num.toFixed(2)	// Retorna 28.50
+
+		5) s.replace('.', ','):
+			// troca todos os pontos por v rgulas.
+			EX:
+
+			var num = 28.5
+			num.toFixed(2).replace('.', ',')	// Retorna 28,50
+
+		6) n1.toLocaleString():
+			// localiza uma forma de string como por exemplo o real.
+			EX:
+
+			var num = 1545.5
+			num.toFixed(2).replace('.', ',')
+			num.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) 	// Retorna R$ 1,545.50
+			num.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'}) 	// Retorna US$ 1,545.50
+
+
+----- OPERADORES:
+
+	----- OPERADORES ARITIM TICOS:
+
+		+	->	Soma.
+		-	->	Subtra  o.
+		*	->	Multiplica  o.
+		/	-> 	Divis o
+		%	->	M dulo (resto da divis o).
+		**	-> 	Elevado.
+	
+		/*
+		Todos s o v lidos:
+		n +=
+		n ++
+		n --
+		n -=
+		n *=
+		n /=
+		n %=
+		n **=
+		 */
+
+	----- OPERADORES RELACIONAIS:
+	
+		>	->	Maior que.
+		<	->	Menor que.
+		>=	->	Maior ou igual.
+		<=	->	Menor ou igual.
+		==	->	Igual.
+		===	->	Identico.
+		!=	->	Diferente.
+
+
+	----- OPERADORES L GICOS:
+
+		!	->	Nega  o (NOT).
+		&&	->	Conjun  o (AND).
+		||	->	Disjun  o (OR).
+
+	----- OPERADOR TREN RIO:
+		
+		// Usado em estruturas de condi  es
+		teste ? True : False
+
+	----- PRECEDENCIA:
+		() -> ** -> (*, /, %) -> (+, -) -> (>, <, >=, <=, ==, ===, !=) -> ! -> && -> ||
+
+
+----- ESTRUTURA CONDICIONAL:
+
+	SIMPLES:
+	
+		if(condi  o){
+			True
+		} else {
+			False
+		}
+ 	
+	ANINHADA: 
+		
+		if(condi  o_1){
+			True
+		} else {
+			if(condi  o_2){
+				True
+			} else {
+				False
+			}
+			False
+		}
+
+	COMPOSTA:
+	
+		if(condi  o_1){
+			x = y
+		} else if (condi  o_2) {
+			x = z
+		} else (condi  o_3){
+			x = w
+		}
+
+	M LTIPLA:
+		
+		var variavel = \\ 0 ou 1 ou 2 ou 3 ou x
+
+		switch (variavel){
+		
+			case 1:
+				...
+				break
+
+			case 2:
+				...
+				break
+			
+			case 3:
+				...
+				break
+
+			...
+
+			case x:
+				...
+				break
+		
+			default:
+	
+		}
+
+
+----- ESTRUTURAS DE REPETI  O:
+	
+	----- while:
+		
+		-> Teste l gico no in cio:
+
+			while (condi  o){
+			...
+			}
+
+			var i = 0
+			while (i <= 5){
+				console.log(i)
+			}
+
+		-> Teste l gico no fim (do):
+			
+			do{
+			...
+			} while (condi  o)
+		
+			var i = 0
+			do{
+				console.log(i)
+			} while (i <= 5)
+
+	----- for:
+
+		for(inicio; teste; incremento){
+		...
+		}
+
+		for(var i = 0; i <= 5; I++){
+			console.log(i)
+		}
+
+	----- foreach:
+
+		for(let num in pos){
+			console.log(num[pos])
+		}
+
+	--- Break e Continue
+		
+		Break: Quebra o la o de repeti  o.
+
+		Continue: Pula para o pr ximo passo do la o de repeti  o ignorando aquilo que viria a seguir.
+
+		for(var i = 0; i <= 6; i++){	// Out -> 0, 1, 3.
+			if (i == 2){
+				continue;
+			}
+			if (i == 4){
+				break;
+			}
+			console.log(i);
+		}
+		
+----- FUNÇÕES
+	----- Declarac o:
+		
+		function bla(){
+			//código
+		}
+
+		function teste(executaAlgo){
+			executaAlgo();
+		}
+		teste(()=>{					//Arrow function.
+			console.log("Ola mundo!");
+		});
+
+		->EX HTML:	
+					
+			<div id="area" onclick="clicar()">
+				Interaja...
+			</div
+			<script>
+				function clicar(){
+					var a = window.document.getElementById("area")
+					a.innerText = "Voce clicou em mim!"
+				}
+			</scritp>
+
+		->EX OBJETO:	
+	
+			objeto.fun  o_do_objeto = function(){
+				c digo a ser executado
+			}
+
+		->EX VARIAVEL:
+		
+			var v = function(x){
+				return x*2
+			}
+
+	----- Passagem de parametros:
+		
+		var nome1 = "Fiorentin"
+		var nome2 = "Ghizoni"
+	
+		function ola (name1="fulano", name2="ciclano"){
+			window.alert("Ola ${name1} e ${name2}")
+		}
+	
+		ola(nome1, nome2)
+
+		var peso = 85.4
+
+		function engordar(p=0){
+			this.peso += p		# Referencia ao objeto.
+		}
+
+	----- Retorno:
+		
+		function parimp (num){
+			if (num % 2 == 0){
+				return "par"
+			} else {
+				return "impar"
+			}
+		}
+
+	----- Promise:
+	
+		function teste(){
+			return new Promise(function(resolve, reject)){
+				const erro = false;
+				if erro{
+					resolve("A promise foi resolvida com sucesso");
+				}else{
+					reject("ERRO!");
+				}
+			}
+		}	
+		
+		teste().then(function(res){		# .then é um método de Promise e caso erro for false executa a função.
+			alert(res);				# out = "A promise foi resolvida com sucesso".
+		}).cath(function(err){			# .catch é um método de Promise e caso erro for true executa a função.
+			alert(err);				# out = "ERRO!".
+		})	
+	
+	----- async:
+	
+		function teste(){
+			setTimeout(function(){
+				alert("ok");
+			}, 2000)
+		}
+
+		async function teste2(){
+			await teste();		# Espera a execução de teste para continuar.
+			alert("ok2");
+		}
+
+
+	1) addEventListener():
+		// Sua func o   executar alguma outra func o quando ocorrer um deterjado evento.
+		EX:	
+		
+			<div id="area"">
+				Interaja...
+			</div
+			<script>
+				var a = window.document.getElementById("area")
+				a.addEventListener("area", clicar)
+		 
+				function clicar(){
+					a.innerText = "Voce clicou em mim!"
+				}
+			</scritp>
+
+----- POO:
+
+	--- INSTANCIANDO UM OBJETO:
+
+		var pessoa1 = new Pessoa("felipe", 21, 75);	// Funções podem ser passadas como atributo.
+
+	--- CLASSE INIT:
+		
+		class Pessoa{
+			function Pessoa(nome, idade, peso){
+				this.nome = nome;
+				this.idade = idade;
+				this.peso = peso;
+			
+			}
+		}
+
+	--- MÉTODOS:
+	
+		class Pessoa{
+			function Pessoa(nome, idade, peso){
+				this.nome = nome;
+				this.idade = idade;
+				this.peso = peso;
+			
+			}
+
+			getNome(){
+				return thid.nome;
+			}
+		}
+		
+
+----- HTML:
+
+	1) createElement:
+		// Cria o elemento html:
+		var img = document.createElement('img')
+
+	2) setAtrribute:
+		// Define o valor dos atributos do elemento criado:
+		img.setAttribute("id", "foto")
+		img.setAttribute("src", "foto-bebe.png")
+
+	----- DOM (Document Object Model):
+	
+		--- getEelement:	
+		// Seleciona o elemento do html.
+		// Utiliza os mesmos métodos de seleção do CSS.
+		
+		1) TAGNAME:	
+		document.getElementsByTagName("Nome da tag")[0];		// Pega a primeira tag com aquele nome.
+
+		2) ID:
+		document.getElementById("id do elemento");			// Pega o elemento e oq for colocado dps acontecera com tal elemento.
+	
+		3) NAME:
+		document.getElementsByName("Nome do elemento")[0];		// Pega o primeiro elemento que possua aquele nome.
+
+		4 ) CLASS:
+		document.getElementsByClassName("nome da classe")[0];		// Pega o primeiro elemento daquela classe.
+
+		5) SELETOR (MAIS PRÁTICO):
+		document.querySelector("div.msg");					// Seleciona apenas a primeira div da classe "msg" que aparece no documento HTML.
+		document.querySelectorAll("div.msg");				// Seleciona todas as divs da classe "msg".
+
+		EX:	
+			
+			<imput type="number" name="n1">
+			<script>
+				var tn1 = document.querySelector("div#n1");
+				var num1 = Number(tn1.value);			// Para pegar apenas o valor do elemnto é necessário o .value.
+			</script>
+	
+	--- EVENTOS:
+
+		<img scr="" onclick="nome da function ()"/>:		// Quando o objeto for clicado a ação function irá acontecer.
+
+		<img scr="" onmousemove="nome da function ()"/>:	// Quando o mouse passar por cima do objeto a ação function será acionada.
+
+		<img scr="" onmouseout="nome da function ()"/>:		// Quando o mouse sair de cima do objeto a ação function será acionada.
+
+		<img scr="" onchange="nome da function ()"/>:		// Quando o elemonto sofrer alguma alteração a ação function será acionada.
+		
+		<img scr="" onkeydown="nome da function ()"/>:		// Quando o usuário precionar a tecla down a ação function será acionada.
+
+		<img scr="" onload="nome da function ()"/>:		// Quando o elemento for carregado a ação function será acionada.
+
+	--- SECTION E LOCAL STORAGE:
+	// O usuário pode fechar a aba do site que tais informações não serão perdidas.
+
+		window.onload(){
+			if(typeof(Storage) !== "undefined"){
+				console.log("Navegador compatível com storage!");
+				initialize();
+			}else{
+				console.log("Navegador não é compatível com storage!");
+			}
+		}
+
+		function initialize(){
+			if(sessionStorage.getitem("nome") !== null){
+				alert("Olá " + sessionStorage.nome + "! Seja muito bem vindo(a) de volta!);
+			}else{
+				alert("Seja muito bem vindo(a) nessa sua primeira visita ao nosso site!");
+				sessionStorage.nome = "nome do usuário";
+			}
+		}
+
+	--- NOTIFICAÇÕES:	
+		
+		<sript src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
+		<script type="text/javascript">
+			if(Push.Permission.get() != "granted"){
+				Push.Permission.request();
+			}
+			if(Push.Permission.get() == "granted"){
+				Push.create("Olá, aqui é da Nome_do_site!", {
+					body: "Conteúdo da notificação",
+					icon: "icone.png",
+					timeout: 3000,
+					vibrate: [100, 100, 100],
+					onClick: function(){
+						window.location.href="url do site";
+					}
+				});
+			}
+		</script>
+	
+----- CSS:
+
+	É possivel fazer diversas alterações no estilo da página através do javascript. O método mais amigavel é utilizando o JQUERY, porém apenas com javascript tbm é possivel.
+
+	var el = document.getElementByid("box");
+	
+	--- STYLE:
+		
+		DIMENSÔES:
+
+		el.style.height = "100px";		// Altura da box.		
+		el.style.width = "100%"; 		// Largura da box.
+
+		ESPAÇAMENTOS:
+
+		el.style.magrin = "100px 10px 100px 10px";	// MarginTop = 100px / MarginRight = 10px / MarginBottom = 100px  / MarginLeft = 10px.
+		el.style.margin = "100px 15px";			// MarginTop = 100px e MarginBottom = 100px  / MarginRight = 15px e MarginLeft = 15px.
+		el.style.marginTop = "100px";			// MarginTop = 100px.		
+		el.style.marginRight = "101px"; 			// MarginRight = 101px.
+		el.style.marginBottom = "102px";			// MarginBottom = 102px.		
+		el.style.marginLeft = "103px"; 			// MarginLeft = 103px.
+		
+		el.style.padding = "100px 10px 100px 10px";	// PaddingTop = 100px / PaddingRight = 10px / PaddingBottom = 100px  / PaddingLeft = 10px.
+		el.style.padding = "100px 15px";			// PaddingTop = 100px e PaddingBottom = 100px  / PaddingRight = 15px e PaddingLeft = 15px.			
+		el.style.paddingTop = "100px";			// PaddingTop = 100px.		
+		el.style.paddingRight = "100%"; 			// PaddingRight = 101px.
+		el.style.paddingBottom = "100px";			// PaddingBottom = 102px.		
+		el.style.paddingLeft = "100%"; 			// PaddingLeft = 103px.
+
+		
+		CORES:
+
+		el.style.color = "red";		// Cor de texto.		
+		el.style.background = "blue"; 	// Cor de fundo.
+
+		TEXTOS:
+
+		el.style.cssText =
+    			'color: blue;' +
+   			'background-color: yellow;' +
+    			'border: 1px solid magenta';
+	
+
+(NODE)--->
+
+	Criando um projeto:
+		[] pasta / ()  arquivo / -> comandos no cmd
+
+		Cria a pasta [projeto_node]
+		
+		[projeto_node] - (app.js):
+			const express = require("express");
+			const app = express();
+
+			app.listen("3000", ()=>{			# Porta (geralmente é a 80) e callback (função executada após o inicio do servidor)(()=>{} === function(){}).  
+				console.log("Servidor on!");
+			})
+	
+  		cmd cd pasta criada:
+			-> npm init -> entry point: (index.js) app.js		# Isso deve criar o arquivo "Package.json".
+			-> npm install express						# Instala o express.
+			-> npm install -g nodemon					# Responsável por atualizar o servidor sem precisar reinicia-lo.
+			-> npm install mysql
+			-> npm install ejs
+			-> npm install body-parser
+			-> nodemon app.js							# Inicia o servidor através do nodemon, dessa forma o arquivo app.js é atualizado automaticamente sem a necessidade de reiniciar o servidor.
+			-> node app.js							# Inicia o servidor.
+			-> Ctrl + c								# Desliga o servidor.
+
+
+		
+
+	laço de repetição:
+
+	1) setInterval(function() => {}, 1000)	// Roda a fun  o a cada segundo.
+		EX:
+			setInterval(() => {
+
+				const { Console } = require('console')
+				const os = require('os')
+				const { freemem, totalmem} = os
+
+
+				const total = parseInt(totalmem() / 1024 / 1024)
+				const mem = parseInt(freemem() / 1024 / 1024)
+				const percents = parseInt((mem / total) * 100)
+
+
+
+				const stats = {
+					free: `${mem} MB`,
+				    	total: `${total} MB`,
+				 	usage: `${percents} %`
+				}
+
+				console.log("===== MEMORY STATS =====")
+				console.table(stats)
+				console.log("========================")
+	
+			}, 1000)	// Roda a fun  o a cada segundo.
+
+
+(CANVAS)--->
+
+	--- GRÁFICOS COM CANVAS:	https://www.chartjs.org/docs/latest/
+		
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 400px;">
+      <canvas id="myChart"></canvas>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('myChart').getContext("2d");
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor:[
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)"
+          ],
+          borderColor: [
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+            "rgba(255, 159, 64, 1)"
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+        });
+  </script>
+
+</body>
+</html>
+
+
+(JQUERY)--->
+
+	Principal car cteristica: c digo come a com $.
+
+	Exemplo de usos:
+	
+		$(function(){
+			alert("Ol ! Mundo.");
+		});
+	
+		ou
+
+		$(document).ready(function(){
+			alert("Ol ! Mundo.");
+		});		
+	
+	Modo de uso em html:
+	...
+	</body>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>	// Fonte do c digo de jquery,   possivel baixar para tornar menos pesado em https://jquery.com/download/
+	<script type="text/javascript" src="js/function.js"></script>		
+	
+	----- Vari veis:
+		
+		Igual JS, serve para n o ter que instanciar o mesmo objeto varias vezes:
+		
+		$(function(){
+			
+			var el_body = $("body");
+			var el_class = $(".class");
+			var el_id = $("#id");
+
+			el_body.css("height", "100px").css("width", "100px").css("background-color", "black");
+			el_class.css("padding-top", "50px").css("padding-bottom", "50px");
+			el_id.css("background-color","black").css("color","white");
+		});
+		
+
+	Eventos:
+	
+		1) preventDefault():
+		
+		Faz com que a fun  o do item n o ocorra.
+	
+		$(function(){
+			$("a").click(function(e){
+				e.preventDefault();		// Ao clicar no link nada acontece.
+				return false;			// Tbm funciona.
+			});
+		});
+	
+	Fun  es:
+	
+	1).css()->
+	
+	Manipulando css:
+	
+		$(function(){
+			$("body").css("height", "100px").css("width", "100px").css("background-color", "black");
+			$("#id").css("background-color","black").css("color","white");
+			$(".class").css("padding-top", "50px").css("padding-bottom", "50px");
+		});
+
+
+	2)setTimeout()->	// Primeiro parametro   a fun  o e o segundo   o tempo de sleep em milesimos por segundo para a fun  o ser executada.
+
+	Funciona como um sleep:
+	clierTimeout() -> Cancela o setTimeout().
+
+		$(function(){
+			setTimeout(function(){
+				$("body").css("height", "100px")
+			}, 2000)
+		});
+
+	3) click() e on()-> 		
+	
+	Quando o usu rio clicar no elemento dispara a fun  o:
+		
+		on():
+		$(function(){
+    			$("body").on("click", "a", function(){		// Quando houver um clique em <a> dispara a fun  o.
+				alert("Ola mundo");
+			});	
+		});
+
+		click:
+		$(function(){
+    			$("body").click(function(){
+        			var cor = 160;
+        			$("body").css("background-color","rgb("+(cor)+","+(cor)+","+(cor)+")");
+        			console.log($("body").css("color"));
+    			});
+		});
+
+	3) hover() -> 		// Primerio parametro   acionado quando o mouse estiver sobre o elemento e o segundo parametro   acionado quando o mouse sair.
+	
+	Quando o usu rio passar o mouse por cima do elemento dispara a fun  o:
+
+		$(function(){
+    			$("body").hover(function(){
+        			$("body").css("background-color","black");
+    			}, function(){
+        			$("body").css("background-color","white");
+    			});
+		});
+
+	4) focus() ->
+	
+	Quando o usu rio estiver focado em um elemento, isto  , interagindo com algum elemento (ex. escrever dentro de uma textarea), dispara a fun  o:
+
+		$(function(){
+			$("textarea").focus(function(){
+        			$("textarea").css("background-color","#ccc");
+    			});
+		});
+
+	5) blur() ->
+
+	Quando o usu rio sair do foco em um elemento, isto  , parar de interagir com algum elemento (ex. clicar fora de uma textarea logo ap s interagir com ela), dispara a fun  o:
+
+		$(function(){
+    			$("textarea").blur(function(){
+        			$("textarea").css("background-color","white");
+    			});
+		});
+
+	6) change()->
+	
+	Quando algum valor for alterado pelo usu rio, como algum select por exemplo, dispara a fun  o:
+
+		$(function(){
+    			$("select").change(function(){
+        			console.log("Select alterado");
+    			});
+		});
+
+	7) scroll()->
+	
+	Serve para detectar os movimentos do scroll:
+
+		$(function(){
+    			$(window).scroll(function(){
+        			console.log("Scroll ativo!");
+    			});
+		});
+
+	8) resize()->
+	
+	Quando a tela for rediencionada algo dispara a fun  o:
+
+		$(function(){
+    			$(window).resize(function(){
+        			console.log("A tela esta sendo redimencionada!");
+    			});
+		});
+
+	9) width() e height()->
+	
+	Nos retorna o width de algum elemento (PADDING INFLUENCIA) ou podemos alterar a largura de algum elemento:
+
+	Width:
+		$(function_retornando(){
+        		return $(window).width();	// Caso o haja padding = 20px e a largura seja de 900px, retorna 860.
+		});
+
+		$(function_alterando(){	
+        		$(window).width("500");		// Usar .css   muito melhor devido ao pedding.
+		});
+
+	Height:
+		$(function_retornando(){
+        		return $(window).height();	// Caso o haja padding = 20px e a altura seja de 900px, retorna 860.
+		});
+
+		$(function_alterando(){	
+        		$(window).height("500");	// Usar .css   muito melhor devido ao pedding.
+		});
+	
+	9.1) innerWidth() ou innerHeight() ->
+	
+	Retorna o width/height real do objeto, considerando o padding:
+	
+		$(function_retornando(){
+      			return $(window).innerWidth();		// Caso o haja padding = 20px e a largura seja de 900px, retorna 900.
+		});
+
+	9.2) outerHeight()->
+	
+	Retorna o width/height real do objeto, considerando o padding, border e margin:
+		
+		$(function_retornando(){
+      			return $(window).outerHeight(true);	// Caso o haja padding = 20px, border = 5px, margin = 100px e a altura seja de 900px, retorna 1150.
+		});
+
+	10) html()->
+
+	Permite reescrever elementos no html:
+
+		$(function(){
+			var el_body = $(body);
+      			el_body.html('<div class="box1">Minha box</div>');
+		});
+
+	10.1) Adicionando elementos no html atrav s da fun  o .html():
+
+		$(function(){
+			var el = $('#box');
+    			var mt = "ola mundo";
+
+	    		el.html("<div class=\"teste\">"+mt+"</div>");
+    			el.html(el.html() + '<h1> Meu texto via js </h1>');
+		});
+
+	11) append() e appendTo() ou prepend() e prependTo() ou after() e insertAfter() ou before() insertBefore()->
+
+	Permide adicionar elementos ao html.
+	
+		append():
+		$(function(){
+			var el = $('.box');
+    			var mt1 = "Ola mundo";
+			var mt2 = "Essa   a segunda box";
+
+	    		el.eq(0).append("<p>"+mt1+"</p>");	// Adiciona "Ola mundo" ao primeiro elemento que for da classe .box.
+			el.eq(1).append("<p>"+mt2+"</p>");	// Adiciona "Essa   a segunda box" ao segundo elemento que for da classe .box.
+		});
+
+		appendTo():	// Permite manipular o css dos novos elementos.
+		$(function(){
+			var mt1 = "Ola mundo";
+			var el = $("<p>"+mt1+"</p>").appendTo($('.box'));
+
+	    		el.css("color", "red");
+		});
+
+		after():	// Permite adicionar um elemento diretamente ap s outro elemento.
+		$(function(){
+			var mt1 = "Ola mundo";
+			var el = $('.box');
+			
+			el.after("<p>"+mt1+"</p>");
+
+		});
+
+		before():	// Permite adicionar um elemento antes de outro elemento.
+		$(function(){
+			var mt1 = "Ola mundo";
+			var el = $('.box');
+			
+			el.before("<p>"+mt1+"</p>");
+
+		});
+
+	12) remove()->
+
+	Remove o elemento selecionado:
+
+		$(function(){
+			var el = $('.box');
+			el.eq(1).remove();
+		});
+
+	13) text()->
+
+	Retorna o texto de algum elemento ou adiciona texto no html mesmo que esse texto estejam em forma de outros elementos.
+	Para formularios usar .val() ao inv s de .text().
+		$(function_Return(){
+			var el = $('#box');
+	    		el.text();		// out: Aquilo que estiver dentro de #box.
+		});
+
+		$(function_Add(){
+			var el = $('#box');
+    			var mt = "ola mundo";
+
+	    		el.text("<div class=\"teste\">"+mt+"</div>");	// out: <div class=\"teste\">"+mt+"</div>
+		});
+	
+	14) keyup() e keydown()->
+	
+		keyup => Quando solta alguma tecla dispara a fun  o:
+
+			var func = function(){
+				$(this).css("background-color", "#ccc");
+			}
+
+			$("input[name=name_pessoa]").keyup(func);
+
+		keydown => Quando preciona alguma tecla dispara a fun  o:
+
+			var func = function(){
+				$(this).css("background-color", "#ccc");
+			}
+
+			$("input[name=name_pessoa]").keydown(func);
+
+	15) index()->
+
+		Retorna a posi  o do elemento.
+	
+		var el = $('.box');
+    			el.append("<input type=\"text\"></input>");
+			el.append("<input type=\"text\"></input>");
+			el.append("<input type=\"text\"></input>");
+			el.append("<input type=\"text\"></input>");
+	
+		var func = function(){
+			console.log($(this).index());
+		}
+
+	16) submit() ->
+
+	Quando o usu rio ativar o submit dispara a fun  o:
+
+		$(function(){
+			$(".form_contato").submit(function(){
+				return false;			// Impede que o site att.
+			});
+		});
+
+	17) val() ->
+	
+	Retorna o valor de algum input.
+
+		$(function(){
+			console.log($(".container input[type=email]").val());	// Retorna o email passado.
+		});
+
+	18) fadeOut(x, y) e fadeIn(x, y) -> x   o tempo para sumir/aparecer em mil simos de segundo e y   o que acontece ap s sumir/aparecer.
+	
+	Anima  o que faz sumir.	
+
+		$(function(){
+			$(".box1").fadeOut(2000, function(){
+				$(".box2").fadeIn(3000, function(){
+					console.log("A anima  o acabou!");
+				});
+			});
+		});
+
+	19) slideToggle(x, y) -> x   o tempo para deslizar em mil simos de segundo e y   o que acontece ap s sumir/aparecer.
+
+	Faz a box deslizar para baixo.
+
+		$(function(){
+			$(".box1").click(function(){
+				$(".box2").slideToggle(4000, function(){
+					console.log("Box 2 deslizou!");
+				});
+			});
+		});
+
+	20) animate({x}, y, z) -> x => as coisas que ir o mudar (Nem todos par metros s o iguais ao css!!!) / y => o tempo em milisegundos / z => o que acontece quando acaba.
+
+	Permite criar anima  es.
+
+		$(function(){
+			$(".box1").animate({"width": "40%", "height": "500px", "marginLeft": "10px", "paddingTop": "40px"}, 2000, function(){
+				console.log("A anima  o terminou!");
+			});
+		});
+
+	21) setInterval(x, y) -> Ap s y mil segundos acontece x.
+
+	Finciona como um setTimeout em looping.
+	clearInterval() -> Cancela o looping.
+
+		$(function(){
+			var timer;
+			timer = setInterval(function(){
+				alert("+ 1 ciclo!");
+			});
+		});		
+
+	22) addClass(x) e removeClass(x) -> x => Nome da classe.
+
+	Adiciona uma nova classe ao elemento ou exclui uma j  existente.
+		
+		add:
+		$(function(){
+			$(".box").addClass("box1");
+		});
+
+		remove:
+		$(function(){
+			$(".box").removeClass("box1");
+		});
+
+	23) find(x) -> x Reprsenta o nome do elemento a ser encontrado.
+
+	Encontra um elemento.
+		
+		$(function(){
+			$("body").find("box1").css("color", "red");
+		});
+
+	24) attr(x, y) -> x => Nome do atributo / y => Novo valor do atributo se desejado.
+
+	Serve para manipular/retornar atributos.
+		
+		$(function(){
+			console.log($("div").eq(2).attr("class"));	// out: "box".
+		});
+
+	25) clone() ->
+	
+	Clona o elemento desejado.
+
+		$(function(){
+			var el = $(".box p").clone();
+			$("box2").html(el.html());
+		});
+
+	26) match(/x/) -> x => Especifica  es do que se deseja econtrar.
+
+	Utiliza express es regulares para encontrar termos em strings.
+
+	 	$(function(){
+			var frase = "Eu te amo Be";
+
+			var verifica = frase.match(/Be/);
+		});
+
+		Regras de express es regulares:
+	
+			/x/			Procura por x.
+	
+			/[A-Z]/			Procura qualquer letra de A at  Z em mai sculo.
+			
+			/[0-9]/			Procura qualquer car ctere de 0 at  9 na string.
+		
+			/[A-Za-z0-9]/		Procura qualquer letra de A at  Z em mai sculo, ou qualquer letra de a at  z em min sculo ou qualquer car ctere de 0 at  9 na string.
+
+			/[a-z]{3}/		Procura por pelo menos 3 car cteres de a at  z em min sculo.
+
+			/[A-Z]{2, 8}/		Procura por pelo menos 2 e no m ximo 8 car cteres de A at  Z em mai sculo.
+
+			/^[A-Z]{1}[a-z]{1,}$/	A Primeira letra deve ser mai scula e todas as pr ximas min sculas.
+
+			/^(.*?)x/		Pega tudo desde o in cio at  o x. (^ => Delimitador para o in cio).
+		
+			/x(.*?)$/		Pega tudo que vem depois do x at  o final. ($ => Delimitador para o final).
+
+			/^(.*?)@(.*?)$/		in: felipe@gmail.com / out: var[1] = felipe & var[2] = gmail.com.
+			
+	27) each() ->
+	
+	Cria um looping analizando todos os elementos selecionados.
+
+		$( "li" ).each(function( index ) {
+	  		console.log( index + ": " + $( this ).text() );
+		});
+
+	28) scrollTop() ->
+
+	Retorna a posi  o em que a scrollbar se encontra.
+
+           	var windowOffY = $(window).scrollTop();
+
+	29) offset() ->
+
+	Retorna um objeto contendo as propriedades top e left, ou seja, a posi  o do objeto
+
+		var elOfY = $(this).offset().top;
+
+	30) size ->
+
+	Retorna a quantidade de subelementos dentro do elemento passado.
+
+		var indiceMax = $(".slider img").size;
+
+
+	--- ajax:
+
+		$(function(){
+			$.ajax({
+				"url": "index.html",
+				"method": "post",
+				data:{"nome":"felipe", "idade":"21"}
+			}).done(function(data){
+				console.log(data);
+			});
+		});
+
+		--- Par metros do objeto:
+
+			1) url:
+				URl que o usu rio sera redirecinado.
+
+				$.ajax({
+					"url": "index.html";
+				});
+		
+			2) beforeSend:
+				Antes de enviar a requisi  o execute tal fun  o.
+
+				$.ajax({
+					"beforeSend": function(){};
+				});
+		
+			3) timeout:
+				Tempo limite para execu  o do programa em mil segundos.
+			
+				$.ajax({
+					"timeout": 10000;
+				});
+
+			4) erro:
+				Caso ocorra algum erro execute tal fun  o. 
+
+				$.ajax({
+					"error": function(){};
+				});
+
+			5) succes:
+				Caso n o ocorra nenhum erro execute tal fun  o. 
+
+				$.ajax({
+					"succes": function(){};
+				});	
+
+
+	----- Plugings:
+
+		Chamando:
+
+			<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+			<script type="text/javascript" src="js/Nome_da_Funcao_do_pluging.jquery.js"></script>	
+	
+		--- Criando um plugin:
+			
+			$.fn.Nome_da_Funcao_do_pluging = function(){
+				$(this).css("color", "red");
+	
+			}
+			
+			$.fn.AplicaCor = function(){
+				var settings = $.extend({
+					// Valores default,
+					color: "black";
+					backgroundColor: "white";
+				}, options);
+
+				return this.css(
+					color: settinsg.color;
+					backgroundColor: settings.backgroundColor;
+				);
+	
+			}
+
+		--- Plugins prontos uteis:
+
+		1) Slick -> slides.
+		https://kenwheeler.github.io/slick/
+
+		iCheck -> checkbox
+
+		jQuery File Upload -> upload de arquivos.
+
+		Pickadate.js -> Escolher data
+
+		Chart.js -> Gr ficos
+
+
+(REACT)--->
+
+	----- Atenção -----
+
+	https://reactjs.org/		// Seu melhor amigo.
+
+	// Para inserir React no documento HTML:	
+	<!-- Load React. -->
+ 	<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  	<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+	React interno:
+		<script type="text/babel">
+        		var el = document.getElementById("main");
+        		ReactDOM.render(<h1>Sup</h1>, el);
+    		</script>
+
+	React externo:
+		index.html-->	
+			<script src="js/file.babel" type="text/babel"></scritp>
+		js/file.babel-->
+			var el = document.getElementById("main");
+        		ReactDOM.render(<h1>Sup</h1>, el);
+
+	----------
+
+	----- Classes -----
+
+		class Box extends React.compoent{
+
+			render(){
+				return <h1>Salve bot</h1>
+			}			
+
+		}
+		var el = document.getElementById("main");
+		ReactDOM.render(<Box />, el)
+
+		---> Retorno multiplo:
+			Basta encapsular dentro de outros elementos, tanto no return como no render.
+
+			class Box extends React.compoent{
+
+				render(){
+					return (<form> <input type="text" /><input type="submit" /><h1>Salve bot</h1></form>);
+				}			
+
+			}
+			var el = document.getElementById("main");
+			ReactDOM.render(<div class="principal"><Box /></div>, el)
+
+		---> Métodos:
+
+			class Box extends React.compoent{
+
+				PrimeiroNome(){
+					var nome = "Felipe";
+					return nome;
+				}
+
+				render(){
+					return (<h1>{this.PrimeiroNome()}</h1>);
+				}			
+
+			}
+			var el = document.getElementById("main");
+			ReactDOM.render(<div class="principal"><Box /></div>, el)
+
+		---> props:
+			Funciona como parametros.
+
+			class Box extends React.compoent{
+
+				render(){
+					return (<h1>{this.props.nome}
+						      {this.props.sobrenome}
+							{this.props.children}	//Retrona o conteudo dentro da box "Algum Texto".	
+						</h1>);
+				}			
+
+			}
+			var el = document.getElementById("main");
+			ReactDOM.render(<div class="principal"><Box>Algum Texto</Box><Box nome="Felipe" sobrenome="ghizoni"/><Box nome="Maria" sobrenome="fiorentin"/><Box nome="Sofia" sobrenome="fiorentin ghizoni"/></div>, el)
+
+
+
+		--> JQuery:
+
+			class Box extends React.compoent{
+
+				handleClick(){
+					alert("clicou");
+				}
+
+				render(){
+					return (<div class="principal"><input type="submit" onClick={this.handleClick()}></div>);
+				}			
+
+			}
+			var el = document.getElementById("main");
+			ReactDOM.render(<div class="principal"><Box>Algum Texto</Box></div>, el)
+
+
+	----------
+
+	----- Exemplo -----
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+    			<meta charset="UTF-8">
+    			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    			<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  			<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+			<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    			<title>React JS</title>
+		</head>
+		<body>
+ 			<div id="main"></div>
+
+    			<script type="text/babel">
+        			var el = document.getElementById("main");
+        			ReactDOM.render(<h1>Sup</h1>, el);
+    			</script>
+		</body>
+		</html>
+	----------
+
+--------------------
+
+(ANGULAR)--->
+
+	----- Atenção -----
+
+		https://www.w3schools.com/angular/angular_intro.asp								// Seu melhor amigo para tirar dúvidas.
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>	// Inserir no documento HTML.
+
+		Você pode usar data-ng-, ao invés de ng-, se você quiser fazer uma página HTML valida.
+
+		EX DE CÓDIGO:	
+		<!DOCTYPE html>
+		<html>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+			<body>
+				<div ng-app="">
+  					<p>Name: <input type="text" ng-model="name"></p>
+  					<p ng-bind="name"></p>
+				</div>
+			</body>	
+		</html>
+
+	--------------------
+
+	----- Expressões -----
+		
+		Expressões em angular podem ser escritas com {{expressão}} ou ng-bind="expressão". 
+		Funcionam de uma forma muito parecida com as expressões de JS, podendo conter números, operadores e variáveis.
+		Números, strings, objetos e arrays em angular funcionam exatamente igual a JS.
+		Expressões em angular não suportam condições, loops e exceções.
+	
+		EX:
+			<div ng-app="">
+  				<p>My first expression: {{ 5 + 5 }}</p>
+			</div>
+
+			<div ng-app="" ng-init="myCol='lightblue'">
+				<input style="background-color:{{myCol}}" ng-model="myCol">
+			</div>
+
+		-> Filtros:
+				
+			--currency:
+				Transforma o número para o formato em dinheiros ($99.999,99).
+				EX:
+					<h1>Price: {{ price | currency }}</h1>
+
+			--date:
+				Especifica um formato de data
+				https://docs.angularjs.org/api/ng/filter/date Para algumas possibilidades de formatação.
+
+			--filter:
+				Filtra os elementos solicitados.
+				EX 1:
+					<ul>
+  						<li ng-repeat="x in names | filter : 'i'">	// Mostra apenas as strings que contenham "i".
+    							{{ x }}
+  						</li>
+					</ul>
+			
+				EX 2:		
+					// Conforme o usuário digita carácteres o programa atualiza a lisata para mostrar apenas os possiveis resultados.
+					<div ng-app="myApp" ng-controller="namesCtrl">
+						<p>Type a letter in the input field:</p>
+						<p><input type="text" ng-model="test"></p>
+						<ul>
+							<li ng-repeat="x in names | filter:test">
+    								{{ x }}
+  							</li>
+						</ul>
+					</div>
+
+					<script>
+						angular.module('myApp', []).controller('namesCtrl', function($scope) {
+    							$scope.names = [
+        							'Jani',
+							      'Carl',
+        							'Margareth'
+    							];
+						});
+					</script>
+
+
+			--json:
+				 Format an object to a JSON string.
+
+			--limitTo:
+				Limita uma string ou um array em um valor fixo de carácteres.
+				EX:
+					<p> {{ "Arnold" | limitTo: 4 }} </p>	// out: "Arno".
+
+			--number:
+				Transforma número em string.
+
+			--orderBy:
+				 Orders an array by an expression.
+				 EX:
+					<ul>
+  						<li ng-repeat="x in names | orderBy:'country'">
+    							{{ x.name + ', ' + x.country }}
+  						</li>
+					</ul>
+				
+			--uppercase:
+				Transforma todo o texto para maiúsculo.
+			--lowercase:
+				Transforma todo o texto para minúsculo.
+
+			Modo de uso:
+				<p>{{firstname | uppercase}}</p>
+
+	--------------------
+
+	-> ng-app:
+		ng-app="" ou ng-app		// Serve para iniciar a aplicação com angular.
+
+	-> ng-init:
+		ng-init="bg_cor='red'; cor='black'" 		// Serve para inicializar variaveis em aplicações com angular.
+		EX:
+		<div ng-app="" ng-init="myCol='lightblue'">
+			<input style="background-color:{{myCol}}" ng-model="myCol">
+		</div>
+
+	-> ng-model & ng-bind (são variáveis dinâmicas):
+		ng-model="name"		// Transforma valores HTML de intput para dados da aplicação.
+		ng-bind="name"		// Transforma dados da aplicação em valores HTML
+		EX:
+			<div ng-app="">
+  				<p>Name: <input type="text" ng-model="name"></p>	// Aquilo que o usuário escrever sera armazenado em "name".
+  				<p ng-bind="name"></p>						// Os dados armazenados em "name" são mostrados aqui.
+			</div>
+
+
+
+	----- Controllers -----
+		
+		AngularJS controllers controlam os dados de aplicações em angular.
+		AngularJS controllers são apenas objetos de JavaScript.
+
+		EX:
+			<div ng-app="myApp" ng-controller="myCtrl">
+				First Name: <input type="text" ng-model="firstName"><br>
+				Last Name: <input type="text" ng-model="lastName"><br>
+				<br>
+				Full Name: {{firstName + " " + lastName}}
+			</div>
+			<script>
+				var app = angular.module('myApp', []);	
+				app.controller('myCtrl', function($scope) {
+  					$scope.firstName = "John";
+  					$scope.lastName = "Doe";
+				});
+			</script>
+			
+			The AngularJS application is defined by  ng-app="myApp". The application runs inside the <div>.
+			The ng-controller="myCtrl" attribute is an AngularJS directive. It defines a controller.
+			The myCtrl function is a JavaScript function.
+			AngularJS will invoke the controller with a $scope object.
+			In AngularJS, $scope is the application object (the owner of application variables and functions).
+			The controller creates two properties (variables) in the scope (firstName and lastName).
+			The ng-model directives bind the input fields to the controller properties (firstName and lastName).
+
+			
+	--------------------
+
+	----- HTTP -----
+
+		$http é um forma de ler dados de servidores externos.
+
+		-> Métodos:
+
+			.delete()
+			
+			.get()
+
+			.head()
+
+			.jsonp()
+
+			.patch()
+
+			.post()
+
+			.put()
+
+
+		-> EX:
+		
+			<div ng-app="myApp" ng-controller="myCtrl">
+				<div ng-bind-html="resposta"></div>			// ng-bind-html importante para o $sce.
+			</div>
+		
+			<script>
+				var obj = { method : "GET", url : "welcome.htm"};		// Método de extração de dados e servidor externo alvo.
+				var app = angular.module('myApp', []);
+
+				app.controller('myCtrl', function($scope, $http, $sce) {		// $sce serve para ler os dados obtidos como html.
+  					$http(obj).then(function mySuccess(response) {
+      					$scope.resposta = $sce.trustAsHtml(response.data);	// $sce usado aqui.
+    					}, function myError(response) {
+      					$scope.respsta = response.statusText;
+  					});
+				});
+			</script>
+	--------------------
+
+
+(VUE)--->
+
+	----- Importante -----
+
+		https://v2.vuejs.org/v2/guide/  		// Seu melhor amigo.
+
+		//Inserir no documento HTML:
+		<!-- development version, includes helpful console warnings -->
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+		ou
+
+		<!-- production version, optimized for size and speed -->
+		<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+	--------------------
+
+	----- Condicional -----
+
+		-> v-if:
+	
+			<div id="app-3">
+  				<span v-if="seen">Now you see me</span>
+			</div>
+
+			var app3 = new Vue({
+  				el: '#app-3',
+  				data: {
+    					seen: true
+  				}
+			})
+	--------------------
+
+	----- Loop -----
+	
+		v-for:
+
+			<div id="app-4">
+ 	 			<ol>
+    					<li v-for="todo in todos">
+      					{{ todo.text }}
+    					</li>
+  				</ol>
+			</div>
+
+			var app4 = new Vue({
+  				el: '#app-4',
+  				data: {
+    					todos: [
+      					{ text: 'Learn JavaScript' },
+      					{ text: 'Learn Vue' },
+      					{ text: 'Build something awesome' }
+    					]
+  				}
+			})
+
+	--------------------
+
+	----- Eventos e Métodos -----
+
+		https://v2.vuejs.org/v2/guide/events.html
+
+		v-on:
+
+			<div id="app-5">
+  				<p>{{ message }}</p>
+  				<button v-on:click="reverseMessage">Reverse Message</button>
+			</div>
+
+			var app5 = new Vue({
+  				el: '#app-5',
+  				data: {
+   	 				message: 'Hello Vue.js!'
+  				},
+  				methods: {
+    					reverseMessage: function () {
+      					this.message = this.message.split('').reverse().join('')
+    					}
+  				}
+			})
+
+	--------------------
+
+	----- EX -----
+
+		<div id="tit" v-html="html_message"></div>		// v-html: Serve para transformar os dados passados em HTML.
+		<div id="app" >
+        		{{message}}							// Assim como em Angular a variavel é passada dentro de {{}}
+    		</div>
+
+		<!-- production version, optimized for size and speed -->
+		<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+		<script>
+    			var app = new Vue({
+        			el: '#app',
+        			data: {
+            			message: 'Hello Vue!'
+        			}
+    			});
+    			var tit = new Vue({
+        			el: "#tit",
+        			data: {
+            			html_message: '<h1>Hello Vue!</h1>'
+        			}
+    			});
+		</script>
+
+----------- TYPESCRIPT ----------
+----- IMPORTANTE
+
+	cmd -> tsc arquivo.ts 			// Compila o código.
+	cmd -> tsc arquivo.ts -w		// Compila o código automaticamente.
+
+----- Variaveis
+	// Diferente do javascript, o typescript possue tipagem.
+	
+	var nome: String 				= "Felipe";
+	let idade: int				= 21;
+	let be: number				// int ou float.
+	var peso: float				= 80.5;
+	let namo: boolean 			= True;
+	var arrNomes: string[]			= ["felipe", "maria"];		// Array formado apenas por strings.
+	let variavel: any				= False;				// Pode receber qualuqer tipo.
+
+	function teste(var1:string){}		// Também funciona em parametros.
+
+----- POO
+
+	class pessoa{
+
+		nome:string;
+
+		constructor(nome:string){
+			this.nome = nome;
+		}		
+
+	}
+

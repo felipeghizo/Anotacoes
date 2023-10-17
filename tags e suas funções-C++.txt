@@ -1,0 +1,41 @@
+pau no cu do C++
+
+base:
+
+	#include <iostream>
+
+	using namespace std;
+
+	int main(){
+
+	    cout << "hello world";
+
+		return 0;
+	};
+
+BIBLIOTECAS:
+
+	#include <iostream>
+
+	using namespace std;
+
+FUNÇÃO:
+
+	tipo_que_sera_retornado nome_da_função(){	# void -> nada / int -> inteiro
+
+	
+		return 0;
+	};
+
+OUTPUT:
+
+	cout << "hello world";
+	printf
+
+FORMATAÇÃO:
+
+	cout << "hello world" << endl; ou "hello world \n";		# Quebra de linha.
+
+For:
+	
+	for (i=0; i<TAM; i++){}

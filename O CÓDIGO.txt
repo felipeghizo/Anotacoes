@@ -1,0 +1,20 @@
+l = int(input("Linhas: "))
+c = l
+
+matriz = []
+for i in range(l):
+    matriz.append([])
+    for j in range(c):
+        if i + j < l:
+            if i <= j:
+                matriz[i].append(i)
+            else:
+                matriz[i].append(j)
+        else:
+            if matriz[i-1][j] < matriz[i][j-1]:
+                matriz[i].append(matriz[i-1][j])
+            else:
+                matriz[i].append(matriz[i][j-1])
+
+for i in range(l):
+    print(matriz[i])

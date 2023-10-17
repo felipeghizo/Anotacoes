@@ -1,0 +1,78 @@
+Git 	-> Software de controle de versão (VCS)
+- Repositório local.	
+
+GutHub 	-> Plataforma de rede social para programadores.
+- Repositório remoto.
+
+----- Tags e suas funções-MarkDown
+- Usado no README.md, issues e em pull requests 
+
+Símbolos:
+- Basta usar uma barra antes.
+
+	/##
+	/!
+	...
+
+Formatação de texto:
+
+	Título			# Título	(Quanto mais # maior o nível do título e menor ele fica, maior: # = nível 1; menor: ## = nível 2 )
+
+	emojis			:nome_do_emoji:	(github.com/ikatyang -> repositório de emoji: emoji-cheat-sheet) (Não funcina no nome do issue, usar copia e cola no emojipedia.org)
+
+ 	Negrito			**texto** ou __texto__
+	Itálico			*texto* ou _texto_
+	Riscado			~~texto~~
+
+	Linha			*** ou ---
+
+	linha de comando 	`comando`
+
+	trecho de programa	``` 
+				comando
+				```
+
+	citação			> texto citado	(Mais facil pela opção de mais opções do texto citado)
+	Menção			#x	(x representa o número da issue)
+
+Lista numerada:
+
+	1. teste		1. teste
+	1. teste 2		2. teste 2
+	1. teste 3 		3. teste 3
+	1. teste 4		4. teste 4
+	   1. sub_teste 1	   i. sub_teste 1	(3 espaços gera um sub título)
+	   1. sub_teste 2	   ii. sub_teste 2
+
+Lista demarcada:
+º = bolinha fechada
+
+	- ou * teste 1		º teste 1
+	- ou * teste 2		º teste 2
+	- ou * teste 3		º teste 3
+	   - ou * sub_teste 1	   ° sub_teste 1
+
+Lista de taréfas:
+
+	- [x] Fazer 1 
+	- [x] Fazer 2
+	- [ ] Fazer 3
+	- [ ] Fazer 4
+
+Imagem:
+- Simplesmente arrasta o arquivo para a sessão desejada.
+	
+	![descrição da imagem](URL)
+
+Link:
+
+	[Mensagem](URL) 
+
+Tabela:
+
+	Num | Nome | Nota
+	--- | --- | ---
+	1 | ciclano | 8,2
+	2 | fulano | 10
+	
+	

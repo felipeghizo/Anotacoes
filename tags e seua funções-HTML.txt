@@ -1,0 +1,697 @@
+-------------------------------IMPORTANTE
+HyperText Markup Language
+URL	 		= www.github.com/felipeghizo
+sub-domínio 		= www
+domínio 		= github.com
+TDL (tp level domain)  	= .com
+caminho			= /felipeghizo
+
+https://www.w3schools.com/    					# Seu melhor amigo.
+
+<!DOCTYPE html>			# Tipo de arquivo.
+<html lange="pt-br">		# Lingua do site que auxilia na busca.
+<head>
+
+<meta charset="utf-8"/>								# Aceita a assentuação latina.
+<meta http-equiv="X-UA-Compatible" content="IE=edge">				# Compativel com explore.
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >		# A página é adaptavel as dimenções do aparelho.
+https://css-tricks.com/essential-meta-tags-social-media/			# Meta tags para social medias.
+
+</head>
+<body>
+
+</body>
+<footer>
+
+</footer>
+</html>
+
+Código de status http:
+
+	100-199:	Resposta de informação.	
+	200-299:	Resposta de sucesso.
+	300-399:	Redirecionamentos.
+	400-499:	Erro do cliente.
+	500-599:	Erro do servidor.
+
+Para fazer análises do site : https://analytics.google.com/analytics/web/provision/#/provision
+	
+
+UI: User Interface	(Tem como foco a construção da interface. Bem como o s elementos interativos, feedbacks, etc).
+	flat desing: Algo mais minimalista.
+	Arquitetura da informação.
+	Padrões utilizados para a criação de interfaces: Menu, Rodapé, aninhamento, etc.
+
+UX: User Experience	(Tem como foco proporcionar a melhor experiencia possivel àquele usuário dieante a interface).
+	sentimentos passados ao usuário.
+
+--------------------------------RECURSOS DE ESCRITA-------------------------------------
+															
+<id>:								Usado dentro do elemento <a> e no local de destino (diferentes temas no mesmo site), ex: <h1 id="top"> blá </h1> "\n" < a href="#top"> top </a>. 
+
+<dl> e <dt> e <dd> E </dl> e </dt> e </dd>: 			listas de definição (<dl> inicia a lista; <dt> apresenta um termo; <dd> especifica esse termo).
+
+<title> e </title>:		        			"nome da pagina".
+
+<sup> e </sup>: 		       		 		Caractéres sobrescritos.
+
+<sub> e </sub>: 						Caractéres subsritos.
+
+<font color=“black”>  Texto com a cor preta </font>
+
+<br />: 							Break line.
+
+<hr />:		 						Separa tópicos através de um linha. 	
+
+<blockquote cite="x"> e </blockquote>:  			Citação >= a um parágrafo.
+
+<q> e </q>:							Áspas.
+
+<abbr> e </abbr>:						Abreviação.
+
+<dfn> e </dfn<:							Introduz um novo termo.
+
+<addres> e </addres>:						Passar o contado do autor da página (geralmente acompanhado de itálico; <p> <a href="mailto:"x"" "x" </a> </p>).
+
+<ins> e </ins>:							Sublinhar.
+
+<u> e </u>:							Sublinhar (depreciado).
+
+<del> e </del>:							Riscar.
+
+<s> e </s>:							Indica algo errado mas que não deve ser excluido (tambem risca)(depreciado).
+
+<ol> e <li> E </ol> e </li>:					Fazer lista numerada (cada item necessita de um <li> e um </li> mas a lista toda só precisa de um <ol> e um </ol>). 
+
+&nbsp; :							espaço.
+
+<wbr/>:								word breaker, quebra as palavras quando necessario.
+
+&shy; :								soft hyphen, cria hifens quando necessario.
+
+<code> e </code>:						sera mostrado como codigo (algoritmo).
+
+<pre> e </pre>:							sera considerado como pre formatado (espaços e enters aparecem).
+
+ELEMENTOS DE BLOCO--------------
+						
+
+<p> e </p>: 							Para paragrafo (display: block;).
+
+<span> e </span>:						Para paragrafo (display: inline;).
+
+<h1> e </h1> (ate h6): 						Para titulos e subtitulos.
+
+<ul> / <ol> e <li> E </ul> / </ol> e </li> :			Fazer lista nao numerada(ul)(type="square / disc / circle") ou uma lista numerada (ol) (type="a/A , i/I " start="numero em que começa")  (cada item necessita de um <li> e um </li> mas a lista toDa so precisa de um <ul> e um </ul>; é possivel colocar uma segunda lista dentro de um elemento <li>). + em CSS.
+
+<div> e </div>:							Agrupar um conjunto de elementos em uma caixa de nivel de bloco [usado para facilitar o CSS e a organilza do site].
+				
+<hgroup> e </hgroup>:						grupo de titulos.
+
+<header> e </header>:						cria o cabeçalho.
+
+<nav> e </nav>:							cria um menu de navegação.
+
+<section> e </section>:						cria uma sessão.
+
+<aside> e </aside>:						cria uma area lateral.
+
+<footer> e </footer>:						cria o rodapé.
+
+<article> e </article>:										
+
+<label> e </label>:						Representa uma legenda para um item em uma interface de usuário.
+				
+ELEMENTOS EM LINHA--------------
+					
+<a> e </a>:							Levar para outra pagina (<a href="file:///C:/HTML/GUSTAVO.html" target="_blank" rel="external"> texto do link </a>)(href="mailto:x" target="_blank" para levar a um email[mailto:] em uma nova janela[target])(rel="external" -> pagina externa / rel="next" e rel="prev" -> pagina interna / rel="nofollow" -> Google não associe o site). SEO = Search Engine Optimization. Donwload: <a href="Livro/meulivro.pdf" download="meulivro.pdf" type="application/pdf"> (type procurar em: iana.org/assignments/ media-types)
+
+<b> e <b/> ou <strong> e </strong>: 				Negrito (strong: usado para dar força a palavra).
+
+<i> e </i> ou <em> e </em> ou <cite> e </cite>: 		Italico (em: usado para dar suavidade a palavra; cite: citaçao de um trabalho). 
+
+<img>:								Adicionar imagens ao site (salvar imagens em: jpeg [imagens de melhor qualidade], gif [cores mais chapadas] ou ping).
+
+<span> e </span>:						Agrupar um conjunto de elementos em uma caixa de nivel de linha, equivale ao <div> em forma inline-level [usado para facilitar o CSS e a organilza do site].
+
+<mark> e </mark>:						Marca como se fosse marca texto (background-color para mudar a cor).
+
+
+CARACTERISTICAS DO ELEMENTO-----
+
+<label for="box"> Digite sua senha: </label>:	Significa que aquele elemento é feito para a box.
+<input type="text" id="box">:			ID que o elemento <input> recebe. Mais util para js.	
+<input type="text" name="box-2">:		Nome que o elemento <input> recebe. Mais util para HTML e PHP.
+<input type="number" placeholder="000000"">	Sugestão de texto.
+	
+
+CARACTERES DE ESCAPE / HTML ENTITIES------------
+
+<:								&lt; 		ou	 &#60;
+
+>:								&gt; 		ou 	 &amp;
+
+menor ou igual:							&le;
+
+maior ou igual:							&ge;
+
+&:								&amp; 		ou	 &#38;
+
+":								&quot; 		ou	 &#34;
+
+sinal de centavo:						&cent; 		ou	 &#162;
+
+sinal de libra:							&pound;		ou	 &#163;
+
+sinal de yen:							&yen; 		ou	 &#165;
+
+sinal de euro:							&euro;		ou	 &#8364;
+
+Simbolo dos direitos autorais:					&copy;		ou	 &#169;
+
+Marca registrada:						&reg;		ou	 &#174;
+
+Marca comercial:						&trade;		ou	 &#8482;
+
+' esquerda:							&lsquo;	 	ou	 &#8216; 			
+
+' direita:							&rdquo;		ou	 &#8217;
+
+" esquerda:							&ldquo;		ou	 &#8220;	
+
+" direita:							&rdquo;		ou	 &#8221;			
+
+Multiplicação:							&times; 	ou	 &#215;						
+
+Divisão:							&divide;	ou	 &#247;	
+
+permil:								&permil;
+
+soma:								&sum;
+
+infinito:							&infin;
+
+mais ou menos:							&plusmn;
+
+mais dentro de uma circunferencia:				&oplus;
+
+raiz quadrada							&radic;
+
+diferente:							&ne;		
+
+delta:								&delta; 	ou 	&Delta;
+
+lambda:								&Lambda;
+
+omega:								&omega;
+
+phi:								&phi;
+
+seta para a esquerda:						&larr;		ou	&Larr;	
+
+seta para a direita:						&rarr;		ou	&Rarr;
+
+seta para cima:							&uarr;		ou	&Uarr;
+
+seta para baixo:						&darr;		ou	&Darr;
+
+seta para os dois lados:					&harr;		ou	&Harr;
+
+espadas:							&spades;
+
+copas:								&clubs;
+
+coração:							&hearts;
+
+diamante:							&diamonds; 
+
+
+----- MOUSE:
+	# Event Reference para mais opcões. 
+	# Funcões desenvolvidas em JS.
+	
+	1) mouseenter
+		Quando o mouse entra na div.
+		<div mouseenter="MouseEntrou()">
+
+	2) mousemove
+		Quando o mouse move dentro da div.
+		<div mouseenter="MouseMoveu()">
+
+	3) mousedown
+		Quando o mouse é clicado e seu botão é segurado dentro da div.
+		<div mouseenter="MouseSegurou()">
+
+	4) mouseup
+		Quando o botão do mouse é solto dentro da div.
+		<div mouseenter="MouseSoltou()">
+
+	5) click
+		Quando é feito um click dentro da div.
+		<div mouseenter="MouseClocou()">
+
+	6) mouseout
+		Quando o mouse sai da div.
+		<div mouseenter="MouseSaiu()">
+
+--------------------------------IMAGEM------------------------------------------
+
+png é mais pesado mas tem mais qualidade, usar editores de foto para diminuir o tamanho do arquivo salvando-o para a web.
+
+imagem flexível conforme o width da página:
+	<picture>
+		<source media="(max-width: 600px)" srcset="images/imagem_pequena.png" type="image/png">
+		<source media="(max-width: 1050px)" srcset="images/imagem_media.png" type="image/png">
+		<img src="images/imagem_grande.png" alt="Image flexível">
+	</picture>
+																					
+<img 							
+
+scr="arquivo em que a imagem foi salva" 			# usar ../ para voltar um arquivo.			
+
+alt="quem procurar oq esta escrito aqui acabara nesse site / texto alternativo para a imagem" 
+
+title="informaçoes adicionais" 				
+
+height="altura em pixels" 				
+
+width="largura em pixels" 				
+
+aling="left" ou "right"					
+
+aling"top"(primeira linha no topo da imagem) 		
+
+aling"middle"(primeira linha no meio da imagem)		
+
+aling"bottom"(primeira linha em baixo da imagem) />	
+
+<figure> <figcaption> </figcaption> </figure>			Adicionar legenda a foto (caso as fotos possuam legendas diferentes é necessario reiniciar o processo).
+
+<iframe> e </iframe>:						Usado para mostrar imagens ou textos de outros sites [google maps](necessita de src, height, width, scrolling="[(yes, no[seamless="seamless"] ou auto)caso a imagem seja maior que o height e o width este comando permite o scrolling na imagem]",frameborder="0[sem borda] ou 1[com borda].
+
+<map> e </map>:							cria mapas dentro das imagens ou outros objetos. Necessário usar name="nome do mapa" e usemap="nome do mapa" onde ele deve ser usado.
+
+<area shape="rect[retangulo] / circle[circulo] / poly[poligono]" coords="cordenadas em pixels do canto superior esquerdo e inferior esquerdo todos separados por virgulas para quadrados / ponto central e raio para circulos / seguir o sentido horario começndo pelo canto suberior esquerdo" href="arquivo a ser aberto" target="nome do alvo" />
+ 
+----- Imagem flexível:
+
+	<picture>
+        	<source media="(max-width: 600px)" srcset="images/paisagem-p.png" type="image/png">
+       		<source media="(max-width: 1000px)" srcset="images/paisagem-m.png" type="image/png">
+        	<img src="images/paisagem-g.png" alt="paisagem">
+    	</picture>
+
+----- favicon:
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> 	# Imagem que aparece ao lado do title.	(https://www.favicon.cc)
+				
+--------------------------------AUDIOS------------------------------------------
+<div id="tv-radio">
+
+	<audio id="musica" controls="controls" autoplay loop=">			# Controls="contorls" serve para mostrar a barra de comandos como volume e tempo / autoplay toca o audio ao carregar a pagina / loop faz com que o audio recomece sempre que acabar.
+
+		<source src="_media/2009-lovers-carvings-bibio.mp3" type="audio/mpeg"/>
+
+	</audio>
+</div>
+
+<audio src="midia/nome_do_audio.mp3" controls autoplay loop>		controls = aparece um menu para controlar o audio / autoplay = toca sozinho / loop = começa de novo quando acaba.
+
+Tenta carregar na ordem:
+<audio preload="x">	# x = metadata (Carrega informações) / x = auto (Carrega tudo) / x = none (Só carrega quando clica)
+	<source src="midia/bla.mp3" type="audio/mpeg">
+	<source src="midia/bla.ogg" type="audio/ogg">
+	<source src="midia/bla.wav" type="audio/wav">
+</audio>
+
+
+
+www. miro video .com  para que o audio seja convertido para todos os navegadores.
+ 
+
+
+--------------------------------VIDEOS------------------------------------------
+<div id="tv-radio">
+
+	<video id="filme" controls="controls" poster="_imagens/video-mini03.jpg" autoplay loop>	# Controls = mostra os controles do video (play, volume, etc) / Poster serve como a imagem fixa antes do video começar / autoplay faz o video comçar sozinho / loop faz com que ao acabar o video comece novamente.	
+		<source src="_media/getting-started.mp4" type="video/mp4"/>
+		<source src="_media/getting-started.webm" type="video/webm"/>
+		<source src="_media/getting-started.ogg" type="video/ogg"/>
+
+		DESCULPE MAS NAO FOI POSSIVEL CARREGAR O AUDIO.					# Caso nao seja possivel mostrar o video essa mensagem ira aparecer.
+						
+	</video>
+
+</div>
+
+para pegar um video do you tube e deixar o seu site mais leve, va nas opções de compartilhar video e selecione incorporar, ai é do dar ctrl c e ctrl v e gg bitches. 
+--------------------------------FILME FLASH-------------------------------------
+										
+<script> e <script>:						Adicionar um filme flash à pagina (dentro do head, são necessarias informações como: nome do arquivo; id; largura; altura; versão minima do flash player. O arquivo deve ser salvo em .swf).
+
+EXEMPLO:
+<head>
+	<script type="text/javascript" src="local em que o video se encontra"></script>				
+	<script type="text/javascript">swfobject.embedSWF("flash/[arquivo do video].swf", "[id]","[largura]","[altura]","[versão minima do flash player(8.0.0)]");</script> 
+</head>
+<body>
+	<div id="qualquer valor"> texto do video em caso de problemas/deficiencias </div>
+</body>
+
+VIDEOS FLV----------------------
+				
+1)converter o video para o formato flv
+-->pesquisar no google por conversores flv ou h264
+
+2)localizar um flv player para reproduzir o video
+-->www.oflv.com 
+-->www.longtailvideo.com
+
+3)inclua o player e vide em sua pagina
+--><head>
+	<script type="text/javascript" src="local em que o video se encontra"></script>				
+	<script type="text/javascript">	var flashvars = {};
+					var params = {movie:"arquivo do video[.flv]"};
+					swfobject.embedSWF("flah/[arquivo do video].swf", "[id]","[largura]","[altura]","[versão minima do flash player(8.0.0)]", flashvars, params);</script> 
+   </head>
+   <body>
+	<div id="qualquer valor"> texto do video em caso de problemas/deficiencias </div>
+   </body>
+
+--------------------------------TABELA------------------------------------------
+
+<caption> e </caption>:		Título da tabela.
+
+<table> e </table>:		Iniciar tabela.
+
+<tr> e </tr> = inicia linha.	# Table Row.
+
+<td> e </td> = inicia célula.	# Table Data, ficam dentro das linhas (<tr>).
+
+<th scope=""> e </th> = nome da linha (<th scope="row"> x </th>); nome da coluna (<th scope="col"> y </th>); nome das linhas (<th scope="rowgroup"> x </th>); nome das colunas (<th scope="colgroup"> x </th>);
+
+<td colspan="numero de colunas que a célula vai ocupar"> x </td>.
+
+<td rowspan="numero de linhas que a célula vai ocupar"> y </td>.
+
+<thead> e </thead> = titulo da tabela.
+
+<tbody> e </tbody> = corpo da tabela.
+
+<tfoot> e </tfoot> = rodapé da tabela.
+
+<table width="numero de pixels da tabela" cellpadding="espaço de cada célula" cellspacing="espaço entre as células">
+
+<table/td border="largura das bordas em pixels" bgcolor="cores em codigo hexadecimal">
+
+<colgroup>		# Seleciona as colunas de uma tabela com 6 colunas.
+	<col class="col_1">
+	<col class="col_2">
+	<col class="col_3">
+	<col class="col_4" span="3">	# Colunas 4, 5 e 6 recebem as características da 4.
+</colgroup>
+
+	Anatomia para tabelas grandes:
+	<table>
+		<thead> e </thead>
+			<tr>, <td>, <th>
+		<tbody> e </tbody> 
+			<tr>, <td>, <th>
+		<tfoot> e </tfoot> 
+			<tr>, <td>, <th>
+
+	Caption fixo:
+	
+		CSS:
+			table{
+				position: relative;}
+			
+			thead > tr > th{
+				position: sticky;}
+
+
+--------------------------------FORMULARIOS-------------------------------------
+														
+<form> e </form>:						Inicia um formulario.
+
+----- ATRIBUTOS FORM:
+
+	<form 
+		autocomplete="off"		# Desliga o preenchimento automatico.
+		action ="cadastro.php"		# Script que receberá e manipulará os dados enviados.
+		method="get / post"		# Get: mais curto (apenas 3000 bits) e menos seguro (Deault) / Post: mais complexo e melhor, mas não criptografa os dados, apenas os tira da url (Para proteger mais use https).
+										
+----- ATRIBUTOS INPUT:
+
+	label:		<label for="box"> Digite sua senha: </label>:		Significa que aquele elemento é feito para a box. (Facilita para clicar).
+	id:		<input type="text" id="box">:				ID que o elemento <input> recebe. Mais util para js.	
+	name:		<input type="text" name="box-2">:			Nome que o elemento <input> recebe. Mais util para HTML e PHP.
+	placeholder:	<input type="number" placeholder="000000"">		Sugestão de texto.
+	maxlength:	<input type="text" maxlength="30">			Número máximo de carácteres permitidos.
+	minlength:	<input type="text" minlength="5">			Número de carácteres minímo necessário.
+	max:		<input type="number" max="100">				Valor máximo permitido.
+	min:		<input type="number" min="1">				Valor mínimo permitido.
+	step:		<input type="number" step="0.5">			De quanto em quanto o valor muda.
+	autocomplete:	<input type="x"	autocomplete="x">			Completa automaticamente e do mesmo tipo.
+	pattern:	<input type="tel" pattern="^[0-9]{4}-[0-9]{4}">		Padrão de número de telefone. Expressões regulares: ("\d{4,5}-\d{4}" -> /d = [0-9] | {4,5} = de 4 a 5 digitos | DDD = (\d{2}\) ).
+
+	type:		<input type="">					Tipo de input, ex: text, password, number, date, subimit, etc.
+
+----- TIPOS DE INPUT:
+														
+	Entrada de senha: 
+		<input type="password" name="password" size="15" maxlength="30" />
+
+	Entrada de texto:
+		<input type="text(=stirng e isso é um comentario)" name="nome da variavel" maxlength="limitar o numero de caracteres dentro da celula input" list="ex">.
+
+	Caixa de entrada com lista:
+		<input type="text" id="itext" list="ex">
+
+		<datalist id="ex">		# Opções de autopreenchimento sugeridas.
+			<option value="Rio de Janeiro"></option>	
+       	      		<option value="Nova Iguaçu"></option>
+       	     	  	<option value="Niterói"></option>
+       		        <option value="Belford Roxo"></option>
+		</datalist>
+
+
+		<fieldset id="mensagem">
+			<legend> Mensagem do Usuário </legend>
+			<p><label for="cMsg"> Mensagem: </label></p>
+			<textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem."></textarea>         cols=colunas / rows=linhas.
+		</fieldset>
+		
+	Área de texto:
+		<textarea name="comments" cols="largura" rows="altura" resize="none"> mensagem dentro da box </textarea> 	# Resize = "none" (impede o usuário de redimencionar a caixa) / "horizontal" (permite o usuário redimencionar apenas na horizontal) / "vertical" (Permite o usuário redimencionar apenas na verical).  
+
+	Botão de rádio[marcar apenas uma opção]:
+		<input type="radio" name="genre" value="estilo musical[variavel]" checked="checked[botao marcado quando o site é carregado]" /> nome da opção.
+
+	Caixa de verificação[marcar uma ou mais opções]:
+		<input type="checkbox" name="service[valor selecionado pelo usuario]" value="[variavel enviada para o servidor]" /> nome da opçao.
+
+	Caixa de lista suspensa: 
+		<select> e </select>:		Caixa seletora.
+		<option> e </option>:		Opções da caixa.
+		<optgroup> e </optgroup>:	Separação das opções.
+
+		<select name="devices"> 	
+			<option value="nome da variavel" disable[não aparece e geralmente vem acompanhado de um selected]> nome da opção </option>
+			<optgroup label="Regiao sul">
+				<option value="SC"> Santa Catarina </option>
+				<option value="PR"> Paraná </option>
+				<option value="RS"> Rio Grande do Sul </option>
+			</optgroup>
+
+			<optgroup label="Regiao sul">
+				<option value="SC"> Santa Catarina </option>
+				<option value="PR"> Paraná </option>
+				<option value="RS"> Rio Grande do Sul </option>
+			</optgroup>
+		</select>
+
+	Caixa de múltipla seleção: 
+		<select name="instruments" size="3[numero de elementos a serem mostrados de uma só vez]" multiple="multiple[selecionar mais de uma opção]" />
+
+	Caixa de entrada de arquivos: 
+		<input type="file" name"user-song" method="POST"/> <br /> <input type="submit" value="upload" />	# POST obrigatório.
+
+	Botão enviar: 
+		<input type="submit" name="subscribe" value="Subscribe" />
+
+	Botão resetar:
+		<input type="reset" value="Limpar" />
+
+	Botão de imagem: 
+		<input type="text" name="email" /> <input type="image" scr="images/subscribe.jpg" width="100" height="20" />
+
+	Botões e controles ocultos: 
+		<button><img src="images/add.gif" alt="add" width="10" height="10" /> add </button> <input type="hidden" name="bookmark" value="lyrics" />
+
+	Rotulando controles de formulário: 
+		<label> <input type="radio" name="age" id="exemploid"/><label for="exemploid"[for serve para fazer referencia]> Exemplo: </label> (quando type="radio" <label for="exemploid">)(permite clicar na palavra e nao na bolinha) (label indica o objeto relativo a ele).
+
+	Agrupando elementos de formulário: 
+		<fieldset> [enter] <legend>titulo do formulario</legend> [enter] </fieldset>
+			
+	Obrigação de preenchimento de campo: 
+		<... required="required" /> 
+											
+	Datas: 
+		<... type="date"/>	
+											
+	Entrada de email, url e pesquisa: 
+		<... type="email".../>,
+		<... type="url" .../>,
+		<... type="search" placeholder="oq sera mostrado na caixa de pesqisa" .../>
+
+	Entrada de telefone:
+		<... type="tel".../>
+
+	Barra de rolagem lateral:
+		Grau de Urgência: </label> min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2">max </p>
+		<input type="range" name="nivel" id="inivel" value="0">
+
+	Opção de cor:
+		<input type="color" name="cor" id="icor" value="#00ff00">
+
+	<-- required dentro do formulario obriga o campo a ser preenchido -->
+
+
+EX:
+
+<form autocomplete="off" action="cadastro.php">
+	<p><label for="inome">Nome: </label> <input type="text" name="nome" id="inome"></p>
+	<p><label for="isobrenome">Sobrenome: </label> <input type="text" name="sobrenome" id="isobrenome"></p>
+	<p><input type="submit" value="Enviar"></p>
+</form
+
+----- OUTPUT (Não envia dados para o formulário):
+
+	oninput -> Com um pouco de JavaScript atualiza o valor instantaneamente: 
+
+		<label for="in1">Numero 1: </label>
+		<input type="number" name"n1" id="in1" min="0" max="50" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)"/>
+
+		<label for="in2">Numero 2: </label>
+		<input type="number" name"n2" id="in2" min="0" max="50" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)"/>
+	
+		<output name="soma" id="isoma">0</output>
+																						
+--------------------------------COMENTARIOS EM HTML-----------------------------
+																																			
+<!-- comentarios entram aqui-->															
+																		
+--------------------------------ATRIBUTOS---------------------------------------
+																
+
+(atributo ID) = <p id="aqui vai o valor que deve ser unico em todo o codigo[CSS]">			#apenas um elemento.					
+
+(atributo class) = <p class="aqui vai o valor que pode ser dado a mais de uma parte do codigo[CSS]">	#mais de um elemento.				
+
+(atributo body) = usado para se referir a todo o codigo[CSS/ www.ricardoassink/algoritmos1/aula5.com]
+																						
+--------------------------------INFORMAÇÕES SOBRE SUAS PAGINAS------------------
+
+<meta>:								Deve ser usado no <head> e usa atributos para armazenar informações 
+name=
+	"description[usado pelos mecanismos de busca]" content="frase para a busca"
+	"keybords[lista de palavras separadas por virgula para o usuario localizar a pagina]" content="exemplo1, exemplo2"
+ 	"robots[acionar ou nao os mecanismos de busca] content="[noindex{nao ser indexada}, nofollow{acionar}"
+http-equiv=
+	"author" content="autor da pagina"
+ 	"pragma(evita que o navegador armazene a pagina em cache)" content="no-cache" 
+	"expires(data para o site expirar na forma de cache)" content="data da semana em ing, 04 apr 2019 23:59:59 GMT"   											
+							
+-------------------------------- ANIMAÇÕES ---------------------------------------
+	https://github.com/michalsnik/aos
+
+
+-------------------------------- IFRAME ---------------------------------------
+	Quadro em linha que serve para abrir outro site dentro do seu site.	
+
+	Tamanho padrão = 300x150 px.
+
+	<iframe src="" frameborder="0" width="500" height="500">
+		<a href="" target=""></a>	# Caso o dispositivo não suporte iframe isso será mostrado, caso contrário ficará oculto.
+	</iframe>
+
+	----- borda:
+		<iframe src="" frameborder="
+					    0	# Sem borda.
+					    1	# Com borda (qulaquer valor != de 0).
+		">
+
+	----- scroll:
+		<iframe src="" frameborder="0" scolling="
+							auto	# Caso precise irá criar.
+							yes	# Irá criar mesmo não precisando.
+							no	# Não irá criar mesmo precisando (bugado em alguns navegadores).
+							">
+
+	----- Mudando o iframe:
+
+		<ul>
+			<li><a href="001.html" target="frame"></li>
+			<li><a href="002.html" target="frame"></li>
+			<li><a href="003.html" target="frame"></li>
+			<li><a href="004.html" target="frame"></li>
+		</ul>
+		<iframe id="tela" name="frame" srcdoc="<h1> Escolha uma das opções acima </h1>">	# srcdoc aceita html e será a mensagem mostrada antes do usuário escolher um site.
+		</iframe>
+
+	----- Deixando o iframe mais seguro:
+		
+		Segurança máxima:
+		<iframe src="" 
+		snadbox="sanbox" 			
+		referrerpolicy="no-referrer">
+
+		Segurança máxima:
+		<iframe src="" 
+		snadbox="allow-same-origin allow-forms 	allow-scripts" 	 # Permite paginas do mesmo servidor / Permite formularios / Permite scripts / Resto não é permitido.	
+		referrerpolicy="no-referrer">
+
+
+
+----- E-mail Marketing:
+
+	Muito limitado em questão de css.
+	Segue um modelo de tabelas.
+
+	--- Estrutura base:
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+	    	<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    		<title>E-mail Marketing!</title>
+		</head>
+		<body style="margin: 0; padding: 0;">
+    			<table>
+    				<tr>
+        				<td>
+        				</td>
+    				</tr>
+    				<tr>
+        				<table>
+         	  	 			<tr>
+                					<td>
+                					</td>
+            					</tr>
+        				</table>
+    				</tr>
+			</table>
+		</body>
+		</html>
+
+	--- Propriedades css devem ser usadas dentro dos elementos:
+
+		<table width="100%" cellpadding="0" cellspacing="0">
+                	<tr>
+                        	<td style="border-bottom: 2px solid #ccc; padding: 30px 0 30px 0;" >
+                            		<span style="color:rgb(117, 117, 117); font-size: 22px;"> Olá Cenourinha!</span>
+                            		<img src="be_fre.jpeg" style="display: block; width: 100%; height: 550px"/>
+                            		<p style="color:rgb(117, 117, 117); font-size: 18px;">
+                                		Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque illum maxime, magni pariatur, modi iste architecto incidunt eos omnis nihil id consequuntur enim animi doloribus ea repudiandae autem totam nesciunt.
+                            		</p>

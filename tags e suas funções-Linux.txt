@@ -1,0 +1,76 @@
+
+----- COMANDOS NO TERMINAL:
+	
+	-Sempre em minúsculo.
+
+	ls --help ou man ls:	ajuda com os parametros dos comandos.
+
+	alias cd="cd .."	todos os cd serão cd .., funciona como um atalho.
+
+	cd 	- entra em uma pasta.
+	Parametros cd:
+		cd ..	- sai de uma pasta.
+		cd ~	- leva ao diretório do usuário.
+		cd /	- leva para a raiz do sistema.
+	
+	cp	- Copia um arquivo e manda para uma pasta.
+	EX:
+		cp oi.txt Pasta/
+
+	mv	- move um arquivo para uma pasta ou renomeia uma pasta ou arquivo.
+	EX:
+		mv oi.txt Pasta/
+		mv Pasta/ Pasta2
+
+	pwd	- Mostra o caminho atual.
+
+	ls 	- Lista o conteúdo de uma pasta.
+	Parametros ls:
+		
+		ls -l ou --long:	Mostra só as pastas e suas informações como tamanho e data de criação.
+		ls -h			Torna as informações de tamanho mais legiveis.
+		ls -a ou --all:		Mostra todos arquivos, inclusive os ocultos.
+		ls -lah:		Junção de -l, -a e -h.	
+		ls -R:			Mostra todo o conteúdo entro de cada pasta.
+		ls pasta/*.txt		Mostra todos os arquivos terminados em txt.
+		ls pasta/*a*		Mostra todos os arquivos que possuem "a" no nome.
+		ls pasta/f*		Mostra todos os arquivos que começam com "f".
+		ls pasta/?as*		Mostra todos os arquivos que possuem "as" na segunda e terceira casa, independente do inicio ou final.
+		ls pasta/f[a-i]*	Mostra todos os arquivos que começam com "f" seguidos de qualquer caráctere entre "a" e "i".
+		ls pasta/f[a,c]*	Mostra todos os arquivos que começam com "f" seguidos de a ou c.
+		ls pasta/f[a-c,e]*	Mostra todos os arquivos que começam com "f" seguidos de qualquer caráctere entre "a" e "c" ou "e".
+		ls pasta/?{am,ul}*	Mostra todos os arquivos que contenham a sequência "am" ou "ul".
+		
+
+	----- CRIANDO E MANIPULANDO ARQUIVOS:
+	
+		toutch oi.txt		- Cria um arquivo.
+
+		cat oi.txt		- Lê o conteúdo do arquivo no terminal.
+
+		nano oi.txt		- Edita o arquivo.
+
+		mkdir Pasta1 Pasta2	- Cria uma ou mais pastas.
+		Parametros mkdir:
+	
+		mkdir -p:		Caso não exista, cria. 
+		EX:
+			mkdir -p Cursos/Hardware/Módulo\ 1/	\ = Não interprete o próximo espaço em branco.
+			mkdir -p "Cursos/Hardware/Módulo 2/"
+	
+	----- EXCLUINDO ARQUIVOS E PASTAS:
+		
+		rm Pasta/arquivo.txt	Exclúi um arquivo da pasta.
+		Parametros rm:
+			rm -rf Cursos:		EXCLÚI TUDO
+
+		rmdir Pasta		Exclúi a pasta.
+
+
+		
+	
+
+	history		- Mostra o histórico de comandos.
+	Parametros history:
+	
+		!Num		Repete o na posição Num		

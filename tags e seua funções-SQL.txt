@@ -1,0 +1,591 @@
+DDL -> DATA DEFINITION LANGUEAGE	# Interage com a estrutura que armazena os dados.
+	- CREATE DATABASE
+	- CREATE TABLE
+	- ALTER TABLE
+	- DROP TABLE 
+	
+DML -> DATA MANIPULATION LANGUAGE	# Interage diretamente com os dados.
+	- INSERT INTO 
+	- UPDATE
+	- DELETE
+	- TRUNCATE
+
+DQL -> DATA QUERY LANGUAGE		# Seleciona os dados.
+	- SELECT
+
+----- MODELO RELACIONAL:
+
+	ENTIDADE 	[]	-> Aquilo que contem os dados.		(Tabela)
+	ATRIBUTOS 	° 	-> Dados.				(Coluna)
+	RELACIONAMENTO	<>	-> Ligação entre duas entidades.
+	CARDINALIDADE	n	-> Relações possiveis entre os dados.
+		-> Tipos:
+			um pra um
+			um para muitos ou muitos para um
+			muitos para muitos
+
+		Cardinalidade Máxima: Número máximo de vezes que uma entidade A
+			pode ocorrer em B. Pode assumir o valor de 1 ou N (inúmeras vezes).
+
+		Cardinalidade Mínima: Número mínimo de vezes que uma entidade A
+			pode ocorrer em B. Pode assumir o valor de 0 ou 1.
+
+	DER -> Diagrama Entidade Relacionamento 
+		entidade	[]
+		   ||
+		   \/
+    	     	relacionamento	<>
+		   ||
+		   \/
+		entidade	[]
+
+
+	[gafanhotos] n----- <assiste> -----n [cursos]
+	n gafanhotos assistem n cursos / n cursos são assistidos por n gafanhotos.
+
+	[produto] (0, n) ----- <> ----- (1, 1) [categoria]
+	Cada produto tem apenas uma categoria / Uma categoria pode ter nenhum ou varios produtos.
+	
+	CHAVES:
+		Regra 1 -> 1 para 1: 		A chave primaria da entidade dominada é passada como chave estrangeira para a entidade dominante.
+		
+			[MARIDO]1 ----- <CASA COM> ----- 1[ESPOSA]
+			-> {cpf-marido}			 -> {cpf-esposa}
+			-> nome		  		 -> nome
+			-> idade			 -> idade
+			-> {cpf-esposa} Chave Estrangeira
+
+		Regra 2 -> 1 para muitos:	A chave primaria o 1 é passada como chave estrangeira para muitos.
+		
+			[FUNCIONÁRIO]1 ----- <CUIDA> ----- n[DEPENDENTE]
+			-> {cpf}			 -> {id}
+			-> nome		  		 -> nome
+			-> cargo			 -> idade
+							 -> {cpf} Chave Estrangeira
+
+		Regra 3 -> Muitos para muitos: 	O relacionamento vira uma entidade e aplica-se a regra 2.
+
+			[CLIENTE]n ----- <COMPRA> ----- n[PRODUTO]
+
+			[CLIENTE]1 ----- <> ----- n[<COMPRA>]n ----- <> ----- 1[PRODUTO]
+			-> {cpf}		    -> {id-compra}		-> {id}
+			-> nome		  	    -> forma-pagto		-> nome
+			-> telefone		    -> {id} Chave Estrangeira	-> preco
+						    -> {cpf} Chave Estrangeira
+
+		
+			CREATE TABLE gafanhotos(
+				id INT,
+				nome VARCHAR(10)
+			) DEFAULT CHARSET = utf8;
+
+			CREATE TABLE curso(
+				id INT,
+				nome VARCHAR(10)
+			)DEFAULT CHARSET = utf8
+
+			
+			CREATE TABLE gafanhoto_assiste_curso(
+				id INT AUTO_INCREMENT,
+				data DATE,
+				idgafanhoto INT,
+				idcurso INT,
+				PRIMARY KEY (ID),
+				FOREING KEY (idgafanhoto) REFERENCES gafanhotos(id),
+				FOERING KEY (idcurso) REFERENCES curso(id)
+			)DEFAULT CHARSET = utf8;
+
+			SELECT * FROM gafanhotos g
+			JOIN gafanhoto_assiste_curso a
+			ON g.id = a.idgafanhoto
+			JOIN curso c
+			ON c.idcurso = a.idcurso;
+		
+ 	
+----- CRIANDO UMA TABELA:
+
+	-> Perguntas sobre o desing:
+	
+		a) Quais são os requisitos do negócio?
+		b) Que tabelas serão necessárias para atender esses requisitos?
+		c) Que colunas cada tabela conterá?
+		d) Como as tabelas serão normalizadas?
+		e) Quais serão seus relacionamentos pai/filho?
+	
+	-> Perguntas relacionada aos dados:
+	
+		a) Quantos dados serão fornecidos nessa tabela?
+		b) Quem ou o que fornecerá os dados para as tabelas?
+		c) De onde virão os dados?
+		d) Precisamos de processos que preencham automaticamente as tabelas?
+
+	-> Perguntas sobre a segurança:
+	
+		a) Quem deve ter acesso a esse banco de dados?
+		b) Quem deve ter acesso a que tabelas? Acesso somente de leitura? Acesso de gravação?
+		c) Esse banco de dados é crítico para operações empresariais?
+		d) Que planos de backupp temos para o caso de desastre/falha?
+		e) As alterações feitas na tabela devem ser registraas?
+		f) Se o banco de dados for usado por sites ou aplicativos web, isso é seguro?
+
+	-> Código para ciração de um banco de dados:
+
+		CREATE DATABASE nome;
+
+	-> Código para ciração de tabelas:
+
+		CREATE TABLE IF NOT EXISTS COMPANY (
+			COMPANY_ID 		INTEGER PRIMARY KEY auto_increment,		# Inteiro principal.
+			NAME 			VARCHAR (30) NOT NULL UNIQUE,			# String não vazia com limite de 30 caracteres e única, ou seja, não há duas empresas com o mesmo nome.				
+			DESCRIPTION 		VARCHAR (30),
+			PRIMARY_CONTACT_ID 	INTEGER NOT NULL UNSIGNED,			# Interio que não possui sinal de positivo ou negativo (- 1 bit necessário).
+			BLA 			BOOLEAN DEFAULT(0)				# Boolean.
+		) DEFAULT CHARSET = utf8;
+
+----- TIPOS:
+
+	Numéricos:
+		- Inteiro: 	TinyInt, SmallInt, Int, MediumInt, BigInt.
+		- Real:		Decimal, Float, Double, Real.
+		- Lógico:	Bit, Boolean.
+
+	Data/Tempo:		Date, DateTime, TimeStamp, Time, Year.
+		
+	Literal:
+		- Caractere:	Char, VarChar.
+		- Texto:	TyniText, Text, MediumText, LongText.
+		- Binário:	TyniBlob, blob, MediumBlob, LongBlob.
+		- Coleção:	Enum, Set.
+
+	Espacial:		Geometry, Point, Polygon, MultiPolygin.
+
+	to_char():		converte para string;
+	to_char(payday, 'dd')	converte payday de DATE para STRING e seleciona apenas o dia.
+
+	to_number()		converte para int;
+	to number('05', '99')	retorna o int 5;
+	
+
+----- OPERADORES LÓGICOS E ARITMÉTICOS:
+		
+	-> Operadores lógicos:
+		
+		AND	->	E.
+
+		OR	->	Ou.
+
+		IN	->	Em.
+
+		NOT 	->	Não.
+		
+		-> EX:	
+			SELECT * FROM STATION_DATA 
+			WHERE YEAR > 2005 AND YEAR < 2010;	
+
+			SELECT * FROM STATION_DATA 
+			WHERE MONTH = 3
+			OR MONTH = 6
+			OR MONTH = 9
+			OR MONTH = 12;	
+	
+			SELECT * FROM STATION_DATA 
+			WHERE MONTH IN (3, 6, 9, 12);	
+
+			SELECT * FROM STATION_DATA 
+			WHERE MONTH NOT IN (3, 6, 9, 12);
+
+			SELECT * FROM STATION_DATA 
+			WHERE MONTH % 3 = 0;
+
+	-> Operadores Booleanos:
+		1		->	True.
+		0		->	False.
+		NULL		->	Vazio.
+		NOT NULL	->	Não vazio.
+			
+		-> EX:	
+				
+			SELECT * FROM STATION_DATA
+			WHERE tornado = 1 and hail = 1;
+			ou
+			WHERE tornado and hail;
+				
+			SELECT * FROM STATION_DATA
+			WHERE tornado = 0 and hail = 1;
+			ou
+			WHERE NOT tornado and hail;	
+
+			SELECT * FROM STATION_DATA
+			WHERE snow_depth IS NULL;
+
+	-> Operadores aritméticos:
+		
+		+	->	Soma.
+		-	->	Subtração.
+		*	->	Multiplicação.
+		/	->	Divisão.
+		%	->	Módulo.		# Oracle não suporta, usar MOD().
+
+		=		->	Igual.
+		!= ou <>	->	Diferente.
+		>=		->	Maior ou igual.
+		<=		->	Menor ou igual.
+
+		-> EX:
+		
+			SELECT 
+			PRODUCT_ID, 
+			DESCRIPTION, 
+			PRICE, 
+			PRICE * 1.07 AS TAXED_PRICE		# Seleciona os valores da tabela PRICE e aumenta o valor de cada um em 7%, em seguida cria uma nova coluna com os valores dos preços com a taxa de 7% aplicada (TAXED_PRICE).
+			FROM PRODUCT;
+
+
+----- PLACEHOLDER:
+	
+	*	->	Tudo.	
+	ASC	->	Ordem crescente.
+	DESC	->	Ordem decrescente.
+
+----- ALTERANDO OS DADOS DO BANCO (ALTER TABLE):
+		
+	----- ADD COLUMN:
+		Adiciona uma coluna nova à tabela.
+		
+			ALTER TABLE pessoa ADD COLUMN profissao VARCHAR(10) AFTER nome;		# A coluna "profissao" será adicionada após a coluna "nome".
+			ou
+			ALTER TABLE pessoa ADD COLUMN profissao VARCHAR(10) FIRST;		# A nova coluna será adicionada na primeira posição da tabela.	
+			ou
+			ALTER TABLE pessoa ADD COLUMN profissao VARCHAR(10);			# A nova coluna "profissao" será aicionada ao final da tabela.
+
+	----- ADD PRIMARY KEY:
+		Define uma coluna como a primária.
+
+			ALTER TABLE pessoa ADD PRIMARY KEY (profissao);
+
+	----- ADD FOREING KEY:
+		Adiciona uma chave estrangeira.
+				
+			ALTER TABLE gafanhotos ADD FOREING KEY (cursopreferido)	REFERENCES curso(idcurso);
+			
+				
+	----- DROP COLUMN:
+		Exclui uma coluna da tabela.
+
+			ALTER TABLE pessoa DROP COLUMN profissao;
+
+	----- MODIFY COLUMN:	
+		Permite modificar o tipo primitivo do valor e as constantes.
+
+			ALTER TABLE pessoa MODIFY COLUMN profissao VARCHAR(20) NOT NULL DEFAULT '';
+
+	----- CHANGE TABLE:
+		Permite modificar o nome da coluna.
+
+			ALTER TABLE pessoas CHANGE TABLE profissao prof VARCHAR(20) NOT NULL DEFAULT '';
+
+	----- RENAME TO:
+		Permite modificar o nome da tabela.
+	
+			ALTER TABLE pessoa RENAME TO humano; 
+
+----- ESTRUTURA DE CONIÇÃO:
+	
+	CREATE TABLE IF NOT EXISTS cursos ();
+	
+	DROP TABLE IF EXISTS pessoas;
+
+----- INSERT (adiciona valores a tabela):
+
+	INSERT INTO ATTENDEE (FIRST_NAME, LAST_NAME)
+	VALUES ("Felipe", "Ghizoni")
+
+
+	INSERT INTO ATTENDEE (FIRST_NAME)
+	VALUE ("Felipe")
+
+	INSERT INTO ATTENDEE (FIRST_NAME, LAST_NAME)
+	VALUES 
+	("Felipe", "Ghizoni"),
+	("Maria", "Fiorentin"),
+	("Sofia", "Ghozni");
+
+
+	
+	INSERT INTO ATTENDEE (FISRT_NAME, LAST_NAME, PHONE, EMAIL)
+	SELECT FISRT_NAME, LAST_NAME, PHONE, EMAIL
+	FROM SOME_OTHER_TABLE;
+
+
+
+----- DELETE:
+	Muito perigosa pois pode apagar valores indesejados. Usar um SELECT antes para confirmar aquilo que sera apagado.
+
+	DELETE FROM ATTENDEE 
+	WHERE PHONE IS NULL
+	AND EMAIL IS NULL;
+
+	-> TRUNCATE TABLE:
+		Melhor forma de excluir todos os dados da tabela no MySQL.
+
+		TRUNCATE TABLE ATTENDEE;
+
+	
+----- UPDATE:
+	Serve para atualizar os valores dos dados.
+
+	UPDATE ATTENDEE SET FIRST_NAME = UPPER(FIRST_NAME),
+	LAST_NAME = LOWER(LAST_NAME);
+
+	UPDATE cursos 
+	SET nome = 'PHP', ano = '2015'
+	WHERE idcurso = '4';
+
+	UPDATE cursos 
+	SET ano = '2015'
+	WHERE ano = '2014'
+	limit 1	;		# Apenas a primeira linha encontrada  será alterado.
+
+----- TRUNCATE TABLE:	
+	Exclui todas as linhas de uma tabela.
+
+	TRUNCATE TABLE cursos;
+
+----- DROP TABLE:
+	Exclui a tabela interia permanentemente.
+
+	DROP TABLE ATTENDEE;	
+
+----- SELECT (seleciona os dados solicitados):
+	
+	----- MODO DE USO:
+
+		SELECT * FROM CUSTOMER;				# Seleciona e retorna todas(*) as colunas do banco CUSTOMER.
+		SELECT NAME, CUSTUMER_ID FROM CUSTUMER;		# Seleciona e retorna apenas as colunas NAME e CUSTOMER_ID do banco CUSTOMER. 
+
+	----- AUXILIARES:
+
+		-> OPERAÇÕES DE TEXTO:
+
+			1) CONCATENAÇÃO ( || ou concat() ):
+			Junta dois ou mais dados. 
+			EX:
+				SELECT CITY || ', ' || STATE AS LOCATION FROM CUSTOMER;		# Junta a cidade e o estada de cada cliente, aiciona a string ', ' entre eles e adiciona o relustado à coluna LOCATION.
+			  
+		-> ALIASES (AS):
+			Permite atribuir um nome à coluna de dados selecionada dentro do SELECT, ou seja, não muda de fato o nome da coluna.
+			EX:
+				SELEC CUSTOMER_ID AS CID FROM PRODUCT;
+				SELEC round((life_registry.omega * 1.618), 3) AS "Factor N"	# ASPAS DUPLAS.
+
+		
+		-> WHERE:
+			Serve para filtrar a tabela e selcionar apenas os valores requeridos.
+			EX:
+				SELEC * FROM STATION_DATA 
+				WHERE YEAR = 2010;			# Seleciona todos os dados apenas de 2010.
+
+				SELEC * FROM STATION_DATA 
+				WHERE YEAR <> 2010;			# Seleciona todos os dados onde ano é diferente de 2010.
+
+				SELEC * FROM STATION_DATA 
+				WHERE YEAR BETWEEN 2005 AND 2010;	# Seleciona todos os dados entre 2005 e 2010 (incluindo ambos).
+
+		-> HAVING:
+			Serve para filtrar uma tabela que foi agrupada (WHERE da erro).
+			EX:
+				SELECT year,
+				SUM(preciptation) as total_preciptation
+				FROM station_data
+				GROUP BY year
+				HAVING SUM(preciptation) > 30 
+
+				SELECT year,
+				SUM(preciptation) as total_preciptation
+				FROM station_data
+				GROUP BY year
+				HAVING total_preciptation > 30 
+
+		-> DISTINCT:	
+			Gera uma lista distinta ao invés de uma duplicata. usado para nao repetir dados.
+			EX:
+				SELECT DISTINCT station_number FROM station_data;
+				
+		
+		-> LIKE:
+			Permite que os curingas _ e % representem padrões de texto.
+			EX:
+				SELEC * FROM STATION_DATA 
+				WHERE REPORT_CODE LIKE 'A%';		# Seleciona todos os dados que começam com a letra A.		
+
+				SELEC * FROM STATION_DATA 
+				WHERE REPORT_CODE LIKE '%A';		# Seleciona todos os dados que terminam com a letra A.
+
+				SELEC * FROM STATION_DATA 
+				WHERE REPORT_CODE LIKE '%A%';		# Seleciona todos os dados que possuem a letra A.
+
+				SELEC * FROM STATION_DATA 
+				WHERE REPORT_CODE LIKE 'A%B';		# Seleciona todos os dados que começam com a letra A e terminam com a letra B.
+
+				SELEC * FROM STATION_DATA 
+				WHERE REPORT_CODE LIKE 'B_C%';		# Seleciona todos que começam com B e são seguidos de C.	
+
+		-> GROUP BY:	
+			Junta os subdados de uma coluna em outra.
+			EX:
+				SELECT year, COUNT(*) AS record_count FROM station_data
+				WHERE tornado = 1
+				GROUP BY year;				# Conta a quantidade de tornados que ocorreu por ano.	
+
+				SELECT year, month, COUNT(*) AS record_count FROM station_data
+				WHERE tornado = 1
+				GROUP BY year, month;			# Conta a quantidade de tornados que ocorreu por mes de cada ano.
+
+				SELECT year, COUNT(*) AS record_count FROM station_data
+				WHERE tornado = 1
+				GROUP BY 1, 2;				# Conta a quantidade de tornados que ocorreu por mes de cada ano.
+
+		-> ORDER BY:
+			Ordena os dados da maneira desejada.
+			EX:	
+				SELECT year, month, COUNT(*) AS record_count FROM station_data
+				WHERE tornado = 1
+				GROUP BY year, month
+				ORDER BY year DESC, month;		# Mostra os tornados mais recentes primeiro.
+
+		-> CASE:
+			Adiciona uma condição.
+			EX:
+				SELECT report_code, year, month, day, wind_speed,
+				CASE
+					WHEN wind_speed >= 40 THEN 'HIGH'
+					WHEN wind_speed >= 30 AND wind_speed < 40 THEN 'MODERATE'	# AND não é necessário pois após achar a condição adequada o resto do bloco CASE não é analizado.
+					ELSE 'LOW'
+				END AS wind_severity
+				FROM station_data 
+
+				SELECT year, month
+				
+				SUM(CASE WHEN tornado=1 THEN precipitation ELSE 0 END) AS tornado_precipitation,
+				SUM(CASE WHEN tornado=0 THEN precipitation ELSE 0 END) AS non_tornado_precipitation
+
+				FROM station_data GROUP BY 1, 2;
+		
+
+		-> DESCRIBE:
+			Descreve os dados de uma tabela.
+		
+			DESCRIBE pessoas;	
+		
+	
+		-> JOIN:
+			Pai na esquerda e filha na direita.
+
+			a) INNER JOIN:
+				Permite mesclar duas tabelas através de um atributo em comum (qualquer registro que não tenha valor comum nas duas tabelas sera excluído).
+				EX:
+					# Agrupando 2 tabelas:
+	
+					SELECT ORDER_ID, 
+					CUSTOMER, CUSTOMER_ID, 
+					ORDER_DATE, SHIP_DATE, 
+					NAME, STREET_ADRESS, CITY, STATE, 
+					ZIP, PRODUCT_ID, ORDER_QTY
+					FROM CUSTOMER INNER JOIN CUSTOMER_ORDER
+					ON CUSTOMER.CUSTOMER_ID = CUSTOMER_ORDER.CUSTOMER_ID;
+
+					# Agrupando 3 tabelas:				
+	
+					SELECT 
+					ORDER_ID, 
+					CUSTOMER.CUSTOMER_ID, 
+					NAME AS CUSTOMER_NAME,
+					STREET_ADRESS, CITY, STATE, ZIP, 
+					ORDER_DATE,
+					PRODUCT_ID, 
+					DESCRIPTION,
+					ORDER_QTY
+			
+					FROM CUSTOMER 
+
+					INNER JOIN CUSTOMER_ORDER
+					ON CUSTOMER.CUSTOMER_ID = CUSTOMER_ORDER.CUSTOMER_ID
+					
+					INNER JOIN PRODUCT
+					ON CUSTOMER_ORDER.PRODUCT_ID = PRODUCT.PRODUCT_ID;
+					
+
+			b) LEFT JOIN:
+				Associa duas tabelas através de um atributo em comum, caso não exista tal aatributo, os registros da tabela da esquerda sem valores recem null.
+				EX:
+					SELECT ORDER_ID, 
+					CUSTOMER, CUSTOMER_ID, 
+					ORDER_DATE, SHIP_DATE, 
+					NAME, STREET_ADRESS, CITY, STATE, 
+					ZIP, PRODUCT_ID, ORDER_QTY
+					FROM CUSTOMER LEFT JOIN CUSTOMER_ORDER
+					ON CUSTOMER.CUSTOMER_ID = CUSTOMER_ORDER.CUSTOMER_ID;
+
+			c) RIGHT JOIN:
+				O mesmo de LEFT JOIN, porém do lado direito (não é aconcelhavel).
+
+			d) OUTER JOIN:
+				Junta duas tabelas e caso não haja associação atribui nulo para o valor da tabela da esquerda ou direita.
+				
+
+	
+	----- VIEW:
+
+		Uma view é um select que foi salvo pois é muito utilizado.
+	
+	----- FUNÇÕES:
+
+		-> count(x):
+			Conta a quantidades de vezes que o que foi solicitado em x aparece.
+			EX:	
+				SELECT COUNT(*) AS record_count 		# Conta a quantidade de tornados que ocorreram.
+				FROM station_data
+				WHERE tornado = 1;
+
+				SELECT COUNT(snow_depth) AS record_snow		# Conta a quantidade de valores não nulos na coluna snow_depth.
+				FROM station_data;
+
+		-> AVG(x):
+			Calcula a média.	
+			EX:
+				SELECT month, ROUNT(AVG(temperature), 2) AS avg_temperature
+				FROM station_data WHERE year >= 2000 GROUP BY month;
+
+		-> SUM(x):
+			Soma todos os valores não nulos de x.
+			EX:
+				SELECT year, SUM(snow_depth) as total_snow FROM station_data.
+
+		-> MAX(x):
+			Pega o maior valor da coluna x.
+				SELECT year, MAX(snow_depth) as max_snow FROM station_data.
+		
+		-> round(x, 2):	# x = valor a ser arredondado / 2 casas após a vírgula.
+			Serve para arredondar valores do tipo float.
+			EX:
+
+				SELECT 
+				PRODUCT_ID, 
+				DESCRIPTION, 
+				PRICE, 
+				round(PRICE * 1.07, 2) AS TAXED_PRICE		# Seleciona os valores da tabela PRICE e aumenta o valor de cada um em 7%, em seguida cria uma nova coluna com os valores dos preços com a taxa de 7% aplicada (TAXED_PRICE).
+				FROM PRODUCT;
+
+		-> length():
+			Conta a quantidade de caracteres do dado.
+			EX:	
+				SELECT * FROM PRODUCT_ID 
+				WHERE LENGTH(ID) > 1;
+
+	
+		-> coalesce():
+			Transfroma nulos em valores.
+			EX:	
+				SELECT * FROM STATION_DATA 
+				WHERE coalesce(preciptation, 0) <= 0.5;		# Avalia se o valor de precipitation é menor ou igual a 5, caso for null transforma em 0.
+			

@@ -1,0 +1,108 @@
+
+
+----- ATALHOS:
+	
+	Tab			- Célula do lado.
+	Enter			- Linha de baixo na posição inicial.
+	
+	ctrl + 'setas'		- Desloca o seletor o máximo possível na direção da seta. Pode usar com ctrl + shift + 'seta' para selecionar os elementos desejados.
+	ctrl + home		- Volta para a primeira célula.
+	
+	ctrl + 'x'		- Recorta os dados e ctrl + 'v' realoca esses dados.
+
+	Alt + 'g'		- Diga-me ou ajuda, serve para pesquisar fórmulas.
+
+	Criando linhas ou colunas novas no meio da tabela:
+	-> Com as linhas novas selecionada: ctrl + '+'
+	-> Com as colunas novas selecionada: ctrl + '+'
+
+	Apagando linhas ou colunas:
+	-> Com a(s) linha(s) ou  coluna(s) selecionada(s): ctrl + '-'
+
+	Selecionando:
+	-> ctrl + a		- Selecionando a tabela inteira.
+	-> ctrl + *		- Selecionando todos os elementos da tabela em que o seletor se encontra.
+	-> shift + espaço	- Seleciona a linha toda.
+	-> ctrl + espaço	- Seleciona a coluna toda.
+
+----- ENTRADA DE DADOS:
+	
+	-> Entrada de dados sequênciais:
+		Primeira e segunda células recebem seus valores e arrasta o mouse até a ultima casa selecionando todas as células desejadas.
+		É possivel gerar uma lista personalizada em Arquivo->opções->Avançado->Geral->Editar listas personalizadas
+	
+	-> Entrada de múltiplos dados iguais:
+		primeira célula recebe o valor, marca as células que irão receber tal valor e Ctrl + 'Enter'.
+
+----- FORMATAÇÃO:
+	
+	Útil para formatar várias células ao mesmo tempo, como por exemplo criar 1°, 2°, 3°, 4°, ...
+ 
+	ctrl+1		- Janela de formatação de células.
+
+	Fusão de células:	Seleciona as selulas desejadas e a opção de mesclar.
+
+
+	-> Tirando a formatação:
+		Edição -> borracha -> limpar formatação.
+
+	-> Números:
+	
+		Seleciona as células e ctrl + '1'
+
+		ctrl + shift + !	-> Vira número.
+		ctrl + shift + $	-> Vira valor.
+		ctrl + shift + %	-> Vira porcentagem.
+		ctrl + shift + #	-> Vira data.
+		ctrl + shift + @	-> Vira hora.
+
+
+----- OPERADORES MATEMÁTICOS:
+
+	Soma 		+
+	Subtração	-
+	Multipicação	*
+	divisão		/
+	Exponencial	^
+	porcentagem	%
+
+	----- Ordem de precedencia:
+		
+		() -> - inversão -> % -> ^ -> */ -> +-
+
+	----- EXEMPLOS
+	Média:
+		=(A1+A2)/2		
+
+
+----- ALGORITMOS:
+	
+	Soma:
+	-> =SOMA(célula_inicial:célula_final) ou (Nome_da_linha_ou_coluna)
+	: = intervalo.
+	; = e.
+
+	Média:
+	-> =MÉDIA(célula_inicial:célula_final) ou (Nome_da_linha_ou_coluna)
+
+	Máximo:
+	-> =MAIOR(célula_inicial:célula_final; chave) ou (Nome_da_linha_ou_coluna)
+	Chave é a posição desejada, por exemplo '2' pega o segundo maior.
+
+	Mínimo:
+	-> =MENOR(célula_inicial:célula_final; chave) ou (Nome_da_linha_ou_coluna)
+	Chave é a posição desejada, por exemplo '2' pega o segundo maior.
+
+	Contador:
+	-> =CONT.NÚM(célula_inicial:célula_final) ou (Nome_da_linha_ou_coluna)
+	Conta quantos valores numéricos existem entre essas casas. 
+	
+	Condicional:
+	-> =SE(A1="SP";"Paulista";"Carioca")	Se o estado for São Paulo status recebe "Paulista", se não recebe "Carioca".
+	-> =SE(A1>50000;"grande";"pequeno")	Se a população for maior que 50000 classificação recebe "grande", se não recebe "pequeno".
+
+	Fusão de algoritmos:
+	SOMA + SE 	-> =SOMASE(Estado="RJ";População)		Se o estado for Rio de Janeiro some a população.
+	CONT + SE 	-> =CONT.SE(Estado;"=RJ")			Conta o total de municipios do Rio de Janeiro.
+	CONT + SES	-> =CONT.SES(Estado;"=RJ";Pupulação;">50000")	Conta se o estado for Rio de Janeiro e a população for maior que 50000.
+	MÉDIA + SE 	-> =MÉDIASE(Estado;"=RJ";População)		Faz a média da população.

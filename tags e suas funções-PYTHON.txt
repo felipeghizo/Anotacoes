@@ -1,0 +1,1550 @@
+---------- IMPORTANTE ----------
+del(alguma coisa)	deleta essa coisa.
+
+Paradigma Imperativo - Fortran - Sequência, Decisão e a Iteração
+Paradigma Estruturado - C - structs
+Paradigma Procedural - Python
+
+
+----- AJUDA
+
+help()	(OBJETOS DUNDER)
+
+dir() -> mostra o que é possível fazer com aquele elemento.
+
+print(alguma_coisa.__doc__)
+
+- - - docstring
+def bla(i, f, p):
+"""
+	aqui vem o que aparece no help porem vc mesmo faz
+"""
+
+---------- PIP ----------
+
+	No prompt de comando:
+
+	pip -- version		-> versão do python.
+	pip list 		-> pacotes instalados.
+	pip install pacote	-> instala o pacote.
+	pip un
+
+ pacote	-> desinstala o pacote.
+	pip freeze > pacote.txt	-> cira um arquivo txt com os pacotes instalados.
+
+---------- STRINGS ----------
+
+	Cadeia de caracteres.
+	
+	+ serve para fazer a concatenação.
+
+	Quando uma string tem numeros, os numeros sao strings (para convertelos basta colocar int()).
+
+	
+	nome = "criança echo"
+
+	c = 0
+	r = 1 
+	i = 2
+	a = 3	
+	n = 4
+	ç = 5
+	a = 6
+	  = 7
+	e = 8
+	c = 9
+	h = 10
+	o = 11 
+
+	#nome[0:7]		-->	"criança"	
+					
+	#nome[0:11:2]		-->	"cinaeh"
+						
+	#nome[0:4]		-->	"cria"
+
+
+	enumerate	ira enumerar os elemnetos de uma lista/tupla/dic
+
+	-> cores em strings:
+		
+		\033[estilo:cor do texto: cor do fundo m
+		
+		estilos:
+			-> 0 none
+			-> 1 bold
+			-> 2 underline
+			-> 3 negative
+		cores:
+			-> 30  branco
+			-> 31  vermelho
+			-> 32  verde 
+			-> 33  amarelo
+			-> 34  azul
+			-> 35  roxo
+			-> 36  ciano
+			-> 37  cinza
+
+		EX:	\033[0:33:44m
+			
+----- FORMATAÇÕES
+
+	print( "{:.2f}" .format(div)) 	#duas casas decimais.
+
+	print( "%.2f" % (variavel))
+
+	print(f'{tupla[pos]:.<30}')	# mostrara a tupla em 30 casas alinhada a esquerda e completara os digitos faltantes com pontos.(EX: livro.........................)
+		<	#alinha pra esquerda.
+		>	#alinha pra direita.
+		^	#alinha com o centro.
+
+
+	print(q, p, p * q, sep=" :-) ")
+
+		459 :-) 0.098 :-) 44.982
+
+	
+	import time
+
+	for _ in range(5):
+    		print('.', end='', flush=True)		#end junta a linha atual com a proxima e o flush gera fluides durante os sleeps.
+    		time.sleep(0.5)
+	print(' Pronto!')
+
+
+	a, b, c = "felipe", 19, 19.2
+	
+	print("%s tem %d anos e %f dinheiros" % (a, b, c))
+	%d	#formata um int.
+
+	%f	#formata um float.
+
+	%s	#formata uma string.
+
+------ ORGANIZANDO: 
+
+	x = [-1, -4, 3, 2]
+	y = sorted(x)					#ordena em ordem alfabetica/numerica mas nao muda o valor da variavel.
+	x.sort()					#ordena em ordem alfabetica/numerica mudando a variavel.
+	
+	y = sorted(x, key=abs, reverse=True)		#[-4, 3, 2, -1] (key=abs(valor absoluto)).
+
+
+---------- INPUT ----------
+
+	variavel = input("qual o seu nome? \n")
+	variavel2 = int(input("qual a sua idade? \n"))
+
+
+-----FUNÇÕES DE STRING E INPUT
+	
+	len(variavel)					retorna o tamanho da string.
+	
+	variavel.count('elemento a ser contado')	conta quantas vezes aquele elemento aparece.
+
+	variavel.count('elemento a ser contado',0,9)	conta quantas vezes aquele elemento aparece no intervalo de 0 até 9.
+
+	variavel.find('aquilo a ser encontrado')	da a posição do objeto procurado e se nao encontrar retorna -1.
+
+	'elemento' in variavel				retorna se o elemento pertence a variavel (True) ou não (False).
+
+	nome.replace(‘acao’,’ador’)        		substitui.
+
+	varivel.upper()  				transforma as minúsculas em maiúsculas
+
+	varivel[0]  					ira pegar apenas a letra que estiver na posição 0.
+
+	varivel.lower() 				transforma as maiúsculas em minúsculas
+
+	varivel.capitalize() 				1º caracter maiúsculo demais minúsculas
+
+	varivel.title() 				1º caracterde de cada palavra fica maiúsculo
+
+	varivel.strip() 				para remover espaço em branco (início e final)
+
+	varivel.rstrip() 				remove espaços extras no final  (right-direita)
+
+	varivel.lstrip() 				remove os espaços extras na esquerda (left–esq)
+
+	variavel.split()  				divide uma string em uma lista/ separando pela inicial de cada palavra. Gera uma lista que conterá todas as palavras de uma cadeia de caracteres ( lista composta). ou seja, a contagem se reiniciara para cada palavra.
+	
+	'valor'.join(variavel)				junta o split e coloca o valor entre as palavras.
+
+
+--------- OPERADORES LÓGICOS ---------
+
+----- OPERADORES DE COMPARAÇÃO
+
+	==	igual.
+
+	!=	diferente.
+
+	>	maior que.
+
+	<	menor que.
+
+	>=	maior ou igual a.
+
+	<=	 menor ou igual a.
+ 
+----- OPERADORES LÓGICOS e VERACIDADE
+
+	and			#e.
+
+	or			#ou.
+
+	not / !			#nao.
+	
+	True			#verdadeiro.
+
+	False			#falso.
+
+		São falsos:
+			False.
+			None.
+			[].
+			{}.
+			set().
+			"".
+			0.
+			0.0.
+
+	x = y and z  		#x recebe True quando o segundo elemento for igual ao primeiro.
+
+	x = y or z		#x só ira receber False caso os dois elemnetos sejam falsos. 
+
+	all([])			#retorna True se tudo oque estiver em seu interior for verdadeiro.
+	any([])			#retorna True se pelo menos um elemento for verdadeiro.	
+
+	all([True, 3, {1}])	#True.
+	all([True, 3, {}])	#False.	
+	any([True, 3, {}])	#True.
+	all([])			#True.
+	any([])			#False.
+
+
+
+
+----- OPERADORES DE ASSOCIAÇÃO:
+	in
+	not in
+
+EX:
+
+	x = y and z  		#x recebe True quando o segundo elemento for igual ao primeiro.
+
+	x = y or z		#x só ira receber False caso os dois elemnetos sejam falsos. 
+
+	all([])			#retorna True se tudo oque estiver em seu interior for verdadeiro.
+	any([])			#retorna True se pelo menos um elemento for verdadeiro.	
+
+	all([True, 3, {1}])	#True.
+	all([True, 3, {}])	#False.	
+	any([True, 3, {}])	#True.
+	all([])			#True.
+	any([])			#False.
+	
+	
+
+	
+----- OPERADORES DE ATRIBUIÇÃO
+	
+	=	recebe.
+
+	+= x	recebe ele mesmo mais o valor x.
+	
+	-= x	recebe ele mesmo menols o valor x.
+
+	*= x	recebe ele mesmo vezes o valor x.
+	
+	/= x 	recebe ele mesmo dividido pelo valor x.	( Py 2.7 = Divisões em phyton retornarão a parte inteira. importe division from __future__ para as divisões serem "quebradas")
+	
+	%= x 	recebe o resto da divisão dele por x.
+	
+	**= x	recebe ele mesmo elevado a x.	
+	
+	//= x	recebe a parte inteira da divisão dele por x.	
+
+	&= x	recebe o valor dele e x. 			
+
+	|= x	recebe ele ou x.
+
+	^= x	recebe ele ou x, mas não os dois.	
+
+	>>=
+
+	<<= 
+		
+
+-----  OPERADORES ARITMÉTICOS 
+	
+	+	soma.
+	
+	-	subtração.
+
+	*	multiplicação.
+	
+	/	divisão.
+	
+	%	resto da divisão.
+	
+	**	potência.
+	
+	//	parte inteira da divisão.
+
+----- OPERADORES BIT A BIT
+
+	&	and
+	
+	|	or
+
+	^	xor
+
+	~	not
+
+	<<
+
+	>>
+	
+	
+
+
+
+--------- VARIAVEIS ----------
+
+	nome_da_variavel = "felipe" ou 2 ou 2.1 ou True/False
+
+	valor:
+		str
+		int
+		double
+		boolean
+
+	escopo global:
+		
+		A variavel recebe o mesmo valor para todo o códio.
+		
+	escopo local:
+
+		A variavel recebe um valor para uma parte especifica do código.(EX: uma função).
+
+
+	def teste(b):
+		global a				# torna o 'a' como escopo global 
+		a = 8
+		b += 4
+		c = 2
+
+		print(f"A dentro vale {a}")	#8
+
+		print(f"B dentro vale {a}")	#12
+
+		print(f"C dentro vale {c}")	#2
+
+	a = 5
+	teste()
+	print(f"A fora vale {a}")		# se houver 'global a' vale 8, caso contrario vale 5.
+
+-----CASTING
+	
+	x = int('1')
+	y = float(2)
+	z = str(3)
+
+
+---------- ESTRUTURAS DE CONDIÇÃO ----------
+	Identação extremamente importante!
+
+	if x > 2:
+		
+		print(x)
+
+	elif x == 2:
+		print(x + 2)
+
+	else:
+		print("alo")
+
+----- OPERADOR TERNARIO
+
+	def cum(lista):
+    		return [x for i, x in enumerate(lista) if x != 2]
+
+
+	lista = [1, 2, 3]
+	print(cum(lista))			# [1, 3].
+	a = 8
+	b = 5
+	print("B") if b > a else print("A")	# A.
+
+
+
+
+
+---------- ESTRUTURAS DE REPETIÇÃO ----------
+
+----- FOR
+
+	for i in range(começo, final + 1, pulando de tanto em tanto):
+		print(i)
+
+	for x in range(5):
+		print(x)
+
+	else:
+		print(x+1)
+
+-- enumerate (funciona como o len(), porem cria o index(=len()) e o element(=elemento que esta em determinado index)):
+	(Solução pythonic é enumerate que produz tuplas(index, element)):
+	for i, document in enumerate(domument):
+		do_something(i, document)
+
+
+
+----- WHILE
+
+	x = 0
+	while x <= 5:
+    		print(x)
+    		x += 1
+	else:
+    		print("f", x)
+
+ou
+
+	x = 0 
+	while True:
+		x += 1
+		if x > 2:
+			break
+
+ou 
+
+	x = 0
+	while x < 2:
+		x += 1 
+
+
+
+while True:
+ 	try:
+    		A, B, C = input().split()
+    		A = int(A)
+    		B = int(B)
+    		C = int(C)
+
+		if  B == C != A:
+        		print("A")
+    		elif A == C != B:
+        		print("B")
+    		elif B == A != C:
+        		print("C")
+    		elif B == A == C:
+        		print("*")
+	except EOFError:
+    		break
+
+
+----- TUPLAS () -----
+
+
+	As tuplas são imutáveis, mas podem ser apagadas inteiramente (impossivel apagar apenas um elemento).
+
+	sintaxe:
+		lanche = ('hamburguer' , 'suco' , 'pzza' , 'pudim')
+
+	EXEMPLO:
+
+		1)
+
+		lanche = ('hamburguer' , 'suco' , 'pizza' , 'pudim')
+
+		tupla = list(range(20))
+
+		print(lanche)		#('hamburguer' , 'suco' , 'pizza' , 'pudim')
+		print(lanche[0])	#hamburguer
+		print(lanche[1])	#suco		
+		print(lanche[2])	#pizza
+		print(lanche[3])	#pudim
+		print(lanche[-2])	#pizza			(ao contrario e não tem zero)
+		print(lanche[1:3])	#suco pizza		(Elemento 3 é ignorado)
+		print(lanche[2:])	#pizza pudim		(vai até o final)
+		print(lanche[:2])	#hamburguer suco	(vai do inicio até o 2 desconciderando o 2)
+		print(lanche[-2:])	#pizza pudim		(mesmo sendo -2 a ordem continua indo pra frente)
+		print(len(lanche))	#4
+		print(sorted(lanche))	#['hamburguer'  , 'pizza' , 'pudim' , 'suco']	(ordena em ordem alfabetica/numerica mas não muda a variavel)
+		
+	
+		2)
+
+		a = (2, 5, 4)
+		b = (5, 8, 1, 2)
+		c = a + b
+
+		print(c)		#(2, 5, 4, 5, 8, 1, 2) 		(vai concatenar)
+		print(len(c))		#7
+		print(c.count(5))	#2				(quantas vezes o 5 aparece)
+		print(c.index(8 ,1))	#3				(qual posição esta o 8 na sua primeira aparição começando a contar da posição 1)
+
+
+----- CONJUNTOS -----
+
+-----DECLARANDO CONJUNTOS:
+
+	con = set()				#util no data science pois verifica mais rapido do que em uma lista e nao conta valores repitidos.
+
+	con = set(x * x for x in [-1, 1])	#{1}.
+
+----- ADICIONANDO VALORES:
+	
+	con.add(1)		#con == {1}
+	con.add(2)		#con == {1, 2}
+	con.add(2)		#con == {1, 2}	(é conjunto).
+
+----- ENCONTRANDO VALORES: 
+	
+	y = 2 in con		#True.
+	x = 3 in con		#False.
+
+----- LISTAS [] -----
+
+-----DECLARANDO LISTAS: 
+
+	valores = list(range(4, 11))				#cria uma lista com 7 elementos. EX: (9, 3, 4, 7, 8, 10, 2)
+	c = lista_A[:]						#copia o conteudo da lista A e cria um laço, ou seja, oq for mudado em uma muda na outra.
+	b = a							#copia os elementos mas nao cria um laço.
+
+	x, y = [1, 2]						#x == 1 e y == 2.
+
+	even_numbers = [x for x in range(10) if x % 2 == 0]	#[0, 2, 4, 6, 8]
+
+	pairs = [(x, y) for x in range(10) for y in range(10)]
+	
+
+
+----- ORGANIZANDO VALORES:
+	
+	valores.sort()				#deixa em ordem.		 EX: (2, 3, 4, 7, 8, 9, 10)
+	valores.sort(reverse = True)		#deixa na ordem ao contrario.	 EX: (10, 9, 8, 7, 4, 3, 2)
+	
+	(compactando):
+	list1 = ['a', 'b', 'c']
+	list2 = [1, 2, 3]
+	zip(list1, list2)			#[('a', 1), ('2', b), ('c', 3)]
+	
+	(desconpactando):
+	pairs = [('a', 1), ('2', b), ('c', 3)]
+	letters, numbers = zip(*pairs)		# * na frente de algum elemento geralmente é algo engenhoso.
+
+----- CONTANDO E ENCONTRANDO VALORES:
+
+	len(valores)				#conta os elementos.		 Ex: 7.
+
+	min(valores)				#Pega o menor valor da lista.
+	max(valores)				#Pega o maior valor da lista.
+
+	valores.index(x, y)			#Em qual posição o x aparece primeiro começando a contar do y.
+	
+	valores = list(range(10))
+	
+	valores[0]				#Primeiro elemento: [0]
+	valores[-1]				#Ultimo elemento(pythonyc): [9]
+
+	valores[:3]				#[0, 1, 2]
+	valores[3:]				#[3, 4, 5, 6, 7, 8, 9]
+	valores[1:5]				#[1, 2, 3, 4]
+	valores[-3:]				#[7, 8, 9]
+	valores[1:-1]				#[1, ..., 8]
+
+	1 in valores				#True.
+	10 in valores				#False.
+
+
+----- ADICIONANDO VALORES:
+	
+	valores = list(range(4))
+	valores[2] = 5				#elemento na posiçaõ 2 virara 5.EX: (0, 1, 5, 3). 
+	valores.append('valor')			#adiciona o elemnto na ultima casa.
+	valores.insert(posição, 'valor')	#adiciona o elemento com 'valor' na posição escolhida. (move o resto para a direita).
+	valores.extend([4, 5, 6])		#expande a lista. EX: (0, 1, 5, 3, 4, 5, 6). 	
+	y = valores + [4, 5, 6]			#mesmo da linha superior.
+
+	
+----- REMOVENDO VALORES:
+	
+	del nome_da_lista[]			#apaga o elemento na posição [].
+	x = nome_da_lista.pop(pos)			#apaga um elemento na posição (pos) da lista. (normalmente para apagar o ultimo elemento).
+	nome_da_lista.remove(‘conteúdo’)	#remove o primeiro elemento que contem o valor 'conteudo'.
+
+
+----- MATRIZ:
+	matriz = [[]]
+	for i in range(1, 4):
+    		matriz.append([])
+    		for j in range(1, 4):
+        		num = int(input(f"Adicione um numero a casa [{i},{j}]: "))
+        		matriz[i].append(num)
+
+	for i in range(1, 4):
+    		print(matriz[i])'''
+
+	mat = [None] * 4
+	for i in range(0, 4):
+		mat[i] = [None] * 3
+----- DICIONARIO {} -----
+
+	dic = dict() ou dic = {}
+
+	dic['nome'] = input("Nome: ")
+	dic['media'] = float(input("Média: "))
+	if dic['media'] >= 7:
+    		dic['situacao'] = "aprovado"
+	else:
+    		dic['situacao'] = "reprovado"
+
+	for k, v in dic.items():
+    		print(f"{k} é igual a {v}")
+
+
+
+	from random import randint
+	from operator import itemgetter
+	dic = {}
+
+	for i in range(1, 5):
+		dic[f'jogador{i}'] = randint(1, 6)
+
+	for k, v in dic.items():
+   		print(f"{k} tirou {v} no dado")
+
+	dic = sorted(dic.items(), key=itemgetter(1), reverse=True)
+
+	for i, v in enumerate(dic):
+    		print(f"{i+1} lugar:  {v[0]} com {v[1]}")
+
+
+
+	print(dic.value())	#"felipe"  
+	print(dic.key())	#nome:
+	print(dic.item())	#nome: "felipe"
+
+
+	list.append(estado.copy()) == list.append(estado[:])	#o segundo nao funciona pois nao da de fatiar o dicionario.
+
+
+
+
+	square_dict = {x: x*x for x in range(5)}		#{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
+
+
+
+----- acrescentando valores no dic:
+
+	dic['key'] = "valor"
+
+	print(dic['key'])  #valor
+
+----- excluindo valores no dic:
+
+	del dic['key']  #elimina o valor e a key
+
+
+----- encontrando e manipulando valores:
+
+	grades = {'joel' : 80, 'Tim' : 95}
+	
+	joel_grades = grades['joel']		#80.
+
+	joel_has_grades = 'joel' in grades	#True.
+	katie_has_grades = 'katie' in grades	#False.
+
+	joel_grades = grades.get('joel', 0) 	#80
+	katie_grades = grades.get('katie', 0) 	#0
+
+	grades['Tim'] = 99			# de 95 passa a ser 99. 
+
+	grades_keys = grades.keys()		#lista das chaves.
+	grades_values = grades.values()		#lista dos valores.
+	grades_items = grades.items()		#lista de (chave, valor) tuplas
+	
+
+
+
+
+
+--------- FUNÇÕES --------
+
+
+
+----- Modulo (import) 
+	
+	PASTA_1(PASTA_2(função3); função1; função2)
+
+	from PASTA_1 import função1, função2
+
+	from PASTA_1.PASTA_2 import função3
+
+	PASTA_1(arquivo1[função1; função2; ... ; funçãoX])
+	
+	from PASTA_1.arquivo1 import funçãoY
+
+	import random
+
+	from random import randint as cum
+
+	from random import random, choice
+	
+	from random import (
+		random,
+		choice
+	)	
+
+
+def nome_da_funcao(parametros):			#declaração
+
+	rotina da função
+
+	return (valor a ser retornado)
+
+print(nome_da_funcao(variavel))			#chamada
+
+
+nome_da_funcao = lambda parametros, passados: parametros*passados
+
+print(nome_da_funcao(1, 2))
+
+
+
+---- util para funções de ordem alta(funções dentro de funções){
+
+	def magic(*args, **kwargs):			#args (é uma tupla dos seus argumentos sem nome); kwargs (é um dicionario dos seus elementos com nome)	
+		print("unnamed args: ", args)		# (1, 2)
+    		print("keyword args: ", kwargs)		# {"key1": "word", "key2", "word2"}
+
+	magic(1, 2, key1="word", key2="word2")
+
+	def other_magic(x, y, z):
+    		return x + y + z
+
+	x_y_list = [1, 2]
+	z_dict = {"z": 3}
+
+	print(other_magic(*x_y_list, **z_dict))		# 6
+
+	
+
+}
+
+
+----- funções uteis e como usa-las:
+
+--sum
+
+	lista = [1, 2, 3, 4]
+	print(sum(lista))
+
+----- desempacotamento
+
+def x(*num):				#caso nao se saiba quantos parametros serao passados.
+
+----- parametro opcinal
+
+def x(a=0, b=0, c=0):			#caso nao sejam passados 3 parametros o codigo nao tera problema.
+
+----- "atalhos"
+
+--random
+	-random.randrange(10) ou (3, 6)				#escolhe aleatoriamente entre 0 e 9 ou 3 e 5.
+	-random.random()					#Produz numeros uniformimente entre 0 e 1.
+	-random.shuffle(lista)					#Reordena os valores de uma lista em ordem aleatoria.
+	-random.choise(lista)					#Escolhe um valor aleatório da lista.
+	-random.sample(lista, 6)				#Escolherá 6 elementos aleatórios da lista.
+	-randint
+		from random import randint
+		x = randint(0, 10)				# gera um numero aleatorio entre 0 e 10.
+	-random.seed()
+		import random 
+		x = random.seed(10)				
+		y = random.seed(10)				#x e y possuem o mesmo valor pois a seed é a mesma.
+	
+						
+
+		
+
+--datetime
+	from datetime import date
+	ano = date.today().year ou .month ou . day	# ano, mes ou dia atual.
+
+--time
+	from time import sleep
+	sleep(3)					# timer em segundos.
+
+--math							
+	from math import sqrt
+	print(sqrt(64))					# raiz quadrada.
+
+
+--partial
+
+	from functools import partial
+	
+	def exp(base, power):
+		return base ** power
+
+	{def two-to_the(power):
+		return exp(2, power)}				#{} muito complexo
+
+	two_to_the = partial(exp, 2(ou power=2))		#agr é uma função de uma variavel. (mais simples).
+	print(two_to_the(3))
+
+
+
+-- map (vc pode usar o map com funções de multiplos argumentos se fornecer multiplas listas):
+	def multiply(x, y): return x * y
+
+
+	products = map(multiply, [1, 2], [4, 5])
+	print(list(products))		#[4, 10]
+
+
+	def double(x):
+		return x * 2
+
+
+	xs = [1, 2, 3, 4]
+	twice_xs = [double(x) for x in xs]	#[2, 4, 6, 8].
+	twice_xs = map(double, xs)		#[2, 4, 6, 8].
+	list_doubler = partial(map, double)	#trasnforma a variavel em uma função com dois parametros( podem ser outras funções ou variaveis).
+	twice_xs = list_doubler(xs)		#[2, 4, 6, 8].
+
+-- filter (faz o trabalho de uma compreensão de lista if):
+	
+	from functools import partial
+	def is_even(x):
+    		return x % 2 == 0
+
+	xs = [1, 2, 3, 4]
+	x_evens = [x for x in xs if is_even(x)]     #[2, 4].
+	x_evens2 = filter(is_even, xs)              #[2, 4].
+	list_evener = partial(filter, is_even)      #função que filtra a lista.
+	x_evens3 = list_evener(xs)                  #[2, 4].
+
+-- reduce (combina os dois primeiros elementos de uma lista, entao esse resultado com o terceiro e dps com o quarto e assim por diante):
+	
+	from functools import reduce
+
+	def multiply(x, y): return x * y
+
+	xs = [1, 2, 3, 4]
+	x_product = reduce(multiply, xs)	# = 1 * 2 * 3 * 4 = 24 ( aplica uma função a todos os valores do conjunto)
+	list_product = partial(reduce, multply)	#função que reduz a lista.
+	x_product = list_product(xs)		# 24
+
+-- os (Verificar pacotes):
+	import os
+	
+	os.name					#retorna o SO que esta sendo utilizado.
+	os.path.exists('arquivo.py')		#verifica se arquivo.py existe.
+	
+	CRIANDO:
+
+		
+		os.makedirs ou os.mkdir("diretorio") 		#cira um diretório.
+		os.mknod("arquivo")				#cria um arquivo.
+
+	APAGANDO:
+		
+		os.rmdir("diretorio")		#exclui um diretório (deve estar vazio).
+		os.remove("arquivo")		#exclui um arquivo.
+		
+	
+	RENOMEANDO:
+
+		os.rename("arquivo1.py", "arquivo2.txt")
+
+		os.rename("./pasta/arquivo1.py", "arquivo2.py")		# tira da pasta.
+		os.rename("./pasta/arquivo1.py", "./pasta/arquivo2.py") # deixa na pasta.
+
+----- manipulando arquivos:
+
+	arquivo = open("arquivo1.txt", "r" ou "w")	# abre o arquivo ("a" de append, 	"w" de write e "r" de read {default é r}).
+	arquivo.close()					# fecha o arquivo.
+
+	print(arquivo.closed)	# retorna True se o arquivo esta fechado e False se esta aberto.
+
+	print(arquivo.read())		# retorna o conteudo do arquivo.
+	print(arquivo.readline())	# retorna o conteudo de uma linha (se usar dnv mostra a proxima).
+
+	with open("./pasta/arquivo.txt", "w"  ou "r") as a:	#cria um bloco e não precisa fechar o arquivo ("a" de append, "w" de write {sobreescreve} e "r" de read {default é r}).
+		print(a.read())
+
+----- PDF
+from pydf import generate_pdf
+import os
+
+os.rename("how_to_make_cum.txt", "how_to_make_cum.pdf")
+
+pdf = generate_pdf("<h1> CUM </h1><p> cum </p>")
+
+with open("how_to_make_cum.pdf", "wb") as a:
+    a.write(pdf)
+
+----- móduloe e pacotes:
+
+---pacotes:
+
+quando existirem muitas funções dentro de um modulo esse modulo pode ser dividido em pacotes, basta criar uma PASTA (uteis) e dentro da pasta criar os MÓDULOS (bla1, bla2, bla3, etc).
+
+1ª passo: criar a pasta projetos.
+
+2ª passo: criar o arquivo index.py.
+
+3º passo: criar um python package (uteis) dentro da pasta projetos.
+
+4ª passo: criar python packages divididos nas categorias desejadas (cores, numeros, strings, datas) dentro do primeiro python package (uteis).
+
+5ª passo: colocar as funções dentro dos arquivos __init__.py de cada python packages.
+
+EX:
+
+	from uteis import numero
+	numero.fatorial()
+
+	
+
+--- módulos:
+
+uteis.py:
+	
+	def bla1():
+
+	def bla2():
+
+	def bla3():
+
+index.py
+
+	import uteis
+
+	uteis.bla1()
+
+	uteis.bla2()
+
+	uteis.bla3()
+
+	#ou
+	
+	from uteistroll improt bla1, bla2, bla3		#pode dar problema.
+	from uteis improt bla1, bla2, bla3		#pode dar problema.
+
+	bla1()						#sera usado o ultimo que foi imortado.
+
+	bla2()
+
+	bla3()
+
+----- TRATAMENTO DE ERRO:
+	
+	try		Será tentado primeiro.
+	except		Caso o try não seja possivél.
+	else		Caso não exista erro.
+	finally		Sempre aparece não importa o resultado do try.
+
+	try:
+		a = int(input("Numerador: "))
+		b = int(input("Denominador: "))
+		r = a/b
+	except Execption as erro:
+		print(f"Houve um problema! {erro}")
+	else:
+		print(r)
+	finally:					
+		print(Volte sempre!)
+	
+----- OBJETOS DUNDER
+	dunder: duplo underscore ou duplo underline
+	
+	Atributos mágicos: variáveis.
+	Métodos mágicos: funções.
+	
+	Serve para obter informações sobre o programa (?)
+
+	__name__ e __main__  ->	
+
+		função:
+			def bla():
+				return "ola mundo"
+
+			if __name__ == "__main__":
+				print(" Esse é o código que foi importado")
+		codigo:
+			import funcao
+			print(funcao.bla())
+		
+		executando o arquivo codigo temos como retorno "ola mundo".
+		executando o arquivo funcao temos como retorno "Esse é o código que foi importado".
+
+
+	__doc__		->   Descreve o que o módulo faz (DOCUMENTAÇÃO) (""" """ é mais útil).
+		
+		função:
+			__doc__ = " a função bla retorna a str "ola mundo".
+
+			def bla():
+				return "ola mundo"
+
+			if __name__ == "__main__":
+				print(" Esse é o código que foi importado")
+		codigo:
+			import funcao
+			print(funcao.bla())
+			print(funcao.__doc__)
+			
+
+	__file__   	->   retorna o caminho do arquivo .py.
+		>>> arquivo.__file__   ->   "retorna o caminho do arquivo"
+
+	__init__
+	    
+	
+	
+	
+	
+	
+
+
+
+
+
+-----POO
+
+
+	4 PILARES: abstração / encapsulamento / Herança / polimorfismo
+
+
+	~~Classe é uma descrição que abstrai um conjunto de objetos que possuem características similares (comportamentos e propriedades).
+		Ex: Cachorro
+
+		-- Classe (Um conjunto de objetos com as mesmas características)
+	
+			Class cum: 
+
+	~~Construtor (Função com mesmo nome da classe que é responsável por contruir o objeto):
+
+	Class cum:
+
+		def __init__(self, nome, idade, cpf, email):
+			self.nome = nome
+			self.idade = idade
+			self.cpf = cpf
+			self.email = email
+
+
+
+
+	~~Objeto é uma instância de uma classe. 
+		Ex: cachorro do Fulano
+
+		Objeto (Representação do mundo real como um tipo de dado de uma classe)
+
+			cum_pequeno = cum(2)
+
+	~~Atributos de classe.
+
+		class cum:
+
+			how_much_cum = 2
+
+			def __init__():
+				bla 
+				bla
+				bla
+			
+			def retorna_cum(self):
+				retunr cum.how_much_cum
+
+	~~Atributos dinamico.
+		
+		instancia1.cum = "a lot"
+		
+		print(instancia1.cum)
+
+		del instancia1.com
+
+	~~Atributos de instancias são propriedades de um objeto. 
+		Ex: cor, raça, peso, idade.
+
+		Atributo (Características do objeto)
+
+			self.nome = nome
+			self.idade = idade
+			self.cpf = cpf
+			self.email = email
+		
+		print(instancia1.__dict__)	# Retorna todos os atributis da instancia. (__dict__ é um objeto dunder)
+
+	~~Métodos são operações ou ações que um objeto pode realizar quando solicitado. 
+		Ex: comer, dormir, correr
+
+		class cum:
+
+			def more_cum(qnt):
+				self.qnt_cum += qnt
+	
+		~~ decorators:
+			class cum:
+				
+				def __init__(self, nome, idade, sexo)
+					self.nome = nome
+					self.idade = idade
+					self.sexo = sexo
+
+				@classmethod		# Método da classe que recebe um parametro da classe, ou seja, nao precisa de um objeto. É chamado da seguinte forma: cum.retornainfo()
+				def retornainfo(cls, nome, anonasci, sexo):
+					idade = date.today().year - anonasci
+					return cls(nome, idade, sexo)		# possibilita acessar e alterar atributos.
+
+				@staticmethod		# Método da classe que não recebe um parametro da classe, ou seja, não consegue acessar as propriedades da classe. É chamado da seguinte forma: cum.retornainfo()
+				de retornainfo2(cls):
+					print("Codigo: 444")
+
+		~~ getters e setters (forma de acessar e manipular atributos privados e protegidos):
+
+			@property
+			def nome(self):
+				return self.__nome
+
+			
+			@nome.setter
+			def nome(self, nome):
+				self._nome = nome
+					
+
+	~~Visibilidade - Modificador de acesso.
+		
+
+		privada (private) - restritiva
+			Atributos e métodos só podem ser manipulados dentro da classe.
+			
+			class banco:
+				def __init__(self, senha):
+					self.__senha = senha	# __ = private
+
+		pretegida (protected) - intermediária
+			Atributos e métodos só podem ser manipulados dentro da classe e nas suas subclasses.
+
+			class banco:
+				def __init__(self, nome):
+					self._nome = nome	# _ = protected
+
+		publica (public) - menos restritiva
+			Atributos e métodos podem ser acessados e manipulados de qualquer parte do código.
+			
+			class banco:
+				def __init__(self, numero):
+					self.numero = numero	# = public
+
+
+
+
+	~~Encapsulamento - usar métodos dentro de métodos
+		class banco:
+			
+			def __inti__(self, valor):
+				self.valor = valor
+
+			def sacar(self, num):
+				self.valor -= num
+
+			def depositar(self, num):
+				self.valor += num
+
+			def transferir(self,num, conta2):
+				self.sacar(num)
+				conta2.depositar(num)
+			
+	
+
+	Herança é uma classe poder utilizar métodos e atributos de outra
+	classe como se fossem seus. Para que haja herança é necessário que
+	as classes possuam uma certa afinidade. Por exemplo, todo
+	professor é uma pessoa, assim como todo aluno é uma pessoa.
+	Ambos possuem todos os atributos e métodos de uma pessoa.
+
+	EX:
+		(Superclasse)
+		class Pessoa:
+				
+			def __init__(self, nome=None, data=None, cpf=None, rg=None)
+				self.nome = nome
+				self.data = data
+				self.cpf = cpf
+				self.rg = rg
+
+		(Subclasse)
+		class Aluno(Pessoa):
+
+			def __init__(self, nome):
+				Pessoa.__init__(self, nome) ou super().__init__(nome)
+				self.matricula = None
+				self.notas = []	
+
+	Herança multipla ocorre quando uma Subclasse possui duas 
+	Superclasse. # O algoritmo MRO da herança multipla busca
+	a referencia mais próxima, nesse caso a função fecundar 
+	acionada seria a do esperma. 
+	Ordem:
+	- Própria classe
+	- Primeiro pai citado
+	- segundo pai citado
+	...
+	- avô
+
+	EX:
+
+		(Superclasse)
+		class Zigotos():
+		
+			def fecundar(self):
+				pass
+	
+			def nascer(self):
+				print("nascer")
+	
+		
+		(Superclasse)
+		class Esperma(Zigotos):
+		
+			def nadar(self):
+				print("nadar")
+
+			def fecundar(self):
+				pass
+
+			def nascer_menino(self):
+				super().nascer()
+
+		(Superclasse)
+		class Ovulo(Zigotos):
+		
+			def esperar(self):
+				print("nadar")
+
+			def fecundar(self):
+				pass
+
+			def nascer_menina(self):
+				super().nascer()
+
+		(Subclasse)
+		Class Sex(Esperma, Ovulo):
+			pass
+	
+			
+
+
+
+	Polimorfismo é a capacidade pela qual duas ou mais classes
+	derivadas de uma mesma superclasse podem possuir métodos com
+	a mesma assinatura, mas comportamentos distintos, que são
+	especializados para cada classe derivada. Tais objetos dessas classes
+	derivadas podem ser atribuídos a variáveis do tipo da superclasse.
+	Por exemplo, embora um triângulo e um retângulo possuam
+	atributos em comum (base e altura) e são formas geométricas, ao
+	executar um método para calcular a área, ambos terão um resultado
+	diferente, mesmo que possuam a mesma base e a mesma altura.
+
+	EX:
+		(Superclasse)
+		class Pessoa:
+				
+			def __init__(self, nome=None, data=None, cpf=None, rg=None)
+				self.nome = nome
+				self.data = data
+				self.cpf = cpf
+				self.rg = rg
+
+			def trabalhar(self):
+				print("trabalhando...")
+
+		(Subclasse 1)
+		class professor(Pessoa):
+
+			def __init__(self, nome):
+				Pessoa.__init__(self, nome) ou super().__init__(nome)
+				self.matricula = None
+				self.notas = []	
+
+			def trabalhar(self):
+				print("alunos eeeee que legal")	
+		
+		(Subclasse 2)
+		class administrador(Pessoa):
+
+			def __init__(self, nome):
+				Pessoa.__init__(self, nome) ou super().__init__(nome)
+				self.matricula = None
+				self.notas = []	
+
+			def trabalhar(self):
+				print("numeros eeeee que legal")			
+	
+	Abstração ocorre quando varias Subclasses possuem os mesmos
+	métodos, e para maior facilidade em criar o código é feita
+	uma Superclasse abstrata. A superclasse abstrata ira possuir
+	os métos pré criados, porém são as Subclasses que irão desenvolver
+	tais métodos conforme suas necessidades.
+	
+	EX:
+
+
+		from abc import ABC, abstractcmethod
+
+		class Cum(ABC):
+
+			def __init__(self, uhun=None):
+				self.uhun = uhun
+
+			@abstractcmethod
+			def uhun(self):
+				pass
+
+		class Load(Cum):
+			
+			def __init__(self, si):
+				super().__init__(si)
+
+			def uhun(self):
+				retunr "uhun"
+
+	
+
+	Composição é quando um objeto (chamaremos de todo) possui
+	como atributos outros objetos (chamaremos de partes), sendo que
+	essas partes não fazem sentido de existir sem o todo. Em uma
+	composição, o objeto todo é responsável por criar os objetos parte
+	e um objeto parte não faz parte de outro objeto todo. Por exemplo,
+	uma nota fiscal é uma composição de itens, sendo que não faz
+	sentido a existência de um item de nota fiscal sem uma nota fiscal.
+
+	Agregação é uma composição mais fraca, onde as partes podem
+	existir sem o todo e isso faz sentido. Além disso, um objeto parte
+	pode ser compartilhado entre vários objetos todo. Por exemplo, um
+	quarto é composto de móveis, mas tanto o quarto pode existir sem
+	os móveis como os móveis podem existir sem um quarto.
+
+
+	class Classe:
+		atributo = "de Classe"
+
+		def metodo(self, parametro, atributos_de_instancias):
+			
+
+	instancia = Classe()
+
+	class Cachorro:		# O nome da classe deve começar com letra maiuscula.
+		pass		# pass permite declarar uma classe vazia.
+
+
+	class Cachorro :				# A classe Cachorro agora possui três atributos: tipo, nome, e idade.
+
+		tipo = " mamifero "			# Tipo é um atributo de classe. Isso significa que todos os cachorros possuem o atributo tipo, com o valor mamifero.
+
+		def __init__ ( self , nome , idade ):	#__init__() é o método construtor. Assim, ao instanciar um cachorro, devemos sempre informar um nome e uma idade para ele.
+
+			#nome e idade são atributos de instância, ou seja, um certo cachorro possui um certo nome e uma certa idade, que pode ser diferente de outros cachorros.
+			self . nome = nome
+			self . idade = idade
+		
+		def falar ( self , frase ):		# A classe Cachorro possui um método falar(), que recebe uma frase como entrada e simplesmente imprime na tela.
+
+			print ( frase )
+
+
+	a = Cachorro (" Ted", 12)
+	b = Cachorro (" Tom", 5)
+
+	# a e b são instâncias de cachorros. Ao escrever Cachorro("Ted", 12) estamos chamando a execução do método construtor da classe: __init__().
+
+	a.falar("teste")	# frase é o parâmetro do método falar() e "teste" é o argumento que é passado na chamada do método. Assim, parâmetro é a variável que recebe um valor na chamada de um método (está na assinatura do método) e argumento é o valor propriamente dito.
+	
+
+		
+
+
+
+
+
+#Arquivo casa
+class Seti:
+
+    def __init__(self, values=None):
+        self.dict = {}
+
+        if values is not None:
+            for value in values:
+                self.add(value)
+
+    def __repr__(self):
+        return "Set" + str(self.dict.keys())
+
+    def add(self, value):
+        self.dict[value] = True
+
+    def contains(self, value):
+        return value in self.dict
+
+    def remove(self, value):
+        del self.dict[value]
+
+#arquivo teste
+from casa import Seti		#caso esteja em pastas diferentes (NOME_DA_PASTA.casa)
+
+s = Seti([1, 2, 3, 4])
+s.add(5)
+print(s.contains(4))
+s.remove(3)
+print(s.contains(3))
+
+
+DATA SCIENCE:
+
+----- utilidades:
+
+------ defaultdict ------
+
+	from collections import defaultdict	#Isso sera útil para quando utilizar dicionários para "coletar" resultados por alguma chave e nao quiser verificar toda vez se ela ainda existe.  
+	
+	dd_list = defaultdict(list)		
+	dd_list[2].append(1)			#{2 : [1]}
+
+	dd_dict = deaultdict(dict)
+	dd_dict['joel']['city'] = "Seattle"	#{ 'joel' : {'city' = "Seattle"}}
+
+	dd_pair = defaultdict(lambda: [0, 0])
+	dd_pair[2][1] = 1			#{2: [0, 1]}
+
+------ counter ------
+	
+	from collections import Counter				#Conta quantas vezes os termos aparecem.
+
+	c = Counter([0, 1, 2, 0])				#conter([0: 2, 1: 1, 2: 1])
+
+	for word, count in word_counts.most_common(10):		#.most_common(x) mostrara os x mais comuns elementos (a variavel deve estar na forma Counter).
+		print word, count
+
+------ graficos ------
+	
+	plt.plot(x, y, color='green', marker='x', linestyle='solid') ==> grafico em linha com x no eixo x e y no eixo y, na cor verde, com x nas intercessões e solido.
+	plt.bar(x, y, 0.8)  ==> grafico em barras com x no eixo x e largura das barras de 0.8.
+
+----- grafico em linha:
+
+	from matplotlib import pyplot as plt
+
+	years = [1950, 1960, 1970, 1980, 1990, 2000, 2010]
+	gdp = [300.2, 543.3, 1075.9, 2862.5, 5979.6, 10289.7, 14958.3]
+
+	plt.plot(years, gdp, color='green', marker='o', linestyle='solid')      # cria um grafico de linha com years no eixo x e gdp no eixo y.
+	plt.title('alskdj')     						# cria um titulo ao grafico.
+	plt.ylabel('bitches')   							# add um selo ao eixo y.
+	plt.xlabel('bad')								# add um selo ao eixo x.
+
+	plt.show()
+	
+	variance = [1, 2, 4, 8, 16, 32, 64, 128, 256]
+	bias_squared = [256, 128, 64, 32, 16, 8, 4, 2]
+	total_error = [x + y for x, y in zip(variance, bias_squared)]
+	xs = [i for i, _ in enumerate(variance)]
+	
+	plt.plot(xs, variance, 'g-', label="variance")		# linha verde solida.
+	plt.plot(xs, bias_squared, 'r-.', label="bias^2")	# linha de linhas e pontos tracejados em vermelho.
+	plt.plot(xs, total_error, 'b:', label="total error")	# pontilhado azul
+
+	plt.legend(loc=9)
+	plt.xlabel("complexidade do modelo")
+	plt.ylabel("compromisso entre polarização e variancia")
+	plt.show()
+
+----- grafico em barra:
+
+	from matplotlib import pyplot as plt
+
+	movies = ['Annie hall', 'Ben-Hur', 'CasaBlanca', 'Gandhi', 'West Side Story']
+	num_oscars = [5, 11, 3, 8, 10]
+
+	xs = [i + 0.1 for i, _ in enumerate(movies)]  # as barras possuem o tamanho padrao de 0.8, entao adicionaremos 0.1 às cordenadas à esquerda para centralizar as barras.
+
+	plt.bar(movies, num_oscars, 8)  # cria um grafico em barra com movies no eixo x, num_oscars no eixo y e cada barra recebe a largura de 8.
+	plt.title('alskdj')  		# cria um titulo ao grafico.
+	plt.ylabel('bitches')  		# add um selo ao eixo y.
+	plt.xlabel('bad')  		# add um selo ao eixo x.
+	plt.axis([-5, 105, 0, 5])	# eixo x de -5 até 105 e eixo y de 0 até 5. 
+
+
+	plt.xticks([i for i, _ in enumerate(movies)], movies)   # nomeia as colunas com seus respectivos filmes.
+
+	plt.show()
+
+----- grafico de dispersao:
+
+	from matplotlib import pyplot as plt
+
+	friends = [70, 65, 72, 63, 71, 64, 60, 64, 67]
+	minutes = [175, 170, 205, 120, 220, 130, 105, 145, 190]
+	labels = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+
+	plt.scatter(friends, minutes)
+
+	for label, friend_count, minute_count in zip(labels, friends, minutes):
+		plt.annotate(label,
+			xy = (friend_count,minute_count),
+			xytext=(5, -5),
+			textcoords="offset points")
+
+	plt.show()
+	
+
+----- MANDANDO EMAIL:
+
+	import smtplib
+	conexao = smtplib.SMTP('smtp.gmail.com', 587)		# smtp.hotmail.com, ...
+	conexao.ehlo()		# se ficar entre 200 e 299 deu bom.
+	conexao.starttls()	# criptografia para garantir segurança dos dados.
+	conexao.login('email1', 'senha')
+	conexao.sendmail('email1', 'email2', 'Subject: assunto \n\n bla bla bla \n\n bla bla bla')
+	conexao.quit()	# encerra a conexao.
+
+	import smtplib
+	with smtplib.SMTP('smtp.gmail.com', 587) as conexao:		# smtp.hotmail.com, ...
+		conexao.ehlo()		# se ficar entre 200 e 299 deu bom.
+		conexao.starttls()	# criptografia para garantir segurança dos dados.
+		conexao.login('email1', 'senha')
+		conexao.sendmail('email1', 'email2', 'Subject: assunto \n\n bla bla bla \n\n bla bla bla')
+
+	import smtplib
+	import ssl
+	import email.message
+
+	msg = email.message.Message()
+
+	msg['From'] = 'email1'
+	msg['To'] = 'email2'
+	password = 'senha1'
+	msg.add_header('Content-Type', 'text/html')
+	
+	body = "bla bla cum bla"
+	msg.set_payload(body)
+	msg['Subject'] = "assunto do email"
+
+	context = ssl.creat_default_context()
+	with smtplib.SMTP('smtp.gmail.com', 587) as conexao:		# smtp.hotmail.com, ...
+		conexao.ehlo()				# se ficar entre 200 e 299 deu bom.
+		conexao.starttls(context=context)	# criptografia para garantir segurança dos dados.
+		conexao.login(msg['From'], password)
+		conexao.sendmail(msg['From'], msg['To'], msg.as_string().encode('utf-8'))
+
+----- ABRINDO UM SERVIDOR WEB HTTP
+	
+	No terminal:	python -m http.server 9000	# 9000 é a porta, se não definir sera 8000 por padrão.
+

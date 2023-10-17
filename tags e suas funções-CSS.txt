@@ -1,0 +1,1324 @@
+----- IMPORTANTE -----
+	CSS = Cascading Style Sheets
+
+	@charset "UTF-8";
+	html, body{
+		height:100%;
+	}
+
+	https://www.w3schools.com/    					# Seu melhor amigo.
+
+	www.prefixer.com para sites mais antigos.
+
+	
+	Espaço representa mudança de parametro.
+	
+	css hack:
+	_:-ms-lang(x){color: blue;}					# Ataca apenas IE ou EDGE.
+	@-moz-document url-prefix(){ body{color: blue;}}		# Atava apenas o mozilla.
+
+	Dessa forma o ios/safari não muda as configs dos inputs:
+	input[type=submit],
+	input[type=text],
+	input[type=email],
+	textarea{
+    		appearance: none;
+    		-webkit-apparance: none;
+	}
+
+----- COMENTARIOS EM CSS:
+
+	/*	*/
+
+----------------------------------------
+
+----- CODIGO BASE:
+
+	p {							# Seletor: indicam os elementos aos quais a regra se aplica.
+		font-family:Arial;}				# Declarações: idicam como os elementos referidos no seletor devem ser estilizados.
+
+	EX:
+
+	h1, h2, h3{
+		font-family: Arial;
+		color: yellow;}
+
+	<span style=" "> e </style>				# Dentro do próprio html.
+
+----------------------------------------
+
+----- CSS EXTERNA:
+
+	<head>
+		<title> externo </title>
+		<link href="css/style.css" type="text/css" rel="stylesheet"/> 						# href="caminho para o arquivo css/styles" type="tipo de documento para que o qual o link aponta. Ovalor deve ser text/css." rel="relação entre a pagina html e o arquivo para qual o link aponta, se apontar para um arquivo css deve ser stylesheet".
+	</head>
+
+----- CSS INTERNA:
+
+	<head>
+		<style type="text/css">
+		h1, h2, h3{
+			font-family: Arial; 
+			color: yellow;}
+
+----------------------------------------
+
+
+----- SELETORES CSS:
+
+	(Seletor universal):		*{}				Seleciona todos os elementos do documento.
+		
+	(Seletor de texto):		h1, h2, h3{}			Seleciona os elemntos pelo tipo.
+
+	(Seletores de classe):		1).note{} / 2) p.note{}		1) Seleciona qualquer elemnto cujo class tem valor .note / 2) seleciona somente elemntos <p> cujo class tem valor .note
+
+	(Seletor de ID):		#exemple{}			Seleciona o atributo cujo valor ID recebe exemple (CADA ELEMENTO DEVE POSSUIR SEU PRÓPRIO ID, USAR CLASS).
+
+	(Seletor de filho):		li>a{}				Seleciona apenas os elementos <a> que sao filhos de <li>.
+
+	(Seletor de descendente):	p a {}				Seleciona quaisquer elementos <a> que residem dentro de um elemento <p>, mesmo se houver outros elemntos aninhados entre eles.
+
+	(Seletor de irmão adjacente):	h1+p{}				Seleciona o primeiro elemnto <p> depois de qualquer elemento <h1>.
+
+	(Seletor de irmão geral):	h1~p{}				Seleciona quaisquer elementos <p> que são irmãos de <h1>.
+
+	(Seletor de sem classes/ID):	a[href="link"]{}		Seleciona o 'a' que possui o href com valor de 'link'. Caso queira pegar apenas uma palavra do link use: [href*="palavra"](se estiver so pal ja pega), caso queira pegar apenas uma palavra dentro da attr use: [attr~="palavra"] (necessita ser a palavra inteira), caso queira pegar uma attr que começe com uma palavra e tenha outra separando-as com um traço (palavra-blablabka) se: [attr|="palavra"], caso queira pegar a primeira palavra da attr apenas pela metade use: [attr^="pala"], caso queira pegar a ultima palavra da attr (palavrablabla) use: [attr$="blabla"]
+
+----- SELETOR DE ATRIBUTOS:
+
+		EXISTENCIA		[]		p[class]		Seleciona qualquer elemento <p> com um atributo chamado class.
+
+		IGUALDADE		[=]		p[class="dog"]		Seleciona qualquer elemento <p> com um atributo chamado class cujo valor é dog.
+																
+		ESPAÇO			[~=]		p[class~="dog"]		Seleciona qualquer elemento <p>	com um atributo class cujo valor é uma lista de palavras separadas por um espaço, uma das quais é dog.									
+																						
+		PREFIXO			[^=]		p[attr^="d"]		Seleciona qualquer elemento <p>	com um atributo cujo o valor começa com a letra'd'.														
+																	
+		SUBSTRING		[*=]		p[attr*="do"]		Seleciona qualquer elemento <p>	com um atributo cujo valor contém as letras 'do'.													
+																			
+		SUFIXO			[$=] 	 	p[attr$="g"]		Seleciona qualquer elemento <p>	com um atributo cujo valor termina com a letra 'g'.											
+		
+----- REGRAS DE PRECEDÊNCIA EM CASCATA:
+
+	(Ùltima regra):		Se dois seletores forem identicos o último tera preferência.
+
+	(Especifidade):		Se um seletor for mais especifico que o outro esse tera preferência.
+
+	(Importante): 		Pode-se adicionar !important a um elemento e esse tera preferencia sobre outros elementos iguais.
+
+----------------------------------------
+
+----- VARIÁVEIS:
+
+	----- Declaração:
+		--nome: valor;
+
+	----- Exemplo:
+		:root{
+			--cor1: #000000;
+			--fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+		}
+		
+		body{
+			background-color: var(--cor1); 
+			font-family: var(fonte-padrao);	
+		}
+
+
+----------------------------------------
+
+----- CORES:
+
+	Usar (adobe colors, paletton, coolors, etc) para manipular a paleta de cores.
+
+	h1{
+	
+		color:DarkCyan;/#ee3e80;/rgb(100,100,90);		# Valores rgb usam a quantidade de vermelho, azul e verde para expressar uma cor / Códigos exadecimais usam a quantidade de vermelho, azul e verde para expressar uma cor / Nomes de cores.
+			
+		background-color:DarkCyan;/#ee3e80;/rgb(100,100,90); 	# Define a cor de fundo do bloco em que for escrito.
+
+		opacity:0.5; / background-color:rgba(0,0,0,0.5);	# A opacidade recebe valores entre 0 e 1.
+
+		/* css3 background-color: hsla(0,100%,100%,0.5);	# Matiz(0°até360°), saturação, luminosidade(50% é normal) e alfa (entre 0 e 1 [para a transparencia]).
+	}
+
+	----- Degradê:
+		
+		background-image: linear-gradient(direção, cor 1 10%, cor x+1 90%)	# Direção: (to right; to top; to left; to bottom) ou (90deg; 180deg; 270deg; 360deg) e (cores e quantidades em que aparecem).
+		background-image: radial-gradient(circle, cor 1, cor x+1)		# Círculo degradê.
+
+----------------------------------------
+
+
+----- TIPOGRAFIA (fontes):
+
+	ANOTAÇÕES:
+	
+	TIPO  	-> TYPOS (impressão).
+	GRAFIA 	-> GRAPHÍA (escrita).
+	Tipografia = Estudo de como escrever (estudo dos tipos).
+
+	ALTURAS:
+		Altura-x: Todas as letras minúsculas de uma fonte são baseadas no x minúsculo dessa fonte.
+		Altura das Maiúculas.
+		Ascendente: Aquilo que vaza para cima (bx).
+		Descendente: Aquilo que vaza para baixo (qx).
+		Corpo: Desde o menor descenente até o maior ascentente(maiúscula).
+	
+	PARTES DAS LETRAS:
+		Haste K	(|)
+		Filete Ae (-)
+		Esporão b (Pé de apio)
+		Arco n 
+		Vértice VA
+		Terminal r
+		Braço K	(/)
+		Perna K (\)
+		Pé(serifa) AK
+		Espinha S
+		Barriga b
+		Olho oq
+		Orelha g
+		Cauda gQ
+
+	Glifo = Letras.
+	Conjunto de glifos = Fonte. 
+	
+	--------------------
+
+	FONTES SEGURAS E MEDIDAS:
+	body{
+		
+		font-family: Arial, Helvetica, sans-serif;		# Pode-se usar mais de um tipo de fonte devido ao fato de que o usuario talvez nao tenha a fonte instalada, caso isso ocorra seguira a sequencia (CSS web safe conbinations).
+		
+		font-size: 12px/200%/1.3em/2vw;}			# Define o tamanho da fonte. Pode ser através de pixels (padrão é 16px), percentagens(100% = 16px), EMS ou view port(responsivo). 
+		/*
+		Medidas absolutas:
+			cm (centímetro), 
+			mm (milímetro), 
+			in (polegada "2,54cm"),
+			-> px (pixel),		# Mais aconselhável.
+			pt (ponto),
+			pc (paica).
+
+		Medidas relativas:
+			-> em(relativo ao m maiúsculo e uma determinada fonte "16px = 1em"),		# Mais aconselhável.
+			ex(relativo ao x maiúsculo e uma determinada fonte), 
+			rem(relativo ao root configurado no body), 
+			vw(view port "largura do dispositivo"), 
+			vh(altura do dispositivo), 
+			%.  
+		*/
+	--------------------
+
+	PESO DA FONTE:
+	Nem todas as fontes possuem esses parametros.
+
+	font-weight:
+		lighter (fino)
+		normal
+		bold (negrito)
+		bolder (+ negrito)
+		100 - 900 (100 = lighter / 900 = bolder)
+		;
+	
+	--------------------
+
+	ESTILO DA FONTE:
+	Nem todas as fontes possuem esses parametros.
+
+	font-style:
+		normal
+		italic (italico)
+		oblique
+		
+	--------------------
+
+	DECORAÇÃO DA FONTE:	
+		
+	font-decoration:
+		underline		# Sublinha.
+		overline		# Risca.	
+		line-through		# Adiciona uma linha no meio do texto.	
+		blink;}			# Anima o texto para que ele pisque na tela.
+
+	--------------------
+
+	SHORTHAND FONT:
+	
+	font: style weight size family;
+	
+	EX: 
+		font: italic bolder 2em 'Work sans', sans-serif;	
+		font: bold 3em 'Work sans';
+
+	--------------------
+	IMPORTANDO FONTES:	
+	fonts.google ou dafont.com para download de fontes.
+	fontes ninja para pegar fontes de outros sites.
+	font finder para pegar fontes de uma imagem.
+
+	@import url(url_da_fonte);	# Regra: logo abaixo do style ou nas primeiras linhas do documento css. 	
+
+	ou
+
+	@font-face{
+		font-family: 'nome_dado_a_fonte';
+		scr: url('local_em_que_a_fonte_foi_salva.otf') format ('opentype'),
+		     url('local_em_que_a_fonte_foi_salva.ttf') format ('truetype');
+
+		/*
+		Tipos de format:
+			opentype (otf).
+			truetype (ttf).
+			embedded-opentype.
+			truetype-aat (Apple advanced typography).
+			svg.
+		*/
+	
+	} 
+
+	--------------------
+
+	ALINHANDO TEXTOS:
+	
+	text-inent: 20px; (começo de parágrafo).	
+
+	text-aling: 
+		left
+		center
+		right
+		justify (left + right);
+
+	vertical-aling: baseline
+			sub
+			super
+			top
+			text-top
+			middle
+			bottom
+			text-bottom
+			12px;
+
+	--------------------
+		
+
+	MAIUSCULAS E MINUSCULAS:
+	
+	h1{
+
+		text-transform: uppercase;}				# Todo o texto fica em maiusculo. 
+
+	h2{
+
+		text-transform: lowercase;}				# Todo o texto fica em minusculo.
+
+	.credts{
+
+		text-transform: capitalize;}				# Primeira letra de toda palavra apareca em maiusculo.
+
+	h3{
+		
+		font-variant: small-caps;}				# Uppercase mais sofisticado (e mais recomendado).
+
+	--------------------
+
+
+	ENTRELINHA:
+	
+	p{
+
+		line-height: 1.4em;}					# É a diferença entre a altura da letra e da linha.
+
+	--------------------	
+
+	ESPAÇAMENTO ENTRE LETRAS E PALAVRAS:
+	 
+	h1, h2{
+
+		letter-spacing: 0.2em;}
+
+	.credtis{
+
+		word-spacing: 1em;}
+
+	--------------------
+
+	CSS3: SOMBRA PROJETADA
+
+	.credts{
+
+		text-shadow: 1px 1px 0px #eeeeee;}			# 1° indica a distancia na horizontal. 2° indica a distancia na vertica. 3° quantidade de desfoque. 4° cor. 
+
+	--------------------
+----------------------------------------	
+
+----- PSEUDO-CLASSES:
+
+	:link{								# Estilo para links nao visitados.
+		color: deeppink;}
+	
+	:visited{							# Estilo para links já visitados.
+
+		color: black;}
+
+	:hover{
+		background-color: black;}				# Quando passar o cursor por cima muda a cor.
+
+	
+	:active{
+		background-color: chocolate;}				# Quando clica muda a cor ou ficar precionando o mouse.
+
+	:focus{
+
+		outline:0;						# A linha ao redor some.
+		color: blue;}						# Quando o elemneto recebe o foco (serve para formularios e muda a cor de fundo da ultima box que foi clicada).
+
+	li:nth-of-type(2){						# Vai atacar apenas o segundo elemento da lista. / nth-of-type(2n + 1) aplique a regra a cada 2 e comece do primeiro.
+		color: red;}
+
+	ul:nth-child(3) / ul:last-child ou ul:first-child{		# Vai atacar o terceiro elemento filho de ul. / # Vai atacar o ultimo filho. 
+		color: green;}
+
+	tbody > tr:nth-child(2n){					# Pula de 2 em 2, ou seja, seleciona apenas os pares (2n: [não], [sim] / 3n: [não], [não], [sim] / odd = 2n-1: só as ímpares / even = 2n: só as pares). 
+		background-color: lightgray}
+
+	tipo escolhido:last-of-type ou first-of-type{			# Vai atacar o ultimo elemento daquele tipo.
+		color: black;}						
+
+	div:not(.one){							# Vai atacar todas as divs menos a que tenha a classe one.
+		color: white;}
+
+	:empty{								# Vai atacar o elemneto vazio.
+		background-color: orange;}
+
+	::before{
+		contente ' felipe ';}
+
+	::after{							# Após todos os elementos selecionados ira adicionar oq estiver dentro do content (pode usar 'before' tbm).
+		content: ' ghizoni.';}				
+
+
+----------------------------------------
+
+----- MOUSE:
+	# Event Reference para mais opcões. 
+	# Funcões desenvolvidas em JS.
+	
+	1) mouseenter
+		Quando o mouse entra na div.
+		<div mouseenter="MouseEntrou()">
+
+	2) mousemove
+		Quando o mouse move dentro da div.
+		<div mouseenter="MouseMoveu()">
+
+	3) mousedown
+		Quando o mouse é clicado e seu botão é segurado dentro da div.
+		<div mouseenter="MouseSegurou()">
+
+	4) mouseup
+		Quando o botão do mouse é solto dentro da div.
+		<div mouseenter="MouseSoltou()">
+
+	5) click
+		Quando é feito um click dentro da div.
+		<div mouseenter="MouseClocou()">
+
+	6) mouseout
+		Quando o mouse sai da div.
+		<div mouseenter="MouseSaiu()">
+
+
+
+	PRIMEIRA LINHA E PRIMEIRA LETRA
+
+	p.intro:first-letter{
+
+		font-size: 200%;}
+
+	p.intro:fist-line{
+
+		text-weght: bold;}
+
+----------------------------------------
+
+----- MODELO DE CAIXAS?
+
+	-> Aninhamento: Caixa dentro de outra caixa.
+
+	Cada caixa possui 3 propriedades disponíveis que podem ser ajustadas para controlar sua aparência:
+	1°) BORDER (Borda) - Dentro do elemento.
+		A borda contorna e delimita uma caixa.
+
+		-> LARGURA DE BORDA
+			.class{				
+			border-width: 10px;
+				      thin;		
+				      medium;  		
+				      thick;
+			
+			border-top-width: 1px; 
+			border-right-width: 2px;			
+			border-bottom-width: 3px;
+			border-left-width: 4px;
+
+			border-width: 1px[top] 2px[right] 3px[bottom] 4px[left]}
+	
+		-> ESTILO DA BORDA
+			.class{
+				border-style: solid;		# Normal.
+					      dotted;		# Um serie de quadrados
+					      dashed;		# Uma serie de linhas curtas.
+					      double;		# Duas linhas continuas.
+					      groove;		# Entalhado na página.
+					      ridge;		# Projetar-se para fora da tela.
+					      inset;		# Parece embutido na tela ( top e left mais graves que bottom e right).
+					      outset;		# Saindo da tela (bottom e right mais graves que top e left).
+					      hidden/none;}	# Invisível.
+
+		-> VÉRTICES ARREDONDADOS
+			.class{
+				border-radius: 10px;		# Raio em px.
+
+				border-top-right-radius: 10px;
+				border-top-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+				border-bottom-left-radius: 10px;
+
+				border-radius: 10px 5px 12 px 15px}
+
+				-moz-border-radius:	# Auxilia navegadores mais antigos (Chrome, Firefox e Safari).
+				-webkit-border-radius:	# Auxilia navegadores mais antigos (Chrome, Firefox e Safari).
+					      	
+		-> COR DA BORDA
+			.class{
+				border-top-color: white; 
+				border-right-color: cyan;
+				border-bottom-color: green;
+				border-left-color: red;
+
+				border-color: 	white[top] cyan[right] green[bottom] red[left]}
+
+		-> SHORTHAND
+			.class{
+				border: 3px[largura] dotted[style] cyan[cor]}
+
+		-> FORMATAÇÃO
+			.class{
+				box-sizing: border-box;  	# Faz com que a borda ocupe o espaço interior da div.
+				appearance: none;}		# Muda o padrao de botoes do site, tira a borda e a seta do select por exemplo.
+
+		-> OUTLINE (Contorno) - Fora do elemento (entre margem e borda).
+			.class{
+				outline: 5px solid black; (não acompanha o elemento pai, pode chegar a crescer para fora dele)}	
+		
+		-> COLAPSO:
+			.calss{
+				border-collapse: separete,	# Default; 
+						 collapse;}	# Junta as bordas.
+		-> IMAGENS DE BORDA
+			.class{
+				border-image-source: url() 11 11 11 11 stretch/repeat/round;}	# url da imagem, onde cortar a imagem, oq fazer com as bordas retas.
+				border-image-slice: xpx;
+				border-image-repeat:repeat;	
+	
+				-moz-border-image:	# Auxilia navegadores mais antigos (Chrome, Firefox e Safari).
+				-webkit-border-image:	# Auxilia navegadores mais antigos (Chrome, Firefox e Safari).
+	--------------------
+
+	2°) MAGRING (Margem) - Borda pra fora. 
+		Margens contornam e demilitam as bordas.
+
+		MARGEM
+
+			.class{
+				
+				margin-top: 0%;
+				margin-right: 0%;
+				margin-bottom: 0%;
+				margin-left: 68%;
+
+				margin: 1px[top] 2px[right] 3px[bottom] 4px[left];
+
+				margin: 10px[right e left] 20px[top e bottom];
+
+				margin: 0 auto;	#deixa a caixa centralizada mas o elemento deve ser bloco (display: block)}
+	--------------------
+
+	3°) PADDING (preenchimento) - Borda pra dentro. 
+		Espaço entre a borda de uma caixa e seu conteudo.
+
+		PREENCHIMENTO
+			
+			.class{
+						
+				padding-top: 0%;
+				padding-right: 0%;
+				padding-bottom: 0%;
+				padding-left: 0%;
+
+				padding: 1px[top] 2px[right] 3px[bottom] 4px[left];
+
+				padding: 10px[right e left] 20px[top e bottom];}
+	--------------------
+		
+			
+	DIMENSÕES DA CAIXA: 
+
+	div.box{
+
+	height: 300px;			#altura. 
+					
+	width: 300px;}			#largura.
+	
+	--------------------
+
+	LIMITANDO A LARGURA:
+
+	tr.description{
+
+		ordem de propriedade: min / max / width.
+
+		min-width: 450px;
+
+		max-width: 650px;}
+
+	--------------------
+
+	LIMITANDO A ALTURA:
+
+	tr.description{
+
+		ordem de propriedade: min / max / height.
+
+		min-height: 100px
+
+		max-height: 200px}
+
+	--------------------
+
+	EXCESSO DE CONTEÚDO:
+
+	tr.description{
+
+		overflow: hidden;			# Barra lateral de scroll não existe e aquilo que não coube não é mostrado.
+	
+		overflow-x:				# Barra lateral para a horizontal.
+		
+		overflow-y:				# Barra lateral para a vertical.
+	
+		overflow: scroll;}			# É criada uma barra lateral unicamente para o texto.
+
+		overflow-y: scroll;	
+		-webkit-overflow-scrolling: touch;	# Gera um scroll mais smooth para aparelhos touchscreen.
+	
+	--------------------
+
+	ALTERAR EM LINHA/BLOCO:
+
+	BOX-LEVEL: 	Linha nova, ocupa 100% de width.
+	INLINE-LEVEL:	Mesma linha, width é o necessário para conter o elemento.
+
+	.class{
+
+		display: inline;  		# Bloco vira linha e ira seguir na mesma linha. 
+			 block;			# Linha vira bloco e passara para a linha de baixo.
+			 inline-block;		# Bloco vira linha mas mantem as caracteristicas de um bloco.(deixar os elementos filhos na mesma linha de código ou margin-right: -4px),( bom usar 'text-alaing:center;' junto).
+			 none; 			# Oculta um elemento da página.
+			 grid;
+			 flex;
+
+		--- Grid:	
+		  Alinha os elementos filhos em forma de grade.
+
+			.container{
+				display: grid;
+				display-gap: 10px;			# Espaçamento entre os elementos.
+				grid-template-rows: 1fr 1fr 1fr 1fr;	# Número de linhas, nesse caso 4.
+				grid-template-columns: 1fr 1fr 1fr;	# Número de Colunas, nesse caso 3.
+				grid-template-areas:	
+				"header herader header"		# width header 100%.
+				"main main main"		# width main 100%.
+				"article article aside"		# width article 66.6% / width aside 33.3%.
+				"footer footer footer"		# width footer 100%.
+			}
+			.header{grid-area: header;}
+			.main{grid-area: main;}
+			.article{grid-area: article;}
+			.aside{grid-area: aside;}
+			.footer{grid-area: footer;}
+			.container-filho{
+				grid-column: 1/4;	# Essa coluna possui width de 100%. (4 pois são 3 colunas + 1).
+			}
+
+		--- Flex:
+
+	--------------------
+
+	OCULTANDO CAIXAS:
+
+	.class{
+
+		visibility: hidden;		# Oculta o elemeneto.
+			    visible;		# Exibe o elemento.
+	
+	--------------------
+
+	SOMBRAS DE CAIXA
+		https://www.cssmatic.com/box-shadow
+
+		box-shadow: inset 5px 5px 5px 5px #777777:	# Sombra pra dentro (inset, outset[default]), deslocamento horizontal, deslocamento vertical, distância do desfoque, difusão da sombra.
+		
+		-moz-border-shadow:				# Auxilia navegadores mais antigos (Chrome, Firefox e Safari).
+
+		-webkit-border-shadow:				# Auxilia navegadores mais antigos (Chrome, Firefox e Safari).
+	--------------------
+----------------------------------------
+
+
+----- LISTAS:
+
+	columns: x;			# Número de colunas.
+	
+	list-style-position: bla;	# Posição dos marcadores da lista.
+	
+	list-style-type: bla;		# Forma dos marcadores (exemplo de emojipidia: "\0000\00A0" onde \0000 representa o símbolo escolhido e \00A0 representa um espaço).
+
+
+----- CSS3:
+
+	FORMAS ELÍPTICAS
+
+		border-radius: 80px 50px;		# Horizontal e vertical.
+
+		padding: 0px;
+		border-radius: 100px;			# Círculo recebe a mesma altura do quadrado.
+
+	TRANSIÇÃO
+
+		transition: 1s;
+
+
+------------------LISTAS E FORMULARIOS-------
+
+	 
+	ESTILOS DE MARCADOR
+
+		ul{
+			list-style-type:;}
+			
+			LISTAS NAO ORDENADAS
+				
+				none;
+   				disc;
+				circle;
+				square;
+			
+			LISTAS ORDENADAS
+				
+				decimal;				
+				decimal-leading-zero;					
+				lower-alpha;								
+				upper-alpha;								
+				lower-roman;								
+				upper-roman;
+		
+	
+
+	IMAGENS PARA MARCADOR
+		
+		ul{
+			list-style-image: url();}
+	
+		li{								
+			margin: 10px 0px 0px 0px;}
+
+
+	POSICIONANDO O MARCADOR
+
+		list-style-position: outside/inside;		# outside é normal e inside entra na linha.
+
+
+	ABREVIAÇÃO DE LISTA
+		
+		list-style: inside circle;	
+
+				
+	BORDAS EM CÉLULAS VAZIAS
+
+		empty-cells: show/hide/inherit;  		# Mostra, esconde, caso a tabela(1) esteja alinhada dentro de outra tabela(2) ela ira receber as regras dessa segunda tabela.
+	
+	ESPAÇOS ENTRE CÉLULAS
+
+		border-spacing: 5px 15px;			# Vertical e horizontal;			
+		border-collapse: collapse/separate;		# Células vazias e border-spacing serão desconsiderados / ira separar as células e border-spacing e células vazias serão considerados.		
+				
+	
+	ESTILO DE CURSOR
+
+		cursor: auto;
+			crosshair;
+			default;		
+			pointer;			
+			move;				
+			texto;				
+			wait;			
+			help;	
+			url();	
+	
+
+-----LAYOUT:
+
+	POSIÇÃO
+
+		position: static;		# Segue o fluxo normal do html.
+			  relative;		# Move um elemento em relação ao local que ele estaria no fluxo normal.
+			  fixed;		# O elemento se torna fixo no fluxo da pagina, ou seja, o scroll nao faz o elemento sair de vista.
+			absolute;		# A caixa se comporata apenas em relação a pagina e nao aos outros blocos.
+
+				left: 0px;
+				right: 0px;
+				top: 0px;
+				bottom: 0px;
+
+		transform: 
+			skewX e sKewY (20deg);		# Rotaciona o elemento no eixo x ou y.
+			matrix(x, y, z, i, j, p);	# (scaleX, skewY, skewX(), scaleY, tranlateX, translateY).
+			translate(x%, y%);
+
+			# Para alinhar no centro: 
+			<container> position: relative;
+				<conteudo> position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+
+	SOBREPONDO ELEMENTOS
+
+		z-index: 10;			# Quanto maior o valor de z-index mais propriedade o elemento tem em relção aos outros.
+
+	ELEMENTOS FLUTUANTES
+
+		display:block;			# OBRIGATÓRIO O ELEMENTO ESTAR EM BLOCO.
+
+		float: right;			# O resto do conteiner se alocará ao redor do elemento.
+		       left;
+		width: 100px;			# OBRIGATÓRIO.
+
+		colocar no html: <div style="clear:both;"></div> no fim do codigo.
+
+		ISOLANDO ELEMENTOS FLOTUANTES
+		
+			clear: left;		# Nada deve tocar o lado esquerdo.
+			       right;		# Nada deve tocar o lado direito.
+			       both; 		# Nada deve tocar nenhum dos lados.
+			       none;		# Pode tocar.
+
+		PROBLEMAS
+
+			div {
+
+				border: 1px solid #665544;}			 
+	
+			Se um elemento contêiner contiver somente elementos flutuantes, alguns navegadores irão tratá-los como se tivessem 0 px de altura, fazendo a bordar parecer uma linha no topo.
+
+		SOLUÇÃO	
+		
+			div {
+
+				border: 1px solid #665544;
+				overflow: auto;
+				width: 100%;}
+
+
+		CRIANDO MULTICOLUNAS
+
+			<div class="coluna1de2"></div>
+
+			<div class="coluna2de2"></div>
+
+			.coluna1de2{
+
+				float: left;		# Posiciona as colunas uma do lado da outra.
+				width: 620px;		# Define a largura das colunas.
+				margin: 10px:}	   	# Cria um espaço entre as colunas.	
+
+
+			.coluna2de2{
+
+				float: left;		# Posiciona as colunas uma do lado da outra.
+				width: 300px;		# Define a largura das colunas.
+				margin: 10px:}	   	# Cria um espaço entre as colunas.	
+
+			ou
+
+			<div class="news"></div.
+	
+			.news{
+				column-count: 3;	# Divide news em 3 colunas.
+				column-width: 100px;	# Cada coluna com 100px.
+				column-gap: 10px;	# Espaçamento entre as colunas de 10px.
+			}
+
+		MULTIPLAS FOLHAS DE ESTILO 
+
+			no css: @import url().
+			no html: <link rel="stylesheet" type="text/css" href=""/>
+
+
+	shortcut:
+
+		Background: color image position repeat [size] attachment;
+
+	background-image: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px;		# url da imagem/ repetir ou nao/ width e heigh.(NAO PODE HAVER EPAÇO ENTRE URL E ()).	
+	
+	repeat: 
+		
+		repeat-x; (horizontal)
+
+		repeat-y; (vertical)
+
+	background-position:
+		
+		top
+	
+		right
+	
+		bottom									
+
+		left
+	
+		center
+		
+		EX:
+
+				background-position: left top;		# Default.
+
+				background-position: center center;	# Centro da imagem. 			
+	
+	transition: background-color 1s;  
+
+	auto:		Usado para dimensões.
+
+	inherit:	Ira herdar as caracteristicas do elemento pai.
+		EX:
+			.box{
+				width: 400px;
+				height: 400px;
+
+			}
+			.box span{
+
+				width: inherit;
+				height: inherit;
+			}
+
+	initial:	Igual a default.
+
+	background-size: 
+
+		0px largura 0px altura.
+		
+		
+		cover; - Cobre tudo distorcendo a imagem (background-position nao fara efeito).
+
+		background-position: center 50px / 0 [esquerda] 0 [topo] – Como e onde a imagem de fundo é posicionada; 50px largura 50px altura. (Quando é um valor negativo se comporta inversamente ao normal).
+
+		contain; - Cobre tudo mas sem distorcer a imagem, oque pode criar espaços em branco. 
+			
+		background-position: center 50px / 0 [esquerda] 0 [topo] – Como e onde a imagem de fundo é posicionada; 50px largura 50px altura. (Quando é cover e o valor passar de 100%, 110% por exemplo, a imagem passa a se mover de maneira oposta como se fosse 90%). 
+	
+
+	background-attachment:
+			
+		fixed;	 	# A imagem ira desaparecer atras do contudo conforme o scroll move (Efeito Parallax).
+
+	background-clip:
+
+		padding-box;	# A box so começa dps da borda
+
+	filtro:
+		grayscale(100%);
+
+		blur(5px);
+
+		brightness(200%);
+
+		contrast(200%);
+	
+		drop-shadow(8px 8px 10px gray);
+
+		hue-rotate(90deg);
+
+		invert(100%);
+
+		opacity(30%);
+
+		saturate(800%);
+
+		sepia(100%);
+
+
+
+----- PORCENTAGEM:
+
+	Sempre ira herdar do elemento pai, por exemplo:
+	
+	.parent{
+
+		width:50%;		# Em relação ao body.
+		height:400px;}
+
+	.son{
+			
+		width:50%;		# Em relação ao .parente, oq equivale a 25% do body.
+		padding-top:25%;}	# Equivale a 100px, ou seja, 25% de 400px.
+
+----------------------------------------
+
+----- CALCULOS: 
+	
+	CALC:
+	width: calc(porcentagem - / + *	 px);	# Espaço necessário entre o sinal e os numeros.
+
+	--------------------
+
+	VW E VH:
+
+	width: 100vw;			# vw = viewport width.	(Não leva em conta o scroll bar vertical).
+	height: 100vh;			# vh = viewport height.	(Não leva em conta o scroll bar horizontal).
+
+	--------------------
+
+----------------------------------------
+
+----- DESING RESPONSIVO:
+
+	ESSENCIAL:
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+	--------------------
+
+	MEDIA QUIRES: 
+
+		media types: 		all, screen, print, etc.
+		media features: 	orientation, ...		# Sempre entre parênteses.
+		EX:
+			<link rel="stylesheet" href="css/style.css" media="all"/>						# Media queries para tudo.
+			<link rel="stylesheet" href="estilo/retrato.css" media="screen and (orientation: portrait)"/>		# Media queries para a tela.
+			<link rel="stylesheet" href="estilo/paisagem.css" media="screen and (orientation: landscape)"/>		# Media queries para a tela.
+			<link rel="stylesheet" href="estilo/impressora.css" media="print"/>					# Media queries para a imprimir.
+
+
+	OPERADORES LOGICOS
+
+		and = e 		# @meida screen and(0) and (0){}
+
+		 ,  = ou		# @meida screen and(0) , screen and (0){}
+
+
+	REDIMENCIONANDO A TELA 
+		
+		@media screen and (max-width: Xpx0){			# Quando o width da tela for de Xpx a .box ira receber aquelas medidas (existe: max-width, min-width, max-height e min-height).
+				
+			.box{
+
+				width:100%;}
+		}
+	--------------------
+				
+----------------------------------------
+-----Desenhando com HTML:
+
+	----- Canvas:
+		Funciona como um turtle, porém possui mais possibilidades, como gráficos, jogos, imagens, etc.
+		<canvas id="myCanvas" width="800" height="800">
+			Your browser does not support the HTML5 canvas tag.
+		</canvas>
+		<script>
+			var c = documentGetElementById("myCanvas");
+			var ctx = c.getContext("2d");
+
+			#linha:
+			ctx.moveTo(0, 0);
+			ctx.lineTo(90, 90);
+			ctx.stroke();
+
+			# Circulo:
+			ctx.beginPath();			
+			ctx.arc(51, 200, 90, 0, 2*Math.PI);	# Circulo (vertical, horizontal, raio).
+			ctx.stroke();
+			ctx.font = "30px Arial";
+			ctx.fillText("Hello Word", 100, 50);
+
+			... 	# https://www.w3schools.com/graphics/canvas_intro.asp
+		</script>
+	----------
+
+	----- SVG:
+		
+		<svg width="400" height"400">
+			<text x="40" y="15" fill="red" transform="rotate(180 40, 15)"> I love SVG </text>
+			<polygon points="200,10 250,190 160,210 150,200" style="fill:lime;stroke:purple;stroke-width:1" />
+			<path d="M150 0 L75 200 L225 200 Z" /> 		# M = moveto / L = lineto / H = horizontal lineto / V = vertical lineto / C = curveto / S = smooth curveto / Q = quadratic Bézier curve / T = smooth quadratic Bézier curveto / A = elliptical Arc / Z = closepath
+			...	# https://www.w3schools.com/graphics/svg_intro.asp
+			Sory, your browser does not support inline SVG.
+		</svg>
+	----------
+
+----------------------------------------
+
+----- LESS:
+	
+	Facilita a criação de códigos css.
+
+	
+	----- Operadores Aritméticos:	
+
+		+		Soma.
+		
+		-		Subtração.
+	
+		*		Multiplicação.
+
+		/		Divisão.
+
+		calc()	Permide usar medidas diferentes, ex: calc(10% + 100px).
+
+	----------	
+
+	----- LESS_Variaveis:
+
+		@Nice-Blue: #5B83AD;
+		@Light-Blue: #5B83AD + #111;
+		@width: 200px;			/* Variavel global */
+		div{
+			@width: 200px;			/* Variavel local */
+    			background: @CorBG;
+			font-size: @FontSize;	
+		}
+
+	----------
+
+	----- Nesting:
+		Permite mudar as caracteristicas dos elementos filhos dentro das caracteristicas do pai.
+
+		@bg: black;
+		div{
+    			background-color: @bg;
+    			h2{
+       	 		background-color: blue;
+        			@media screen and (max-width: 700px){
+            			background-color: aqua;
+        			}
+    			}
+    			&:hover{
+        			background-color: red;
+    			}
+    			@media screen and (max-width: 700px){
+        			background-color: rgb(40, 92, 92);
+    			}
+		}
+	
+	----------
+
+	----- import:
+		Importa outros arquivos sass ou scss.
+
+
+
+	----- Mixing:
+		Funciona como funções, muito útil para webkit:
+
+		.one(@par){
+			width: @par;
+		}
+	
+		.two{
+			.one(200px); 
+		}
+		
+		.three{
+			.two;
+		}
+
+	----------
+
+-----SASS E SCSS:
+
+	Facilita a criação de códigos css.	
+	A diferença de SASS e SCSS esta apenas na sintaxe. Enquanto SCSS se aproxima mais de CSS através de "{}" e ";", o SASS dispensa tais acentuações.
+
+	
+	----- Operadores Aritméticos:
+		Soma e subtração: Mesmas medidas (px + px | % - %).
+		Multiplicação e divisão: As medidas podem ser misturadas.		
+
+		+		Soma.
+		
+		-		Subtração.
+	
+		*		Multiplicação.
+
+		/		Divisão.
+
+		calc()	Permide usar medidas diferentes, ex: calc(10% + 100px).
+
+		SASS:
+	
+			div
+   	 			width: (100% + 10%) / 2		/* 55% */
+
+		SCSS:
+
+			div{
+   	 			width: (10px / 7px) * 10%;		/* 14.2857142857% */
+			}
+
+	----------	
+
+	----- SASS_Variaveis:
+
+		SASS:
+
+			$CorBG: rgb(0, 0, 0)
+			$FontSize: 20px
+			div
+    				background: $CorBG
+				font-size: $FontSize
+
+
+		SCSS:
+
+			$CorBG: rgb(0, 0, 0);
+			$FontSize: 20px;
+			div{
+    				background: $CorBG;
+				font-size: $FontSize;
+			}
+
+	----------
+
+	----- Nesting:
+		Permite mudar as caracteristicas dos elementos filhos dentro das caracteristicas do pai.
+
+		SASS:
+			div
+    				background: blue
+    				color: red
+    				a
+        				color: green
+    				h2
+        				color: black
+    			
+
+		SCSS:
+			div{
+    				background: blue;
+    				color: red;
+    				a{
+        				color: green;
+    				}
+    				h2{
+        				color: black;
+    				}
+			}
+	
+	----------
+
+	----- import:
+		Importa outros arquivos sass ou scss.
+
+		SASS:
+			(reset.sass)
+				$CorBG: rgb(0, 0, 0)
+				$FontSize: 20px
+				*
+ 	   				margin: 0
+    					padding: 0
+    					box-sizing: border-box
+
+			(style.sass)
+			div
+				@import 'reset'
+				div
+    					background: $CorBG
+    					font-size: $FontSize
+    					width: 100px
+    					height: 100px
+    					color: red
+    			
+
+		SCSS:
+			(reset.sass)
+				$CorBG: rgb(0, 0, 0);
+				$FontSize: 20px;
+				*{
+ 	   				margin: 0;
+    					padding: 0;
+    					box-sizing: border-box;
+				}
+
+			(style.sass)
+				@import 'reset';
+				div{
+    					background: $CorBG;
+    					font-size: $FontSize;
+    					width: 100px;
+    					height: 100px;
+    					color: red;
+				}
+
+	----- Mixing:
+		Funciona como funções, muito útil para webkit:
+
+		SASS:
+			@mixin border($radius, $width: 1px, $style: "solid", $color: black)
+    				-webkit-border-radius: $radius
+    				-moz-border-radius: $radius
+    				-ns-border-radius: $radius
+    				border-radius: $radius
+    				border-width: $width
+    				border-color: $color
+    				border-style: $style
+
+				div
+    					@include border(10px)
+
+		SCSS:
+			@mixin border($radius, $width: 1px, $style: "solid", $color: black){
+    				-webkit-border-radius: $radius;
+    				-moz-border-radius: $radius;
+    				-ns-border-radius: $radius;
+    				border-radius: $radius;
+    				border-width: $width;
+    				border-color: $color;
+    				border-style: $style;
+			}
+			div{
+    				@include border(10px);
+			}
+
+	----------
+	
+	----- Extend:
+		Copia as características de outro elemento.
+
+		SASS:
+			.middle{
+    				margin: 0 auto;
+			}
+			div{
+  		  		@extend .middle;
+			}
+
+		SCSS:
+			.middle
+    				margin: 0 auto
+			div
+	    			@extend .middle
+
+	----------
+
+
+		

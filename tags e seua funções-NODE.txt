@@ -1,0 +1,8 @@
+extrair:
+
+const os = require('os')
+
+const freemem = os.freemem
+cons totalmem = os.totalmem
+#ou
+const { freemem, totalmem } = os	# extrai o quanto de memoria livre há e o total de memória.
