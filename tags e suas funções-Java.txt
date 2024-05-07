@@ -1,22 +1,56 @@
-import java.util.Scanner;
+# IMPORTANTE # 
+EM OBRAS
 
-	public class Main {
+	- Comentários:
 
- 		public static void main(String[] args){
- 		    
- 		    Scanner input = new Scanner(System.in);
+		// Comentário em linha.
+		/* Comentário 
+		   em
+		   bloco
+		*/
 
- 			int num1 = input.nextInt();
+	- Código base de java:
+	
+		package Principal;
+		imports
 
- 			int num2 = input.nextInt();
- 			
- 			input.close();
-
- 			int num3 = num1 + num2;
-
- 			System.out.println("SOMA = " + num3);
-
- 		}
+		public class Principal {
+    			public static void main(String[] args) {
+	        		// Aqui vai o código principal.
+        		}
+    		}
 
 
- 	}
+----- INPUTS E OUTPUTS:
+
+	- Inputs: 
+
+	- outputs:
+
+		print:
+		- print() 	= Apenas mostra o texto		// System.out.print("Olá, mundo!");		= Olá, mundo! (Cursor fica na mesma linha)
+		- printf()  	= Formata numeros		// System.out.printf("%.2f", 12.3456789); 	= 12.34
+		- println() 	= Pula linha			// System.out.println("Olá, mundo!");		= Olá, mundo! (Cursor pula para a próxima linha)
+
+		JOPtionPane:
+		Não esqueca de importar: import javax.util.JOPtionPane;
+		- JOptionPane.showMessageDialog (null, "Olá, mndo!");		// Em um PopUp será mostrada a mensagem.	
+
+----- VARIAVEIS:
+	- Tipos:
+		-- String
+		-- int
+		-- Double
+		-- Float
+		-- Boolean
+
+----- ESTRUTURA CONDICIONAL:
+
+----- ESTRUTURA DE REPETIÇÃO:
+	- For
+	- While
+	- Do
+
+----- FUNÇÕES:
+
+----- PROGRAMAÇÃO ORIENTADA A OBJETOS:
