@@ -307,7 +307,7 @@ DQL -> DATA QUERY LANGUAGE		# Seleciona os dados.
 	INSERT INTO ATTENDEE (FIRST_NAME, LAST_NAME)
 	VALUES 
 	("Felipe", "Ghizoni"),
-	("Maria", "Fiorentin"),
+	("Maria", "Ghizoni"),
 	("Sofia", "Ghozni");
 
 
