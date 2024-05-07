@@ -110,8 +110,8 @@ MODO DE USO:
 
 		5) replace(x, y) -> Troca x por y.
 
-			let text = "A be   minha amiga!";
-			let newText = text.replace("amiga", "namorada");	// out: A be   minha namorada!
+			let text = "A Ana é minha amiga!";
+			let newText = text.replace("amiga", "irmã");	// out: A Ana é minha irmã!
 
 		6) toUpperCase() -> Converte a string para mai sculo.
 
@@ -123,46 +123,46 @@ MODO DE USO:
 			let text1 = "Hello World!";       
 			let text2 = text1.toLowerCase();	// out: hello world!
 
-		8) concat(x, y) -> Atrav s do car ctere passado em x ira concatenar com y.
+		8) concat(x, y) -> Através do car ctere passado em x ira concatenar com y.
 
-			let text1 = "Eu te amo";
-			let text2 = "Be!";
-			let text3 = text1.concat(" ", text2);	// out: Eu te amo Be!
+			let text1 = "I love you";
+			let text2 = "girl!";
+			let text3 = text1.concat(" ", text2);	// out: I love you girl!
 			let text3 = text1 + " " + text2;
 
-		9) trim() -> Remove todos os espa os desnecess rios (espa os > 1 viram 1) tanto no in cio como no meio e no final da string.
+		9) trim() -> Remove todos os espaços desnecessários (espaçoos > 1 viram 1) tanto no início como no meio e no final da string.
 
-			let text1 = "      Cenourinha     e      Moranguinho      ";
-			let text2 = text1.trim();	// out: "Cenourinha e Moranguinho".
+			let text1 = "      Cenoura     e      morango      ";
+			let text2 = text1.trim();	// out: "Cenoura e Morango".
 
-		10) he trimStart() -> Remove todos os espa os desnecess rios (espa os > 1 viram 1) no in cio da string.
+		10) he trimStart() -> Remove todos os espa os desnecessários (espaços > 1 viram 1) no início da string.
 
-			let text1 = "      Cenourinha     e      Moranguinho      ";
-			let text2 = text1.trim();	// out: "Cenourinha e Moranguinho    ".	
+			let text1 = "      Cenoura     e      morango      ";
+			let text2 = text1.trim();	// out: "Cenoura e morango    ".	
 
 		11) The trimEnd()-> Remove todos os espa os desnecess rios (espa os > 1 viram 1) no final da string.
 
-			let text1 = "      Cenourinha     e      Moranguinho      ";
-			let text2 = text1.trim();	// out: "      Cenourinha e Moranguinho".	
+			let text1 = "      Cenoura     e      morango      ";
+			let text2 = text1.trim();	// out: "      Cenoura e morango".	
 
-		12) padStart(x, y) -> Adiciona o valor de y no in cio da string at  que length da string seja >= x (Caso length > x n o acontece nada).
+		12) padStart(x, y) -> Adiciona o valor de y no início da string até que length da string seja >= x (Caso length > x n o acontece nada).
 
 			let text = "Eu te amo";
 			let padded = text.padStart(13,"mto");	// out: "mto Eu te amo".
 
-		13) The padEnd(x, y) -> Adiciona o valor de y no final da string at  que length da string seja >= x (Caso length > x n o acontece nada).
+		13) The padEnd(x, y) -> Adiciona o valor de y no final da string até que length da string seja >= x (Caso length > x n o acontece nada).
 
 			let text = "Eu te amo ";
 			let padded = text.padStart(18,"mto ");	// out: "Eu te amo mto mto".
 
 		14) charAt(x) -> Retorna o valor do elemento no index x.
 
-			let text = "Eu te amo Be";
-			let char = text.charAt(10);	// out: B
+			let text = "Je te aime ma femme";
+			let char = text.charAt(6);	// out: a
 
 		15) charCodeAt() -> Retorna o valor UTF-16 do elemento no index x.
 
-			let text = "Eu te amo Be";
+			let text = "Eu te amo Bem";
 			let char = text.charAt(10);	// out: 66
 
 -----VARIAVEIS
@@ -171,17 +171,17 @@ MODO DE USO:
 
 		const = "Felipe";		// Valor não pode ser alteardo, é constante.
 
-		let = "Maria";		// Variável é usada apenas dentro da estrutura em que se apresenta, como uma estrutura de condição, dessa forma ocupa menos espaço na memória.
+		let = "Ana";		// Variável é usada apenas dentro da estrutura em que se apresenta, como uma estrutura de condição, dessa forma ocupa menos espaço na memória.
 
-		var = "Soso";			// Variável normal.
+		var = "Sofia";			// Variável normal.
 
-	----- DECLARA  O DE VARIAVEIS
+	----- DECLARAÇÃO DE VARIAVEIS
 		/* 
 		O JavaScript possui algumas regras diderentes de declara  o de variaveis em rela ao a outras linguagens:
-		1) Pode come ar com letra, $ ou _.
-		2) N o pode come ar com n meros.
-		3)   possiv l usar letras, numeros, acentos e s mbolos.
-		4) N o pode conter espa os e n o pode ser uma palavra reservada.
+		1) Pode começar com letra, $ ou _.
+		2) Não pode começar com números.
+		3) É possivíl usar letras, números, acentos e símbolos.
+		4) Não pode conter espa os e n o pode ser uma palavra reservada.
 		*/
  			
 		var nome = "Felipe"
@@ -543,7 +543,7 @@ MODO DE USO:
 
 	----- Passagem de parametros:
 		
-		var nome1 = "Fiorentin"
+		var nome1 = "Oliveira"
 		var nome2 = "Ghizoni"
 	
 		function ola (name1="fulano", name2="ciclano"){
@@ -1326,9 +1326,9 @@ MODO DE USO:
 	Utiliza express es regulares para encontrar termos em strings.
 
 	 	$(function(){
-			var frase = "Eu te amo Be";
+			var frase = "Eu te amo Bem";
 
-			var verifica = frase.match(/Be/);
+			var verifica = frase.match(/Bem/);
 		});
 
 		Regras de express es regulares:
@@ -1556,7 +1556,7 @@ MODO DE USO:
 
 			}
 			var el = document.getElementById("main");
-			ReactDOM.render(<div class="principal"><Box>Algum Texto</Box><Box nome="Felipe" sobrenome="ghizoni"/><Box nome="Maria" sobrenome="fiorentin"/><Box nome="Sofia" sobrenome="fiorentin ghizoni"/></div>, el)
+			ReactDOM.render(<div class="principal"><Box>Algum Texto</Box><Box nome="Felipe" sobrenome="ghizoni"/><Box nome="Ana" sobrenome="Oliveira"/><Box nome="Sofia" sobrenome="Oliveira ghizoni"/></div>, el)
 
 
 
@@ -1932,7 +1932,7 @@ MODO DE USO:
 	let be: number				// int ou float.
 	var peso: float				= 80.5;
 	let namo: boolean 			= True;
-	var arrNomes: string[]			= ["felipe", "maria"];		// Array formado apenas por strings.
+	var arrNomes: string[]			= ["felipe", "Ana"];		// Array formado apenas por strings.
 	let variavel: any				= False;				// Pode receber qualuqer tipo.
 
 	function teste(var1:string){}		// Também funciona em parametros.
