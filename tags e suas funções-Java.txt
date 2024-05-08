@@ -211,11 +211,75 @@ EM OBRAS
 
 	- 4 PILARES: Abstração / Encapsulamento / Herança / Polimorfismo
 
+	- Classe:
+		É uma descrição que abstrai um conjunto de objetos que possuem características e funções similares (comportamentos e propriedades).
 
-	- Classe é uma descrição que abstrai um conjunto de objetos que possuem características similares (comportamentos e propriedades).
-		Ex: Cachorro
+	- Objeto:
+		Uma intância de uma classe, como um índividuo em um grupo de comuns.
 
-		-- Classe (Um conjunto de objetos com as mesmas características)
+	- Atributo/propriedade:
+		Características de um objeto representadas por váriaveis.
+
+	- Método/Comportamento:
+		Funções que o objeto executa.
+
+	- Exemplo:
+		classe animal
+		objeto cachorro
+		atributo raça
+		metodo latir
+
+	- Polimorfismo é a capacidade pela qual duas ou mais classes
+	derivadas de uma mesma superclasse podem possuir métodos com
+	a mesma assinatura, mas comportamentos distintos, que são
+	especializados para cada classe derivada. Tais objetos dessas classes
+	derivadas podem ser atribuídos a variáveis do tipo da superclasse.
+	Por exemplo, embora um triângulo e um retângulo possuam
+	atributos em comum (base e altura) e são formas geométricas, ao
+	executar um método para calcular a área, ambos terão um resultado
+	diferente, mesmo que possuam a mesma base e a mesma altura.
+
+	- Herança é uma classe poder utilizar métodos e atributos de outra
+	classe como se fossem seus. Para que haja herança é necessário que
+	as classes possuam uma certa afinidade. Por exemplo, todo
+	professor é uma pessoa, assim como todo aluno é uma pessoa.
+	Ambos possuem todos os atributos e métodos de uma pessoa.
+	Herança multipla ocorre quando uma Subclasse possui duas 
+	Superclasse. # O algoritmo MRO da herança multipla busca
+	a referencia mais próxima, nesse caso a função fecundar 
+	acionada seria a do esperma. 
+
+	- Abstração ocorre quando varias Subclasses possuem os mesmos
+	métodos, e para maior facilidade em criar o código é feita
+	uma Superclasse abstrata. A superclasse abstrata ira possuir
+	os métos pré criados, porém são as Subclasses que irão desenvolver
+	tais métodos conforme suas necessidades.
+
+	- Encpsulamento
+
+	-- Modelagem de relações
+	--- Associação
+
+	--- Agregação é uma composição mais fraca, onde as partes podem
+	existir sem o todo e isso faz sentido. Além disso, um objeto parte
+	pode ser compartilhado entre vários objetos todo. Por exemplo, um
+	quarto é composto de móveis, mas tanto o quarto pode existir sem
+	os móveis como os móveis podem existir sem um quarto.
+
+	--- Composição é quando um objeto (chamaremos de todo) possui
+	como atributos outros objetos (chamaremos de partes), sendo que
+	essas partes não fazem sentido de existir sem o todo. Em uma
+	composição, o objeto todo é responsável por criar os objetos parte
+	e um objeto parte não faz parte de outro objeto todo. Por exemplo,
+	uma nota fiscal é uma composição de itens, sendo que não faz
+	sentido a existência de um item de nota fiscal sem uma nota fiscal.
+
+	--- Herança
+
+	--- Realização
+
+	--- Dependencia
+		
 	
 
 	~~Construtor (Função com mesmo nome da classe que é responsável por contruir o objeto):
