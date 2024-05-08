@@ -19,38 +19,543 @@ EM OBRAS
 	        		// Aqui vai o código principal.
         		}
     		}
-
+-----------------------------------------------------------------------------------------------------------
 
 ----- INPUTS E OUTPUTS:
 
 	- Inputs: 
+		--Scanner
+		  Não esqueca de importar: import java.util.Scanner;
+			--- Crie um objeto do tipo Scanner:
+				Scanner scanner = new Scanner(System.in);
+			--- Leia um valor:
+				String	=	String texto = scanner.nextLine();
+				Int	=	int numeroInteiro = scanner.nextInt();
+				Double	=	double numeroPontoFlutuante = scanner.nextDouble();
+			--- Feche o Sanner quando finalizar as leituras de entrada:
+				scanner.close();
+
+		--JOPtionPane:
+		  Não esqueca de importar: import javax.util.JOPtionPane;
+			--- int numero = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite seu número: "));	// Em um PopUp será mostrada uma área para o usuário digitar.	
+
 
 	- outputs:
 
-		print:
-		- print() 	= Apenas mostra o texto		// System.out.print("Olá, mundo!");		= Olá, mundo! (Cursor fica na mesma linha)
-		- printf()  	= Formata numeros		// System.out.printf("%.2f", 12.3456789); 	= 12.34
-		- println() 	= Pula linha			// System.out.println("Olá, mundo!");		= Olá, mundo! (Cursor pula para a próxima linha)
+		--print:
+			--- print() 	= Apenas mostra o texto		// System.out.print("Olá, mundo!");		= Olá, mundo! (Cursor fica na mesma linha)
+			--- printf()  	= Formata numeros		// System.out.printf("%.2f", 12.3456789); 	= 12.34
+			--- println() 	= Pula linha			// System.out.println("Olá, mundo!");		= Olá, mundo! (Cursor pula para a próxima linha)
 
-		JOPtionPane:
-		Não esqueca de importar: import javax.util.JOPtionPane;
-		- JOptionPane.showMessageDialog (null, "Olá, mndo!");		// Em um PopUp será mostrada a mensagem.	
+		--JOPtionPane:
+		  Não esqueca de importar: import javax.util.JOPtionPane;
+			--- JOptionPane.showMessageDialog (null, "Olá, mndo!");		// Em um PopUp será mostrada a mensagem.	
+
+-----------------------------------------------------------------------------------------------------------
 
 ----- VARIAVEIS:
 	- Tipos:
-		-- String
-		-- int
-		-- Double
-		-- Float
-		-- Boolean
+		-- String	=	"Texto";
+		-- int		=	10;
+		-- Double	=	10.10;		// Precisão dupla usando 8 bits (1 byte) para armazenar informação.
+		-- Float	=	10.10;		// Precisão simples usando apenas 4 bits para armazenar informação.
+		-- Boolean	=	true/false;
+
+	- Conversão:
+		-- String } Int			=	int num = Integer.parseInt("12");
+		-- String } double		=	double num = Double.parseDouble("12.10");
+		-- String } float		=	float num = Float.parseFloat("12.01");
+		-- Int/double/float } String	= 	1) Concatenação com uma string vazia:
+							  --- String numeroString = "" + numero;
+							2) Método String.valueOf():
+							  --- String numeroString = String.valueOf(numero);
+							3) Método Integer.toString():
+							  --- String numeroString = Integer.toString(numero);
+
+	- Manipulação de Strings:
+
+-----------------------------------------------------------------------------------------------------------
+
+----- OPERADORES ARITMÉTICOS:
+
+	+	Soma.
+	-	Subtração.
+	*	Multiplicação.
+	/	Divisão.
+	%	Resto da divisão.
+	== 	Igual.
+	!= 	Diferente.
+
+-----------------------------------------------------------------------------------------------------------
+
+----- OPERADORES LÓGICOS:
+
+	&&	E.
+	||	Ou.
+	! 	Negado.
+	1 	Verdadeiro.
+	0	Falso.
+
+-----------------------------------------------------------------------------------------------------------
 
 ----- ESTRUTURA CONDICIONAL:
 
+	Se a condição for verdadeira o bloco será executado, caso contrario será ignorado.
+
+	- Seleção simples:
+		if (condição){			// 
+			bloco será executado.
+		}
+
+	- Seleção composta:	(ELSE IF dentro de IF)
+		if (condição){	
+			bloco será executado.
+		}
+		else if (condição){		// Caso as condições a cima sejam falsas e essa verdadeira a mesma será executada. 
+			bloco será executado.
+		}
+		else if (condição){		// Podem haver inúmeros else if dentro de um único if.
+			bloco será executado.
+		}
+		else{				// Caso nenhuma condição a cima for verdadeira o programa executará esse bloco.
+			bloco será executado.
+		}
+
+	- Seleção encadeada:	(IF dentro de IF)
+		if (true){
+			if (condição){			 
+				bloco será executado.
+			} else {
+				bloco será executado.
+			}
+		}else if (true){
+			if (condição){			
+				bloco será executado.
+			}
+			else if (condição){		
+				bloco será executado.
+			}
+			else if (condição){		
+				bloco será executado.
+			}
+			else{				
+				bloco será executado.
+			}
+		}else{
+			bloco será executado.
+		}
+
+	- Lógica de condições:
+
+		-- &&	=  AND / E	(ambos precisam ser verdade).
+			--- Tabela verdade:
+				0 && 0 = 0
+				0 && 1 = 0
+				1 && 0 = 0
+				1 && 1 = 1
+			--- EX:
+				if (false && false){bloco;}	// Falso e não executa o bloco.
+				if (false && true){bloco;}	// Falso e não executa o bloco.
+				if (true && false){bloco;}	// Falso e não executa o bloco.
+				if (true && true){bloco;}	// Verdadeiro e executa o bloco.
+			
+		-- ||	=  OR / Ou	(apenas um precisa ser verdade).
+			--- Tabela verdade:
+				0 && 0 = 0
+				0 && 1 = 1
+				1 && 0 = 1
+				1 && 1 = 1
+			--- EX:
+				if (false && false){bloco;}	// Falso e não executa o bloco.
+				if (false && true){bloco;}	// Verdadeiro e executa o bloco.
+				if (true && false){bloco;}	// Verdadeiro e executa o bloco.
+				if (true && true){bloco;}	// Verdadeiro e executa o bloco.
+
+		-- !	=  NOT / Não	(inverte o valor da condição).
+			--- Tabela verdade:
+				!0 = 1
+				!1 = 0
+	
+			--- EX:
+				if (!false){bloco;}	// Verdadeiro e executa o bloco.
+				if (!true){bloco;}	// Falso e não executa o bloco.
+-----------------------------------------------------------------------------------------------------------
+
 ----- ESTRUTURA DE REPETIÇÃO:
-	- For
-	- While
-	- Do
+	- For:
+		for(valor inicial; condição de parada; incremento){
+			bloco;
+		}
+
+
+	- While:
+		while(condição){
+			bloco;
+		}
+	
+	- Do	
+		do{
+			bloco;
+		}while(condição);
+
+	- break
+	- continue
+
+-----------------------------------------------------------------------------------------------------------
 
 ----- FUNÇÕES:
 
+-----------------------------------------------------------------------------------------------------------
+
 ----- PROGRAMAÇÃO ORIENTADA A OBJETOS:
+
+	- 4 PILARES: Abstração / Encapsulamento / Herança / Polimorfismo
+
+
+	- Classe é uma descrição que abstrai um conjunto de objetos que possuem características similares (comportamentos e propriedades).
+		Ex: Cachorro
+
+		-- Classe (Um conjunto de objetos com as mesmas características)
+	
+
+	~~Construtor (Função com mesmo nome da classe que é responsável por contruir o objeto):
+
+	Class LISTA:
+
+		def __init__(self, nome, idade, cpf, email):
+			self.nome = nome
+			self.idade = idade
+			self.cpf = cpf
+			self.email = email
+
+
+
+
+	~~Objeto é uma instância de uma classe. 
+		Ex: cachorro do Fulano
+
+		Objeto (Representação do mundo real como um tipo de dado de uma classe)
+
+			LISTA_pequeno = LISTA(2)
+
+	~~Atributos de classe.
+
+		class LISTA:
+
+			how_much_LISTA = 2
+
+			def __init__():
+				bla 
+				bla
+				bla
+			
+			def retorna_LISTA(self):
+				retunr LISTA.how_much_LISTA
+
+	~~Atributos dinamico.
+		
+		instancia1.LISTA = "a lot"
+		
+		print(instancia1.LISTA)
+
+		del instancia1.com
+
+	~~Atributos de instancias são propriedades de um objeto. 
+		Ex: cor, raça, peso, idade.
+
+		Atributo (Características do objeto)
+
+			self.nome = nome
+			self.idade = idade
+			self.cpf = cpf
+			self.email = email
+		
+		print(instancia1.__dict__)	# Retorna todos os atributis da instancia. (__dict__ é um objeto dunder)
+
+	~~Métodos são operações ou ações que um objeto pode realizar quando solicitado. 
+		Ex: comer, dormir, correr
+
+		class LISTA:
+
+			def more_LISTA(qnt):
+				self.qnt_LISTA += qnt
+	
+		~~ decorators:
+			class LISTA:
+				
+				def __init__(self, nome, idade, sexo)
+					self.nome = nome
+					self.idade = idade
+					self.sexo = sexo
+
+				@classmethod		# Método da classe que recebe um parametro da classe, ou seja, nao precisa de um objeto. É chamado da seguinte forma: LISTA.retornainfo()
+				def retornainfo(cls, nome, anonasci, sexo):
+					idade = date.today().year - anonasci
+					return cls(nome, idade, sexo)		# possibilita acessar e alterar atributos.
+
+				@staticmethod		# Método da classe que não recebe um parametro da classe, ou seja, não consegue acessar as propriedades da classe. É chamado da seguinte forma: LISTA.retornainfo()
+				de retornainfo2(cls):
+					print("Codigo: 444")
+
+		~~ getters e setters (forma de acessar e manipular atributos privados e protegidos):
+
+			@property
+			def nome(self):
+				return self.__nome
+
+			
+			@nome.setter
+			def nome(self, nome):
+				self._nome = nome
+					
+
+	~~Visibilidade - Modificador de acesso.
+		
+
+		privada (private) - restritiva
+			Atributos e métodos só podem ser manipulados dentro da classe.
+			
+			class banco:
+				def __init__(self, senha):
+					self.__senha = senha	# __ = private
+
+		pretegida (protected) - intermediária
+			Atributos e métodos só podem ser manipulados dentro da classe e nas suas subclasses.
+
+			class banco:
+				def __init__(self, nome):
+					self._nome = nome	# _ = protected
+
+		publica (public) - menos restritiva
+			Atributos e métodos podem ser acessados e manipulados de qualquer parte do código.
+			
+			class banco:
+				def __init__(self, numero):
+					self.numero = numero	# = public
+
+
+
+
+	~~Encapsulamento - usar métodos dentro de métodos
+		class banco:
+			
+			def __inti__(self, valor):
+				self.valor = valor
+
+			def sacar(self, num):
+				self.valor -= num
+
+			def depositar(self, num):
+				self.valor += num
+
+			def transferir(self,num, conta2):
+				self.sacar(num)
+				conta2.depositar(num)
+			
+	
+
+	Herança é uma classe poder utilizar métodos e atributos de outra
+	classe como se fossem seus. Para que haja herança é necessário que
+	as classes possuam uma certa afinidade. Por exemplo, todo
+	professor é uma pessoa, assim como todo aluno é uma pessoa.
+	Ambos possuem todos os atributos e métodos de uma pessoa.
+
+	EX:
+		(Superclasse)
+		class Pessoa:
+				
+			def __init__(self, nome=None, data=None, cpf=None, rg=None)
+				self.nome = nome
+				self.data = data
+				self.cpf = cpf
+				self.rg = rg
+
+		(Subclasse)
+		class Aluno(Pessoa):
+
+			def __init__(self, nome):
+				Pessoa.__init__(self, nome) ou super().__init__(nome)
+				self.matricula = None
+				self.notas = []	
+
+	Herança multipla ocorre quando uma Subclasse possui duas 
+	Superclasse. # O algoritmo MRO da herança multipla busca
+	a referencia mais próxima, nesse caso a função fecundar 
+	acionada seria a do esperma. 
+	Ordem:
+	- Própria classe
+	- Primeiro pai citado
+	- segundo pai citado
+	...
+	- avô
+
+	EX:
+
+		(Superclasse)
+		class Zigotos():
+		
+			def fecundar(self):
+				pass
+	
+			def nascer(self):
+				print("nascer")
+	
+		
+		(Superclasse)
+		class Esperma(Zigotos):
+		
+			def nadar(self):
+				print("nadar")
+
+			def fecundar(self):
+				pass
+
+			def nascer_menino(self):
+				super().nascer()
+
+		(Superclasse)
+		class Ovulo(Zigotos):
+		
+			def esperar(self):
+				print("nadar")
+
+			def fecundar(self):
+				pass
+
+			def nascer_menina(self):
+				super().nascer()
+
+		(Subclasse)
+		Class Sex(Esperma, Ovulo):
+			pass
+	
+			
+
+
+
+	Polimorfismo é a capacidade pela qual duas ou mais classes
+	derivadas de uma mesma superclasse podem possuir métodos com
+	a mesma assinatura, mas comportamentos distintos, que são
+	especializados para cada classe derivada. Tais objetos dessas classes
+	derivadas podem ser atribuídos a variáveis do tipo da superclasse.
+	Por exemplo, embora um triângulo e um retângulo possuam
+	atributos em comum (base e altura) e são formas geométricas, ao
+	executar um método para calcular a área, ambos terão um resultado
+	diferente, mesmo que possuam a mesma base e a mesma altura.
+
+	EX:
+		(Superclasse)
+		class Pessoa:
+				
+			def __init__(self, nome=None, data=None, cpf=None, rg=None)
+				self.nome = nome
+				self.data = data
+				self.cpf = cpf
+				self.rg = rg
+
+			def trabalhar(self):
+				print("trabalhando...")
+
+		(Subclasse 1)
+		class professor(Pessoa):
+
+			def __init__(self, nome):
+				Pessoa.__init__(self, nome) ou super().__init__(nome)
+				self.matricula = None
+				self.notas = []	
+
+			def trabalhar(self):
+				print("alunos eeeee que legal")	
+		
+		(Subclasse 2)
+		class administrador(Pessoa):
+
+			def __init__(self, nome):
+				Pessoa.__init__(self, nome) ou super().__init__(nome)
+				self.matricula = None
+				self.notas = []	
+
+			def trabalhar(self):
+				print("numeros eeeee que legal")			
+	
+	Abstração ocorre quando varias Subclasses possuem os mesmos
+	métodos, e para maior facilidade em criar o código é feita
+	uma Superclasse abstrata. A superclasse abstrata ira possuir
+	os métos pré criados, porém são as Subclasses que irão desenvolver
+	tais métodos conforme suas necessidades.
+	
+	EX:
+
+
+		from abc import ABC, abstractcmethod
+
+		class LISTA(ABC):
+
+			def __init__(self, uhun=None):
+				self.uhun = uhun
+
+			@abstractcmethod
+			def uhun(self):
+				pass
+
+		class Load(LISTA):
+			
+			def __init__(self, si):
+				super().__init__(si)
+
+			def uhun(self):
+				retunr "uhun"
+
+	
+
+	Composição é quando um objeto (chamaremos de todo) possui
+	como atributos outros objetos (chamaremos de partes), sendo que
+	essas partes não fazem sentido de existir sem o todo. Em uma
+	composição, o objeto todo é responsável por criar os objetos parte
+	e um objeto parte não faz parte de outro objeto todo. Por exemplo,
+	uma nota fiscal é uma composição de itens, sendo que não faz
+	sentido a existência de um item de nota fiscal sem uma nota fiscal.
+
+	Agregação é uma composição mais fraca, onde as partes podem
+	existir sem o todo e isso faz sentido. Além disso, um objeto parte
+	pode ser compartilhado entre vários objetos todo. Por exemplo, um
+	quarto é composto de móveis, mas tanto o quarto pode existir sem
+	os móveis como os móveis podem existir sem um quarto.
+
+
+	class Classe:
+		atributo = "de Classe"
+
+		def metodo(self, parametro, atributos_de_instancias):
+			
+
+	instancia = Classe()
+
+	class Cachorro:		# O nome da classe deve começar com letra maiuscula.
+		pass		# pass permite declarar uma classe vazia.
+
+
+	class Cachorro :				# A classe Cachorro agora possui três atributos: tipo, nome, e idade.
+
+		tipo = " mamifero "			# Tipo é um atributo de classe. Isso significa que todos os cachorros possuem o atributo tipo, com o valor mamifero.
+
+		def __init__ ( self , nome , idade ):	#__init__() é o método construtor. Assim, ao instanciar um cachorro, devemos sempre informar um nome e uma idade para ele.
+
+			#nome e idade são atributos de instância, ou seja, um certo cachorro possui um certo nome e uma certa idade, que pode ser diferente de outros cachorros.
+			self . nome = nome
+			self . idade = idade
+		
+		def falar ( self , frase ):		# A classe Cachorro possui um método falar(), que recebe uma frase como entrada e simplesmente imprime na tela.
+
+			print ( frase )
+
+
+	a = Cachorro (" Ted", 12)
+	b = Cachorro (" Tom", 5)
+
+	# a e b são instâncias de cachorros. Ao escrever Cachorro("Ted", 12) estamos chamando a execução do método construtor da classe: __init__().
+
+	a.falar("teste")	# frase é o parâmetro do método falar() e "teste" é o argumento que é passado na chamada do método. Assim, parâmetro é a variável que recebe um valor na chamada de um método (está na assinatura do método) e argumento é o valor propriamente dito.
+	
+
+-----------------------------------------------------------------------------------------------------------
