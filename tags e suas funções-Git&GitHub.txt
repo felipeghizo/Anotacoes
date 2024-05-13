@@ -1,78 +1,87 @@
+O git é uma ferramenta para controle de versões do projeto e uma grande ajuda para programadores. 
+Já o GitHub é uma rede social para programadores e interface grafica para facilitar a utilização do git. 
+
 Git 	-> Software de controle de versão (VCS)
-- Repositório local.	
+- Repositório local. (local onde o projeto está salvo no dispositivo local).	
 
 GutHub 	-> Plataforma de rede social para programadores.
-- Repositório remoto.
+- Repositório remoto. (local onde o projeto está salvo remotamente).
 
 ----- Tags e suas funções-MarkDown
-- Usado no README.md, issues e em pull requests 
+-- Clone: Clona um repositório remoto para a máquina local.
+-- pull: Atualiza o repositório local com as mudanças do repositório remoto.
+-- add: Adiciona o(s) arquivo(s) que foram alterados localmente para enviar para o repositório remoto.
+-- commit: Prepara os arquivos adicionados ao add e adiciona um comentário para enviar junto.
+-- push: envia o commit pra o repositório remoto.
 
-Símbolos:
-- Basta usar uma barra antes.
+----- Usado no README.md, issues e em pull requests 
 
-	/##
-	/!
-	...
+	--Símbolos:
+		---- Basta usar uma barra antes.
 
-Formatação de texto:
+			/##
+			/!
+			...
 
-	Título			# Título	(Quanto mais # maior o nível do título e menor ele fica, maior: # = nível 1; menor: ## = nível 2 )
+	-- Formatação de texto:
 
-	emojis			:nome_do_emoji:	(github.com/ikatyang -> repositório de emoji: emoji-cheat-sheet) (Não funcina no nome do issue, usar copia e cola no emojipedia.org)
+		--- Título			# Título	(Quanto mais # maior o nível do título e menor ele fica, maior: # = nível 1; menor: ## = nível 2 )
 
- 	Negrito			**texto** ou __texto__
-	Itálico			*texto* ou _texto_
-	Riscado			~~texto~~
+		--- emojis			:nome_do_emoji:	(github.com/ikatyang -> repositório de emoji: emoji-cheat-sheet) (Não funcina no nome do issue, usar copia e cola no emojipedia.org)
 
-	Linha			*** ou ---
+ 		--- Negrito			**texto** ou __texto__
+		--- Itálico			*texto* ou _texto_
+		--- Riscado			~~texto~~
 
-	linha de comando 	`comando`
+		--- Linha			*** ou ---
 
-	trecho de programa	``` 
-				comando
-				```
+		--- linha de comando 	`comando`
 
-	citação			> texto citado	(Mais facil pela opção de mais opções do texto citado)
-	Menção			#x	(x representa o número da issue)
+		--- trecho de programa	``` 
+					comando
+					```
 
-Lista numerada:
+		--- citação			> texto citado	(Mais facil pela opção de mais opções do texto citado)
+		--- Menção			#x	(x representa o número da issue)
 
-	1. teste		1. teste
-	1. teste 2		2. teste 2
-	1. teste 3 		3. teste 3
-	1. teste 4		4. teste 4
-	   1. sub_teste 1	   i. sub_teste 1	(3 espaços gera um sub título)
-	   1. sub_teste 2	   ii. sub_teste 2
+	-- Lista numerada:
 
-Lista demarcada:
-º = bolinha fechada
+		1. teste		1. teste
+		1. teste 2		2. teste 2
+		1. teste 3 		3. teste 3
+		1. teste 4		4. teste 4
+		   1. sub_teste 1	   i. sub_teste 1	(3 espaços gera um sub título)
+		   1. sub_teste 2	   ii. sub_teste 2
 
-	- ou * teste 1		º teste 1
-	- ou * teste 2		º teste 2
-	- ou * teste 3		º teste 3
-	   - ou * sub_teste 1	   ° sub_teste 1
+	-- Lista demarcada:
+		º = bolinha fechada
 
-Lista de taréfas:
+			- ou * teste 1		º teste 1
+			- ou * teste 2		º teste 2
+			- ou * teste 3		º teste 3
+	   		- ou * sub_teste 1	   ° sub_teste 1
 
-	- [x] Fazer 1 
-	- [x] Fazer 2
-	- [ ] Fazer 3
-	- [ ] Fazer 4
+	-- Lista de taréfas:
 
-Imagem:
-- Simplesmente arrasta o arquivo para a sessão desejada.
+		- [x] Fazer 1 
+		- [x] Fazer 2
+		- [ ] Fazer 3
+		- [ ] Fazer 4
+
+	-- Imagem:
+		--- Simplesmente arrasta o arquivo para a sessão desejada.
 	
-	![descrição da imagem](URL)
+			![descrição da imagem](URL)
 
-Link:
+	-- Link:
 
-	[Mensagem](URL) 
+		[Mensagem](URL) 
 
-Tabela:
+	-- Tabela:
 
-	Num | Nome | Nota
-	--- | --- | ---
-	1 | ciclano | 8,2
-	2 | fulano | 10
-	
+		Num | Nome | Nota
+		--- | --- | ---
+		1 | ciclano | 8,2
+		2 | fulano | 10
+		
 	
